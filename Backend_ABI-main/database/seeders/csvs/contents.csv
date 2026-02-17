@@ -1,0 +1,11 @@
+name,roles,description
+Cantidad de estudiantes,"[""professor""]",Número total de estudiantes que participarán activamente en el desarrollo del proyecto de investigación.
+Tiempo de ejecución,"[""professor""]","Duración estimada del proyecto, especificada en semestres, desde su inicio hasta la finalización."
+Título,"[""professor"",""student""]",Nombre o encabezado del proyecto que resume su objetivo central de forma clara y concisa.
+Viabilidad,"[""professor""]","Evaluación general de si el proyecto puede realizarse con los recursos, tiempo y condiciones disponibles."
+Pertinencia con el grupo de investigación y con el programa,"[""professor""]",Justificación de cómo el proyecto se relaciona con las líneas del grupo de investigación y los objetivos del programa académico.
+Disponibilidad de docentes para su dirección y calificación,"[""professor""]",Confirmación de que hay docentes disponibles y capacitados para orientar y evaluar el proyecto.
+Calidad y correspondencia entre título y objetivo,"[""professor""]",Análisis de la coherencia entre el título propuesto y el objetivo general del proyecto.
+Objetivo general del proyecto,"[""professor"",""student""]","Meta principal que se espera alcanzar con la ejecución del proyecto, redactada de manera clara y medible."
+Descripción del proyecto de investigación,"[""professor"",""student""]","Resumen amplio del proyecto que incluya el contexto, el problema, la metodología, los beneficiarios y el impacto esperado."
+Comentarios,"[""committee_leader""]",Comentarios 

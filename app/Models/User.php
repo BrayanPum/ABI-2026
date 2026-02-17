@@ -1,0 +1,96 @@
+<?php
+
+namespace App\Models;
+
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
+
+/**
+ * user table model, manages communication with the database using the root user, 
+ * should not be used by any end user, 
+ * always use an inherited model with the connection specific to each role.
+ */
+class User extends Authenticatable
+{
+    use HasApiTokens, HasFactory, Notifiable;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'email',
+        'role',
+        'password',
+    ];
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
+
+    /**
+     * Professor profile associated with the user.
+     */
+    public function professor()
+    {
+        return $this->hasOne(Professor::class, 'user_id', 'id');
+    }
+
+    /**
+     * Student profile associated with the user.
+     */
+    public function student()
+    {
+        return $this->hasOne(Student::class, 'user_id', 'id');
+    }
+
+    /**
+     * Research staff profile associated with the user.
+     */
+    public function researchstaff()
+    {
+        return $this->hasOne(ResearchStaff::class, 'user_id', 'id');
+    }
+
+    /**
+     * Check if the user has a specific role.
+     *
+     * @param string $role The role to check
+     * @return bool True if user has the specified role
+     */
+    public function hasRole($role)
+    {
+        return $this->role === $role;
+    }
+
+    /**
+     * Check if the user has any of the specified roles.
+     *
+     * @param array|string $roles Single role or array of roles to check
+     * @return bool True if user has any of the specified roles
+     */
+    public function hasAnyRole($roles)
+    {
+        return in_array($this->role, (array)$roles);
+    }
+}

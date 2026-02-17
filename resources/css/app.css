@@ -1,0 +1,14 @@
+/**
+ * Backend ABI - Main CSS File
+ *
+ * Importa todos los estilos personalizados del proyecto
+ */
+
+/* Estilos personalizados del logo */
+@import 'custom-logo.css';
+
+/* Estilos de iconos */
+@import 'icon-style.css';
+
+/* Estilos adicionales del proyecto */
+/* Agrega aquí más imports según necesites */

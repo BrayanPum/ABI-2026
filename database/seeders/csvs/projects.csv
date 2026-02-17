@@ -1,0 +1,18 @@
+date,title,thematic_area_id,project_status_id,evaluation_criteria
+2025-04-22 14:03:17,Trazabilidad de productos agrícolas mediante blockchain,2,1,
+2025-02-13 9:27:45,Sistema inteligente para detección de emociones en llamadas de servicio al cliente,6,2,
+2025-06-30 18:41:02,Desarrollo de una aplicación móvil para monitoreo de cultivos en zonas rurales,11,3,
+2025-01-05 22:15:33,Algoritmo predictivo para mantenimiento preventivo en maquinaria industrial,16,4,
+2025-03-18 7:56:10,Optimización de rutas de entrega utilizando redes neuronales,21,5,
+2025-05-11 12:29:44,Implementación de gemelos digitales en procesos logísticos,16,1,
+2025-07-09 20:45:01,Análisis forense de ciberataques con herramientas de código abierto,31,2,
+2025-02-27 3:14:38,Modelo de predicción de abandono escolar basado en machine learning,36,3,
+2025-06-05 16:22:59,Plataforma web para la gestión de residuos sólidos urbanos,46,4,
+2025-03-01 10:08:23,Sistema de recomendación de cursos personalizados con inteligencia artificial,51,5,
+2025-04-13 9:27:45,Modelado de procesos académicos mediante BPMN para optimizar la gestión administrativa universitaria,6,2,"El estudiante debe poseer conocimientos en gestión de procesos de negocio (BPM), análisis organizacional y modelado con BPMN, además de habilidades en herramientas de diagramación y documentación de procesos."
+2025-02-10 9:12:57,Implementación de un sistema de monitoreo de seguridad para la protección de datos institucionales,11,2,"El estudiante debe tener conocimientos en administración de redes, seguridad informática, análisis de vulnerabilidades y manejo de sistemas operativos basados en Linux. Además, debe ser capaz de integrar y configurar herramientas de monitoreo como Snort, OSSEC o Wazuh."
+2025-04-18 7:56:10,Desarrollo de un entorno virtual interactivo para el aprendizaje de estructuras de datos,17,2,"El estudiante asignado debe poseer conocimientos sólidos en programación orientada a objetos, estructuras de datos y diseño de interfaces web interactivas. Se valorará experiencia previa en el uso de frameworks educativos o motores de simulación."
+2025-04-22 14:03:17,Sistema de analítica predictiva para la deserción estudiantil en programas universitarios,13,6,
+2025-05-11 12:29:44,Desarrollo de una plataforma web para la gestión eficiente de prácticas empresariales en programas de ingeniería,7,6,
+2025-06-05 16:22:59,Integración de inteligencia artificial generativa en el desarrollo de interfaces conversacionales universitarias,10,6,
+2025-06-30 18:41:02,Diseño de una arquitectura empresarial para la transformación digital de una universidad privada de mediana escala,15,6,

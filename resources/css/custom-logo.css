@@ -1,0 +1,48 @@
+/**
+ * Custom Logo Styles - Backend ABI
+ *
+ * Previene que el logo se invierta en modo oscuro
+ */
+
+/* Clase personalizada para evitar inversión de colores del logo */
+.logo-no-invert {
+    filter: none !important;
+    opacity: 1 !important;
+}
+
+/* Asegurar que el logo mantenga sus colores en modo oscuro */
+[data-bs-theme="dark"] .logo-no-invert,
+.theme-dark .logo-no-invert {
+    filter: none !important;
+    opacity: 1 !important;
+}
+
+/* Si el logo necesita ajuste de brillo en modo oscuro (opcional) */
+[data-bs-theme="dark"] .logo-with-brightness,
+.theme-dark .logo-with-brightness {
+    filter: brightness(1.1) !important;
+}
+
+/* Prevenir inversión en navbar */
+.navbar-brand-image.logo-no-invert {
+    filter: none !important;
+}
+
+/* Soporte para diferentes temas de Tablar */
+body.theme-dark .logo-no-invert,
+body[data-bs-theme="dark"] .logo-no-invert {
+    filter: none !important;
+    opacity: 1 !important;
+}
+
+/* Para el logo en el sidebar */
+.navbar .navbar-brand-image.logo-no-invert,
+.aside .navbar-brand-image.logo-no-invert {
+    filter: none !important;
+}
+
+/* Para el logo en la página de autenticación */
+.page-center .auth-logo img.logo-no-invert {
+    filter: none !important;
+    opacity: 1 !important;
+}

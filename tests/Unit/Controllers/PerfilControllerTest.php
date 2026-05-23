@@ -83,6 +83,108 @@ class PerfilControllerTest extends TestCase
     }
 
     /** @test */
+<<<<<<< Updated upstream
+=======
+    public function test_validation_requires_email_confirmation_only_when_email_changes()
+    {
+        $user = ResearchStaffUser::create([
+            'email' => 'test@example.com',
+            'password' => Hash::make('password'),
+            'role' => 'research_staff',
+            'state' => 1,
+        ]);
+
+        ResearchStaffResearchStaff::create([
+            'user_id' => $user->id,
+            'card_id' => '12345678',
+            'name' => 'Carlos',
+            'last_name' => 'Montoya',
+            'phone' => '3001111111',
+        ]);
+
+        $data = [
+            'name' => 'Carlos',
+            'last_name' => 'Montoya',
+            'email' => 'nuevo@example.com',
+            'phone' => '3001111111',
+        ];
+
+        $response = $this->actingAs($user)->put(route('perfil.update'), $data);
+
+        $response->assertSessionHasErrors('email_confirmation');
+    }
+
+    /** @test */
+    public function test_validation_rejects_invalid_profile_field_formats(): void
+    {
+        $user = ResearchStaffUser::create([
+            'email' => 'test@example.com',
+            'password' => Hash::make('password'),
+            'role' => 'research_staff',
+            'state' => 1,
+        ]);
+
+        ResearchStaffResearchStaff::create([
+            'user_id' => $user->id,
+            'card_id' => '12345678',
+            'name' => 'Carlos',
+            'last_name' => 'Montoya',
+            'phone' => '3001111111',
+        ]);
+
+        $response = $this->actingAs($user)->put(route('perfil.update'), [
+            'name' => 'Carlos123',
+            'last_name' => 'Montoya',
+            'email' => 'correo-invalido',
+            'phone' => '300-111',
+        ]);
+
+        $response->assertSessionHasErrors(['name', 'email', 'phone']);
+
+        $responseShortPhone = $this->actingAs($user)->put(route('perfil.update'), [
+            'name' => 'Carlos',
+            'last_name' => 'Montoya',
+            'email' => 'test@example.com',
+            'phone' => '300123',
+        ]);
+
+        $responseShortPhone->assertSessionHasErrors('phone');
+    }
+
+    /** @test */
+    public function test_validation_fails_with_obvious_numeric_sequence_password()
+    {
+        $user = ResearchStaffUser::create([
+            'email' => 'test@example.com',
+            'password' => Hash::make('password'),
+            'role' => 'research_staff',
+            'state' => 1,
+        ]);
+
+        ResearchStaffResearchStaff::create([
+            'user_id' => $user->id,
+            'card_id' => '12345678',
+            'name' => 'Carlos',
+            'last_name' => 'Montoya',
+            'phone' => '3001111111',
+        ]);
+
+        $data = [
+            'name' => 'Carlos',
+            'last_name' => 'Montoya',
+            'email' => 'test@example.com',
+            'phone' => '3001111111',
+            'password' => '123456789',
+            'password_confirmation' => '123456789',
+        ];
+
+        $response = $this->actingAs($user)->put(route('perfil.update'), $data);
+
+        $response->assertSessionHasErrors('password');
+    }
+
+    /** @test */
+>>>>>>> Stashed changes
     public function test_validation_fails_with_short_password()
     {
         $user = ResearchStaffUser::create([

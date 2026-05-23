@@ -1,4 +1,9 @@
 @extends('tablar::auth.layout')
+
+@php
+    use App\Support\ProfileInputValidation;
+@endphp
+
 @section('title', 'Register')
 @section('content')
     <div class="container container-tight py-4">
@@ -52,7 +57,10 @@
                 <div class="mb-3">
                     <label class="form-label">Número de identificación</label>
                     <input type="text" name="card_id" class="form-control @error('card_id') is-invalid @enderror"
-                           placeholder="Ingrese el número de identificación" value="{{ old('card_id') }}" required>
+                           placeholder="Ingrese el número de identificación" value="{{ old('card_id') }}"
+                           data-input-filter="digits" inputmode="numeric"
+                           pattern="{{ ProfileInputValidation::DIGITS_HTML_PATTERN }}"
+                           title="Solo numeros." required>
                     @error('card_id')
                     <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -61,7 +69,9 @@
                 <div class="mb-3">
                     <label class="form-label">Nombre</label>
                     <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
-                           placeholder="Ingrese el nombre" value="{{ old('name') }}" required>
+                           placeholder="Ingrese el nombre" value="{{ old('name') }}"
+                           data-input-filter="name" pattern="{{ ProfileInputValidation::NAME_HTML_PATTERN }}"
+                           title="Solo letras, espacios, guiones y apostrofes." required>
                     @error('name')
                     <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -70,7 +80,9 @@
                 <div class="mb-3">
                     <label class="form-label">Apellido</label>
                     <input type="text" name="last_name" class="form-control @error('last_name') is-invalid @enderror"
-                           placeholder="Ingrese el apellido" value="{{ old('last_name') }}" required>
+                           placeholder="Ingrese el apellido" value="{{ old('last_name') }}"
+                           data-input-filter="name" pattern="{{ ProfileInputValidation::NAME_HTML_PATTERN }}"
+                           title="Solo letras, espacios, guiones y apostrofes." required>
                     @error('last_name')
                     <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -78,11 +90,31 @@
 
                 <div class="mb-3">
                     <label class="form-label">Teléfono</label>
-                    <input type="text" name="phone" class="form-control @error('phone') is-invalid @enderror"
-                           placeholder="Ingrese el número de teléfono" value="{{ old('phone') }}" required>
-                    @error('phone')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
+                    <input
+                        type="text"
+                        name="phone"
+                        class="form-control @error('phone') is-invalid @enderror"
+                        placeholder="3158899001"
+                        value="{{ old('phone') }}"
+                        data-input-filter="phone-co"
+                        data-live-validate="phone-co"
+                        inputmode="numeric"
+                        maxlength="{{ ProfileInputValidation::PHONE_LENGTH }}"
+                        minlength="{{ ProfileInputValidation::PHONE_LENGTH }}"
+                        pattern="{{ ProfileInputValidation::PHONE_HTML_PATTERN }}"
+                        title="Debe tener 10 digitos."
+                        required
+                    >
+                    <div
+                        class="invalid-feedback @error('phone') d-block @else d-none @enderror"
+                        data-live-phone-feedback
+                    >
+                        @error('phone')
+                            {{ $message }}
+                        @else
+                            El telefono debe tener exactamente 10 digitos (ejemplo: 3158899001).
+                        @enderror
+                    </div>
                 </div>
 
                 <!-- Student specific fields -->
@@ -118,11 +150,26 @@
                 <!-- Email and Password -->
                 <div class="mb-3">
                     <label class="form-label">Dirección de correo electrónico</label>
-                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
-                           placeholder="Ingrese el correo electrónico" value="{{ old('email') }}" required>
-                    @error('email')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
+                    <input
+                        type="email"
+                        name="email"
+                        class="form-control @error('email') is-invalid @enderror"
+                        placeholder="Ingrese el correo electrónico"
+                        value="{{ old('email') }}"
+                        data-live-validate="email"
+                        autocomplete="email"
+                        required
+                    >
+                    <div
+                        class="invalid-feedback @error('email') d-block @else d-none @enderror"
+                        data-live-email-feedback
+                    >
+                        @error('email')
+                            {{ $message }}
+                        @else
+                            Ingrese un correo electronico valido (ejemplo: usuario@dominio.com).
+                        @enderror
+                    </div>
                 </div>
 
                 <div class="mb-3">
@@ -193,6 +240,8 @@
         </div>
 
     </div>
+
+    @include('partials.user-profile-input-filters')
 
     <!-- JavaScript to show/hide fields based on role -->
     <script>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Support\ProfileInputValidation;
 use App\Models\ResearchStaff\ResearchStaffCityProgram;
 use App\Models\ResearchStaff\ResearchStaffProfessor;
 use App\Models\ResearchStaff\ResearchStaffResearchStaff;
@@ -78,14 +79,16 @@ class RegisterController extends Controller
         'name.required' => 'El nombre es obligatorio.',
         'name.string' => 'El nombre debe ser un texto válido.',
         'name.max' => 'El nombre no debe exceder 255 caracteres.',
+        'name.regex' => ProfileInputValidation::messages()['name.regex'],
         
         'last_name.required' => 'El apellido es obligatorio.',
         'last_name.string' => 'El apellido debe ser un texto válido.',
         'last_name.max' => 'El apellido no debe exceder 255 caracteres.',
+        'last_name.regex' => ProfileInputValidation::messages()['last_name.regex'],
         
         'phone.required' => 'El teléfono es obligatorio.',
         'phone.string' => 'El teléfono debe ser un texto válido.',
-        'phone.max' => 'El teléfono no debe exceder 20 caracteres.',
+        'phone.digits' => ProfileInputValidation::messages()['phone.digits'],
         
         'password.required' => 'La contraseña es obligatoria.',
         'password.string' => 'La contraseña debe ser un texto válido.',
@@ -98,9 +101,10 @@ class RegisterController extends Controller
         'card_id.required' => 'La cédula es obligatoria.',
         'card_id.string' => 'La cédula debe ser un texto válido.',
         'card_id.max' => 'La cédula no debe exceder 20 caracteres.',
+        'card_id.regex' => ProfileInputValidation::messages()['card_id.regex'],
         
         'email.required' => 'El correo electrónico es obligatorio.',
-        'email.email' => 'Debe ingresar un correo electrónico válido.',
+        'email.email' => ProfileInputValidation::messages()['email.email'],
         'email.unique' => 'Este correo electrónico ya está registrado.',
         
         'city_program_id.required' => 'El programa es obligatorio.',
@@ -114,15 +118,13 @@ class RegisterController extends Controller
 
         // Base validation rules common to all roles
         $rules = [
-            'name' => ['required', 'string', 'max:255'],
-            'last_name' => ['required', 'string', 'max:255'],
-            'phone' => ['required', 'string', 'max:20'],            
+            'name' => ProfileInputValidation::nameRules(),
+            'last_name' => ProfileInputValidation::nameRules(),
+            'phone' => ProfileInputValidation::phoneRules(),
             'password' => ['required', 'string', 'min:4', 'confirmed'],
             'role' => ['required', 'in:student,professor,committee_leader,research_staff'],
             'card_id' => [
-                'required',
-                'string',
-                'max:20',
+                ...ProfileInputValidation::cardIdRules(),
                 function ($attribute, $value, $fail) {
                     $exists = \App\Models\ResearchStaff\ResearchStaffStudent::where('card_id', $value)->exists() ||
                             \App\Models\ResearchStaff\ResearchStaffProfessor::where('card_id', $value)->exists() ||
@@ -133,7 +135,10 @@ class RegisterController extends Controller
                     }
                 },
             ],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => [
+                ...ProfileInputValidation::emailRules(),
+                'unique:users',
+            ],
         ];
 
         // Additional validation based on role

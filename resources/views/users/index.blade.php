@@ -36,7 +36,7 @@
                         {{-- Badge exposes the total record count given the current filter combination. --}}
                         <span class="badge bg-indigo ms-2">{{ $users->total() }}</span>
                     </h2>
-                    <p class="text-muted mb-0">Administra los usuarios del sistema segÃºn su rol y estado.</p>
+                    <p class="text-muted mb-0">Administra los usuarios del sistema según su rol y estado.</p>
                 </div>
                 <div class="col-auto ms-auto d-print-none">
                     {{-- Primary action button creates new accounts directly from the index. --}}
@@ -61,7 +61,7 @@
 
             <div class="card mb-3">
                 <div class="card-header">
-                    <h3 class="card-title">Filtros de bÃºsqueda</h3>
+                    <h3 class="card-title">Filtros de búsqueda</h3>
                 </div>
                 <div class="card-body">
                     {{-- Form element sends the captured data to the specified endpoint. --}}
@@ -71,7 +71,7 @@
                             <label for="search" class="form-label">Buscar</label>
                             <div class="input-group">
                                 {{-- Input element used to capture the 'search' value. --}}
-                                <input type="text" name="search" id="search" value="{{ $search ?? '' }}" class="form-control" placeholder="Email, nombre, cÃ©dulaâ€¦">
+                                <input type="text" name="search" id="search" value="{{ $search ?? '' }}" class="form-control" placeholder="Email, nombre, cédula">
                                 @if(!empty($search) || !empty($role) || !empty($state) || !empty($cityProgramId) || ($perPage ?? 10) != 10)
                                     <a href="{{ route('users.index') }}" class="input-group-text" title="Limpiar filtros">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -90,8 +90,8 @@
                                 <option value="">Todos</option>
                                 <option value="student" {{ (string)($role ?? '') === 'student' ? 'selected' : '' }}>Estudiante</option>
                                 <option value="professor" {{ (string)($role ?? '') === 'professor' ? 'selected' : '' }}>Profesor</option>
-                                <option value="committee_leader" {{ (string)($role ?? '') === 'committee_leader' ? 'selected' : '' }}>LÃ­der de ComitÃ©</option>
-                                <option value="research_staff" {{ (string)($role ?? '') === 'research_staff' ? 'selected' : '' }}>Personal de InvestigaciÃ³n</option>
+                                <option value="committee_leader" {{ (string)($role ?? '') === 'committee_leader' ? 'selected' : '' }}>Lí­der de Comité</option>
+                                <option value="research_staff" {{ (string)($role ?? '') === 'research_staff' ? 'selected' : '' }}>Personal de Investigación</option>
                             </select>
                         </div>
                         <div class="col-12 col-sm-6 col-xl-2">
@@ -118,8 +118,8 @@
                             </select>
                         </div>
                         <div class="col-12 col-sm-6 col-xl-2">
-                            {{-- Label describing the purpose of 'Registros por pÃ¡gina'. --}}
-                            <label for="per_page" class="form-label">Registros por pÃ¡gina</label>
+                            {{-- Label describing the purpose of 'Registros por página'. --}}
+                            <label for="per_page" class="form-label">Registros por página</label>
                             {{-- Dropdown presenting the available options for 'per_page'. --}}
                             <select name="per_page" id="per_page" class="form-select" onchange="this.form.submit()">
                                 @foreach($perPageOptions as $size)
@@ -159,9 +159,9 @@
                                 <th class="text-truncate" style="max-width: 160px;">Rol</th>
                                 <th class="text-truncate" style="max-width: 140px;">Estado</th>
                                 <th class="text-truncate" style="max-width: 220px;">Nombre</th>
-                                <th class="text-truncate" style="max-width: 160px;">CÃ©dula</th>
+                                <th class="text-truncate" style="max-width: 160px;">Cédula</th>
                                 <th class="text-truncate" style="max-width: 240px;">Programa</th>
-                                <th class="text-truncate" style="max-width: 160px;">Semestre/LÃ­der</th>
+                                <th class="text-truncate" style="max-width: 160px;">Semestre</th>
                                 <th class="w-1 text-center">Acciones</th>
                             </tr>
                         </thead>
@@ -221,9 +221,9 @@
                                     @if($user->role === 'student' && $user->details)
                                         <span class="badge bg-blue-lt">Semestre {{ $user->details->semester }}</span>
                                     @elseif(in_array($user->role, ['professor', 'committee_leader']) && $user->details)
-                                        <span class="badge bg-secondary-lt">{{ $user->details->committee_leader ? 'LÃ­der' : 'Docente' }}</span>
+                                        <span class="badge bg-secondary-lt">{{ $user->details->committee_leader ? 'Lí­der' : 'Docente' }}</span>
                                     @else
-                                        <span class="text-muted">â€”</span>
+                                        <span class="text-muted">No aplica</span>
                                     @endif
                                 </td>
                                 <td>
@@ -290,7 +290,7 @@
                                             </svg>
                                         </div>
                                         <p class="empty-title">No hay usuarios registrados</p>
-                                        <p class="empty-subtitle text-muted">Registra usuarios para gestionar el sistema segÃºn sus roles.</p>
+                                        <p class="empty-subtitle text-muted">Registra usuarios para gestionar el sistema según sus roles.</p>
                                         <div class="empty-action">
                                             <a href="{{ route('register') }}" class="btn btn-primary">Registrar usuario</a>
                                         </div>
@@ -320,11 +320,11 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="user-status-modal-title">Confirmar acciÃ³n</h5>
+                    <h5 class="modal-title" id="user-status-modal-title">Confirmar acción</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body">
-                    <p class="mb-0" id="user-status-modal-message">Â¿Deseas continuar con esta acciÃ³n?</p>
+                    <p class="mb-0" id="user-status-modal-message">¿Deseas continuar con esta acción?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -359,13 +359,13 @@
 
                 if (action === 'deactivate') {
                     modalTitle.textContent = 'Desactivar usuario';
-                    modalMessage.textContent = `Â¿Deseas desactivar la cuenta ${email}? Puedes reactivarla mÃ¡s adelante.`;
+                    modalMessage.textContent = `¿Deseas desactivar la cuenta ${email}? Puedes reactivarla más adelante.`;
                     confirmButton.classList.remove('btn-success');
                     confirmButton.classList.add('btn-danger');
                     confirmButton.textContent = 'Desactivar';
                 } else {
                     modalTitle.textContent = 'Activar usuario';
-                    modalMessage.textContent = `Â¿Deseas activar la cuenta ${email}? El usuario podrÃ¡ volver a iniciar sesiÃ³n.`;
+                    modalMessage.textContent = `¿Deseas activar la cuenta ${email}? El usuario podrá volver a iniciar sesión.`;
                     confirmButton.classList.remove('btn-danger');
                     confirmButton.classList.add('btn-success');
                     confirmButton.textContent = 'Activar';

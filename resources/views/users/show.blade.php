@@ -63,7 +63,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">InformaciÃ³n de cuenta</h3>
+                            <h3 class="card-title">Información de cuenta</h3>
                             <div class="card-actions text-muted small">
                                 Actualizado {{ $user->updated_at?->diffForHumans() ?? 'sin cambios' }}
                             </div>
@@ -88,10 +88,10 @@
                                 </dd>
                                 
                                 @if($details)
-                                    <dt class="col-sm-3">CÃ©dula</dt>
+                                    <dt class="col-sm-3">Cédula</dt>
                                     <dd class="col-sm-9">{{ $details->card_id }}</dd>
                                     
-                                    <dt class="col-sm-3">TelÃ©fono</dt>
+                                    <dt class="col-sm-3">Teléfono</dt>
                                     <dd class="col-sm-9">{{ $details->phone }}</dd>
                                 @endif
                             </dl>
@@ -103,7 +103,7 @@
                     <div class="col-lg-6">
                         <div class="card h-100">
                             <div class="card-header">
-                                <h3 class="card-title">InformaciÃ³n personal</h3>
+                                <h3 class="card-title">Información personal</h3>
                             </div>
                             <div class="card-body">
                                 <dl class="row mb-0">
@@ -117,10 +117,10 @@
                                         <dt class="col-sm-4">Semestre</dt>
                                         <dd class="col-sm-8">{{ $details->semester }}</dd>
                                     @elseif(in_array($user->role, ['professor', 'committee_leader']))
-                                        <dt class="col-sm-4">LÃ­der de ComitÃ©</dt>
+                                        <dt class="col-sm-4">Lí­der de Comité</dt>
                                         <dd class="col-sm-8">
                                             @if($details->committee_leader)
-                                                <span class="badge bg-success-lt">SÃ­</span>
+                                                <span class="badge bg-success-lt">Sí­</span>
                                             @else
                                                 <span class="badge bg-secondary-lt">No</span>
                                             @endif
@@ -135,7 +135,7 @@
                         <div class="col-lg-6">
                             <div class="card h-100">
                                 <div class="card-header d-flex justify-content-between align-items-center">
-                                    <h3 class="card-title">Programa acadÃ©mico</h3>
+                                    <h3 class="card-title">Programa académico</h3>
                                 </div>
                                 <div class="card-body">
                                     <dl class="row mb-0">
@@ -145,7 +145,7 @@
                                         <dt class="col-sm-4">Ciudad</dt>
                                         <dd class="col-sm-8">{{ $details->cityProgram->city->name }}</dd>
                                         
-                                        <dt class="col-sm-4">CÃ³digo</dt>
+                                        <dt class="col-sm-4">Código</dt>
                                         <dd class="col-sm-8">{{ $details->cityProgram->program->code ?? 'N/A' }}</dd>
                                     </dl>
                                 </div>

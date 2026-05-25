@@ -160,6 +160,34 @@ class ProjectControllerTest extends TestCase
         $response->assertViewHas('projects');
     }
 
+    /** @test */
+    public function test_research_staff_can_see_new_project_report_modules()
+    {
+        $response = $this->actingAs($this->researchStaff)->get(route('projects.index'));
+
+        $response->assertStatus(200);
+        $response->assertViewHas('isResearchStaff', true);
+        $response->assertViewHas('reportModules', function (array $reportModules): bool {
+            return array_key_exists('projects_old_bank_ideas', $reportModules)
+                && array_key_exists('projects_status_rotation', $reportModules);
+        });
+    }
+
+    /** @test */
+    public function test_research_staff_can_select_each_new_project_report()
+    {
+        foreach (['projects_old_bank_ideas', 'projects_status_rotation'] as $reportKey) {
+            $response = $this->actingAs($this->researchStaff)
+                ->get(route('projects.index', ['report_key' => $reportKey]));
+
+            $response->assertStatus(200);
+            $response->assertViewHas('activeReportKey', $reportKey);
+            $response->assertViewHas('reportVisuals', function (array $reportVisuals): bool {
+                return count($reportVisuals) >= 3;
+            });
+        }
+    }
+
     // ========================
     // CREATE TESTS
     // ========================

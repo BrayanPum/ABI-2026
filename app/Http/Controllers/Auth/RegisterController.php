@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Events\UserCreated;
 use App\Http\Controllers\Controller;
 use App\Support\ProfileInputValidation;
 use App\Models\ResearchStaff\ResearchStaffCityProgram;
@@ -229,6 +230,9 @@ class RegisterController extends Controller
 
         // Fire registration event (optional, for consistency)
         event(new Registered($user));
+        
+        // Fire custom UserCreated event for our notification system
+        event(new UserCreated($user, $request->only(['name', 'last_name'])));
 
         // Handle post-registration logic and redirection
         if ($response = $this->registered($request, $user)) {

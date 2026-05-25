@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Helpers\AuthUserHelper;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -22,10 +24,14 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Schema::defaultStringLength(191);
-        
+
         // Forzar HTTPS en producción
         if (config('app.env') === 'production') {
             URL::forceScheme('https');
         }
+
+        View::composer('tablar::partials.header.sidebar-top', static function ($view): void {
+            $view->with('authenticatedUserDisplayName', AuthUserHelper::displayName());
+        });
     }
 }

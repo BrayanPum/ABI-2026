@@ -30,6 +30,8 @@ use App\Http\Controllers\ProjectionProfessorController;
 use App\Http\Controllers\ProjectionStudentController;
 use App\Http\Controllers\TeacherAssignmentController;
 use App\Http\Controllers\TeacherLoadController;
+use App\Http\Controllers\Formats\FormatoTipoController;
+use App\Http\Controllers\Formats\FormatoRegistroController;
 
 Route::get('/', function () {
     return redirect()->route('login');
@@ -58,11 +60,8 @@ Route::middleware(['auth', 'role:research_staff'])->group(function () {
     Route::put('users/{user}/activate', [UserController::class, 'activate'])->name('users.activate');
 
     // Profile (edición solo personal de investigaciones)
-    Route::get('/perfil/editar', [PerfilController::class, 'edit'])->name('perfil.edit');
-    Route::put('/perfil', [PerfilController::class, 'update'])->name('perfil.update');
     
-    //  Added routes for Departments and Cities (new addition)
-    // These were added to manage departments and their related cities
+    Route::get('departments-cities', [DepartmentController::class, 'unifiedIndex'])->name('departments-cities.index');
     Route::resource('departments', DepartmentController::class);
     Route::resource('cities', CityController::class);
     Route::resource('city-program', CityProgramController::class);
@@ -123,6 +122,10 @@ Route::middleware(['auth', 'role:research_staff'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     // Perfil (vista de solo lectura para cualquier usuario autenticado)
     Route::get('/perfil', [PerfilController::class, 'show'])->name('perfil.show');
+    Route::get('/perfil/foto', [PerfilController::class, 'showPhoto'])->name('perfil.photo.show');
+    Route::get('/perfil/editar', [PerfilController::class, 'edit'])->name('perfil.edit');
+    Route::put('/perfil', [PerfilController::class, 'update'])->name('perfil.update');
+    Route::put('/perfil/foto', [PerfilController::class, 'updatePhoto'])->name('perfil.photo.update');
 
     Route::get('projects/my-load', [TeacherLoadController::class, 'index'])
         ->middleware('role:professor,committee_leader')
@@ -175,4 +178,27 @@ Route::middleware(['auth', 'role:committee_leader'])->group(function () {
 
     Route::get('professor/projects/approved/{project}', [BankApprovedIdeasForProfessorsController::class, 'show'])
         ->name('professor.projects.approved.show');
+});
+
+// =============================================================================
+// MÓDULO DE FORMATOS — Sistema dinámico
+// =============================================================================
+
+Route::middleware(['auth'])->prefix('formatos')->name('formatos.')->group(function () {
+
+    Route::get('/', [FormatoTipoController::class, 'hub'])->name('index');
+
+    Route::middleware('role:research_staff')->resource('tipos', FormatoTipoController::class);
+
+    Route::prefix('{tipo}/registros')->name('registros.')->group(function () {
+        Route::get('/',                  [FormatoRegistroController::class, 'index'])->name('index');
+        Route::get('/crear',             [FormatoRegistroController::class, 'create'])->name('create');
+        Route::post('/',                 [FormatoRegistroController::class, 'store'])->name('store');
+        Route::get('/{registro}',        [FormatoRegistroController::class, 'show'])->name('show');
+        Route::get('/{registro}/editar', [FormatoRegistroController::class, 'edit'])->name('edit');
+        Route::put('/{registro}',        [FormatoRegistroController::class, 'update'])->name('update');
+        Route::delete('/{registro}',     [FormatoRegistroController::class, 'destroy'])->name('destroy');
+        Route::get('/{registro}/pdf',    [FormatoRegistroController::class, 'exportPdf'])->name('pdf');
+    });
+
 });

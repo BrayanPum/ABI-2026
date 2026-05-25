@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
 class LoginController extends Controller
@@ -67,7 +66,6 @@ class LoginController extends Controller
             Log::error('Database error: ' . $e->getMessage());
 
             return redirect()->back()->withErrors(['db_error' => 'Inténtelo más tarde.']);
-            // dd($e->getMessage()); #ELIMINAR DESPUES DE PRUEBAS
         }
     }
 
@@ -80,13 +78,10 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
-        // Redirigir a la página de clientes si el usuario tiene el rol 'user'
         if ($user->role == 'user') {
-            // return redirect()->route('clientes.index');
-            return redirect()->route('home'); #ELIMINAR DESPUES DE PRUEBAS
+            return redirect()->route('home');
         }
 
-        // Redirigir a la página de inicio si no es un 'user'
         return redirect()->route('home');
     }
 

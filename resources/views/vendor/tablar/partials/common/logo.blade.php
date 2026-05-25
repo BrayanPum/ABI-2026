@@ -8,7 +8,7 @@
 
 <a href="{{ $dashboard_url }}">
     @if(config('tablar.logo_img.path'))
-        <img src="{{ asset(config('tablar.logo_img.path', 'assets/logo.svg')) }}"
+        <img src="{{ asset(config('tablar.logo_img.path', 'assets/tablar-logo.png')) }}"
              width="{{ config('tablar.logo_img.width', 110) }}"
              height="{{ config('tablar.logo_img.height', 32) }}"
              alt="{{ config('tablar.logo_img.alt', 'ABI Logo') }}"

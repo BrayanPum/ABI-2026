@@ -2,7 +2,7 @@
 
 return [
 
-    'show_warnings' => true,
+    'show_warnings' => false,
 
     'convert_entities' => true,
 
@@ -20,11 +20,11 @@ return [
         'enable_remote' => true,
         'enable_css_float' => true,
         'enable_javascript' => true,
-        'debug_layout' => true,
-        'debug_layout_lines' => true,
-        'debug_layout_blocks' => true,
-        'debug_layout_inline' => true,
-        'debug_layout_padding_box' => true,
+        'debug_layout' => false,
+        'debug_layout_lines' => false,
+        'debug_layout_blocks' => false,
+        'debug_layout_inline' => false,
+        'debug_layout_padding_box' => false,
         'pdfa' => true,
         'pdf_backend' => "CPDF",
         'default_media_type' => "screen",
@@ -34,9 +34,9 @@ return [
         'font_height_ratio' => 1.1,
         'is_html5_parser_enabled' => true,
         'is_font_subsetting_enabled' => true,
-        'debug_keep_temp' => true,
+        'debug_keep_temp' => false,
         'debug_css' => false,
-        'debug_text' => true,
+        'debug_text' => false,
         'log_output_file' => null,
     ],
 

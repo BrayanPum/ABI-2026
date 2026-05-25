@@ -47,6 +47,11 @@
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         }
 
+        .project-report-visuals {
+            display: grid;
+            gap: 1.5rem;
+        }
+
         .project-report-stat {
             border: 1px solid rgba(15, 23, 42, 0.08);
             border-radius: 16px;
@@ -84,11 +89,13 @@
             box-shadow: 0 18px 36px rgba(15, 23, 42, 0.07);
             min-height: 360px;
             display: grid;
+            overflow: hidden;
         }
 
         .project-report-panel {
             display: none;
             height: 100%;
+            min-width: 0;
         }
 
         .project-report-panel.is-active {
@@ -141,20 +148,29 @@
         }
 
         .project-report-columns {
-            display: flex;
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: minmax(88px, 1fr);
             align-items: end;
-            justify-content: center;
+            justify-content: stretch;
+            justify-items: center;
             gap: 1rem;
             min-height: 260px;
-            padding: 0 0.5rem;
+            padding: 0 0.5rem 0.75rem;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
         }
 
         .project-report-column {
-            flex: 1;
-            min-width: 0;
+            width: 100%;
+            min-width: 88px;
+            max-width: 120px;
             display: grid;
             gap: 0.75rem;
             justify-items: center;
+            align-self: end;
         }
 
         .project-report-column__value {
@@ -163,7 +179,8 @@
         }
 
         .project-report-column__bar {
-            width: min(72px, 100%);
+            width: 100%;
+            max-width: 72px;
             min-height: 14px;
             border-radius: 18px 18px 0 0;
             display: flex;
@@ -177,10 +194,13 @@
         }
 
         .project-report-column__label {
+            width: 100%;
             text-align: center;
             font-size: 0.85rem;
             color: #475569;
             line-height: 1.3;
+            word-break: break-word;
+            overflow-wrap: anywhere;
         }
 
         .project-report-rows {
@@ -243,6 +263,17 @@
             text-align: center;
             color: #64748b;
             min-height: 220px;
+        }
+
+        .project-report-table-card {
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 18px 36px rgba(15, 23, 42, 0.07);
+        }
+
+        .project-report-table-card .table td {
+            vertical-align: top;
         }
 
         @media (max-width: 991px) {
@@ -348,7 +379,6 @@
                     <form method="GET" class="row g-3 align-items-end">
                         @if ($isResearchStaff)
                             <input type="hidden" name="report_key" value="{{ $reportFilters['report_key'] }}">
-                            <input type="hidden" name="report_search" value="{{ $reportFilters['report_search'] }}">
                             <input type="hidden" name="report_from" value="{{ $reportFilters['report_from'] }}">
                             <input type="hidden" name="report_to" value="{{ $reportFilters['report_to'] }}">
                             <input type="hidden" name="report_program_id" value="{{ $reportFilters['report_program_id'] }}">
@@ -499,23 +529,6 @@
             </div>
 
             @if ($isResearchStaff)
-                @php
-                    $topReportSegment = collect($reportSegments)->sortByDesc('value')->first();
-                    $maxReportValue = max($reportData['values'] ?: [0]);
-                    $currentPercent = 0;
-                    $chartStops = [];
-
-                    foreach ($reportSegments as $segment) {
-                        $start = $currentPercent;
-                        $currentPercent = min(100, $currentPercent + $segment['percentage']);
-                        $chartStops[] = "{$segment['color']} {$start}% {$currentPercent}%";
-                    }
-
-                    $chartBackground = $chartStops !== []
-                        ? 'conic-gradient(' . implode(', ', $chartStops) . ')'
-                        : 'linear-gradient(135deg, #d1d5db, #9ca3af)';
-                @endphp
-
                 <div class="card mt-3" id="projects-report">
                     <div class="card-header">
                         <div>
@@ -529,7 +542,7 @@
                             <input type="hidden" name="status_id" value="{{ $selectedStatus }}">
                             <input type="hidden" name="city_program_id" value="{{ $selectedCityProgram }}">
                             <input type="hidden" name="pending_review_due_to_age" value="{{ $pendingReviewDueToAge ? 1 : '' }}">
-                            <div class="col-12 col-md-6 col-lg-3">
+                            <div class="col-12 col-md-6 col-lg-4">
                                 <label for="report_key" class="form-label">Que deseas comparar</label>
                                 <select id="report_key" name="report_key" class="form-select">
                                     @foreach ($reportModules as $reportKey => $module)
@@ -538,17 +551,6 @@
                                         </option>
                                     @endforeach
                                 </select>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-3">
-                                <label for="report_search" class="form-label">Buscar dato</label>
-                                <input
-                                    type="text"
-                                    id="report_search"
-                                    name="report_search"
-                                    class="form-control"
-                                    placeholder="Estado, area, linea, tipo o titulo"
-                                    value="{{ $reportFilters['report_search'] }}"
-                                >
                             </div>
                             <div class="col-12 col-md-4 col-lg-2">
                                 <label for="report_from" class="form-label">Desde</label>
@@ -570,7 +572,7 @@
                                     value="{{ $reportFilters['report_to'] }}"
                                 >
                             </div>
-                            <div class="col-12 col-md-4 col-lg-2">
+                            <div class="col-12 col-md-4 col-lg-4">
                                 <label for="report_program_id" class="form-label">Programa</label>
                                 <select id="report_program_id" name="report_program_id" class="form-select">
                                     <option value="">Todos los programas</option>
@@ -592,7 +594,6 @@
                                             'city_program_id' => $selectedCityProgram,
                                             'pending_review_due_to_age' => $pendingReviewDueToAge ? 1 : null,
                                             'report_key' => $activeReportKey,
-                                            'report_search' => $reportFilters['report_search'],
                                             'report_from' => $reportFilters['report_from'],
                                             'report_to' => $reportFilters['report_to'],
                                             'report_program_id' => $reportFilters['report_program_id'],
@@ -602,136 +603,94 @@
                                     >
                                         Exportar CSV
                                     </a>
+                                    <a
+                                        href="{{ route('projects.index', array_filter([
+                                            'search' => $search,
+                                            'status_id' => $selectedStatus,
+                                            'city_program_id' => $selectedCityProgram,
+                                            'pending_review_due_to_age' => $pendingReviewDueToAge ? 1 : null,
+                                            'report_key' => $activeReportKey,
+                                            'report_from' => $reportFilters['report_from'],
+                                            'report_to' => $reportFilters['report_to'],
+                                            'report_program_id' => $reportFilters['report_program_id'],
+                                            'report_export' => 'pdf',
+                                        ], static fn ($value) => $value !== null && $value !== '')) }}"
+                                        class="btn btn-outline-danger"
+                                    >
+                                        Exportar PDF
+                                    </a>
                                 </div>
                             </div>
                         </form>
 
-                        <div class="project-report-toolbar">
-                            <div class="project-report-switch" role="tablist" aria-label="Tipos de grafico del reporte">
-                                <button type="button" class="project-report-switch__button is-active" data-chart-target="donut">Dona</button>
-                                <button type="button" class="project-report-switch__button" data-chart-target="columns">Barras verticales</button>
-                                <button type="button" class="project-report-switch__button" data-chart-target="rows">Barras horizontales</button>
-                            </div>
-                            <div class="text-muted small">Puedes cambiar la visualizacion sin regenerar el reporte.</div>
+                        <div class="text-muted small">
+                            Cada diagrama tiene sus propios controles para cambiar entre dona, barras verticales y barras horizontales.
                         </div>
-
-                        @if (! empty($reportFilters['report_search']))
-                            <div class="alert alert-secondary mb-0">
-                                Busqueda aplicada: <strong>{{ $reportFilters['report_search'] }}</strong>
-                            </div>
-                        @endif
 
                         <div class="project-report-grid">
-                            <div class="project-report-stat">
-                                <div class="project-report-stat__label">Total de registros</div>
-                                <div class="project-report-stat__value">{{ $reportData['total'] }}</div>
-                            </div>
-                            <div class="project-report-stat">
-                                <div class="project-report-stat__label">Categorias detectadas</div>
-                                <div class="project-report-stat__value">{{ count($reportData['categories']) }}</div>
-                            </div>
-                            <div class="project-report-stat">
-                                <div class="project-report-stat__label">Categoria principal</div>
-                                <div class="project-report-stat__value" style="font-size: 1.2rem;">
-                                    {{ $topReportSegment['label'] ?? 'Sin datos' }}
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="project-report-visual">
-                            <div class="project-report-panel-wrap">
-                                <div class="project-report-panel project-report-panel--donut is-active" data-chart-panel="donut">
-                                    @if ($reportSegments !== [])
-                                        <div class="project-report-donut-wrap">
-                                            <div class="project-report-donut" style="background: {{ $chartBackground }};">
-                                                <div class="project-report-donut__center">
-                                                    <div>
-                                                        <strong>{{ $reportData['total'] }}</strong>
-                                                        <span>Total de proyectos</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="text-muted text-center">
-                                                Diagrama de dona generado con los filtros seleccionados.
-                                            </div>
-                                        </div>
-                                    @else
-                                        <div class="project-report-empty">Sin datos para construir el grafico.</div>
-                                    @endif
-                                </div>
-
-                                <div class="project-report-panel" data-chart-panel="columns">
-                                    @if ($reportSegments !== [])
-                                        <div class="project-report-columns">
-                                            @foreach ($reportSegments as $segment)
-                                                @php
-                                                    $columnHeight = $maxReportValue > 0
-                                                        ? max(14, (int) round(($segment['value'] / $maxReportValue) * 220))
-                                                        : 14;
-                                                @endphp
-                                                <div class="project-report-column">
-                                                    <div class="project-report-column__value">{{ $segment['value'] }}</div>
-                                                    <div
-                                                        class="project-report-column__bar"
-                                                        style="height: {{ $columnHeight }}px; background: {{ $segment['color'] }};"
-                                                        title="{{ $segment['label'] }}: {{ $segment['value'] }}"
-                                                    >
-                                                        {{ number_format($segment['percentage'], 1) }}%
-                                                    </div>
-                                                    <div class="project-report-column__label">{{ $segment['label'] }}</div>
-                                                </div>
-                                            @endforeach
-                                        </div>
-                                    @else
-                                        <div class="project-report-empty">Sin datos para construir el grafico.</div>
-                                    @endif
-                                </div>
-
-                                <div class="project-report-panel" data-chart-panel="rows">
-                                    @if ($reportSegments !== [])
-                                        <div class="project-report-rows">
-                                            @foreach ($reportSegments as $segment)
-                                                @php
-                                                    $rowWidth = $maxReportValue > 0
-                                                        ? round(($segment['value'] / $maxReportValue) * 100, 2)
-                                                        : 0;
-                                                @endphp
-                                                <div class="project-report-row">
-                                                    <div class="project-report-row__header">
-                                                        <span>{{ $segment['label'] }}</span>
-                                                        <span>{{ $segment['value'] }} registros</span>
-                                                    </div>
-                                                    <div class="project-report-row__track">
-                                                        <div
-                                                            class="project-report-row__fill"
-                                                            style="width: {{ $rowWidth }}%; background: {{ $segment['color'] }};"
-                                                            title="{{ $segment['label'] }}: {{ number_format($segment['percentage'], 2) }}%"
-                                                        ></div>
-                                                    </div>
-                                                </div>
-                                            @endforeach
-                                        </div>
-                                    @else
-                                        <div class="project-report-empty">Sin datos para construir el grafico.</div>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="project-report-legend">
-                                @forelse ($reportSegments as $segment)
-                                    <div class="project-report-legend__item">
-                                        <span class="project-report-legend__swatch" style="background: {{ $segment['color'] }}"></span>
-                                        <div>
-                                            <div class="fw-semibold">{{ $segment['label'] }}</div>
-                                            <div class="text-muted small">{{ $segment['value'] }} registros</div>
-                                        </div>
-                                        <div class="fw-semibold">{{ number_format($segment['percentage'], 2) }}%</div>
+                            @forelse ($reportInsights as $insight)
+                                <div class="project-report-stat">
+                                    <div class="project-report-stat__label">{{ $insight['label'] }}</div>
+                                    <div class="project-report-stat__value" style="font-size: 1.2rem;">
+                                        {{ $insight['value'] }}
                                     </div>
-                                @empty
-                                    <div class="text-muted">Sin datos para construir la leyenda del reporte.</div>
-                                @endforelse
-                            </div>
+                                    <div class="text-muted small mt-2">{{ $insight['caption'] }}</div>
+                                </div>
+                            @empty
+                                <div class="project-report-stat">
+                                    <div class="project-report-stat__label">Total de registros</div>
+                                    <div class="project-report-stat__value">{{ $reportData['total'] }}</div>
+                                </div>
+                            @endforelse
                         </div>
+
+                        <div class="project-report-visuals">
+                            @forelse ($reportVisuals as $visual)
+                                @include('projects.partials.report-visual', [
+                                    'visual' => $visual,
+                                    'groupId' => 'report-' . $loop->index,
+                                ])
+                            @empty
+                                <div class="project-report-empty">Sin datos para construir el reporte.</div>
+                            @endforelse
+                        </div>
+
+                        @if ($reportTable)
+                            <div class="card project-report-table-card bg-white">
+                                <div class="card-header">
+                                    <div>
+                                        <h4 class="card-title mb-0">{{ $reportTable['title'] }}</h4>
+                                        <div class="text-muted">{{ $reportTable['description'] }}</div>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table card-table table-vcenter">
+                                        <thead>
+                                            <tr>
+                                                @foreach ($reportTable['columns'] as $column)
+                                                    <th>{{ $column }}</th>
+                                                @endforeach
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @forelse ($reportTable['rows'] as $row)
+                                                <tr>
+                                                    @foreach ($row as $cell)
+                                                        <td class="text-break">{{ $cell }}</td>
+                                                    @endforeach
+                                                </tr>
+                                            @empty
+                                                <tr>
+                                                    <td colspan="{{ count($reportTable['columns']) }}" class="text-center text-secondary">
+                                                        No se encontraron registros para este reporte.
+                                                    </td>
+                                                </tr>
+                                            @endforelse
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        @endif
                     </div>
                 </div>
             @endif
@@ -740,22 +699,24 @@
     @if ($isResearchStaff)
         <script>
             document.addEventListener('DOMContentLoaded', function () {
-                const buttons = Array.from(document.querySelectorAll('[data-chart-target]'));
-                const panels = Array.from(document.querySelectorAll('[data-chart-panel]'));
+                const buttons = Array.from(document.querySelectorAll('[data-chart-target][data-chart-group]'));
 
-                if (buttons.length === 0 || panels.length === 0) {
+                if (buttons.length === 0) {
                     return;
                 }
 
                 buttons.forEach(function (button) {
                     button.addEventListener('click', function () {
+                        const group = button.getAttribute('data-chart-group');
                         const target = button.getAttribute('data-chart-target');
+                        const groupButtons = Array.from(document.querySelectorAll('[data-chart-target][data-chart-group="' + group + '"]'));
+                        const groupPanels = Array.from(document.querySelectorAll('[data-chart-panel][data-chart-group="' + group + '"]'));
 
-                        buttons.forEach(function (item) {
+                        groupButtons.forEach(function (item) {
                             item.classList.toggle('is-active', item === button);
                         });
 
-                        panels.forEach(function (panel) {
+                        groupPanels.forEach(function (panel) {
                             panel.classList.toggle('is-active', panel.getAttribute('data-chart-panel') === target);
                         });
                     });

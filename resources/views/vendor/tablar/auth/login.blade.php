@@ -4,7 +4,7 @@
     <div class="container container-tight py-4">
         <div class="text-center mb-1 mt-5">
             <a href="" class="navbar-brand navbar-brand-autodark">
-                <img src="{{ asset(config('tablar.auth_logo.img.path', 'assets/logo.svg')) }}"
+                <img src="{{ asset(config('tablar.auth_logo.img.path', 'assets/tablar-logo.png')) }}"
                      width="{{ config('tablar.auth_logo.img.width', 110) }}"
                      height="{{ config('tablar.auth_logo.img.height', 110) }}"
                      alt="{{ config('tablar.auth_logo.img.alt', 'Auth Logo') }}"

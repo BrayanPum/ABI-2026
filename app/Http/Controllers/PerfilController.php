@@ -4,84 +4,92 @@ namespace App\Http\Controllers;
 
 use App\Helpers\AuthUserHelper;
 use App\Helpers\UserRoleHelper;
-<<<<<<< Updated upstream
-=======
 use App\Models\User;
 use App\Support\ProfileInputValidation;
 use Illuminate\Http\RedirectResponse;
->>>>>>> Stashed changes
+use App\Models\User;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rule;
 
 class PerfilController extends Controller
 {
     public function show()
     {
         $user = AuthUserHelper::fullUser();
-        $userMail = $user?->email ?? '';
+        $profile = $this->resolveProfile($user);
         $userRole = $user?->role ?? '';
-        $nameFromAccount = trim((string) ($user?->name ?? ''));
+        $displayName = AuthUserHelper::displayName($user);
         $nameUserRole = UserRoleHelper::displayName($user);
+        $showAcademicLocation = $this->showsAcademicLocation($userRole);
+        $canManageProfileFields = $this->canManageProfileFields($userRole);
 
-        if ($userRole === 'student') {
-            $userCard = $user?->student?->card_id;
-            $userPhone = $user?->student?->phone;
-            $userCity = $user?->student?->cityProgram?->city?->name;
-            $userProgram = $user?->student?->cityProgram?->program?->name;
-            $name = $user?->student?->name ?? $nameFromAccount;
-            $surname = $user?->student?->last_name ?? '';
-            $nameFromAccount = trim($name . ' ' . $surname);
-        } elseif ($userRole === 'professor' || $userRole === 'committee_leader') {
-            $userCard = $user?->professor?->card_id;
-            $userPhone = $user?->professor?->phone;
-            $userCity = $user?->professor?->cityProgram?->city?->name;
-            $userProgram = $user?->professor?->cityProgram?->program?->name;
-            $name = $user?->professor?->name ?? $nameFromAccount;
-            $surname = $user?->professor?->last_name ?? '';
-            $nameFromAccount = trim($name . ' ' . $surname);
-        } else {
-            $name = $user?->researchStaff?->name ?? $nameFromAccount;
-            $userCard = $user?->researchStaff?->card_id;
-            $userPhone = $user?->researchStaff?->phone;
-            $userCity = 'N/A';
-            $userProgram = 'N/A';
-            $surname = $user?->researchStaff?->last_name ?? '';
-            $nameFromAccount = trim($name . ' ' . $surname);
-        }
+        return view('perfil_show', [
+            'user' => $user,
+            'userRole' => $userRole,
+            'displayName' => $displayName,
+            'nameUserRole' => $nameUserRole,
+            'userMail' => $user?->email ?? '',
+            'userCard' => $profile?->card_id,
+            'userPhone' => $profile?->phone,
+            'userProgram' => $showAcademicLocation ? $this->resolveProgramName($user) : null,
+            'userCity' => $showAcademicLocation ? $this->resolveCityName($user) : null,
+            'showAcademicLocation' => $showAcademicLocation,
+            'canEditProfile' => $canManageProfileFields,
+            'canChangePassword' => $user instanceof User,
+        ]);
+    }
 
-        $displayName = $nameFromAccount !== '' ? $nameFromAccount : __('Usuario');
+    public function showPhoto(Request $request)
+    {
+        $user = AuthUserHelper::fullUser();
 
-        return view('perfil_show', compact(
-            'displayName',
-            'userCity',
-            'userProgram',
-            'nameUserRole',
-            'userMail',
-            'userCard',
-            'userPhone'
-        ));
+        abort_unless($user instanceof User, 403);
+
+        $requestedPath = ltrim(str_replace('\\', '/', trim((string) $request->query('path'))), '/');
+        $currentPhotoPath = ltrim(str_replace('\\', '/', trim((string) ($user->profile_photo_path ?? ''))), '/');
+
+        abort_if($requestedPath === '' || ! str_starts_with($requestedPath, 'profile_photos/'), 404);
+        abort_unless($currentPhotoPath !== '' && hash_equals($currentPhotoPath, $requestedPath), 403);
+        abort_unless(Storage::disk('public')->exists($requestedPath), 404);
+
+        return Storage::disk('public')->response($requestedPath, basename($requestedPath), [
+            'Cache-Control' => 'private, max-age=300',
+        ]);
     }
 
     public function edit()
     {
-        return view('perfil');
+        $user = AuthUserHelper::fullUser();
+        $profile = $this->resolveProfile($user);
+        $userRole = $user?->role ?? '';
+
+        return view('perfil', [
+            'user' => $user,
+            'profile' => $profile,
+            'displayName' => AuthUserHelper::displayName($user),
+            'userRole' => $userRole,
+            'canManageProfileFields' => $this->canManageProfileFields($userRole),
+        ]);
     }
 
-    public function update(Request $request)
+    public function updatePhoto(Request $request): RedirectResponse
     {
-        $user = Auth::user();
+        $user = AuthUserHelper::fullUser();
 
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
-            'password' => 'nullable|string|min:8|confirmed',
+        abort_unless($user instanceof User, 404);
+
+        $validated = $request->validate([
+            'profile_photo' => ['required', 'image', 'mimes:jpg,jpeg,png,webp', 'max:2048'],
+        ], [
+            'profile_photo.required' => 'Debes seleccionar una imagen.',
+            'profile_photo.image' => 'La foto de perfil debe ser una imagen valida.',
+            'profile_photo.mimes' => 'La foto de perfil debe estar en formato JPG, JPEG, PNG o WEBP.',
+            'profile_photo.max' => 'La foto de perfil no puede superar los 2 MB.',
         ]);
 
-<<<<<<< Updated upstream
-        $user->name = $request->input('name');
-        $user->email = $request->input('email');
-=======
         $previousPhotoPath = trim((string) ($user->profile_photo_path ?? ''));
         $newPhotoPath = $validated['profile_photo']->store('profile_photos', 'public');
 
@@ -114,31 +122,26 @@ class PerfilController extends Controller
         ];
 
         if ($canManageProfileFields) {
-            $rules['name'] = ProfileInputValidation::nameRules();
-            $rules['last_name'] = ProfileInputValidation::nameRules();
-            $rules['phone'] = ProfileInputValidation::phoneRules();
-            $rules['email'] = [
-                ...ProfileInputValidation::emailRules(),
-                Rule::unique('users', 'email')->ignore($user->id),
-            ];
+            $rules['name'] = ['required', 'string', 'max:255'];
+            $rules['last_name'] = ['required', 'string', 'max:255'];
+            $rules['phone'] = ['required', 'string', 'max:20'];
+            $rules['email'] = ['required', 'string', 'email', 'max:255', Rule::unique('users', 'email')->ignore($user->id)];
         }
 
         if ($canManageProfileFields && $emailChanged) {
-            $rules['email_confirmation'] = [
-                'required',
-                ...ProfileInputValidation::emailRules(),
-                'same:email',
-            ];
+            $rules['email_confirmation'] = ['required', 'string', 'email', 'same:email'];
         }
 
-        $validated = $request->validate($rules, array_merge(ProfileInputValidation::messages(), [
+        $validated = $request->validate($rules, [
             'email_confirmation.required' => 'Debes confirmar el nuevo correo electronico.',
             'email_confirmation.same' => 'La confirmacion del correo debe coincidir.',
             'password.required' => 'Debes ingresar una nueva contrasena.',
             'password.min' => 'La contrasena debe tener al menos 9 caracteres.',
             'password.confirmed' => 'La confirmacion de la contrasena no coincide.',
-        ]));
+        ]);
 
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
         if ($canManageProfileFields) {
             $profileUpdates = [
                 'name' => trim((string) $validated['name']),
@@ -160,14 +163,96 @@ class PerfilController extends Controller
                 $user->email = $newEmail;
             }
         }
->>>>>>> Stashed changes
 
         if ($request->filled('password')) {
-            $user->password = Hash::make($request->input('password'));
+            $user->password = Hash::make($validated['password']);
         }
 
-        $user->save();
+        if ($user->isDirty()) {
+            $user->save();
+        }
 
-        return redirect()->route('perfil.edit')->with('status', 'Perfil actualizado correctamente');
+        return redirect()
+            ->route('perfil.show')
+            ->with('status', 'Perfil actualizado correctamente');
+    }
+
+    private function canManageProfileFields(?string $role): bool
+    {
+        return (string) $role === 'research_staff';
+    }
+
+    private function passwordRules(string $presence): array
+    {
+        return [
+            $presence,
+            'string',
+            'min:9',
+            'confirmed',
+            function (string $attribute, mixed $value, \Closure $fail): void {
+                if (! is_string($value) || trim($value) === '') {
+                    return;
+                }
+
+                if ($this->isObviousNumericSequence($value)) {
+                    $fail('La contrasena no puede ser una secuencia numerica obvia como 123456789.');
+                }
+            },
+        ];
+    }
+
+    private function isObviousNumericSequence(string $password): bool
+    {
+        if (! preg_match('/^\d{8,}$/', $password)) {
+            return false;
+        }
+
+        $digits = str_split($password);
+        $ascending = true;
+        $descending = true;
+
+        for ($index = 1, $length = count($digits); $index < $length; $index++) {
+            $difference = (int) $digits[$index] - (int) $digits[$index - 1];
+            $ascending = $ascending && $difference === 1;
+            $descending = $descending && $difference === -1;
+        }
+
+        return $ascending || $descending;
+    }
+
+    private function resolveProfile(?User $user)
+    {
+        if (! $user instanceof User) {
+            return null;
+        }
+
+        return match ($user->role) {
+            'student' => $user->student,
+            'professor', 'committee_leader' => $user->professor,
+            default => $user->researchstaff,
+        };
+    }
+
+    private function showsAcademicLocation(?string $role): bool
+    {
+        return in_array((string) $role, ['student', 'professor', 'committee_leader'], true);
+    }
+
+    private function resolveProgramName(?User $user): ?string
+    {
+        return match ($user?->role) {
+            'student' => $user?->student?->cityProgram?->program?->name,
+            'professor', 'committee_leader' => $user?->professor?->cityProgram?->program?->name,
+            default => null,
+        };
+    }
+
+    private function resolveCityName(?User $user): ?string
+    {
+        return match ($user?->role) {
+            'student' => $user?->student?->cityProgram?->city?->name,
+            'professor', 'committee_leader' => $user?->professor?->cityProgram?->city?->name,
+            default => null,
+        };
     }
 }

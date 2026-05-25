@@ -26,13 +26,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('research-groups', ResearchGroupController::class);
-Route::apiResource('programs', ProgramController::class);
-Route::apiResource('investigation-lines', InvestigationLineController::class);
-Route::apiResource('thematic-areas', ThematicAreaController::class);
-Route::apiResource('contents', ContentController::class);
-Route::apiResource('versions', VersionController::class);
-Route::apiResource('content-versions', ContentVersionController::class);
-Route::get('projects/meta', [ProjectController::class, 'meta'])->name('projects.meta');
-Route::post('projects/{project}/restore', [ProjectController::class, 'restore'])->name('projects.restore');
-Route::apiResource('projects', ProjectController::class);
+Route::name('api.')->group(function () {
+    Route::apiResource('research-groups', ResearchGroupController::class);
+    Route::apiResource('programs', ProgramController::class);
+    Route::apiResource('investigation-lines', InvestigationLineController::class);
+    Route::apiResource('thematic-areas', ThematicAreaController::class);
+    Route::apiResource('contents', ContentController::class);
+    Route::apiResource('versions', VersionController::class);
+    Route::apiResource('content-versions', ContentVersionController::class);
+    Route::get('projects/meta', [ProjectController::class, 'meta'])->name('projects.meta');
+    Route::post('projects/{project}/restore', [ProjectController::class, 'restore'])->name('projects.restore');
+    Route::apiResource('projects', ProjectController::class);
+});

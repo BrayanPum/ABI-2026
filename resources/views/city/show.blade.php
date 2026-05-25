@@ -19,7 +19,7 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Inicio</a></li>
                             {{-- Navigational link returns to the list of cities. --}}
-                            <li class="breadcrumb-item"><a href="{{ route('cities.index') }}">Ciudades</a></li>
+                            <li class="breadcrumb-item"><a href="{{ $redirectTo ?? route('cities.index', [], false) }}">Ciudades</a></li>
                             {{-- Active crumb displays the selected city's name. --}}
                             <li class="breadcrumb-item active" aria-current="page">{{ $city->name }}</li>
                         </ol>
@@ -38,7 +38,7 @@
                 <div class="col-12 col-md-auto ms-auto d-print-none">
                     <div class="btn-list">
                         {{-- Action button opens the edit form for this city. --}}
-                        <a href="{{ route('cities.edit', $city) }}" class="btn btn-primary">
+                        <a href="{{ route('cities.edit', ['city' => $city, 'redirect_to' => $redirectTo], false) }}" class="btn btn-primary">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
                                 <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
@@ -47,7 +47,7 @@
                             Editar
                         </a>
                         {{-- Secondary action returns to the table without making changes. --}}
-                        <a href="{{ route('cities.index') }}" class="btn btn-outline-secondary">
+                        <a href="{{ $redirectTo ?? route('cities.index', [], false) }}" class="btn btn-outline-secondary">
                             Volver al listado
                         </a>
                     </div>

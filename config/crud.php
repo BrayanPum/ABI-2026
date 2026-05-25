@@ -34,7 +34,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | This value is the name of your application layout. This value is used when creating
-    | views for crud. Default will be the "layouts.app".
+    | views for crud. This project uses the Tablar page layout.
     |
     */
 

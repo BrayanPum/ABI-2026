@@ -36,9 +36,7 @@ class CityControllerTest extends TestCase
 
         $response = $this->actingAs($user)->get(route('cities.index'));
 
-        $response->assertStatus(200);
-        $response->assertViewIs('city.index');
-        $response->assertViewHas('cities');
+        $response->assertRedirect(route('departments-cities.index'));
     }
 
     /** @test */
@@ -52,8 +50,7 @@ class CityControllerTest extends TestCase
 
         $response = $this->actingAs($user)->get(route('cities.index', ['search' => 'Especial']));
 
-        $response->assertStatus(200);
-        $response->assertViewHas('search', 'Especial');
+        $response->assertRedirect(route('departments-cities.index', ['city_search' => 'Especial']));
     }
 
     /** @test */
@@ -63,8 +60,9 @@ class CityControllerTest extends TestCase
 
         $response = $this->actingAs($user)->get(route('cities.index', ['department_id' => $this->department->id]));
 
-        $response->assertStatus(200);
-        $response->assertViewHas('departmentId', $this->department->id);
+        $response->assertRedirect(route('departments-cities.index', [
+            'selected_department_id' => $this->department->id,
+        ]));
     }
 
     /** @test */
@@ -96,6 +94,21 @@ class CityControllerTest extends TestCase
         $response->assertRedirect(route('cities.index'));
         $response->assertSessionHas('success');
         $this->assertDatabaseHas('cities', ['name' => 'Nueva Ciudad']);
+    }
+
+    /** @test */
+    public function test_can_create_city_and_return_to_unified_view()
+    {
+        $user = $this->createAuthUser();
+
+        $response = $this->actingAs($user)->post(route('cities.store'), [
+            'name' => 'Ciudad Unificada',
+            'department_id' => $this->department->id,
+            'redirect_to' => '/departments-cities?selected_department_id=' . $this->department->id,
+        ]);
+
+        $response->assertRedirect('/departments-cities?selected_department_id=' . $this->department->id);
+        $this->assertDatabaseHas('cities', ['name' => 'Ciudad Unificada']);
     }
 
     /** @test */
@@ -157,9 +170,9 @@ class CityControllerTest extends TestCase
 
         $response = $this->actingAs($user)->get(route('cities.show', $city));
 
-        $response->assertStatus(200);
-        $response->assertViewIs('city.show');
-        $response->assertViewHas('city');
+        $response->assertRedirect(route('departments-cities.index', [
+            'selected_department_id' => $this->department->id,
+        ]));
     }
 
     /** @test */

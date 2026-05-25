@@ -4,6 +4,7 @@ namespace Tests\Unit\Controllers;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Models\ResearchStaff\ResearchStaffCity;
 use App\Models\ResearchStaff\ResearchStaffDepartment;
 use App\Models\ResearchStaff\ResearchStaffUser;
 use Illuminate\Support\Facades\Hash;
@@ -24,9 +25,7 @@ class DepartmentControllerTest extends TestCase
 
         $response = $this->actingAs($user)->get(route('departments.index'));
 
-        $response->assertStatus(200);
-        $response->assertViewIs('departments.index');
-        $response->assertViewHas('departments');
+        $response->assertRedirect(route('departments-cities.index'));
     }
 
     /** @test */
@@ -37,8 +36,27 @@ class DepartmentControllerTest extends TestCase
 
         $response = $this->actingAs($user)->get(route('departments.index', ['search' => 'Especial']));
 
+        $response->assertRedirect(route('departments-cities.index', ['department_search' => 'Especial']));
+    }
+
+    /** @test */
+    public function test_can_render_unified_departments_and_cities_view()
+    {
+        $user = $this->createAuthUser();
+        $department = ResearchStaffDepartment::create(['name' => 'Departamento Central']);
+        ResearchStaffCity::create([
+            'name' => 'Ciudad Central',
+            'department_id' => $department->id,
+        ]);
+
+        $response = $this->actingAs($user)->get(route('departments-cities.index', [
+            'selected_department_id' => $department->id,
+        ]));
+
         $response->assertStatus(200);
-        $response->assertViewHas('search', 'Especial');
+        $response->assertViewIs('departments.unified-index');
+        $response->assertViewHas('selectedDepartment');
+        $response->assertViewHas('cities');
     }
 
     /** @test */
@@ -67,6 +85,20 @@ class DepartmentControllerTest extends TestCase
         $response->assertRedirect(route('departments.index'));
         $response->assertSessionHas('success');
         $this->assertDatabaseHas('departments', ['name' => 'Nuevo Departamento']);
+    }
+
+    /** @test */
+    public function test_can_create_department_and_return_to_unified_view()
+    {
+        $user = $this->createAuthUser();
+
+        $response = $this->actingAs($user)->post(route('departments.store'), [
+            'name' => 'Departamento Unificado',
+            'redirect_to' => '/departments-cities',
+        ]);
+
+        $response->assertRedirect('/departments-cities');
+        $this->assertDatabaseHas('departments', ['name' => 'Departamento Unificado']);
     }
 
     /** @test */
@@ -105,9 +137,9 @@ class DepartmentControllerTest extends TestCase
 
         $response = $this->actingAs($user)->get(route('departments.show', $department));
 
-        $response->assertStatus(200);
-        $response->assertViewIs('departments.show');
-        $response->assertViewHas('department');
+        $response->assertRedirect(route('departments-cities.index', [
+            'selected_department_id' => $department->id,
+        ]));
     }
 
     /** @test */

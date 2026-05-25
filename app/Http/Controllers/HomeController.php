@@ -16,27 +16,13 @@ class HomeController extends Controller
     {
         $user = AuthUserHelper::fullUser();
         $userRole = $user?->role ?? '';
-        $nameFromAccount = trim((string) ($user?->name ?? ''));
-
-        if ($userRole === 'student') {
-            $name = $user?->student?->name ?? $nameFromAccount;
-            $surname = $user?->student?->last_name ?? '';
-            $nameFromAccount = trim($name . ' ' . $surname);
-        } elseif ($userRole === 'professor' || $userRole === 'committee_leader') {
-            $name = $user?->professor?->name ?? $nameFromAccount;
-            $surname = $user?->professor?->last_name ?? '';
-            $nameFromAccount = trim($name . ' ' . $surname);
-        } else {
-            $name = $user?->researchStaff?->name ?? $nameFromAccount;
-            $surname = $user?->researchStaff?->last_name ?? '';
-            $nameFromAccount = trim($name . ' ' . $surname);
-        }
-
-        $displayName = $nameFromAccount !== '' ? $nameFromAccount : __('Usuario');
+        $displayName = AuthUserHelper::displayName($user);
+        $profilePhotoUrl = $user?->profile_photo_url;
         $userTypeLabel = UserRoleHelper::displayName($user);
 
         return view('home', compact(
             'displayName',
+            'profilePhotoUrl',
             'userTypeLabel',
             'userRole'
         ));

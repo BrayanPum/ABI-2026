@@ -27,7 +27,8 @@
 // Tabler Webfont Icons
 @import "../../node_modules/@tabler/icons-webfont/tabler-icons.css";
 
-// Custom Icon Sizes and Styles
+// Project styles
+@import "../css/custom-logo.css";
 @import "../css/icon-style.css";
 
 // Perfil (solo lectura): contraste correcto en tema claro/oscuro (data-bs-theme)

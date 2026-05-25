@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\ProjectIdeaEvaluated; // We can reuse this or create IdeaStatusChanged
 use App\Models\AcademicProcessWindow;
 use App\Models\Project;
 use App\Models\ProjectStatus;
@@ -135,6 +136,13 @@ class BankApprovedIdeasAssignController extends Controller
                 'Proyecto asignado durante la ventana de seleccion.',
                 ['selection_window_id' => $selectionWindow?->id, 'student_ids' => $studentIds]
             );
+
+            // Disparar evento de notificación
+            event(new ProjectIdeaEvaluated(
+                $project->load(['students.user', 'professors.user']),
+                'Asignado',
+                'El proyecto ha sido seleccionado por un estudiante.'
+            ));
 
             DB::commit();
         } catch (\Throwable $e) {

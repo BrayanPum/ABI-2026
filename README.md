@@ -210,7 +210,7 @@ Este paso solo aplica si estás usando `.env` local.
 En Windows PowerShell, desde la raíz del proyecto:
 
 ```powershell
-.\scripts\set-db-roles.ps1
+powershell -ExecutionPolicy Bypass -File .\scripts\set-db-roles.ps1
 ```
 
 Ese script realiza dos acciones:

@@ -2,21 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\ProjectIdeaEvaluated;
 use App\Models\Content;
 use App\Models\ContentVersion;
 use App\Models\Professor;
 use App\Models\Project;
 use App\Models\ProjectStatus;
 use App\Services\AcademicCalendar\AcademicCalendarService;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\View\View;
 
 class ProjectEvaluationController extends Controller
 {
-    public function index(): View
+    public function index(Request $request): View|Response
     {
         $committeeLeader = $this->resolveCommitteeLeader();
         $cityProgramId = (int) $committeeLeader->city_program_id;
@@ -36,10 +39,17 @@ class ProjectEvaluationController extends Controller
             ->orderByDesc('created_at')
             ->get();
 
+        $committeeLeader->loadMissing('cityProgram.program', 'cityProgram.city');
+        $reportState = $this->buildCommitteeReportState($cityProgramId, $projects->count());
+
+        if ($request->query('report_export') === 'pdf') {
+            return $this->downloadCommitteeReportPdf($committeeLeader, $reportState);
+        }
+
         return view('projects.evaluation.index', [
             'projects' => $projects,
-            'committeeLeader' => $committeeLeader->loadMissing('cityProgram.program', 'cityProgram.city'),
-            'reportState' => $this->buildCommitteeReportState($cityProgramId, $projects->count()),
+            'committeeLeader' => $committeeLeader,
+            'reportState' => $reportState,
         ]);
     }
 
@@ -126,6 +136,13 @@ class ProjectEvaluationController extends Controller
             $validated['comments'] ?? null,
             ['final_status_name' => $statusName]
         );
+
+        // Disparar evento de notificación
+        event(new ProjectIdeaEvaluated(
+            $project->load(['students.user', 'professors.user']),
+            $statusName,
+            $validated['comments'] ?? null
+        ));
 
         return redirect()
             ->route('projects.evaluation.index')
@@ -337,5 +354,141 @@ class ProjectEvaluationController extends Controller
         if (! $belongsToProgram) {
             abort(403, 'Este proyecto no pertenece al programa del lider de comite autenticado.');
         }
+    }
+
+    /**
+     * Render the committee report as a branded PDF document.
+     */
+    protected function downloadCommitteeReportPdf(Professor $committeeLeader, array $reportState): Response
+    {
+        $generatedAt = now();
+
+        $pdf = Pdf::loadView('projects.evaluation.report-pdf', [
+            'committeeLeader' => $committeeLeader,
+            'reportGeneratedAt' => $generatedAt,
+            'reportState' => $reportState,
+            'reportInsights' => $this->committeeReportInsights($reportState),
+            'reportVisuals' => $this->committeeReportVisuals($reportState),
+            'logoDataUri' => $this->publicAssetDataUri('assets/tablar-logo.png'),
+        ])
+            ->setOptions([
+                'debugLayout' => false,
+                'debugLayoutLines' => false,
+                'debugLayoutBlocks' => false,
+                'debugLayoutInline' => false,
+                'debugLayoutPaddingBox' => false,
+                'debugCss' => false,
+                'debugKeepTemp' => false,
+                'debugText' => false,
+            ])
+            ->setPaper('a4', 'landscape');
+
+        $filename = sprintf(
+            'reporte-comite-%s-%s.pdf',
+            Str::slug((string) ($committeeLeader->cityProgram->program->name ?? 'programa')),
+            $generatedAt->format('Ymd-His')
+        );
+
+        return $pdf->download($filename);
+    }
+
+    /**
+     * @param  array{
+     *     totals: array{evaluated:int,pending:int,approved:int,rejected:int,returned:int},
+     *     periods: array<int, array{label:string,value:int,percentage:float,color:string}>,
+     *     statuses: array<int, array{label:string,value:int,percentage:float,color:string}>,
+     *     rates: array<int, array{label:string,value:int,percentage:float,color:string,description:string}>,
+     *     topPeriod:?string
+     * }  $reportState
+     * @return array<int, array{label:string,value:string,caption:string}>
+     */
+    protected function committeeReportInsights(array $reportState): array
+    {
+        return [
+            [
+                'label' => 'Ideas evaluadas',
+                'value' => (string) ($reportState['totals']['evaluated'] ?? 0),
+                'caption' => 'Total historico con decision final registrada por el comite.',
+            ],
+            [
+                'label' => 'Pendientes actuales',
+                'value' => (string) ($reportState['totals']['pending'] ?? 0),
+                'caption' => 'Proyectos del programa que siguen esperando revision.',
+            ],
+            [
+                'label' => 'Ideas aprobadas',
+                'value' => (string) ($reportState['totals']['approved'] ?? 0),
+                'caption' => 'Cantidad de ideas con resultado favorable.',
+            ],
+            [
+                'label' => 'Periodo mas activo',
+                'value' => (string) ($reportState['topPeriod'] ?? 'Sin datos'),
+                'caption' => 'Periodo academico con mayor numero de evaluaciones.',
+            ],
+        ];
+    }
+
+    /**
+     * @param  array{
+     *     totals: array{evaluated:int,pending:int,approved:int,rejected:int,returned:int},
+     *     periods: array<int, array{label:string,value:int,percentage:float,color:string}>,
+     *     statuses: array<int, array{label:string,value:int,percentage:float,color:string}>,
+     *     rates: array<int, array{label:string,value:int,percentage:float,color:string,description:string}>,
+     *     topPeriod:?string
+     * }  $reportState
+     * @return array<int, array{
+     *     title:string,
+     *     description:string,
+     *     total_label:string,
+     *     total_value:int,
+     *     segments: array<int, array{label:string,value:int,percentage:float,color:string,description?:string}>
+     * }>
+     */
+    protected function committeeReportVisuals(array $reportState): array
+    {
+        return [
+            [
+                'title' => 'Ideas evaluadas por periodo',
+                'description' => 'Cantidad de ideas que alcanzaron una decision final dentro de cada periodo academico.',
+                'total_label' => 'Ideas evaluadas',
+                'total_value' => (int) ($reportState['totals']['evaluated'] ?? 0),
+                'segments' => $reportState['periods'] ?? [],
+            ],
+            [
+                'title' => 'Estado final de las ideas',
+                'description' => 'Distribucion entre aprobacion, rechazo y devolucion con base en la ultima decision del comite.',
+                'total_label' => 'Total evaluadas',
+                'total_value' => (int) ($reportState['totals']['evaluated'] ?? 0),
+                'segments' => $reportState['statuses'] ?? [],
+            ],
+            [
+                'title' => 'Porcentajes de aceptacion, rechazo y devolucion',
+                'description' => 'Comparativo de las tres salidas principales del proceso de evaluacion.',
+                'total_label' => 'Ideas analizadas',
+                'total_value' => (int) ($reportState['totals']['evaluated'] ?? 0),
+                'segments' => $reportState['rates'] ?? [],
+            ],
+        ];
+    }
+
+    /**
+     * Convert a public asset into a base64 data URI so Dompdf can embed it reliably.
+     */
+    protected function publicAssetDataUri(string $relativePath): ?string
+    {
+        $absolutePath = public_path($relativePath);
+
+        if (! is_file($absolutePath)) {
+            return null;
+        }
+
+        $mimeType = mime_content_type($absolutePath) ?: 'image/png';
+        $contents = file_get_contents($absolutePath);
+
+        if ($contents === false) {
+            return null;
+        }
+
+        return 'data:' . $mimeType . ';base64,' . base64_encode($contents);
     }
 }

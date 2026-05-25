@@ -19,9 +19,9 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Inicio</a></li>
                             {{-- First crumb returns to the general listing if the user cancels. --}}
-                            <li class="breadcrumb-item"><a href="{{ route('cities.index') }}">Ciudades</a></li>
+                            <li class="breadcrumb-item"><a href="{{ $redirectTo ?? route('departments-cities.index', [], false) }}">Departamentos y Ciudades</a></li>
                             {{-- Second crumb links to the detail page for quick verification before editing. --}}
-                            <li class="breadcrumb-item"><a href="{{ route('cities.show', $city) }}">{{ $city->name }}</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('departments-cities.index', ['selected_department_id' => $city->department_id], false) }}#cities-section">{{ $city->name }}</a></li>
                             {{-- Final crumb indicates the current edit action. --}}
                             <li class="breadcrumb-item active" aria-current="page">Editar</li>
                         </ol>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="col-auto ms-auto d-print-none">
                     {{-- Quick access back to the detailed record or listing. --}}
-                    <a href="{{ route('cities.show', $city) }}" class="btn btn-outline-secondary">Ver detalle</a>
+                    <a href="{{ route('departments-cities.index', ['selected_department_id' => $city->department_id], false) }}#cities-section" class="btn btn-outline-secondary">Ver detalle</a>
                 </div>
             </div>
         </div>
@@ -61,11 +61,14 @@
                             <form action="{{ route('cities.update', $city) }}" method="POST" novalidate autocomplete="off">
                                 @csrf
                                 @method('PUT')
+                                @if(!empty($redirectTo))
+                                    <input type="hidden" name="redirect_to" value="{{ $redirectTo }}">
+                                @endif
                                 {{-- Partial reused from the create screen keeps the form consistent across flows. --}}
                                 @includeFirst(['city.form', 'cities.form'])
 
                                 <div class="d-flex justify-content-end gap-2 mt-4">
-                                    <a href="{{ route('cities.index') }}" class="btn btn-link">Cancelar</a>
+                                    <a href="{{ $redirectTo ?? route('departments-cities.index', [], false) }}" class="btn btn-link">Cancelar</a>
                                     <button type="submit" class="btn btn-success">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                             <path d="M5 12l5 5l10 -10" />

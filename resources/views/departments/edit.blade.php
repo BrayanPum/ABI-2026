@@ -12,8 +12,8 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                            <li class="breadcrumb-item"><a href="{{ route('departments.index') }}">Departamentos</a></li>
-                            <li class="breadcrumb-item"><a href="{{ route('departments.show', $department) }}">{{ $department->name }}</a></li>
+                            <li class="breadcrumb-item"><a href="{{ $redirectTo ?? route('departments-cities.index', [], false) }}">Departamentos y Ciudades</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('departments-cities.index', ['selected_department_id' => $department->id], false) }}">{{ $department->name }}</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Editar</li>
                         </ol>
                     </nav>
@@ -29,7 +29,7 @@
                     <p class="text-muted mb-0">Actualiza la información del departamento seleccionado.</p>
                 </div>
                 <div class="col-auto ms-auto d-print-none">
-                    <a href="{{ route('departments.show', $department) }}" class="btn btn-outline-secondary">Ver detalle</a>
+                    <a href="{{ route('departments-cities.index', ['selected_department_id' => $department->id], false) }}#cities-section" class="btn btn-outline-secondary">Ver detalle</a>
                 </div>
             </div>
         </div>
@@ -54,11 +54,14 @@
                             <form action="{{ route('departments.update', $department) }}" method="POST" novalidate autocomplete="off">
                                 @csrf
                                 @method('PUT')
+                                @if(!empty($redirectTo))
+                                    <input type="hidden" name="redirect_to" value="{{ $redirectTo }}">
+                                @endif
                                 {{-- Reuse the shared form partial, which adapts to edit mode automatically. --}}
                                 @include('departments.form')
 
                                 <div class="d-flex justify-content-end gap-2 mt-4">
-                                    <a href="{{ route('departments.index') }}" class="btn btn-link">Cancelar</a>
+                                    <a href="{{ $redirectTo ?? route('departments-cities.index', [], false) }}" class="btn btn-link">Cancelar</a>
                                     <button type="submit" class="btn btn-success">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                             <path d="M5 12l5 5l10 -10" />

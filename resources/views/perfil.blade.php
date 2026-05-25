@@ -1,23 +1,6 @@
-{{--
-    View path: perfil.blade.php.
-    Purpose: Renders the perfil.blade view for the Perfil.Blade module.
-    Expected variables within this template: $message.
-    No additional partials are included within this file.
-    All markup below follows Tablar styling conventions for visual consistency.
---}}
-<!-- resources/views/perfil.blade.php -->
-
 @extends('tablar::page')
 
-<<<<<<< Updated upstream
 @section('title', 'Perfil')
-=======
-@php
-    use App\Support\ProfileInputValidation;
-@endphp
-
-@section('title', 'Editar perfil')
->>>>>>> Stashed changes
 
 @section('content')
 <div class="container mt-5">
@@ -74,7 +57,6 @@
                             @enderror
                         </div>
 
-<<<<<<< Updated upstream
                         <div class="form-group">
                             {{-- Label describing the purpose of '{{ __('Confirmar Nueva Contraseña') }}'. --}}
                             <label class="form-label fw-semibold text-body-secondary" for="password-confirm">{{ __('Confirmar Nueva Contraseña') }}</label>
@@ -89,7 +71,6 @@
                             </button>
                         </div>
                     </form>
-=======
                                 <div class="row g-3">
                                     @if ($canManageFields)
                                         <div class="col-12 col-md-6">
@@ -272,19 +253,11 @@
                             </div>
                         </form>
                     </div>
->>>>>>> Stashed changes
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
-<<<<<<< Updated upstream
-=======
-
-@push('js')
-    @include('partials.user-profile-input-filters')
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const emailInput = document.getElementById('email');
@@ -333,5 +306,3 @@
             passwordInput?.addEventListener('input', syncPasswordConfirmationVisibility);
         });
     </script>
-@endpush
->>>>>>> Stashed changes

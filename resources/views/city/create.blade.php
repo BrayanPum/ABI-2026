@@ -20,7 +20,7 @@
                             {{-- Dashboard crumb mirrors the structure used within the projects module. --}}
                             <li class="breadcrumb-item"><a href="#">Inicio</a></li>
                             {{-- Link points back to the index allowing the user to abort the creation flow. --}}
-                            <li class="breadcrumb-item"><a href="{{ route('cities.index') }}">Ciudades</a></li>
+                            <li class="breadcrumb-item"><a href="{{ $redirectTo ?? route('departments-cities.index', [], false) }}">Departamentos y Ciudades</a></li>
                             {{-- Static crumb indicating the current "create" step in the hierarchy. --}}
                             <li class="breadcrumb-item active" aria-current="page">Crear</li>
                         </ol>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="col-auto ms-auto d-print-none">
                     {{-- Secondary action mirrors the back button provided in the projects module. --}}
-                    <a href="{{ route('cities.index') }}" class="btn btn-outline-secondary">Volver al listado</a>
+                    <a href="{{ $redirectTo ?? route('departments-cities.index', [], false) }}" class="btn btn-outline-secondary">Volver al listado</a>
                 </div>
             </div>
         </div>
@@ -57,11 +57,14 @@
                             {{-- Form element sends the captured data to the specified endpoint. --}}
                             <form action="{{ route('cities.store') }}" method="POST" novalidate autocomplete="off">
                                 @csrf
+                                @if(!empty($redirectTo))
+                                    <input type="hidden" name="redirect_to" value="{{ $redirectTo }}">
+                                @endif
                                 {{-- Shared partial renders the reusable form inputs for both create and edit screens. --}}
                                 @includeFirst(['city.form', 'cities.form'])
 
                                 <div class="d-flex justify-content-end gap-2 mt-4">
-                                    <a href="{{ route('cities.index') }}" class="btn btn-link">Cancelar</a>
+                                    <a href="{{ $redirectTo ?? route('departments-cities.index', [], false) }}" class="btn btn-link">Cancelar</a>
                                     <button type="submit" class="btn btn-primary">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                             <path d="M5 12l5 5l10 -10" />

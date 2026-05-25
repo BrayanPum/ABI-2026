@@ -6,7 +6,6 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/js/app.js',
-                'resources/css/app.css', // Agregado para compilar CSS personalizado
             ],
             refresh: true,
         }),

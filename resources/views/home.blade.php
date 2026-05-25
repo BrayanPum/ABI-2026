@@ -14,7 +14,7 @@
                 <div class="col">
                     {{-- Subheading gives context to the title below. --}}
                     <div class="page-pretitle">
-                        Bienvenid@ {{ $displayName }}
+                        {{ $displayName !== '' ? 'Bienvenido, ' . $displayName : 'Bienvenido' }}
                     </div>
                     <h2 class="page-title">
                         ABI - Sistema de Gestión
@@ -28,12 +28,16 @@
     {{-- Welcome card summarizing the system purpose and current user details. --}}
     <div class="row mt-4 justify-content-center">
         <div class="col-lg-8">
-            <div class="card card-md">
+                <div class="card card-md">
                 <div class="card-body text-center py-5">
-                    <span class="avatar avatar-xl rounded-circle bg-white shadow-sm mb-4 p-3">
-                        <img src="{{ asset('udi-logo.png') }}" alt="Logo UDI" class="img-fluid">
+                    <span class="avatar avatar-xl rounded-circle bg-white shadow-sm mb-4 p-0 abi-home-avatar">
+                        <img
+                            src="{{ $profilePhotoUrl ?: asset('udi-logo.png') }}"
+                            alt="{{ $profilePhotoUrl ? 'Foto de perfil de ' . $displayName : 'Logo UDI' }}"
+                            class="abi-home-avatar__image"
+                        >
                     </span>
-                    <h1 class="card-title mb-3">Hola, {{ $displayName }}</h1>
+                    <h1 class="card-title mb-3">{{ $displayName !== '' ? 'Hola, ' . $displayName : 'Hola' }}</h1>
                     <p>{{ $userTypeLabel }}</p>
                     <p class="text-muted mb-4">Último acceso: <strong>{{ now()->format('d/m/Y H:i') }}</strong></p>
                     <div class="text-muted fs-5 mb-4">
@@ -59,3 +63,23 @@
     </div>
 
 @endsection
+
+@push('css')
+    <style>
+        .abi-home-avatar {
+            width: 80px;
+            height: 80px;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .abi-home-avatar__image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    </style>
+@endpush

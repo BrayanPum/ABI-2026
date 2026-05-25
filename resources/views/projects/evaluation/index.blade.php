@@ -427,6 +427,12 @@
                     </div>
                 </div>
 
+                <div class="d-flex justify-content-end">
+                    <a href="{{ route('projects.evaluation.index', ['report_export' => 'pdf']) }}" class="btn btn-outline-danger">
+                        Exportar reporte en PDF
+                    </a>
+                </div>
+
                 <div class="row g-3">
                     <div class="col-12 col-xl-7">
                         <div class="committee-chart-card">

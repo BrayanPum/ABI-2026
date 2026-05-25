@@ -2,10 +2,12 @@
 
 namespace Tests\Unit\Controllers;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Models\ResearchStaff\ResearchStaffResearchStaff;
 use App\Models\ResearchStaff\ResearchStaffUser;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
+use Tests\TestCase;
 
 class PerfilControllerTest extends TestCase
 {
@@ -21,6 +23,14 @@ class PerfilControllerTest extends TestCase
             'state' => 1,
         ]);
 
+        ResearchStaffResearchStaff::create([
+            'user_id' => $user->id,
+            'card_id' => '12345678',
+            'name' => 'Carlos',
+            'last_name' => 'Montoya',
+            'phone' => '3001234567',
+        ]);
+
         $response = $this->actingAs($user)->get(route('perfil.edit'));
 
         $response->assertStatus(200);
@@ -31,28 +41,43 @@ class PerfilControllerTest extends TestCase
     public function test_can_update_profile()
     {
         $user = ResearchStaffUser::create([
-            'name' => 'Original Name',
             'email' => 'original@example.com',
             'password' => Hash::make('oldpassword'),
-            'role' => 'student',
+            'role' => 'research_staff',
             'state' => 1,
         ]);
 
+        ResearchStaffResearchStaff::create([
+            'user_id' => $user->id,
+            'card_id' => '12345678',
+            'name' => 'Original',
+            'last_name' => 'Name',
+            'phone' => '3001111111',
+        ]);
+
         $data = [
-            'name' => 'Updated Name',
+            'name' => 'Carlos',
+            'last_name' => 'Montoya',
             'email' => 'updated@example.com',
+            'email_confirmation' => 'updated@example.com',
+            'phone' => '3002222222',
             'password' => 'newpassword',
             'password_confirmation' => 'newpassword',
         ];
 
         $response = $this->actingAs($user)->put(route('perfil.update'), $data);
 
-        $response->assertRedirect(route('perfil.edit'));
+        $response->assertRedirect(route('perfil.show'));
         $response->assertSessionHas('status');
         $this->assertDatabaseHas('users', [
             'id' => $user->id,
-            'name' => 'Updated Name',
-            'email' => 'updated@example.com'
+            'email' => 'updated@example.com',
+        ]);
+        $this->assertDatabaseHas('research_staff', [
+            'user_id' => $user->id,
+            'name' => 'Carlos',
+            'last_name' => 'Montoya',
+            'phone' => '3002222222',
         ]);
 
         $user->refresh();
@@ -63,18 +88,25 @@ class PerfilControllerTest extends TestCase
     public function test_validation_fails_with_invalid_email()
     {
         $user = ResearchStaffUser::create([
-            'name' => 'Test User',
             'email' => 'test@example.com',
             'password' => Hash::make('password'),
-            'role' => 'student',
+            'role' => 'research_staff',
             'state' => 1,
         ]);
 
+        ResearchStaffResearchStaff::create([
+            'user_id' => $user->id,
+            'card_id' => '12345678',
+            'name' => 'Carlos',
+            'last_name' => 'Montoya',
+            'phone' => '3001111111',
+        ]);
+
         $data = [
-            'name' => 'Test User',
+            'name' => 'Carlos',
+            'last_name' => 'Montoya',
             'email' => 'invalid-email',
-            'password' => 'newpassword',
-            'password_confirmation' => 'newpassword',
+            'phone' => '3001111111',
         ];
 
         $response = $this->actingAs($user)->put(route('perfil.update'), $data);
@@ -83,8 +115,6 @@ class PerfilControllerTest extends TestCase
     }
 
     /** @test */
-<<<<<<< Updated upstream
-=======
     public function test_validation_requires_email_confirmation_only_when_email_changes()
     {
         $user = ResearchStaffUser::create([
@@ -184,20 +214,29 @@ class PerfilControllerTest extends TestCase
     }
 
     /** @test */
->>>>>>> Stashed changes
+
     public function test_validation_fails_with_short_password()
     {
         $user = ResearchStaffUser::create([
-            'name' => 'Test User',
             'email' => 'test@example.com',
             'password' => Hash::make('password'),
-            'role' => 'student',
+            'role' => 'research_staff',
             'state' => 1,
         ]);
 
+        ResearchStaffResearchStaff::create([
+            'user_id' => $user->id,
+            'card_id' => '12345678',
+            'name' => 'Carlos',
+            'last_name' => 'Montoya',
+            'phone' => '3001111111',
+        ]);
+
         $data = [
-            'name' => 'Test User',
+            'name' => 'Carlos',
+            'last_name' => 'Montoya',
             'email' => 'test@example.com',
+            'phone' => '3001111111',
             'password' => '123',
             'password_confirmation' => '123',
         ];
@@ -211,16 +250,25 @@ class PerfilControllerTest extends TestCase
     public function test_validation_fails_with_mismatched_password()
     {
         $user = ResearchStaffUser::create([
-            'name' => 'Test User',
             'email' => 'test@example.com',
             'password' => Hash::make('password'),
-            'role' => 'student',
+            'role' => 'research_staff',
             'state' => 1,
         ]);
 
+        ResearchStaffResearchStaff::create([
+            'user_id' => $user->id,
+            'card_id' => '12345678',
+            'name' => 'Carlos',
+            'last_name' => 'Montoya',
+            'phone' => '3001111111',
+        ]);
+
         $data = [
-            'name' => 'Test User',
+            'name' => 'Carlos',
+            'last_name' => 'Montoya',
             'email' => 'test@example.com',
+            'phone' => '3001111111',
             'password' => 'newpassword',
             'password_confirmation' => 'differentpassword',
         ];
@@ -231,7 +279,7 @@ class PerfilControllerTest extends TestCase
     }
 
     /** @test */
-    public function test_requires_role_for_edit_and_all_can_view_show()
+    public function test_all_authenticated_users_can_access_password_change_and_view_show()
     {
         $student = ResearchStaffUser::create([
             'email' => 'student@example.com',
@@ -241,10 +289,56 @@ class PerfilControllerTest extends TestCase
         ]);
 
         $editResponse = $this->actingAs($student)->get(route('perfil.edit'));
-        $editResponse->assertStatus(403);
+        $editResponse->assertStatus(200);
+        $editResponse->assertViewIs('perfil');
 
         $showResponse = $this->actingAs($student)->get(route('perfil.show'));
         $showResponse->assertStatus(200);
         $showResponse->assertViewIs('perfil_show');
+    }
+
+    /** @test */
+    public function test_authenticated_user_can_load_their_profile_photo_through_the_application_route()
+    {
+        Storage::fake('public');
+
+        $user = ResearchStaffUser::create([
+            'email' => 'photo@example.com',
+            'password' => Hash::make('password'),
+            'role' => 'research_staff',
+            'state' => 1,
+            'profile_photo_path' => 'profile_photos/carlos.jpg',
+        ]);
+
+        Storage::disk('public')->put('profile_photos/carlos.jpg', 'avatar-content');
+
+        $response = $this->actingAs($user)->get(route('perfil.photo.show', [
+            'path' => 'profile_photos/carlos.jpg',
+        ]));
+
+        $response->assertOk();
+        $response->assertContent('avatar-content');
+    }
+
+    /** @test */
+    public function test_authenticated_user_cannot_request_a_different_profile_photo_path()
+    {
+        Storage::fake('public');
+
+        $user = ResearchStaffUser::create([
+            'email' => 'photo@example.com',
+            'password' => Hash::make('password'),
+            'role' => 'research_staff',
+            'state' => 1,
+            'profile_photo_path' => 'profile_photos/carlos.jpg',
+        ]);
+
+        Storage::disk('public')->put('profile_photos/otra.jpg', 'avatar-content');
+
+        $response = $this->actingAs($user)->get(route('perfil.photo.show', [
+            'path' => 'profile_photos/otra.jpg',
+        ]));
+
+        $response->assertForbidden();
     }
 }

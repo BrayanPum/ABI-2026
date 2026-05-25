@@ -25,7 +25,7 @@ class ProfileAccessTest extends TestCase
         $response->assertViewIs('perfil');
     }
 
-    public function test_non_staff_cannot_access_edit_and_can_view_show()
+    public function test_non_staff_can_access_password_change_and_view_show()
     {
         $student = ResearchStaffUser::create([
             'email' => 'student@example.com',
@@ -35,7 +35,8 @@ class ProfileAccessTest extends TestCase
         ]);
 
         $edit = $this->actingAs($student)->get(route('perfil.edit'));
-        $edit->assertStatus(302);
+        $edit->assertStatus(200);
+        $edit->assertViewIs('perfil');
 
         $show = $this->actingAs($student)->get(route('perfil.show'));
         $show->assertStatus(200);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Postulation;
+use App\Models\PostulationPriority;
 use App\Models\Professor;
 use App\Models\ProjectStatus;
 use App\Services\AcademicCalendar\AcademicCalendarService;
@@ -70,6 +71,11 @@ class PostulationEvaluationController extends Controller
                 'review_comment' => $request->review_comment,
             ]);
 
+            // Si se rechaza, liberar la prioridad
+            if ($request->status === 'rejected') {
+                $this->cleanupPriority($postulation);
+            }
+
             if ($request->status === 'approved') {
                 $project = $postulation->project;
                 $activePeriod = AcademicCalendarService::currentActivePeriodOrFail();
@@ -108,6 +114,8 @@ class PostulationEvaluationController extends Controller
                             'status' => 'rejected',
                             'review_comment' => 'Cancelada automáticamente por aprobación de otra postulación.',
                         ]);
+                        // Liberar prioridades de las postulaciones canceladas
+                        $this->cleanupPriority($other);
                     }
                 }
 
@@ -130,6 +138,28 @@ class PostulationEvaluationController extends Controller
             DB::rollBack();
 
             return back()->with('error', 'Error al evaluar la postulación: '.$e->getMessage());
+        }
+    }
+
+    /**
+     * Libera y reordena las prioridades de un estudiante cuando una postulación es rechazada.
+     */
+    private function cleanupPriority(Postulation $postulation): void
+    {
+        $priorityRecord = PostulationPriority::where('postulation_id', $postulation->postulation_id)
+            ->first();
+
+        if ($priorityRecord) {
+            $studentId = $priorityRecord->student_id;
+            $order = $priorityRecord->priority_order;
+
+            // Eliminar el registro de prioridad actual
+            $priorityRecord->delete();
+
+            // Reordenar las prioridades superiores del mismo estudiante para cerrar el hueco
+            PostulationPriority::where('student_id', $studentId)
+                ->where('priority_order', '>', $order)
+                ->decrement('priority_order');
         }
     }
 

@@ -31,7 +31,25 @@ class PostulationController extends Controller
             }])
             ->get();
 
-        return view('postulations.student.index', compact('postulations'));
+        return view('postulations.student.index', compact('postulations', 'student'));
+    }
+
+    public function show(Postulation $postulation)
+    {
+        $student = Student::where('user_id', Auth::id())->firstOrFail();
+
+        // Verificar que el estudiante sea parte de la postulación
+        $isMember = $postulation->members()->where('student_id', $student->id)->exists();
+
+        if (!$isMember) {
+            abort(403, 'No tienes permiso para ver esta postulación.');
+        }
+
+        $postulation->load(['project.thematicArea', 'project.professors', 'members.student', 'priorities' => function ($q) use ($student) {
+            $q->where('student_id', $student->id);
+        }]);
+
+        return view('postulations.student.show', compact('postulation', 'student'));
     }
 
     public function create(Project $project)
@@ -99,6 +117,14 @@ class PostulationController extends Controller
     {
         $student = Student::where('user_id', Auth::id())->firstOrFail();
         $project = Project::findOrFail($request->project_id);
+
+        // Si ya existe una postulación rechazada para este mismo proyecto y este estudiante,
+        // la eliminamos ANTES de validar para liberar la prioridad y evitar conflictos UNIQUE
+        Postulation::where('project_id', $project->id)
+            ->where('lead_student_id', $student->id)
+            ->where('status', 'rejected')
+            ->delete();
+
         $maxStudents = $project->maxStudents();
 
         $request->validate([
@@ -205,8 +231,9 @@ class PostulationController extends Controller
     {
         $student = Student::where('user_id', Auth::id())->firstOrFail();
 
+        // Solo el líder que creó la postulación puede cancelarla
         if ($postulation->lead_student_id !== $student->id) {
-            abort(403);
+            abort(403, 'Solo el líder que creó la postulación puede cancelarla.');
         }
 
         if ($postulation->status !== 'pending') {
@@ -224,24 +251,28 @@ class PostulationController extends Controller
                 $priorityOrder = $priorityToDelete->priority_order;
                 $priorityToDelete->delete();
 
+                // Liberar el espacio de prioridad para este estudiante
                 PostulationPriority::where('student_id', $student->id)
                     ->where('priority_order', '>', $priorityOrder)
                     ->decrement('priority_order');
             }
 
-            if ($postulation->grades_file) {
+            // Eliminar archivo de notas si existe
+            if ($postulation->grades_file && Storage::disk('local')->exists($postulation->grades_file)) {
                 Storage::disk('local')->delete($postulation->grades_file);
             }
 
+            // Al eliminar la postulación, Eloquent se encarga de los miembros si hay cascade en la BD
+            // o los eliminamos manualmente para mayor seguridad
             $postulation->delete();
 
             DB::commit();
 
-            return back()->with('success', 'Postulación cancelada correctamente.');
+            return back()->with('success', 'Postulación cancelada correctamente y prioridad liberada.');
         } catch (\Exception $e) {
             DB::rollBack();
 
-            return back()->with('error', 'Error al cancelar la postulación.');
+            return back()->with('error', 'Error al cancelar la postulación: ' . $e->getMessage());
         }
     }
 }

@@ -173,6 +173,7 @@ Route::middleware(['auth', 'role:student'])->prefix('students/projects')->group(
 
     // Postulaciones
     Route::get('postulations', [PostulationController::class, 'index'])->name('students.postulations.index');
+    Route::get('postulations/{postulation}', [PostulationController::class, 'show'])->name('students.postulations.show');
     Route::get('approved/{project}/postulate', [PostulationController::class, 'create'])->name('students.postulations.create');
     Route::post('postulations', [PostulationController::class, 'store'])->name('students.postulations.store');
     Route::delete('postulations/{postulation}', [PostulationController::class, 'destroy'])->name('students.postulations.destroy');

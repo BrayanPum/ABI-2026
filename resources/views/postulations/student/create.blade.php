@@ -16,6 +16,13 @@
 
     <div class="page-body">
         <div class="container-xl">
+            @if (session('success'))
+                <div class="alert alert-success">{{ session('success') }}</div>
+            @endif
+            @if (session('error'))
+                <div class="alert alert-danger">{{ session('error') }}</div>
+            @endif
+
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul class="mb-0">
@@ -138,7 +145,7 @@
                                                         @error('teammates.'.$i.'.id') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                                     </div>
                                                     <div class="col-md-5">
-                                                        <input type="text" name="teammates[{{ $i }}][role]" class="form-control @error('teammates.'.$i.'.role') is-invalid @enderror" placeholder="Rol del compañero" value="{{ old("teammates.$i.role") }}">
+                                                        <input type="text" autocomplete="off"  name="teammates[{{ $i }}][role]" class="form-control @error('teammates.'.$i.'.role') is-invalid @enderror" placeholder="Rol del compañero"  value="{{ old("teammates.$i.role") }}">
                                                         @error('teammates.'.$i.'.role') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                                     </div>
                                                 </div>

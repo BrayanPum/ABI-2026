@@ -64,7 +64,11 @@
                                         </span>
                                     </td>
                                     <td>
-                                        <div class="font-weight-medium">{{ $postulation->project->title }}</div>
+                                        <div class="font-weight-medium">
+                                            <a href="{{ route('students.postulations.show', $postulation) }}" class="text-decoration-none">
+                                                {{ $postulation->project->title }}
+                                            </a>
+                                        </div>
                                         <div class="text-muted">{{ $postulation->project->thematicArea->name ?? 'Sin área' }}</div>
                                     </td>
                                     <td>
@@ -87,7 +91,7 @@
                                     <td>{{ $postulation->created_at->format('d/m/Y') }}</td>
                                     <td>
                                         <div class="btn-list flex-nowrap">
-                                            @if ($postulation->status === 'pending')
+                                            @if ($postulation->status === 'pending' && $postulation->lead_student_id === $student->id)
                                                 <form action="{{ route('students.postulations.destroy', $postulation) }}" method="POST" onsubmit="return confirm('¿Estás seguro de cancelar esta postulación?')">
                                                     @csrf
                                                     @method('DELETE')

@@ -1,6 +1,6 @@
-academic_period_id,process_key,name,start_at,end_at,is_enabled,notes,created_at,updated_at
-1,idea_proposal,Propuesta de ideas 2026-1,2026-02-01 00:00:00,2026-06-30 23:59:59,1,Convocatoria base para registrar ideas durante el periodo 2026-1.,2026-01-15 08:00:00,2026-01-15 08:00:00
-1,idea_selection,Seleccion de ideas 2026-1,2026-03-01 00:00:00,2026-06-30 23:59:59,1,Calendario base para asignar ideas aprobadas en el periodo activo.,2026-01-15 08:05:00,2026-01-15 08:05:00
-1,teacher_load_projection,Proyeccion de carga docente 2026-1,2026-03-10 00:00:00,2026-06-30 23:59:59,1,Configuracion inicial para pruebas locales de proyeccion docente.,2026-01-15 08:10:00,2026-01-15 08:10:00
-1,teacher_assignment,Asignacion docente 2026-1,2026-03-15 00:00:00,2026-06-30 23:59:59,1,Configuracion inicial para registrar asignaciones docentes en 2026-1.,2026-01-15 08:15:00,2026-01-15 08:15:00
-1,idea_demand_projection,Proyeccion de demanda de ideas 2026-1,2026-03-20 00:00:00,2026-06-30 23:59:59,1,Calendario base para consultar demanda de ideas en el periodo activo.,2026-01-15 08:20:00,2026-01-15 08:20:00
+academic_period_id,process_key,name,start_at,end_at,is_enabled,requires_evaluation,notes,created_at,updated_at
+1,idea_proposal,Propuesta de ideas 2026-1,2026-02-01 00:00:00,2026-06-30 23:59:59,1,true,Convocatoria base para registrar ideas durante el periodo 2026-1.,2026-01-15 08:00:00,2026-01-15 08:00:00
+1,idea_selection,Seleccion de ideas 2026-1,2026-03-01 00:00:00,2026-06-30 23:59:59,1,true,Calendario base para asignar ideas aprobadas en el periodo activo.,2026-01-15 08:05:00,2026-01-15 08:05:00
+1,teacher_load_projection,Proyeccion de carga docente 2026-1,2026-03-10 00:00:00,2026-06-30 23:59:59,1,true,Configuracion inicial para pruebas locales de proyeccion docente.,2026-01-15 08:10:00,2026-01-15 08:10:00
+1,teacher_assignment,Asignacion docente 2026-1,2026-03-15 00:00:00,2026-06-30 23:59:59,1,true,Configuracion inicial para registrar asignaciones docentes en 2026-1.,2026-01-15 08:15:00,2026-01-15 08:15:00
+1,idea_demand_projection,Proyeccion de demanda de ideas 2026-1,2026-03-20 00:00:00,2026-06-30 23:59:59,1,true,Calendario base para consultar demanda de ideas en el periodo activo.,2026-01-15 08:20:00,2026-01-15 08:20:00

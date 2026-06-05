@@ -1,0 +1,5 @@
+<map id="App::Http::Controllers::ContentController::show" name="App::Http::Controllers::ContentController::show">
+<area shape="rect" id="Node000001" title="Muestra el detalle completo de un contenido específico." alt="" coords="5,5,192,45"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Content.html#a51ffcbf3b8678d401c0a58fa005d481e" title="Get the versions of projects where this content has been filled out." alt="" coords="240,5,401,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,23,226,23,226,28,192,28"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="App::Http::Controllers::TeacherAssignmentController::edit" name="App::Http::Controllers::TeacherAssignmentController::edit">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,41,260,81"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1TeacherAssignment.html#acaa715039d73cfae151c98a31e4eb113" title=" " alt="" coords="308,5,545,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="260,43,294,39,295,44,260,48"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1Controller.html#a5737da7f2852861bc3eae90310c17ab4" title=" " alt="" coords="319,70,534,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="260,74,306,80,305,85,260,80"/>
+</map>

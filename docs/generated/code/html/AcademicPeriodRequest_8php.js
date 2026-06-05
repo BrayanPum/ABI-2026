@@ -1,0 +1,4 @@
+var AcademicPeriodRequest_8php =
+[
+    [ "App::Http::Requests::AcademicPeriodRequest", "classApp_1_1Http_1_1Requests_1_1AcademicPeriodRequest.html", "classApp_1_1Http_1_1Requests_1_1AcademicPeriodRequest" ]
+];

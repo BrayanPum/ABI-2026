@@ -1,0 +1,25 @@
+var namespaceApp_1_1Models_1_1Student =
+[
+    [ "ResearchStaffPostularion", "classApp_1_1Models_1_1Student_1_1ResearchStaffPostularion.html", "classApp_1_1Models_1_1Student_1_1ResearchStaffPostularion" ],
+    [ "ResearchStaffPostulationMember", "classApp_1_1Models_1_1Student_1_1ResearchStaffPostulationMember.html", "classApp_1_1Models_1_1Student_1_1ResearchStaffPostulationMember" ],
+    [ "ResearchStaffPostulationPriority", "classApp_1_1Models_1_1Student_1_1ResearchStaffPostulationPriority.html", "classApp_1_1Models_1_1Student_1_1ResearchStaffPostulationPriority" ],
+    [ "StudentCity", "classApp_1_1Models_1_1Student_1_1StudentCity.html", "classApp_1_1Models_1_1Student_1_1StudentCity" ],
+    [ "StudentCityProgram", "classApp_1_1Models_1_1Student_1_1StudentCityProgram.html", "classApp_1_1Models_1_1Student_1_1StudentCityProgram" ],
+    [ "StudentContent", "classApp_1_1Models_1_1Student_1_1StudentContent.html", "classApp_1_1Models_1_1Student_1_1StudentContent" ],
+    [ "StudentContentFramework", "classApp_1_1Models_1_1Student_1_1StudentContentFramework.html", "classApp_1_1Models_1_1Student_1_1StudentContentFramework" ],
+    [ "StudentContentFrameworkProject", "classApp_1_1Models_1_1Student_1_1StudentContentFrameworkProject.html", "classApp_1_1Models_1_1Student_1_1StudentContentFrameworkProject" ],
+    [ "StudentContentVersion", "classApp_1_1Models_1_1Student_1_1StudentContentVersion.html", "classApp_1_1Models_1_1Student_1_1StudentContentVersion" ],
+    [ "StudentDepartment", "classApp_1_1Models_1_1Student_1_1StudentDepartment.html", "classApp_1_1Models_1_1Student_1_1StudentDepartment" ],
+    [ "StudentFramework", "classApp_1_1Models_1_1Student_1_1StudentFramework.html", "classApp_1_1Models_1_1Student_1_1StudentFramework" ],
+    [ "StudentInvestigationLine", "classApp_1_1Models_1_1Student_1_1StudentInvestigationLine.html", "classApp_1_1Models_1_1Student_1_1StudentInvestigationLine" ],
+    [ "StudentProfessor", "classApp_1_1Models_1_1Student_1_1StudentProfessor.html", "classApp_1_1Models_1_1Student_1_1StudentProfessor" ],
+    [ "StudentProgram", "classApp_1_1Models_1_1Student_1_1StudentProgram.html", "classApp_1_1Models_1_1Student_1_1StudentProgram" ],
+    [ "StudentProject", "classApp_1_1Models_1_1Student_1_1StudentProject.html", "classApp_1_1Models_1_1Student_1_1StudentProject" ],
+    [ "StudentProjectStatus", "classApp_1_1Models_1_1Student_1_1StudentProjectStatus.html", "classApp_1_1Models_1_1Student_1_1StudentProjectStatus" ],
+    [ "StudentResearchGroup", "classApp_1_1Models_1_1Student_1_1StudentResearchGroup.html", "classApp_1_1Models_1_1Student_1_1StudentResearchGroup" ],
+    [ "StudentResearchStaff", "classApp_1_1Models_1_1Student_1_1StudentResearchStaff.html", "classApp_1_1Models_1_1Student_1_1StudentResearchStaff" ],
+    [ "StudentStudent", "classApp_1_1Models_1_1Student_1_1StudentStudent.html", "classApp_1_1Models_1_1Student_1_1StudentStudent" ],
+    [ "StudentThematicArea", "classApp_1_1Models_1_1Student_1_1StudentThematicArea.html", "classApp_1_1Models_1_1Student_1_1StudentThematicArea" ],
+    [ "StudentUser", "classApp_1_1Models_1_1Student_1_1StudentUser.html", "classApp_1_1Models_1_1Student_1_1StudentUser" ],
+    [ "StudentVersion", "classApp_1_1Models_1_1Student_1_1StudentVersion.html", "classApp_1_1Models_1_1Student_1_1StudentVersion" ]
+];

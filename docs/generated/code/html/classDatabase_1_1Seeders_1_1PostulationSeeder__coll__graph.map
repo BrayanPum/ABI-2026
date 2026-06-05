@@ -1,0 +1,13 @@
+<map id="Database::Seeders::PostulationSeeder" name="Database::Seeders::PostulationSeeder">
+<area shape="rect" id="Node000001" title=" " alt="" coords="119,376,263,456"/>
+<area shape="rect" id="Node000002" href="$classDatabase_1_1Seeders_1_1CsvUpsertSeeder.html" title=" " alt="" coords="98,177,283,327"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,340,193,376,188,376,188,340"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="153,5,212,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="187,85,190,177,185,177,182,85"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="17,5,68,71"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="34,72,19,124,9,189,8,225,12,260,20,294,34,325,48,344,65,360,105,384,102,389,62,364,44,347,30,328,15,295,6,261,3,225,4,189,14,122,28,70"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="52,70,64,111,85,152,93,163,89,166,80,155,59,113,46,72"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="272,5,320,71"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="310,71,316,94,318,158,313,233,298,328,284,349,267,367,263,363,280,345,293,326,307,232,313,158,311,95,305,72"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="273,55,250,73,230,96,214,128,204,162,199,161,209,126,226,93,246,69,270,51"/>
+</map>

@@ -1,0 +1,21 @@
+<map id="App::Services::Projects::TeacherIdeaBalanceService::recommendationsForProfessor" name="App::Services::Projects::TeacherIdeaBalanceService::recommendationsForProfessor">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,199,235,253"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Services_1_1Projects_1_1TeacherIdeaBalanceService.html#a0a3208028cd713e676b1d5c055a6ccb9" title=" " alt="" coords="283,5,491,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,197,201,134,240,99,281,69,289,64,292,69,284,74,243,104,205,137,146,200"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Services_1_1Projects_1_1TeacherIdeaBalanceService.html#a3801986320a7cae7f509ce317729240a" title=" " alt="" coords="283,84,491,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="177,196,282,149,300,141,302,146,284,154,180,201"/>
+<area shape="rect" id="Node000006" href="$classApp_1_1Services_1_1Projects_1_1TeacherIdeaBalanceService.html#a4b5c134f4b30a98ef0e01136695d9117" title=" " alt="" coords="283,163,491,217"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="234,208,269,203,269,208,235,213"/>
+<area shape="rect" id="Node000008" href="$classApp_1_1Models_1_1Professor.html#ad2da7b4e640a943b256c39e03b9bf74c" title="Get the city program that the professor belongs to." alt="" coords="301,242,472,282"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="235,239,288,246,287,251,234,244"/>
+<area shape="rect" id="Node000009" href="$classApp_1_1Services_1_1Projects_1_1TeacherIdeaBalanceService.html#ac47b6ecbc7d8c97f2995c0f199b1b00d" title=" " alt="" coords="283,307,491,361"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="186,251,284,292,302,299,300,304,282,296,184,256"/>
+<area shape="rect" id="Node000010" href="$classApp_1_1Models_1_1InvestigationLine.html#abb3e4b52f28cf60dca730f125feb1b2b" title="Get the thematic areas associated with this investigation line." alt="" coords="289,386,484,426"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="146,252,205,312,243,344,284,372,296,378,294,383,281,376,240,348,201,316,142,255"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Services_1_1Projects_1_1TeacherIdeaBalanceService.html#a58dd62cc3e9383581ee66bdb7262f439" title=" " alt="" coords="539,5,747,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="491,30,525,30,525,35,491,35"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Models_1_1ThematicArea.html#ad2d4d4adb1abde55e4cae16bc08638be" title="Get the investigation line that owns the thematic area." alt="" coords="542,91,743,131"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="491,109,528,109,528,114,491,114"/>
+<area shape="rect" id="Node000007" href="$classApp_1_1Models_1_1Project.html#aa96cc7a6d2323571a8ae63459a55a083" title=" " alt="" coords="565,170,720,210"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="491,187,552,187,552,193,491,193"/>
+</map>

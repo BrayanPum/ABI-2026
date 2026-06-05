@@ -1,0 +1,21 @@
+<map id="App::Services::Students::StudentAcademicProgressService::loadStudentContext" name="App::Services::Students::StudentAcademicProgressService::loadStudentContext">
+<area shape="rect" id="Node000001" title=" " alt="" coords="597,163,845,217"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#a342aecffaca0198db506453dd0d79774" title=" " alt="" coords="301,163,549,217"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="584,193,549,193,549,187,584,187"/>
+<area shape="rect" id="Node000007" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#aeb732c9b05ef4cc560b5aa5fc328ebfe" title=" " alt="" coords="301,241,549,296"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="606,223,530,244,528,239,604,218"/>
+<area shape="rect" id="Node000008" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#a05802f22d14a0a627d4185203760a502" title=" " alt="" coords="301,84,549,139"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="604,162,528,141,530,136,606,157"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#a55a9ac21791b1808b8e6dcd6df8a8d40" title=" " alt="" coords="5,163,253,217"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="288,193,253,193,253,187,288,187"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#a775c34b5077ad05fdc69cbcd34616b19" title=" " alt="" coords="5,241,253,296"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="310,223,234,244,232,239,308,218"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#ad4a9a187a3af7eab46510377ddcd8fd9" title=" " alt="" coords="5,5,253,60"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="307,158,300,152,283,132,275,112,268,92,252,73,235,62,238,58,255,69,272,89,280,110,287,129,303,148,310,153"/>
+<area shape="rect" id="Node000006" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#a8b9cff259063e54d6862375d6fd898bc" title=" " alt="" coords="5,84,253,139"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="308,162,232,141,234,136,310,157"/>
+<area shape="poly" id="edge8_Node000008_Node000003" title=" " alt="" coords="310,145,234,165,232,160,308,140"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="309,148,303,152,287,171,280,190,272,211,255,231,235,243,232,239,252,227,268,208,275,188,282,168,300,148,305,144"/>
+<area shape="poly" id="edge10_Node000008_Node000005" title=" " alt="" coords="308,83,232,63,234,58,310,78"/>
+<area shape="poly" id="edge11_Node000008_Node000006" title=" " alt="" coords="288,114,253,114,253,109,288,109"/>
+</map>

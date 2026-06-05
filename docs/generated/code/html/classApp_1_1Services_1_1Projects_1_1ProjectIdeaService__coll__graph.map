@@ -1,0 +1,7 @@
+<map id="App::Services::Projects::ProjectIdeaService" name="App::Services::Projects::ProjectIdeaService">
+<area shape="rect" id="Node000001" title="Encapsulates the persistence rules used when professors or students submit a project idea." alt="" coords="5,133,328,1072"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="75,5,123,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,71,103,109,103,116,98,117,97,109,96,71"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="221,5,251,71"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="235,71,229,117,224,116,229,70"/>
+</map>

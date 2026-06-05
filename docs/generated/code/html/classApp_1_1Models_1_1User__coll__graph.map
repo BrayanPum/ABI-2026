@@ -1,0 +1,5 @@
+<map id="App::Models::User" name="App::Models::User">
+<area shape="rect" id="Node000001" title="user table model, manages communication with the database using the root user, should not be used by ..." alt="" coords="5,119,219,344"/>
+<area shape="rect" id="Node000002" href="$classAuthenticatable.html" title=" " alt="" coords="53,5,171,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,84,115,119,109,119,109,84"/>
+</map>

@@ -1,0 +1,44 @@
+<map id="App::Http::Controllers::ProjectController::buildProjectReportState" name="App::Http::Controllers::ProjectController::buildProjectReportState">
+<area shape="rect" id="Node000001" title="Build the report state rendered below the projects list." alt="" coords="5,694,229,749"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a8f4b9392fade0bdec576281c18000164" title=" " alt="" coords="277,441,484,495"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,692,339,503,343,507,149,696"/>
+<area shape="rect" id="Node000018" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a97c36f622c3b03ecbf40df5b86c24ab1" title=" " alt="" coords="839,913,1031,967"/>
+<area shape="poly" id="edge22_Node000001_Node000018" title=" " alt="" coords="221,746,826,908,825,914,220,751"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a465638bbc5a18dfdf236626e7d4db9f6" title=" " alt="" coords="552,134,753,189"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="404,438,616,197,620,201,408,442"/>
+<area shape="rect" id="Node000006" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a97e2b94a18babf3ec770fb491b12fa5a" title=" " alt="" coords="532,441,773,495"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="484,465,518,465,518,471,484,471"/>
+<area shape="rect" id="Node000015" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a8ade12f874e51329f6fea90c246904f8" title=" " alt="" coords="534,755,771,810"/>
+<area shape="poly" id="edge14_Node000002_Node000015" title=" " alt="" coords="407,494,621,743,617,746,403,497"/>
+<area shape="rect" id="Node000019" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a006f39f685a7fb461bfa1b2a1786aada" title=" " alt="" coords="543,55,763,110"/>
+<area shape="poly" id="edge19_Node000002_Node000019" title=" " alt="" coords="383,440,397,375,424,289,443,243,467,198,496,156,530,119,534,116,537,120,534,123,500,160,472,201,448,246,429,291,402,377,389,441"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Models_1_1Project.html#a2957d15a78ccb6a5d46712c9ecb0503b" title=" " alt="" coords="858,69,1013,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="753,133,844,110,845,115,754,138"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Models_1_1Project.html#a420e5cdaa9461c251dbb35622fd6f71c" title=" " alt="" coords="840,133,1031,173"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="753,156,826,154,826,159,754,161"/>
+<area shape="rect" id="Node000007" href="$classApp_1_1Models_1_1Professor.html#ad2da7b4e640a943b256c39e03b9bf74c" title="Get the city program that the professor belongs to." alt="" coords="850,612,1021,652"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="684,494,745,546,782,574,823,598,838,605,836,610,820,602,780,578,741,551,680,498"/>
+<area shape="rect" id="Node000008" href="$classApp_1_1Models_1_1Student.html#a46fcfb5c48fcf7591c7541e8767ac37f" title="Get the city program that the student belongs to." alt="" coords="855,197,1015,237"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="665,439,689,397,723,345,767,292,820,247,841,235,844,240,823,252,771,296,728,348,693,400,670,442"/>
+<area shape="rect" id="Node000009" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#aab40c1c7a942966f31844e4ec40c8262" title="Build a report visual ready for the Blade charts." alt="" coords="821,677,1049,731"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="673,494,733,576,775,622,823,662,832,668,829,672,820,666,771,626,729,580,668,497"/>
+<area shape="rect" id="Node000010" href="$classApp_1_1Models_1_1Project.html#a15197eb4854cf5d7ecd802ff9647b515" title=" " alt="" coords="858,261,1013,301"/>
+<area shape="poly" id="edge9_Node000006_Node000010" title=" " alt="" coords="675,438,736,374,776,340,820,311,844,300,846,305,823,316,779,345,740,378,678,442"/>
+<area shape="rect" id="Node000011" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#adb174590d6ee0bdf06f6f4463afc04f4" title="Build the query used by the programs and lines report." alt="" coords="831,326,1040,381"/>
+<area shape="poly" id="edge10_Node000006_Node000011" title=" " alt="" coords="710,438,820,390,837,383,839,388,822,394,712,443"/>
+<area shape="rect" id="Node000012" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a75d7b8bf4cd5ae5e976f3e1ec8277b2c" title=" " alt="" coords="827,405,1044,459"/>
+<area shape="poly" id="edge11_Node000006_Node000012" title=" " alt="" coords="773,450,813,445,813,450,774,455"/>
+<area shape="rect" id="Node000013" href="$classApp_1_1Models_1_1Project.html#a6e148fe6ffa1778de91228a3cbe51ec5" title=" " alt="" coords="858,484,1013,524"/>
+<area shape="poly" id="edge12_Node000006_Node000013" title=" " alt="" coords="774,481,844,490,844,495,773,486"/>
+<area shape="rect" id="Node000014" href="$classApp_1_1Models_1_1Project.html#aa96cc7a6d2323571a8ae63459a55a083" title=" " alt="" coords="858,548,1013,588"/>
+<area shape="poly" id="edge13_Node000006_Node000014" title=" " alt="" coords="718,493,822,533,847,541,845,547,820,539,716,498"/>
+<area shape="poly" id="edge17_Node000015_Node000009" title=" " alt="" coords="751,753,823,733,824,738,752,758"/>
+<area shape="rect" id="Node000016" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a5795eaa526784e7f06e485a8ad17c7cc" title=" " alt="" coords="823,834,1047,889"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="752,808,824,828,823,833,751,813"/>
+<area shape="rect" id="Node000017" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a952df4f3fafa1145e4a349bfdeff17d2" title=" " alt="" coords="833,755,1038,810"/>
+<area shape="poly" id="edge16_Node000015_Node000017" title=" " alt="" coords="772,780,819,780,819,785,772,785"/>
+<area shape="poly" id="edge18_Node000015_Node000018" title=" " alt="" coords="688,808,749,854,823,899,835,905,833,910,820,904,746,858,685,812"/>
+<area shape="poly" id="edge20_Node000019_Node000004" title=" " alt="" coords="763,83,844,85,844,90,763,88"/>
+<area shape="rect" id="Node000020" href="$classApp_1_1Models_1_1Project.html#aa7f598c5341f3abbdc5c667597789ac4" title=" " alt="" coords="858,5,1013,45"/>
+<area shape="poly" id="edge21_Node000019_Node000020" title=" " alt="" coords="763,58,844,41,845,46,764,63"/>
+</map>

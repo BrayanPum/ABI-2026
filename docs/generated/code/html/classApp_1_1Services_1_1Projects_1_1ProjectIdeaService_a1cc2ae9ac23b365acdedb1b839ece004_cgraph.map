@@ -1,0 +1,33 @@
+<map id="App::Services::Projects::ProjectIdeaService::persistStudentIdea" name="App::Services::Projects::ProjectIdeaService::persistStudentIdea">
+<area shape="rect" id="Node000001" title="Persist a project idea coming from a student." alt="" coords="5,347,176,401"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Services_1_1Projects_1_1ProjectIdeaService.html#aa846712f578784c696df1f52ed5218c0" title="Builds the content map stored alongside a student submission." alt="" coords="253,5,435,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,346,107,289,131,215,147,176,168,138,193,102,222,71,239,58,242,62,226,75,197,106,173,141,152,178,135,217,112,290,99,347"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1Student.html#a46fcfb5c48fcf7591c7541e8767ac37f" title="Get the city program that the student belongs to." alt="" coords="264,85,424,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="97,346,113,300,138,243,175,184,197,158,222,135,250,119,253,123,226,139,201,161,179,187,143,245,118,302,102,347"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Services_1_1Projects_1_1ProjectIdeaService.html#ad195a772b523826ef2714f5749f2a537" title="Collects student identifiers, including the authenticated student." alt="" coords="259,149,429,204"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="106,345,153,279,185,244,222,213,245,201,247,205,226,218,189,248,157,282,110,348"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Services_1_1Projects_1_1ProjectIdeaService.html#a8508965dd3de4879787a4bd55f11f4a7" title="Determines if a duplicate project already exists for the provided student lineup." alt="" coords="243,228,445,283"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="130,344,174,317,223,292,238,285,240,290,225,296,177,322,133,349"/>
+<area shape="rect" id="Node000007" href="$classApp_1_1Services_1_1Projects_1_1ProjectIdeaService.html#a51d34ee85f15680c1ff1310fc78875c5" title="Normalizes repeated whitespace and applies title casing to project titles." alt="" coords="259,307,429,361"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="176,358,245,347,245,352,177,363"/>
+<area shape="rect" id="Node000008" href="$classApp_1_1Services_1_1Projects_1_1ProjectIdeaService.html#a81b55e2a92ccc412216421a2f16576c9" title="Inserts or updates a project record maintaining the &quot;waiting evaluation&quot; status." alt="" coords="259,385,429,440"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="177,384,245,395,245,400,176,390"/>
+<area shape="rect" id="Node000010" href="$classApp_1_1Services_1_1Projects_1_1ProjectIdeaService.html#a946c8d2b6d5061da86b88726d4cb34e8" title="Stores the provided content values for the given project version." alt="" coords="259,464,429,519"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="135,399,178,425,225,449,247,458,245,463,223,454,175,429,132,404"/>
+<area shape="rect" id="Node000012" href="$classApp_1_1Services_1_1Projects_1_1ProjectIdeaService.html#aca6db5377882854bfc064effd107c913" title="Ensures the student does not have another active project awaiting evaluation." alt="" coords="259,543,429,597"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="110,400,157,465,189,499,226,529,247,541,245,546,222,534,185,503,153,468,106,403"/>
+<area shape="rect" id="Node000015" href="$classApp_1_1Services_1_1Projects_1_1ProjectIdeaService.html#a0b47b1f39f1eeaf3a430ac8317b89639" title="Synchronises the contact fields for the student and their linked user." alt="" coords="253,621,435,676"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="103,401,119,446,144,502,180,559,201,585,226,608,242,619,239,623,222,612,198,589,176,562,140,504,114,448,98,403"/>
+<area shape="rect" id="Node000016" href="$classApp_1_1Services_1_1Projects_1_1ProjectIdeaService.html#aff7e931a99d3894b0909ac0d3df392f6" title="Checks if any teammate already owns a different project idea." alt="" coords="224,700,464,755"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="98,401,110,460,133,537,150,578,171,617,196,654,226,687,229,690,226,694,222,691,192,657,166,620,145,580,128,539,105,461,93,402"/>
+<area shape="rect" id="Node000006" href="$classApp_1_1Models_1_1Project.html#a6e148fe6ffa1778de91228a3cbe51ec5" title=" " alt="" coords="531,235,685,275"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="446,253,517,253,517,258,446,258"/>
+<area shape="rect" id="Node000009" href="$classApp_1_1Services_1_1Projects_1_1ProjectIdeaService.html#adb2836c3bec61a73078c6ea481c3ca61" title="Returns the identifier for the &quot;waiting evaluation&quot; status reusing the last lookup." alt="" coords="512,385,704,440"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="429,410,498,410,498,415,429,415"/>
+<area shape="rect" id="Node000011" href="$classApp_1_1Services_1_1Projects_1_1ProjectIdeaService.html#a0ac5780c777fd44fc0325e1db56e7e84" title="Retrieve the identifier for a content record, caching the lookup for the current request." alt="" coords="523,464,693,519"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="429,489,509,489,509,494,429,494"/>
+<area shape="rect" id="Node000013" href="$classApp_1_1Models_1_1Student.html#af3237a316f5e0d39630a7fc7f40d5f19" title="Get the projects assigned to the student." alt="" coords="528,550,688,590"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="429,567,514,567,514,573,429,573"/>
+<area shape="rect" id="Node000014" href="$classApp_1_1Models_1_1Student.html#a3bf17f9bede4cf4076b93cfe9c0e00e0" title="Resolve the model class used for the projects relationship." alt="" coords="752,550,923,590"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="689,567,738,567,738,573,689,573"/>
+</map>

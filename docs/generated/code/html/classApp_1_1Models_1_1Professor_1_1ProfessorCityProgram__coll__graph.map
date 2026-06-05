@@ -1,0 +1,7 @@
+<map id="App::Models::Professor::ProfessorCityProgram" name="App::Models::Professor::ProfessorCityProgram">
+<area shape="rect" id="Node000001" title="Extended model that reads city&#45;program data through the professor connection, limiting operations to ..." alt="" coords="15,312,179,412"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1CityProgram.html" title="city_program table model, manages communication with the database using the root user,..." alt="" coords="5,119,188,264"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,278,99,312,94,312,94,278"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="69,5,124,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="99,84,99,118,94,118,94,84"/>
+</map>

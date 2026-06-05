@@ -1,0 +1,5 @@
+<map id="App::Services::Projects::ProjectIdeaService::hasDuplicateProfessorProject" name="App::Services::Projects::ProjectIdeaService::hasDuplicateProfessorProject">
+<area shape="rect" id="Node000001" title="Determines if a duplicate project already exists for the provided professor lineup." alt="" coords="224,5,437,60"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Services_1_1Projects_1_1ProjectIdeaService.html#adb4e0355059d11557925e516319253b2" title="Persist a project idea coming from a professor or committee leader." alt="" coords="5,5,176,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,35,176,35,176,30,210,30"/>
+</map>

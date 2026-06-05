@@ -1,0 +1,7 @@
+<map id="App::Http::Requests::ContentRequest::validated" name="App::Http::Requests::ContentRequest::validated">
+<area shape="rect" id="Node000001" title="Retrieve the validated data with normalized roles order." alt="" coords="252,37,455,77"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1ContentController.html#aa0ad1d430ebf0a7d787478c4496858e5" title="Crea un nuevo contenido en el catálogo." alt="" coords="11,5,198,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="238,45,198,40,198,35,239,40"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1ContentController.html#a1bb5ca2ba9cc8b186d97c2a15b131613" title="Actualiza los datos de un contenido existente." alt="" coords="5,69,204,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="239,75,205,79,204,74,238,69"/>
+</map>

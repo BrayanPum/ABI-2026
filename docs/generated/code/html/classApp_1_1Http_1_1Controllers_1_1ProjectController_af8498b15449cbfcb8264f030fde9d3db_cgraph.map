@@ -1,0 +1,5 @@
+<map id="App::Http::Controllers::ProjectController::isReturnedForCorrection" name="App::Http::Controllers::ProjectController::isReturnedForCorrection">
+<area shape="rect" id="Node000001" title="Determine whether the project can be corrected and resubmitted." alt="" coords="5,5,223,60"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Project.html#a2957d15a78ccb6a5d46712c9ecb0503b" title=" " alt="" coords="271,13,425,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,30,257,30,257,35,223,35"/>
+</map>

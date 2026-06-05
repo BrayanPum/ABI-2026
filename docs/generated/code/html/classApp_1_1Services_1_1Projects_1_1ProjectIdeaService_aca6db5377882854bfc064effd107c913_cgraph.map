@@ -1,0 +1,7 @@
+<map id="App::Services::Projects::ProjectIdeaService::studentHasActiveIdea" name="App::Services::Projects::ProjectIdeaService::studentHasActiveIdea">
+<area shape="rect" id="Node000001" title="Ensures the student does not have another active project awaiting evaluation." alt="" coords="5,5,176,60"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Student.html#af3237a316f5e0d39630a7fc7f40d5f19" title="Get the projects assigned to the student." alt="" coords="224,13,384,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,30,210,30,210,35,176,35"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1Student.html#a3bf17f9bede4cf4076b93cfe9c0e00e0" title="Resolve the model class used for the projects relationship." alt="" coords="432,13,603,53"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="384,30,419,30,419,35,384,35"/>
+</map>

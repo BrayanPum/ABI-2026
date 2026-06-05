@@ -1,0 +1,7 @@
+<map id="App::Http::Controllers::ContentFrameworkController" name="App::Http::Controllers::ContentFrameworkController">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,291,301,549"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1Controller.html" title=" " alt="" coords="38,119,269,243"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,256,156,290,151,290,151,256"/>
+<area shape="rect" id="Node000003" href="$classBaseController.html" title=" " alt="" coords="98,5,209,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="156,84,156,118,151,118,151,84"/>
+</map>

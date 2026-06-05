@@ -1,0 +1,11 @@
+<map id="App::Http::Controllers::BankApprovedIdeasForProfessorsController::show" name="App::Http::Controllers::BankApprovedIdeasForProfessorsController::show">
+<area shape="rect" id="Node000001" title="Los profesores pueden ver el detalle de una idea aprobada sin depender de la ventana del calendario." alt="" coords="5,94,253,149"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Project.html#a152d496578f09f42e1a3c553b0707128" title=" " alt="" coords="301,5,505,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,91,300,55,323,47,325,52,302,60,202,96"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1Project.html#a15197eb4854cf5d7ecd802ff9647b515" title=" " alt="" coords="326,69,481,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="253,104,312,97,313,103,254,109"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Models_1_1Project.html#a6e148fe6ffa1778de91228a3cbe51ec5" title=" " alt="" coords="326,133,481,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="254,133,313,140,312,145,253,138"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Models_1_1Project.html#a481cceca5ff749aeaead65b9482cfd23" title=" " alt="" coords="326,197,481,237"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="202,146,302,183,325,190,323,195,300,188,200,151"/>
+</map>

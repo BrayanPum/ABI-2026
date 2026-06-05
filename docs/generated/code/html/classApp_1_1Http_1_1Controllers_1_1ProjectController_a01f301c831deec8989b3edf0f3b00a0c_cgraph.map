@@ -1,0 +1,11 @@
+<map id="App::Http::Controllers::ProjectController::persistStudentProject" name="App::Http::Controllers::ProjectController::persistStudentProject">
+<area shape="rect" id="Node000001" title="Persist the project data for a student either creating or updating a record." alt="" coords="5,62,196,117"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Student.html#a46fcfb5c48fcf7591c7541e8767ac37f" title="Get the city program that the student belongs to." alt="" coords="244,5,404,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,59,240,47,241,52,197,65"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1Student.html#af3237a316f5e0d39630a7fc7f40d5f19" title="Get the projects assigned to the student." alt="" coords="244,69,404,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="196,87,230,87,230,92,196,92"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Models_1_1Project.html#a6e148fe6ffa1778de91228a3cbe51ec5" title=" " alt="" coords="247,133,401,173"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="197,114,241,127,240,132,195,119"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Models_1_1Student.html#a3bf17f9bede4cf4076b93cfe9c0e00e0" title="Resolve the model class used for the projects relationship." alt="" coords="452,69,623,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="404,87,439,87,439,92,404,92"/>
+</map>

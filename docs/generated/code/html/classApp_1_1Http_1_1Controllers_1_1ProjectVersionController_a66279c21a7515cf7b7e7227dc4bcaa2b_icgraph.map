@@ -1,0 +1,7 @@
+<map id="App::Http::Controllers::ProjectVersionController::resolveSnapshot" name="App::Http::Controllers::ProjectVersionController::resolveSnapshot">
+<area shape="rect" id="Node000001" title="Build a compatible snapshot for legacy and new versions." alt="" coords="283,41,469,96"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#a2389d8b616d87db11847ca38eb91109b" title="Display the version history associated with the project." alt="" coords="27,5,213,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="269,56,213,48,214,43,270,51"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#a2cfada4301b68a0a74ecc8723a363bc7" title="Show the full snapshot of a project version." alt="" coords="5,85,235,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="269,86,235,91,235,86,269,81"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="App::Models::Professor::ProfessorUser" name="App::Models::Professor::ProfessorUser">
+<area shape="rect" id="Node000001" title="Extended model that enforces the professor connection when reading users so authentication data is li..." alt="" coords="31,392,193,492"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1User.html" title="user table model, manages communication with the database using the root user, should not be used by ..." alt="" coords="5,119,219,344"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,358,115,392,109,392,109,358"/>
+<area shape="rect" id="Node000003" href="$classAuthenticatable.html" title=" " alt="" coords="53,5,171,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="115,84,115,119,109,119,109,84"/>
+</map>

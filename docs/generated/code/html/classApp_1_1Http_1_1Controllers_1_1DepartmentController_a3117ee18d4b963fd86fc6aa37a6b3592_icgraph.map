@@ -1,0 +1,15 @@
+<map id="App::Http::Controllers::DepartmentController::resolveRedirectTarget" name="App::Http::Controllers::DepartmentController::resolveRedirectTarget">
+<area shape="rect" id="Node000001" title=" " alt="" coords="479,77,651,132"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1DepartmentController.html#a5aaa5d1b740937bbc66c92ff5499eeb3" title=" " alt="" coords="242,5,414,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="465,77,413,61,415,56,466,72"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1DepartmentController.html#a7eef7a5c5f017c2fc14cb7e082f7fa28" title=" " alt="" coords="225,85,431,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="465,107,431,107,431,102,465,102"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Http_1_1Controllers_1_1DepartmentController.html#af72d11b73f216b90e8d310085e4b6301" title=" " alt="" coords="242,149,414,204"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="466,137,415,153,413,148,465,132"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Http_1_1Controllers_1_1DepartmentController.html#aaf36621ae1aa8f6ead4d66c5eaeffb2b" title=" " alt="" coords="5,71,177,125"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="231,147,173,128,175,123,233,142"/>
+<area shape="rect" id="Node000006" href="$classApp_1_1Http_1_1Controllers_1_1DepartmentController.html#a5b4d8eee97617ee866b215dd164efeef" title=" " alt="" coords="5,149,177,204"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="228,179,177,179,177,174,228,174"/>
+<area shape="rect" id="Node000007" href="$classApp_1_1Http_1_1Controllers_1_1DepartmentController.html#a6717489a8b930b37812e5684bfcb6ce5" title=" " alt="" coords="5,228,177,283"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="233,211,175,230,173,225,231,206"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="App::Services::Projects::ProjectParticipantService::present" name="App::Services::Projects::ProjectParticipantService::present">
+<area shape="rect" id="Node000001" title="Converts a professor model into the shape expected by the UI widgets." alt="" coords="5,30,197,85"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Professor.html#ad2da7b4e640a943b256c39e03b9bf74c" title="Get the city program that the professor belongs to." alt="" coords="245,5,416,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,41,231,36,232,42,198,47"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1Professor.html#a40972ba6a5a24a8fa59596c0268da934" title="Get the user associated with the professor." alt="" coords="245,69,416,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="198,68,232,73,231,78,197,73"/>
+</map>

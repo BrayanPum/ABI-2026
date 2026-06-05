@@ -1,0 +1,22 @@
+<map id="App::Services::Projects::TeacherWorkloadService::summaryForUser" name="App::Services::Projects::TeacherWorkloadService::summaryForUser">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,169,195,223"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1TeacherAssignment.html#acaa715039d73cfae151c98a31e4eb113" title=" " alt="" coords="243,5,480,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,167,171,110,205,80,241,55,254,48,257,53,244,60,208,84,175,114,124,170"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Services_1_1Projects_1_1TeacherWorkloadService.html#a810049526ae7f7cabc1b4ddc1eeb5cd4" title=" " alt="" coords="267,70,456,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="172,166,275,127,277,132,174,171"/>
+<area shape="rect" id="Node000006" href="$classApp_1_1Services_1_1Projects_1_1TeacherWorkloadService.html#ade3404da3752dbae974b74b252bba155" title=" " alt="" coords="552,186,741,241"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="195,187,243,185,361,181,480,185,539,192,538,197,480,191,361,187,243,191,195,193"/>
+<area shape="rect" id="Node000007" href="$classApp_1_1Services_1_1Projects_1_1TeacherWorkloadService.html#af73229c3da7126a527ea5e811cf449a0" title=" " alt="" coords="267,201,456,255"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="195,205,253,212,253,217,194,210"/>
+<area shape="rect" id="Node000008" href="$classApp_1_1Services_1_1Projects_1_1TeacherWorkloadService.html#a8659b7c6e82d2f668780b5d89c3ee0a6" title=" " alt="" coords="244,280,479,349"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="155,221,244,264,261,272,259,277,242,269,153,226"/>
+<area shape="rect" id="Node000009" href="$classApp_1_1Services_1_1Projects_1_1TeacherWorkloadService.html#ab579bbc03c7d3050b263130c9c06c3c7" title=" " alt="" coords="267,374,456,429"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="120,222,171,290,205,327,244,359,255,366,253,371,241,364,201,331,166,294,116,225"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Models_1_1TeacherAssignment.html#a14631d068788def7e66a92dfde4b62f1" title=" " alt="" coords="528,28,765,68"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="456,78,517,68,517,73,456,84"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Models_1_1TeacherAssignment.html#a8d359a956a6a9ebbc998782c9577e4e5" title=" " alt="" coords="528,92,765,132"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="456,100,514,103,514,108,456,105"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="456,220,538,216,538,222,456,226"/>
+<area shape="rect" id="Node000010" href="$classApp_1_1Models_1_1User.html#a49efcb9e3b03c4867ce680e80d9f427f" title="Professor profile associated with the user." alt="" coords="573,381,721,421"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="456,399,559,399,559,404,456,404"/>
+</map>

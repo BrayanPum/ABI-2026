@@ -1,0 +1,5 @@
+<map id="App::Models::ResearchGroup::programs" name="App::Models::ResearchGroup::programs">
+<area shape="rect" id="Node000001" title="Get the programs associated with the research group." alt="" coords="247,13,456,53"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1ResearchGroupController.html#a0a50e00a4a7c424092dae9dbebbe27c3" title="Elimina lógicamente (soft delete) un grupo de investigación." alt="" coords="5,5,199,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="233,35,199,35,199,30,233,30"/>
+</map>

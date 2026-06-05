@@ -1,0 +1,5 @@
+<map id="App::Models::Content::contentVersions" name="App::Models::Content::contentVersions">
+<area shape="rect" id="Node000001" title="Get all content version records associated with this content." alt="" coords="256,5,417,45"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1ContentController.html#ae9087065f90313f9f3116ed88a174869" title="Elimina lógicamente (soft delete) un contenido del catálogo." alt="" coords="5,5,208,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="242,28,208,28,208,23,242,23"/>
+</map>

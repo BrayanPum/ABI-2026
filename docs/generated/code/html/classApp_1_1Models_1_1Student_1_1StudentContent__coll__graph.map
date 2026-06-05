@@ -1,0 +1,9 @@
+<map id="App::Models::Student::StudentContent" name="App::Models::Student::StudentContent">
+<area shape="rect" id="Node000001" title="Extended model that keeps content queries on the student connection so learners adhere to their restr..." alt="" coords="6,288,158,388"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Content.html" title="content table model, manages communication with the database using the root user, should not be used ..." alt="" coords="5,133,159,239"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,252,85,288,79,288,79,252"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="17,5,72,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="59,83,71,133,66,134,54,85"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="96,5,145,71"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="115,72,103,118,97,117,110,70"/>
+</map>

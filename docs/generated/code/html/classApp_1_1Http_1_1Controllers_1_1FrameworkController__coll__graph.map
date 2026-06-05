@@ -1,0 +1,7 @@
+<map id="App::Http::Controllers::FrameworkController" name="App::Http::Controllers::FrameworkController">
+<area shape="rect" id="Node000001" title="Controlador para la gestión de frameworks." alt="" coords="5,291,251,584"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1Controller.html" title=" " alt="" coords="13,119,243,243"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,256,131,291,125,291,125,256"/>
+<area shape="rect" id="Node000003" href="$classBaseController.html" title=" " alt="" coords="73,5,183,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="131,84,131,118,125,118,125,84"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="App::Models::Professor::ProfessorContentFramework" name="App::Models::Professor::ProfessorContentFramework">
+<area shape="rect" id="Node000001" title="Extended model that channels content&#45;framework queries through the professor connection to respect fa..." alt="" coords="15,272,222,372"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1ContentFramework.html" title="content_frameworks table model, manages communication with the database using the root user,..." alt="" coords="5,119,232,224"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,237,121,272,116,272,116,237"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="91,5,146,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="121,85,121,118,116,118,116,85"/>
+</map>

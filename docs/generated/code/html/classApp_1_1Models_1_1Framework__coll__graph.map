@@ -1,0 +1,7 @@
+<map id="App::Models::Framework" name="App::Models::Framework">
+<area shape="rect" id="Node000001" title="framework table model, manages communication with the database using the root user,..." alt="" coords="5,133,185,259"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="29,5,84,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,83,83,132,77,134,65,85"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="109,5,159,71"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="129,71,117,118,112,117,124,70"/>
+</map>

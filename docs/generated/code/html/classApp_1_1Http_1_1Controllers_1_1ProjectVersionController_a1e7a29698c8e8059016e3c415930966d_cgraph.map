@@ -1,0 +1,5 @@
+<map id="App::Http::Controllers::ProjectVersionController::create" name="App::Http::Controllers::ProjectVersionController::create">
+<area shape="rect" id="Node000001" title="Display an informational screen because versions are generated automatically." alt="" coords="5,5,192,60"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#adacb95202c38fa936cb57ac339917dc0" title="Allow the history to be consulted by any authenticated user that can reach the project detail." alt="" coords="240,5,427,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,30,226,30,226,35,192,35"/>
+</map>

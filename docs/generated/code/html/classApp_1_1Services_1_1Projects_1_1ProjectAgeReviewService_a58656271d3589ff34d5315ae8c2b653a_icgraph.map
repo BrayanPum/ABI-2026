@@ -1,0 +1,11 @@
+<map id="App::Services::Projects::ProjectAgeReviewService::referenceAcademicPeriod" name="App::Services::Projects::ProjectAgeReviewService::referenceAcademicPeriod">
+<area shape="rect" id="Node000001" title=" " alt="" coords="528,45,725,100"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Services_1_1Projects_1_1ProjectAgeReviewService.html#a7dddba2d815e7ed8eddbf73017f5a885" title=" " alt="" coords="284,5,480,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="514,57,480,51,481,46,515,52"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Services_1_1Projects_1_1ProjectAgeReviewService.html#ab13f742fa8a666e8840706bd540d8b5b" title=" " alt="" coords="284,84,480,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="515,93,481,99,480,93,514,88"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Services_1_1Projects_1_1ProjectAgeReviewService.html#abcf99ce20b381d803015f14976c5664b" title=" " alt="" coords="23,5,219,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="270,35,219,35,219,30,270,30"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Services_1_1Projects_1_1ProjectAgeReviewService.html#ab88b09d88c13c2a45c9297faa37efd61" title=" " alt="" coords="5,84,236,139"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="271,114,236,114,236,109,271,109"/>
+</map>

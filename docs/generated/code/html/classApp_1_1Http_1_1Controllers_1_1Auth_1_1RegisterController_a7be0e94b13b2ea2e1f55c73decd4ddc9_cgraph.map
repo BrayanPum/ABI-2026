@@ -1,0 +1,9 @@
+<map id="App::Http::Controllers::Auth::RegisterController::register" name="App::Http::Controllers::Auth::RegisterController::register">
+<area shape="rect" id="Node000001" title="Handle a registration request for the application." alt="" coords="5,84,192,139"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1Auth_1_1RegisterController.html#a9fc629b5dbd42fae7151fb6bc501d170" title="Create a new user instance after a valid registration." alt="" coords="240,5,427,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,81,237,62,239,67,182,86"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1Auth_1_1RegisterController.html#a890df3be5f39babf73153c9e7b1419fd" title="Override the post&#45;registration redirect behavior." alt="" coords="240,84,427,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="192,109,226,109,226,114,192,114"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Http_1_1Controllers_1_1Auth_1_1RegisterController.html#adc6d83766809d60c76acb18ecd583626" title="Get a validator instance for the incoming registration request." alt="" coords="240,163,427,217"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="182,136,239,156,237,161,180,141"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="App::Models::ResearchStaff::ResearchStaffAcademicPeriod" name="App::Models::ResearchStaff::ResearchStaffAcademicPeriod">
+<area shape="rect" id="Node000001" title=" " alt="" coords="13,615,231,715"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1AcademicPeriod.html" title=" " alt="" coords="5,119,239,567"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,581,125,614,119,614,119,581"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="95,5,149,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="125,85,125,118,119,118,119,85"/>
+</map>

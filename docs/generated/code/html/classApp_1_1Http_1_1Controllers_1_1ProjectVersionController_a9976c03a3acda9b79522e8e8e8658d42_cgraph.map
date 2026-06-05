@@ -1,0 +1,5 @@
+<map id="App::Http::Controllers::ProjectVersionController::resolveAuthorLabel" name="App::Http::Controllers::ProjectVersionController::resolveAuthorLabel">
+<area shape="rect" id="Node000001" title="Resolve the best human&#45;readable label for the user who generated the version." alt="" coords="5,5,192,60"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Version.html#a663cf47c8739fb20674588ae05973121" title="User who generated the version snapshot." alt="" coords="240,13,399,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,30,226,30,226,35,192,35"/>
+</map>

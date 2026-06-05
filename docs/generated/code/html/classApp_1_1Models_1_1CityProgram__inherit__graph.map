@@ -1,0 +1,11 @@
+<map id="App::Models::CityProgram" name="App::Models::CityProgram">
+<area shape="rect" id="Node000001" title="city_program table model, manages communication with the database using the root user,..." alt="" coords="199,119,381,264"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1Professor_1_1ProfessorCityProgram.html" title="Extended model that reads city&#45;program data through the professor connection, limiting operations to ..." alt="" coords="5,322,169,422"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="200,275,145,324,141,320,197,271"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffCityProgram.html" title="Extended model that restricts city&#45;program lookups to the research staff connection,..." alt="" coords="193,312,387,432"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="293,278,293,312,287,312,287,278"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Models_1_1Student_1_1StudentCityProgram.html" title="Extended model that accesses city&#45;program data through the student connection, maintaining the permis..." alt="" coords="411,322,564,422"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="381,271,435,320,431,324,377,275"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="263,5,317,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="293,84,293,118,287,118,287,84"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="App::Http::Controllers::ProjectController::projectReportModules" name="App::Http::Controllers::ProjectController::projectReportModules">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1048,71,1240,125"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a910bc101d1d62734a0ca5ce2a0120e6f" title="Build the report state rendered below the projects list." alt="" coords="236,56,460,111"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1034,99,460,88,460,83,1034,93"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#aac69c9e81382317b0b0b45f650744332" title="Display a paginated list of projects for the authenticated user." alt="" coords="5,97,188,137"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="1034,107,679,123,458,127,236,126,188,124,188,119,236,121,458,122,679,118,1034,102"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a8ade12f874e51329f6fea90c246904f8" title=" " alt="" coords="763,5,1000,60"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1034,73,991,63,992,57,1035,68"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="223,103,189,107,188,102,222,97"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a8f4b9392fade0bdec576281c18000164" title=" " alt="" coords="508,5,715,60"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="749,35,715,35,715,30,749,30"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="495,58,461,64,460,59,494,52"/>
+</map>

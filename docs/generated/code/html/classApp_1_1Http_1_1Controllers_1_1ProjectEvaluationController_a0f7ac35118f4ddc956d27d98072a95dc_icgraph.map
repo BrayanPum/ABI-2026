@@ -1,0 +1,7 @@
+<map id="App::Http::Controllers::ProjectEvaluationController::committeeReportVisuals" name="App::Http::Controllers::ProjectEvaluationController::committeeReportVisuals">
+<area shape="rect" id="Node000001" title=" " alt="" coords="540,5,748,60"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#a2c92a25c3577ed2efed766a9c592e5c5" title="Render the committee report as a branded PDF document." alt="" coords="261,5,492,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="527,35,492,35,492,30,527,30"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#a242ddacaab9456585601a8eb9bb3f993" title=" " alt="" coords="5,5,213,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="248,35,214,35,214,30,248,30"/>
+</map>

@@ -3,7 +3,7 @@ name: Auto Docs
 on:
   push:
     branches:
-      - main
+      [ main, docs/auto-documentacion ]
     paths-ignore:
       - docs/generated/**
   workflow_dispatch:

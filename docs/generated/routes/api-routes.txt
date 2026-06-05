@@ -1,0 +1,47 @@
+
+  GET|HEAD        api/content-versions ................... api.content-versions.index › ContentVersionController@index
+  POST            api/content-versions ................... api.content-versions.store › ContentVersionController@store
+  GET|HEAD        api/content-versions/{content_version} ... api.content-versions.show › ContentVersionController@show
+  PUT|PATCH       api/content-versions/{content_version} api.content-versions.update › ContentVersionController@update
+  DELETE          api/content-versions/{content_version} api.content-versions.destroy › ContentVersionController@dest…
+  GET|HEAD        api/contents .......................................... api.contents.index › ContentController@index
+  POST            api/contents .......................................... api.contents.store › ContentController@store
+  GET|HEAD        api/contents/{content} .................................. api.contents.show › ContentController@show
+  PUT|PATCH       api/contents/{content} .............................. api.contents.update › ContentController@update
+  DELETE          api/contents/{content} ............................ api.contents.destroy › ContentController@destroy
+  GET|HEAD        api/investigation-lines .......... api.investigation-lines.index › InvestigationLineController@index
+  POST            api/investigation-lines .......... api.investigation-lines.store › InvestigationLineController@store
+  GET|HEAD        api/investigation-lines/{investigation_line} api.investigation-lines.show › InvestigationLineContro…
+  PUT|PATCH       api/investigation-lines/{investigation_line} api.investigation-lines.update › InvestigationLineCont…
+  DELETE          api/investigation-lines/{investigation_line} api.investigation-lines.destroy › InvestigationLineCon…
+  GET|HEAD        api/programs .......................................... api.programs.index › ProgramController@index
+  POST            api/programs .......................................... api.programs.store › ProgramController@store
+  GET|HEAD        api/programs/{program} .................................. api.programs.show › ProgramController@show
+  PUT|PATCH       api/programs/{program} .............................. api.programs.update › ProgramController@update
+  DELETE          api/programs/{program} ............................ api.programs.destroy › ProgramController@destroy
+  GET|HEAD        api/projects .......................................... api.projects.index › ProjectController@index
+  POST            api/projects .......................................... api.projects.store › ProjectController@store
+  GET|HEAD        api/projects/meta ....................................... api.projects.meta › ProjectController@meta
+  GET|HEAD        api/projects/{project} .................................. api.projects.show › ProjectController@show
+  PUT|PATCH       api/projects/{project} .............................. api.projects.update › ProjectController@update
+  DELETE          api/projects/{project} ............................ api.projects.destroy › ProjectController@destroy
+  POST            api/projects/{project}/restore .................... api.projects.restore › ProjectController@restore
+  GET|HEAD        api/research-groups ...................... api.research-groups.index › ResearchGroupController@index
+  POST            api/research-groups ...................... api.research-groups.store › ResearchGroupController@store
+  GET|HEAD        api/research-groups/{research_group} ....... api.research-groups.show › ResearchGroupController@show
+  PUT|PATCH       api/research-groups/{research_group} ... api.research-groups.update › ResearchGroupController@update
+  DELETE          api/research-groups/{research_group} . api.research-groups.destroy › ResearchGroupController@destroy
+  GET|HEAD        api/thematic-areas ......................... api.thematic-areas.index › ThematicAreaController@index
+  POST            api/thematic-areas ......................... api.thematic-areas.store › ThematicAreaController@store
+  GET|HEAD        api/thematic-areas/{thematic_area} ........... api.thematic-areas.show › ThematicAreaController@show
+  PUT|PATCH       api/thematic-areas/{thematic_area} ....... api.thematic-areas.update › ThematicAreaController@update
+  DELETE          api/thematic-areas/{thematic_area} ..... api.thematic-areas.destroy › ThematicAreaController@destroy
+  GET|HEAD        api/user ........................................................................................... 
+  GET|HEAD        api/versions .......................................... api.versions.index › VersionController@index
+  POST            api/versions .......................................... api.versions.store › VersionController@store
+  GET|HEAD        api/versions/{version} .................................. api.versions.show › VersionController@show
+  PUT|PATCH       api/versions/{version} .............................. api.versions.update › VersionController@update
+  DELETE          api/versions/{version} ............................ api.versions.destroy › VersionController@destroy
+
+                                                                                                   Showing [43] routes
+

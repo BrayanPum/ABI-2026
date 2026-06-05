@@ -1,0 +1,230 @@
+
+  GET|HEAD        / .................................................................................................. 
+  GET|HEAD        academic-periods ........................... academic-periods.index › AcademicPeriodController@index
+  POST            academic-periods ........................... academic-periods.store › AcademicPeriodController@store
+  GET|HEAD        academic-periods/create .................. academic-periods.create › AcademicPeriodController@create
+  GET|HEAD        academic-periods/{academic_period} ........... academic-periods.show › AcademicPeriodController@show
+  PUT|PATCH       academic-periods/{academic_period} ....... academic-periods.update › AcademicPeriodController@update
+  DELETE          academic-periods/{academic_period} ..... academic-periods.destroy › AcademicPeriodController@destroy
+  PUT             academic-periods/{academic_period}/activate academic-periods.activate › AcademicPeriodController@ac…
+  PUT             academic-periods/{academic_period}/close ... academic-periods.close › AcademicPeriodController@close
+  GET|HEAD        academic-periods/{academic_period}/edit ...... academic-periods.edit › AcademicPeriodController@edit
+  GET|HEAD        academic-process-windows .... academic-process-windows.index › AcademicProcessWindowController@index
+  POST            academic-process-windows .... academic-process-windows.store › AcademicProcessWindowController@store
+  GET|HEAD        academic-process-windows/create academic-process-windows.create › AcademicProcessWindowController@c…
+  GET|HEAD        academic-process-windows/{academic_process_window} academic-process-windows.show › AcademicProcessW…
+  PUT|PATCH       academic-process-windows/{academic_process_window} academic-process-windows.update › AcademicProces…
+  DELETE          academic-process-windows/{academic_process_window} academic-process-windows.destroy › AcademicProce…
+  GET|HEAD        academic-process-windows/{academic_process_window}/edit academic-process-windows.edit › AcademicPro…
+  GET|HEAD        api/content-versions ................... api.content-versions.index › ContentVersionController@index
+  POST            api/content-versions ................... api.content-versions.store › ContentVersionController@store
+  GET|HEAD        api/content-versions/{content_version} ... api.content-versions.show › ContentVersionController@show
+  PUT|PATCH       api/content-versions/{content_version} api.content-versions.update › ContentVersionController@update
+  DELETE          api/content-versions/{content_version} api.content-versions.destroy › ContentVersionController@dest…
+  GET|HEAD        api/contents .......................................... api.contents.index › ContentController@index
+  POST            api/contents .......................................... api.contents.store › ContentController@store
+  GET|HEAD        api/contents/{content} .................................. api.contents.show › ContentController@show
+  PUT|PATCH       api/contents/{content} .............................. api.contents.update › ContentController@update
+  DELETE          api/contents/{content} ............................ api.contents.destroy › ContentController@destroy
+  GET|HEAD        api/investigation-lines .......... api.investigation-lines.index › InvestigationLineController@index
+  POST            api/investigation-lines .......... api.investigation-lines.store › InvestigationLineController@store
+  GET|HEAD        api/investigation-lines/{investigation_line} api.investigation-lines.show › InvestigationLineContro…
+  PUT|PATCH       api/investigation-lines/{investigation_line} api.investigation-lines.update › InvestigationLineCont…
+  DELETE          api/investigation-lines/{investigation_line} api.investigation-lines.destroy › InvestigationLineCon…
+  GET|HEAD        api/programs .......................................... api.programs.index › ProgramController@index
+  POST            api/programs .......................................... api.programs.store › ProgramController@store
+  GET|HEAD        api/programs/{program} .................................. api.programs.show › ProgramController@show
+  PUT|PATCH       api/programs/{program} .............................. api.programs.update › ProgramController@update
+  DELETE          api/programs/{program} ............................ api.programs.destroy › ProgramController@destroy
+  GET|HEAD        api/projects .......................................... api.projects.index › ProjectController@index
+  POST            api/projects .......................................... api.projects.store › ProjectController@store
+  GET|HEAD        api/projects/meta ....................................... api.projects.meta › ProjectController@meta
+  GET|HEAD        api/projects/{project} .................................. api.projects.show › ProjectController@show
+  PUT|PATCH       api/projects/{project} .............................. api.projects.update › ProjectController@update
+  DELETE          api/projects/{project} ............................ api.projects.destroy › ProjectController@destroy
+  POST            api/projects/{project}/restore .................... api.projects.restore › ProjectController@restore
+  GET|HEAD        api/research-groups ...................... api.research-groups.index › ResearchGroupController@index
+  POST            api/research-groups ...................... api.research-groups.store › ResearchGroupController@store
+  GET|HEAD        api/research-groups/{research_group} ....... api.research-groups.show › ResearchGroupController@show
+  PUT|PATCH       api/research-groups/{research_group} ... api.research-groups.update › ResearchGroupController@update
+  DELETE          api/research-groups/{research_group} . api.research-groups.destroy › ResearchGroupController@destroy
+  GET|HEAD        api/thematic-areas ......................... api.thematic-areas.index › ThematicAreaController@index
+  POST            api/thematic-areas ......................... api.thematic-areas.store › ThematicAreaController@store
+  GET|HEAD        api/thematic-areas/{thematic_area} ........... api.thematic-areas.show › ThematicAreaController@show
+  PUT|PATCH       api/thematic-areas/{thematic_area} ....... api.thematic-areas.update › ThematicAreaController@update
+  DELETE          api/thematic-areas/{thematic_area} ..... api.thematic-areas.destroy › ThematicAreaController@destroy
+  GET|HEAD        api/user ........................................................................................... 
+  GET|HEAD        api/versions .......................................... api.versions.index › VersionController@index
+  POST            api/versions .......................................... api.versions.store › VersionController@store
+  GET|HEAD        api/versions/{version} .................................. api.versions.show › VersionController@show
+  PUT|PATCH       api/versions/{version} .............................. api.versions.update › VersionController@update
+  DELETE          api/versions/{version} ............................ api.versions.destroy › VersionController@destroy
+  GET|HEAD        cities ......................................................... cities.index › CityController@index
+  POST            cities ......................................................... cities.store › CityController@store
+  GET|HEAD        cities/create ................................................ cities.create › CityController@create
+  GET|HEAD        cities/{city} .................................................... cities.show › CityController@show
+  PUT|PATCH       cities/{city} ................................................ cities.update › CityController@update
+  DELETE          cities/{city} .............................................. cities.destroy › CityController@destroy
+  GET|HEAD        cities/{city}/edit ............................................... cities.edit › CityController@edit
+  GET|HEAD        city-program ...................................... city-program.index › CityProgramController@index
+  POST            city-program ...................................... city-program.store › CityProgramController@store
+  GET|HEAD        city-program/create ............................. city-program.create › CityProgramController@create
+  GET|HEAD        city-program/{city_program} ......................... city-program.show › CityProgramController@show
+  PUT|PATCH       city-program/{city_program} ..................... city-program.update › CityProgramController@update
+  DELETE          city-program/{city_program} ................... city-program.destroy › CityProgramController@destroy
+  GET|HEAD        city-program/{city_program}/edit .................... city-program.edit › CityProgramController@edit
+  GET|HEAD        comite/projects/evaluation ........... projects.evaluation.index › ProjectEvaluationController@index
+  GET|HEAD        comite/projects/evaluation/{project} ... projects.evaluation.show › ProjectEvaluationController@show
+  POST            comite/projects/evaluation/{project}/evaluate projects.evaluation.evaluate › ProjectEvaluationContr…
+  GET|HEAD        consultas/participantes .................... participants.index › ProjectController@participantsPage
+  GET|HEAD        content-framework-project content-framework-project.index › ContentFrameworkProjectController@index
+  POST            content-framework-project content-framework-project.store › ContentFrameworkProjectController@store
+  GET|HEAD        content-framework-project/create content-framework-project.create › ContentFrameworkProjectControll…
+  GET|HEAD        content-framework-project/{content_framework_project} content-framework-project.show › ContentFrame…
+  PUT|PATCH       content-framework-project/{content_framework_project} content-framework-project.update › ContentFra…
+  DELETE          content-framework-project/{content_framework_project} content-framework-project.destroy › ContentFr…
+  GET|HEAD        content-framework-project/{content_framework_project}/edit content-framework-project.edit › Content…
+  GET|HEAD        content-frameworks ..................... content-frameworks.index › ContentFrameworkController@index
+  POST            content-frameworks ..................... content-frameworks.store › ContentFrameworkController@store
+  GET|HEAD        content-frameworks/create ............ content-frameworks.create › ContentFrameworkController@create
+  GET|HEAD        content-frameworks/{content_framework} ... content-frameworks.show › ContentFrameworkController@show
+  PUT|PATCH       content-frameworks/{content_framework} content-frameworks.update › ContentFrameworkController@update
+  DELETE          content-frameworks/{content_framework} content-frameworks.destroy › ContentFrameworkController@dest…
+  GET|HEAD        content-frameworks/{content_framework}/edit content-frameworks.edit › ContentFrameworkController@ed…
+  GET|HEAD        content-versions ............................................................ content-versions.index
+  GET|HEAD        content-versions/create .................................................... content-versions.create
+  GET|HEAD        content-versions/{contentVersionId} .......................................... content-versions.show
+  GET|HEAD        content-versions/{contentVersionId}/edit ..................................... content-versions.edit
+  GET|HEAD        contents ............................................................................ contents.index
+  GET|HEAD        departments ......................................... departments.index › DepartmentController@index
+  POST            departments ......................................... departments.store › DepartmentController@store
+  GET|HEAD        departments-cities .................... departments-cities.index › DepartmentController@unifiedIndex
+  GET|HEAD        departments/create ................................ departments.create › DepartmentController@create
+  GET|HEAD        departments/{department} .............................. departments.show › DepartmentController@show
+  PUT|PATCH       departments/{department} .......................... departments.update › DepartmentController@update
+  DELETE          departments/{department} ........................ departments.destroy › DepartmentController@destroy
+  GET|HEAD        departments/{department}/edit ......................... departments.edit › DepartmentController@edit
+  GET|HEAD        evaluation/postulations projects.evaluation.postulations.index › PostulationEvaluationController@in…
+  GET|HEAD        evaluation/postulations/{postulation} projects.evaluation.postulations.show › PostulationEvaluation…
+  GET|HEAD        evaluation/postulations/{postulation}/download-grades projects.evaluation.postulations.download-gra…
+  POST            evaluation/postulations/{postulation}/evaluate projects.evaluation.postulations.evaluate › Postulat…
+  GET|HEAD        formatos ........................................ formatos.index › Formats\FormatoTipoController@hub
+  GET|HEAD        formatos/tipos .......................... formatos.tipos.index › Formats\FormatoTipoController@index
+  POST            formatos/tipos .......................... formatos.tipos.store › Formats\FormatoTipoController@store
+  GET|HEAD        formatos/tipos/create ................. formatos.tipos.create › Formats\FormatoTipoController@create
+  GET|HEAD        formatos/tipos/{tipo} ..................... formatos.tipos.show › Formats\FormatoTipoController@show
+  PUT|PATCH       formatos/tipos/{tipo} ................. formatos.tipos.update › Formats\FormatoTipoController@update
+  DELETE          formatos/tipos/{tipo} ............... formatos.tipos.destroy › Formats\FormatoTipoController@destroy
+  GET|HEAD        formatos/tipos/{tipo}/edit ................ formatos.tipos.edit › Formats\FormatoTipoController@edit
+  GET|HEAD        formatos/{tipo}/registros ....... formatos.registros.index › Formats\FormatoRegistroController@index
+  POST            formatos/{tipo}/registros ....... formatos.registros.store › Formats\FormatoRegistroController@store
+  GET|HEAD        formatos/{tipo}/registros/crear formatos.registros.create › Formats\FormatoRegistroController@create
+  GET|HEAD        formatos/{tipo}/registros/{registro} formatos.registros.show › Formats\FormatoRegistroController@sh…
+  PUT             formatos/{tipo}/registros/{registro} formatos.registros.update › Formats\FormatoRegistroController@…
+  DELETE          formatos/{tipo}/registros/{registro} formatos.registros.destroy › Formats\FormatoRegistroController…
+  GET|HEAD        formatos/{tipo}/registros/{registro}/editar formatos.registros.edit › Formats\FormatoRegistroContro…
+  GET|HEAD        formatos/{tipo}/registros/{registro}/pdf formatos.registros.pdf › Formats\FormatoRegistroController…
+  GET|HEAD        framework .............................................. framework.index › FrameworkController@index
+  POST            framework .............................................. framework.store › FrameworkController@store
+  GET|HEAD        framework/create ..................................... framework.create › FrameworkController@create
+  GET|HEAD        framework/{framework} .................................... framework.show › FrameworkController@show
+  PUT|PATCH       framework/{framework} ................................ framework.update › FrameworkController@update
+  DELETE          framework/{framework} .............................. framework.destroy › FrameworkController@destroy
+  GET|HEAD        framework/{framework}/edit ............................... framework.edit › FrameworkController@edit
+  GET|HEAD        frameworks ............................................ frameworks.index › FrameworkController@index
+  POST            frameworks ............................................ frameworks.store › FrameworkController@store
+  GET|HEAD        frameworks/create ................................... frameworks.create › FrameworkController@create
+  GET|HEAD        frameworks/{framework} .................................. frameworks.show › FrameworkController@show
+  PUT|PATCH       frameworks/{framework} .............................. frameworks.update › FrameworkController@update
+  DELETE          frameworks/{framework} ............................ frameworks.destroy › FrameworkController@destroy
+  GET|HEAD        frameworks/{framework}/edit ............................. frameworks.edit › FrameworkController@edit
+  GET|HEAD        home ................................................................... home › HomeController@index
+  GET|HEAD        investigation-lines .................. investigation-lines.index › InvestigationLineController@index
+  POST            investigation-lines .................. investigation-lines.store › InvestigationLineController@store
+  GET|HEAD        investigation-lines/create ......... investigation-lines.create › InvestigationLineController@create
+  GET|HEAD        investigation-lines/{investigation_line} investigation-lines.show › InvestigationLineController@show
+  PUT|PATCH       investigation-lines/{investigation_line} investigation-lines.update › InvestigationLineController@u…
+  DELETE          investigation-lines/{investigation_line} investigation-lines.destroy › InvestigationLineController@…
+  GET|HEAD        investigation-lines/{investigation_line}/edit investigation-lines.edit › InvestigationLineControlle…
+  GET|HEAD        login ................................................... login › Auth\LoginController@showLoginForm
+  POST            login ................................................................... Auth\LoginController@login
+  POST            logout ........................................................ logout › Auth\LoginController@logout
+  GET|HEAD        obtener-ciudades-por-departamento/{id} obtener-ciudades-por-departamento › DepartmentController@ciu…
+  GET|HEAD        obtener-ciudades/{id_departamento} .................... DepartmentController@ciudadesPorDepartamento
+  GET|HEAD        perfil ......................................................... perfil.show › PerfilController@show
+  PUT             perfil ..................................................... perfil.update › PerfilController@update
+  GET|HEAD        perfil/editar .................................................. perfil.edit › PerfilController@edit
+  GET|HEAD        perfil/foto ......................................... perfil.photo.show › PerfilController@showPhoto
+  PUT             perfil/foto ..................................... perfil.photo.update › PerfilController@updatePhoto
+  GET|HEAD        professor/projects/approved professor.projects.approved.index › BankApprovedIdeasForProfessorsContr…
+  GET|HEAD        professor/projects/approved/{project} professor.projects.approved.show › BankApprovedIdeasForProfes…
+  GET|HEAD        programs .................................................. programs.index › ProgramController@index
+  POST            programs .................................................. programs.store › ProgramController@store
+  GET|HEAD        programs/create ......................................... programs.create › ProgramController@create
+  GET|HEAD        programs/{program} .......................................... programs.show › ProgramController@show
+  PUT|PATCH       programs/{program} ...................................... programs.update › ProgramController@update
+  DELETE          programs/{program} .................................... programs.destroy › ProgramController@destroy
+  GET|HEAD        programs/{program}/edit ..................................... programs.edit › ProgramController@edit
+  GET|HEAD        projections/idea-demand ................. projections.idea-demand.index › IdeaDemandController@index
+  GET|HEAD        projections/load-projections ... projections.load-projections.index › LoadProjectionController@index
+  POST            projections/load-projections ... projections.load-projections.store › LoadProjectionController@store
+  GET|HEAD        projections/load-projections/create projections.load-projections.create › LoadProjectionController@…
+  PUT|PATCH       projections/load-projections/{load_projection} projections.load-projections.update › LoadProjection…
+  GET|HEAD        projections/load-projections/{load_projection}/edit projections.load-projections.edit › LoadProject…
+  GET|HEAD        projections/professors .......... projections.professors.index › ProjectionProfessorController@index
+  GET|HEAD        projections/students ................ projections.students.index › ProjectionStudentController@index
+  GET|HEAD        projections/teacher-assignments projections.teacher-assignments.index › TeacherAssignmentController…
+  POST            projections/teacher-assignments projections.teacher-assignments.store › TeacherAssignmentController…
+  GET|HEAD        projections/teacher-assignments/create projections.teacher-assignments.create › TeacherAssignmentCo…
+  PUT|PATCH       projections/teacher-assignments/{teacher_assignment} projections.teacher-assignments.update › Teach…
+  GET|HEAD        projections/teacher-assignments/{teacher_assignment}/edit projections.teacher-assignments.edit › Te…
+  GET|HEAD        projects .................................................. projects.index › ProjectController@index
+  POST            projects .................................................. projects.store › ProjectController@store
+  GET|HEAD        projects/create ......................................... projects.create › ProjectController@create
+  GET|HEAD        projects/my-load .................................... projects.my-load › TeacherLoadController@index
+  GET|HEAD        projects/participants ....................... projects.participants › ProjectController@participants
+  GET|HEAD        projects/{project} .......................................... projects.show › ProjectController@show
+  PUT|PATCH       projects/{project} ...................................... projects.update › ProjectController@update
+  GET|HEAD        projects/{project}/edit ..................................... projects.edit › ProjectController@edit
+  GET|HEAD        projects/{project}/versions ............... projects.versions.index › ProjectVersionController@index
+  GET|HEAD        projects/{project}/versions/create ...... projects.versions.create › ProjectVersionController@create
+  GET|HEAD        projects/{project}/versions/{version} ....... projects.versions.show › ProjectVersionController@show
+  GET|HEAD        projects/{project}/versions/{version}/edit .. projects.versions.edit › ProjectVersionController@edit
+  GET|HEAD        register ................................... register › Auth\RegisterController@showRegistrationForm
+  POST            register .......................................................... Auth\RegisterController@register
+  GET|HEAD        research-groups .............................. research-groups.index › ResearchGroupController@index
+  POST            research-groups .............................. research-groups.store › ResearchGroupController@store
+  GET|HEAD        research-groups/create ..................... research-groups.create › ResearchGroupController@create
+  GET|HEAD        research-groups/{research_group} ............... research-groups.show › ResearchGroupController@show
+  PUT|PATCH       research-groups/{research_group} ........... research-groups.update › ResearchGroupController@update
+  DELETE          research-groups/{research_group} ......... research-groups.destroy › ResearchGroupController@destroy
+  GET|HEAD        research-groups/{research_group}/edit .......... research-groups.edit › ResearchGroupController@edit
+  GET|HEAD        students/projects/approved students.projects.approved.index › BankApprovedIdeasForStudentsControlle…
+  GET|HEAD        students/projects/approved/{project} students.projects.approved.show › BankApprovedIdeasForStudents…
+  GET|HEAD        students/projects/approved/{project}/postulate students.postulations.create › PostulationController…
+  GET|HEAD        students/projects/postulations ........... students.postulations.index › PostulationController@index
+  POST            students/projects/postulations ........... students.postulations.store › PostulationController@store
+  GET|HEAD        students/projects/postulations/{postulation} students.postulations.show › PostulationController@show
+  DELETE          students/projects/postulations/{postulation} students.postulations.destroy › PostulationController@…
+  POST            students/projects/{project}/assign projects.student.assign › BankApprovedIdeasAssignController@assi…
+  GET|HEAD        students/projects/{project}/select projects.student.select › BankApprovedIdeasAssignController@sele…
+  GET|HEAD        thematic-areas ................................. thematic-areas.index › ThematicAreaController@index
+  POST            thematic-areas ................................. thematic-areas.store › ThematicAreaController@store
+  GET|HEAD        thematic-areas/create ........................ thematic-areas.create › ThematicAreaController@create
+  GET|HEAD        thematic-areas/{thematic_area} ................... thematic-areas.show › ThematicAreaController@show
+  PUT|PATCH       thematic-areas/{thematic_area} ............... thematic-areas.update › ThematicAreaController@update
+  DELETE          thematic-areas/{thematic_area} ............. thematic-areas.destroy › ThematicAreaController@destroy
+  GET|HEAD        thematic-areas/{thematic_area}/edit .............. thematic-areas.edit › ThematicAreaController@edit
+  GET|HEAD        user/{user} ....................................................... users.show › UserController@show
+  GET|HEAD        users ........................................................... users.index › UserController@index
+  PUT             users/{user} .................................................. users.update › UserController@update
+  DELETE          users/{user} ................................................ users.destroy › UserController@destroy
+  PUT             users/{user}/activate ..................................... users.activate › UserController@activate
+  GET|HEAD        users/{user}/edit ................................................. users.edit › UserController@edit
+  GET|HEAD        versions ............................................................................ versions.index
+  GET|HEAD        versions/create .................................................................... versions.create
+  GET|HEAD        versions/{versionId} ................................................................. versions.show
+  GET|HEAD        versions/{versionId}/edit ............................................................ versions.edit
+
+                                                                                                  Showing [226] routes
+

@@ -1,0 +1,7 @@
+<map id="App::Http::Controllers::ProjectController::persistProfessorProject" name="App::Http::Controllers::ProjectController::persistProfessorProject">
+<area shape="rect" id="Node000001" title="Persist the project data for a professor either creating or updating a record." alt="" coords="5,30,196,85"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Professor.html#ad2da7b4e640a943b256c39e03b9bf74c" title="Get the city program that the professor belongs to." alt="" coords="244,5,415,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,41,230,37,231,42,197,47"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1Project.html#a15197eb4854cf5d7ecd802ff9647b515" title=" " alt="" coords="252,69,407,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="197,68,239,74,238,79,196,73"/>
+</map>

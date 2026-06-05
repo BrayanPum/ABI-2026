@@ -1,0 +1,5 @@
+<map id="App::Http::Controllers::ContentController::update" name="App::Http::Controllers::ContentController::update">
+<area shape="rect" id="Node000001" title="Actualiza los datos de un contenido existente." alt="" coords="5,5,204,45"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Requests_1_1ContentRequest.html#a2b3675bdcebba0f2c9c731203f318adf" title="Retrieve the validated data with normalized roles order." alt="" coords="252,5,455,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,23,239,23,239,28,204,28"/>
+</map>

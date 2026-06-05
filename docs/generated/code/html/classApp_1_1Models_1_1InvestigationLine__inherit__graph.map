@@ -1,0 +1,11 @@
+<map id="App::Models::InvestigationLine" name="App::Models::InvestigationLine">
+<area shape="rect" id="Node000001" title="investigation_lines table model, manages communication with the database using the root user,..." alt="" coords="229,119,443,273"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1Professor_1_1ProfessorInvestigationLine.html" title="Extended model that limits investigation line access to the professor connection, matching the permis..." alt="" coords="5,321,200,421"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="224,284,170,323,167,319,221,279"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffInvestigationLine.html" title="Extended model that keeps investigation line queries within the research staff connection,..." alt="" coords="224,321,448,421"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="339,287,339,321,333,321,333,287"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Models_1_1Student_1_1StudentInvestigationLine.html" title="Extended model that restricts investigation line queries to the student connection,..." alt="" coords="472,321,656,421"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="449,280,501,319,498,323,446,284"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="309,5,363,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="339,84,339,118,333,118,333,84"/>
+</map>

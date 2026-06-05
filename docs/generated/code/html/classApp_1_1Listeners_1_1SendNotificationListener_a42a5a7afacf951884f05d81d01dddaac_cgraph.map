@@ -1,0 +1,9 @@
+<map id="App::Listeners::SendNotificationListener::handle" name="App::Listeners::SendNotificationListener::handle">
+<area shape="rect" id="Node000001" title="Handle the event." alt="" coords="5,37,235,77"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Listeners_1_1SendNotificationListener.html#a020870893a1c98381dea0c7babe27efd" title="Handle ProjectIdeaEvaluated event." alt="" coords="283,5,547,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,42,269,38,269,44,235,48"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Listeners_1_1SendNotificationListener.html#a7a040a01baf7859bc5609408f3048d02" title="Handle UserCreated event." alt="" coords="300,69,529,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="235,67,287,73,286,78,235,72"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Listeners_1_1SendNotificationListener.html#ab0c2ca7c8e6fff827b298243fb22fc20" title="Resolve who should receive project notifications." alt="" coords="595,5,837,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="547,23,581,23,581,28,547,28"/>
+</map>

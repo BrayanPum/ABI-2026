@@ -1,0 +1,5 @@
+<map id="App::Services::Projects::ProjectParticipantService::search" name="App::Services::Projects::ProjectParticipantService::search">
+<area shape="rect" id="Node000001" title="Performs an unrestricted search optionally excluding the active professor." alt="" coords="5,5,197,60"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Services_1_1Projects_1_1ProjectParticipantService.html#aa9913c0ca0a541f931a116ae7b94cf8e" title="Shared query builder used by both the fetch and search flows." alt="" coords="245,5,437,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,30,232,30,232,35,197,35"/>
+</map>

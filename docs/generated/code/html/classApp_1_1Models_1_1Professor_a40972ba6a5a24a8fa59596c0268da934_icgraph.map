@@ -1,0 +1,15 @@
+<map id="App::Models::Professor::user" name="App::Models::Professor::user">
+<area shape="rect" id="Node000001" title="Get the user associated with the professor." alt="" coords="555,131,725,171"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a8eca93212c12c16305928089124a9a7f" title="Build a portable snapshot so each version preserves the project state of that moment." alt="" coords="283,5,507,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="596,126,553,99,506,74,480,63,482,58,508,69,556,95,599,121"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Services_1_1Projects_1_1ProjectParticipantService.html#a245485e0b2d9d869ef6f0524df0513c4" title="Converts a professor model into the shape expected by the UI widgets." alt="" coords="299,84,491,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="541,138,490,130,491,124,542,133"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a6b7ca729894d4a38d890c8a007c862c2" title="Normalize the participant payload so the Blade and JS layers consume the same shape." alt="" coords="297,163,493,217"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="542,169,493,177,493,172,541,164"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#a66279c21a7515cf7b7e7227dc4bcaa2b" title="Build a compatible snapshot for legacy and new versions." alt="" coords="301,241,488,296"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="598,181,508,231,478,244,476,239,505,226,595,176"/>
+<area shape="rect" id="Node000006" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#a2389d8b616d87db11847ca38eb91109b" title="Display the version history associated with the project." alt="" coords="27,205,213,260"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="287,257,213,248,214,242,288,252"/>
+<area shape="rect" id="Node000007" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#a2cfada4301b68a0a74ecc8723a363bc7" title="Show the full snapshot of a project version." alt="" coords="5,285,235,325"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="288,285,235,292,235,287,287,280"/>
+</map>

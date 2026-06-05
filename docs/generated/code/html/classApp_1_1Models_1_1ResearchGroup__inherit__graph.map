@@ -1,0 +1,11 @@
+<map id="App::Models::ResearchGroup" name="App::Models::ResearchGroup">
+<area shape="rect" id="Node000001" title="research_groups table model, manages communication with the database using the root user,..." alt="" coords="217,119,419,308"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1Professor_1_1ProfessorResearchGroup.html" title="Extended model that funnels research group queries through the professor connection to respect the pe..." alt="" coords="5,356,188,456"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="209,312,156,358,152,353,205,308"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffResearchGroup.html" title="Extended model that executes research group queries via the research staff connection to match the pe..." alt="" coords="213,356,423,456"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="321,322,321,356,315,356,315,322"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Models_1_1Student_1_1StudentResearchGroup.html" title="Extended model that queries research groups through the student connection so learners stay within th..." alt="" coords="447,356,618,456"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="431,311,479,354,475,358,428,315"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="291,5,345,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="321,85,321,118,315,118,315,85"/>
+</map>

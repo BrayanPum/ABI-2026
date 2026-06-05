@@ -1,0 +1,3 @@
+<map id="App::Services::Projects::RoleContextResolver" name="App::Services::Projects::RoleContextResolver">
+<area shape="rect" id="Node000001" title="Resolves the role context for the authenticated user so controllers and services can share the same c..." alt="" coords="5,5,223,100"/>
+</map>

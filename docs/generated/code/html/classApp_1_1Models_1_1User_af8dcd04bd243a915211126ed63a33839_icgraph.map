@@ -1,0 +1,31 @@
+<map id="App::Models::User::student" name="App::Models::User::student">
+<area shape="rect" id="Node000001" title="Student profile associated with the user." alt="" coords="559,323,707,363"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a2a1b70d892c5194d1203a6449baadfac" title="Guard access to edit/update operations ensuring the user participates in the project." alt="" coords="268,5,476,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="623,311,611,258,589,194,556,129,534,99,509,73,475,53,477,48,512,69,538,96,560,126,594,192,616,257,629,309"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a7d3e3eb5deda28736e05092ed5f5b65a" title=" " alt="" coords="261,84,483,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="617,311,600,274,577,232,546,189,509,153,482,138,485,133,512,149,550,186,581,229,605,272,622,309"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#acc2e77076795cc48c569966e0be202f9" title="Show the form used to create a new project idea." alt="" coords="278,163,466,203"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="608,314,566,263,539,239,509,218,465,200,467,195,512,213,543,234,570,260,612,310"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a1a5cbe33cd3fb125fa815009ad08ece0" title="Display the edit form with the existing project information." alt="" coords="286,227,458,267"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="586,319,510,282,457,266,459,261,512,277,588,314"/>
+<area shape="rect" id="Node000006" href="$classApp_1_1Http_1_1Controllers_1_1PerfilController.html#a992760e3c8425e96e5c73038fc7e3cb7" title=" " alt="" coords="248,291,496,331"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="545,335,496,329,497,324,545,330"/>
+<area shape="rect" id="Node000008" href="$classApp_1_1Helpers_1_1UserRoleHelper.html#adcd21e972c61236b2c7f9eef17025727" title=" " alt="" coords="265,355,479,395"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="545,357,480,365,479,359,545,351"/>
+<area shape="rect" id="Node000009" href="$classApp_1_1Http_1_1Controllers_1_1PerfilController.html#a5b88204314f8c45104c90ef065e71b6a" title=" " alt="" coords="260,483,484,523"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="612,376,570,427,543,452,512,474,485,486,483,481,509,469,539,448,566,423,608,373"/>
+<area shape="rect" id="Node000012" href="$classApp_1_1Http_1_1Controllers_1_1PerfilController.html#a012e5db8d6febedf7f6cc7f448421c4e" title=" " alt="" coords="233,419,511,459"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="588,373,512,410,474,422,472,417,510,405,586,368"/>
+<area shape="rect" id="Node000013" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#acc9c5eacfea40b9ea411d8a281058cf9" title="Persist a new project idea following the role specific business rules." alt="" coords="282,547,462,587"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="622,378,606,415,582,459,551,502,512,537,489,551,463,560,461,555,486,546,509,533,547,498,578,456,601,413,617,376"/>
+<area shape="rect" id="Node000014" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a3f7f9798f68cbee868a1a874e04495fb" title="Update the project information by creating a new version with the submitted content." alt="" coords="276,611,468,651"/>
+<area shape="poly" id="edge15_Node000001_Node000014" title=" " alt="" coords="628,377,615,427,593,488,559,549,538,577,512,601,492,614,469,624,467,619,489,610,509,597,534,574,555,547,588,486,610,426,623,376"/>
+<area shape="rect" id="Node000007" href="$classApp_1_1Http_1_1Controllers_1_1PerfilController.html#afb150068c01ca62055dc1f454164b6e0" title=" " alt="" coords="11,419,180,459"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="254,338,234,346,171,382,121,421,118,417,168,378,232,341,252,333"/>
+<area shape="poly" id="edge10_Node000009_Node000007" title=" " alt="" coords="271,483,233,474,180,461,181,456,234,469,272,478"/>
+<area shape="rect" id="Node000010" href="$classApp_1_1Http_1_1Controllers_1_1PerfilController.html#a22a47bc9936ec088641c820ee6776efc" title=" " alt="" coords="14,483,177,523"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="246,506,177,506,177,501,246,501"/>
+<area shape="rect" id="Node000011" href="$classApp_1_1Http_1_1Controllers_1_1PerfilController.html#ac7fa2ae9f9879418589a3139da210a80" title=" " alt="" coords="5,547,185,587"/>
+<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="272,529,234,538,183,550,182,545,233,533,271,524"/>
+<area shape="poly" id="edge13_Node000012_Node000007" title=" " alt="" coords="220,442,180,442,180,437,220,437"/>
+</map>

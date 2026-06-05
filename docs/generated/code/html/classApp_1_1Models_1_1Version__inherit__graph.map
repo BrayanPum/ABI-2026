@@ -1,0 +1,11 @@
+<map id="App::Models::Version" name="App::Models::Version">
+<area shape="rect" id="Node000001" title="version table model, manages communication with the database using the root user, should not be used ..." alt="" coords="213,119,363,264"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1Professor_1_1ProfessorVersion.html" title="Extended model that ensures version records are handled via the professor connection,..." alt="" coords="5,312,168,412"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="204,267,147,314,143,310,200,262"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffVersion.html" title="Extended model that enforces the research staff connection when handling version records so they stay..." alt="" coords="192,312,384,412"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="291,278,291,312,285,312,285,278"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Models_1_1Student_1_1StudentVersion.html" title="Extended model that forces the student connection for version records so learners operate under their..." alt="" coords="408,312,560,412"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="376,264,428,309,425,314,372,269"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="261,5,315,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="291,84,291,118,285,118,285,84"/>
+</map>

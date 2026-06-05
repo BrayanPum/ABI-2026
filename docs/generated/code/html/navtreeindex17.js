@@ -1,0 +1,23 @@
+var NAVTREEINDEX17 =
+{
+"namespaceApp_1_1Listeners.html":[0,0,0,6],
+"namespaceApp_1_1Mail.html":[0,0,0,7],
+"namespaceApp_1_1Models.html":[0,0,0,8],
+"namespaceApp_1_1Models_1_1Professor.html":[0,0,0,8,0],
+"namespaceApp_1_1Models_1_1Professors.html":[0,0,0,8,1],
+"namespaceApp_1_1Models_1_1ResearchStaff.html":[0,0,0,8,2],
+"namespaceApp_1_1Models_1_1Student.html":[0,0,0,8,3],
+"namespaceApp_1_1Models_1_1User.html":[0,0,0,8,4],
+"namespaceApp_1_1Providers.html":[0,0,0,9],
+"namespaceApp_1_1Services.html":[0,0,0,10],
+"namespaceApp_1_1Services_1_1AcademicCalendar.html":[0,0,0,10,0],
+"namespaceApp_1_1Services_1_1Projections.html":[0,0,0,10,1],
+"namespaceApp_1_1Services_1_1Projects.html":[0,0,0,10,2],
+"namespaceApp_1_1Services_1_1Projects_1_1Exceptions.html":[0,0,0,10,2,0],
+"namespaceApp_1_1Services_1_1Reports.html":[0,0,0,10,3],
+"namespaceApp_1_1Services_1_1Students.html":[0,0,0,10,4],
+"namespaces.html":[0,0],
+"pages.html":[],
+"web_8php.html":[2,0,0,0,0,0,0,2,3],
+"web_8php_source.html":[2,0,0,0,0,0,0,2,3]
+};

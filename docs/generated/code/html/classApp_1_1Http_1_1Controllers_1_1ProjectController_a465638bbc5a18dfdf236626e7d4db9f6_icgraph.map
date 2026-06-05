@@ -1,0 +1,9 @@
+<map id="App::Http::Controllers::ProjectController::buildOldBankIdeasReportState" name="App::Http::Controllers::ProjectController::buildOldBankIdeasReportState">
+<area shape="rect" id="Node000001" title=" " alt="" coords="763,5,964,60"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a8f4b9392fade0bdec576281c18000164" title=" " alt="" coords="508,5,715,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="749,35,715,35,715,30,749,30"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a910bc101d1d62734a0ca5ce2a0120e6f" title="Build the report state rendered below the projects list." alt="" coords="236,5,460,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="494,35,460,35,460,30,494,30"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#aac69c9e81382317b0b0b45f650744332" title="Display a paginated list of projects for the authenticated user." alt="" coords="5,13,188,53"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="222,35,188,35,188,30,222,30"/>
+</map>

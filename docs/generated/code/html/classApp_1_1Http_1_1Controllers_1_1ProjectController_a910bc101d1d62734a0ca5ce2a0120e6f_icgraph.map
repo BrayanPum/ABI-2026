@@ -1,0 +1,5 @@
+<map id="App::Http::Controllers::ProjectController::buildProjectReportState" name="App::Http::Controllers::ProjectController::buildProjectReportState">
+<area shape="rect" id="Node000001" title="Build the report state rendered below the projects list." alt="" coords="236,5,460,60"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#aac69c9e81382317b0b0b45f650744332" title="Display a paginated list of projects for the authenticated user." alt="" coords="5,13,188,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="222,35,188,35,188,30,222,30"/>
+</map>

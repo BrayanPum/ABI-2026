@@ -1,0 +1,7 @@
+<map id="App::Models::AcademicProcessWindow" name="App::Models::AcademicProcessWindow">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,207,256,367"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="66,5,121,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,84,121,206,116,207,98,85"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="145,5,194,71"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="167,71,148,191,143,190,162,71"/>
+</map>

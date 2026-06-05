@@ -1,0 +1,11 @@
+<map id="App::Services::Projections::IdeaDemandProjectionService::summaryForPeriod" name="App::Services::Projections::IdeaDemandProjectionService::summaryForPeriod">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,110,232,165"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1LoadProjection.html#a63bce15c5716274a7e7d3e3207969aaa" title=" " alt="" coords="290,5,497,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,107,221,81,279,55,301,47,303,52,281,60,223,85,170,112"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Services_1_1Projections_1_1IdeaDemandProjectionService.html#a84bd2441691df9176347a6460ef3d89b" title=" " alt="" coords="280,70,507,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="232,118,266,113,267,118,233,123"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Services_1_1Projections_1_1IdeaDemandProjectionService.html#a76442310cf5852ddc9f074ed1478983b" title=" " alt="" coords="280,149,507,203"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="233,151,267,155,266,161,232,156"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Models_1_1LoadProjection.html#ada727c25d735f12b2d1b8d055f07f5ed" title=" " alt="" coords="290,228,497,268"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="172,162,281,212,307,221,305,226,279,217,170,167"/>
+</map>

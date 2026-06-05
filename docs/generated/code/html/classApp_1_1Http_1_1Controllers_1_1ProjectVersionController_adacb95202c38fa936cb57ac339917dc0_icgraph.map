@@ -1,0 +1,11 @@
+<map id="App::Http::Controllers::ProjectVersionController::authorizeHistoryAccess" name="App::Http::Controllers::ProjectVersionController::authorizeHistoryAccess">
+<area shape="rect" id="Node000001" title="Allow the history to be consulted by any authenticated user that can reach the project detail." alt="" coords="283,113,469,168"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#a1e7a29698c8e8059016e3c415930966d" title="Display an informational screen because versions are generated automatically." alt="" coords="27,5,213,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="308,109,234,75,202,63,204,58,236,70,310,104"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#a54f3f58279e6aa956031453c044284e9" title="Display an informational screen because versions are read&#45;only." alt="" coords="10,85,230,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="269,128,230,123,231,118,270,123"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#a2389d8b616d87db11847ca38eb91109b" title="Display the version history associated with the project." alt="" coords="27,149,213,204"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="270,158,214,166,213,161,269,153"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#a2cfada4301b68a0a74ecc8723a363bc7" title="Show the full snapshot of a project version." alt="" coords="5,229,235,269"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="318,177,236,218,199,231,197,226,234,213,316,173"/>
+</map>

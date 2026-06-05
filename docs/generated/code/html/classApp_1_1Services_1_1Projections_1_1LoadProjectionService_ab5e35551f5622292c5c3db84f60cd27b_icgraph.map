@@ -1,0 +1,9 @@
+<map id="App::Services::Projections::LoadProjectionService::calculateMetrics" name="App::Services::Projections::LoadProjectionService::calculateMetrics">
+<area shape="rect" id="Node000001" title=" " alt="" coords="244,84,435,139"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Services_1_1Projections_1_1LoadProjectionService.html#aecb80e14218dce88e7344958113664aa" title=" " alt="" coords="5,5,196,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="241,82,183,63,185,58,243,77"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Services_1_1Projections_1_1LoadProjectionService.html#ab0a0a3a59763d9945d9389ee25a1e82b" title=" " alt="" coords="5,84,196,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="230,114,196,114,196,109,230,109"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Services_1_1Projections_1_1LoadProjectionService.html#a2dffb2fe4e9390c6b941dbab58bd7d58" title=" " alt="" coords="5,163,196,217"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="243,146,185,165,183,160,241,141"/>
+</map>

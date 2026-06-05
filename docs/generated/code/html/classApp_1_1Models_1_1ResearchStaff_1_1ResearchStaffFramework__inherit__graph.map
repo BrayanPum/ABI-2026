@@ -1,0 +1,7 @@
+<map id="App::Models::ResearchStaff::ResearchStaffFramework" name="App::Models::ResearchStaff::ResearchStaffFramework">
+<area shape="rect" id="Node000001" title="Extended model that channels framework operations through the research staff connection to honor the ..." alt="" coords="5,312,197,412"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Framework.html" title="framework table model, manages communication with the database using the root user,..." alt="" coords="11,119,191,264"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,278,104,312,99,312,99,278"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="74,5,129,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="104,84,104,118,99,118,99,84"/>
+</map>

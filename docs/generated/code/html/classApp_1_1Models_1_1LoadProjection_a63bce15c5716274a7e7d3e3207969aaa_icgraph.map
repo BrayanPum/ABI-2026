@@ -1,0 +1,7 @@
+<map id="App::Models::LoadProjection::academicPeriod" name="App::Models::LoadProjection::academicPeriod">
+<area shape="rect" id="Node000001" title=" " alt="" coords="280,41,487,81"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1LoadProjectionController.html#a2f9c93bde0ed2d6cdb5afb616fe27c3f" title=" " alt="" coords="7,5,230,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="266,48,230,43,230,38,267,43"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Services_1_1Projections_1_1IdeaDemandProjectionService.html#a6e3515aaf7549bfc8e28eef4f840fdcd" title=" " alt="" coords="5,70,232,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="267,80,233,85,232,79,266,75"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="App::Models::Student::StudentContentVersion" name="App::Models::Student::StudentContentVersion">
+<area shape="rect" id="Node000001" title="Extended model that keeps content&#45;version access on the student connection so permissions remain alig..." alt="" coords="21,272,191,372"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1ContentVersion.html" title="content_version table model, manages communication with the database using the root user,..." alt="" coords="5,119,207,224"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,237,109,272,103,272,103,237"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="79,5,133,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="109,85,109,118,103,118,103,85"/>
+</map>

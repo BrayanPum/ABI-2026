@@ -1,0 +1,14 @@
+<map id="App::Http::Controllers::Formats::FormatoRegistroController::store" name="App::Http::Controllers::Formats::FormatoRegistroController::store">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,84,268,139"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1Formats_1_1FormatoRegistroController.html#a419b6f950ba1f7b41b7d3c21c8150bdf" title=" " alt="" coords="316,5,579,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="245,81,325,61,326,66,246,87"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Http_1_1Controllers_1_1Formats_1_1FormatoRegistroController.html#a5f5fbe43f2776d358cf787c3ac65adf8" title=" " alt="" coords="316,163,579,217"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="246,136,326,157,325,162,245,141"/>
+<area shape="rect" id="Node000006" href="$classApp_1_1Http_1_1Controllers_1_1Formats_1_1FormatoRegistroController.html#a7258018fde63390f9f2f1ca695d52c33" title=" " alt="" coords="316,84,579,139"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="268,109,302,109,302,114,268,114"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1FormatoTipo.html#ab5e58f98ed32b9d5418049278f47f893" title=" " alt="" coords="627,53,819,93"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="579,49,613,54,613,59,579,54"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Models_1_1FormatoTipo.html#aa7723012de64d5372a8fd844c2d69ee2" title=" " alt="" coords="627,170,819,210"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="579,187,613,187,613,193,579,193"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="579,90,613,85,613,91,579,95"/>
+</map>

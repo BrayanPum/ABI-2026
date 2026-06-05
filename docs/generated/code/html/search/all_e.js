@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['lastinsequence_0',['lastInSequence',['../classApp_1_1Models_1_1AcademicPeriod.html#aed806c760c0b727cac37531faa0dd119',1,'App::Models::AcademicPeriod']]],
+  ['latestnonterminalproject_1',['latestNonTerminalProject',['../classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#aa4ccef91a56d349c2f2f8e54f7c446ed',1,'App::Services::Students::StudentAcademicProgressService']]],
+  ['leadstudent_2',['leadStudent',['../classApp_1_1Models_1_1Postulation.html#a9a9c2e59583c73e7b45e46343bd4c28a',1,'App::Models::Postulation']]],
+  ['loadprojection_3',['LoadProjection',['../classApp_1_1Models_1_1LoadProjection.html',1,'App::Models']]],
+  ['loadprojection_2ephp_4',['LoadProjection.php',['../LoadProjection_8php.html',1,'']]],
+  ['loadprojectioncontroller_5',['LoadProjectionController',['../classApp_1_1Http_1_1Controllers_1_1LoadProjectionController.html',1,'App::Http::Controllers']]],
+  ['loadprojectioncontroller_2ephp_6',['LoadProjectionController.php',['../LoadProjectionController_8php.html',1,'']]],
+  ['loadprojectionreportfilterssummary_7',['loadProjectionReportFiltersSummary',['../classApp_1_1Http_1_1Controllers_1_1LoadProjectionController.html#a147ca8a5fd188d0f1c1cf9e700695f3d',1,'App::Http::Controllers::LoadProjectionController']]],
+  ['loadprojectionreportmodules_8',['loadProjectionReportModules',['../classApp_1_1Http_1_1Controllers_1_1LoadProjectionController.html#add924a8c66ab4306f94153b99699ac34',1,'App::Http::Controllers::LoadProjectionController']]],
+  ['loadprojectionrequest_9',['LoadProjectionRequest',['../classApp_1_1Http_1_1Requests_1_1LoadProjectionRequest.html',1,'App::Http::Requests']]],
+  ['loadprojectionrequest_2ephp_10',['LoadProjectionRequest.php',['../LoadProjectionRequest_8php.html',1,'']]],
+  ['loadprojectionservice_11',['LoadProjectionService',['../classApp_1_1Services_1_1Projections_1_1LoadProjectionService.html',1,'App::Services::Projections']]],
+  ['loadprojectionservice_2ephp_12',['LoadProjectionService.php',['../LoadProjectionService_8php.html',1,'']]],
+  ['loadprojectionstableseeder_13',['LoadProjectionsTableSeeder',['../classDatabase_1_1Seeders_1_1LoadProjectionsTableSeeder.html',1,'Database::Seeders']]],
+  ['loadprojectionstableseeder_2ephp_14',['LoadProjectionsTableSeeder.php',['../LoadProjectionsTableSeeder_8php.html',1,'']]],
+  ['loadstudentcontext_15',['loadStudentContext',['../classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#a27b45962b08966caa8bba8324488d26d',1,'App::Services::Students::StudentAcademicProgressService']]],
+  ['login_16',['login',['../classApp_1_1Http_1_1Controllers_1_1Auth_1_1LoginController.html#a3b25fea104b6261f2b912372cd9c5c22',1,'App::Http::Controllers::Auth::LoginController']]],
+  ['logincontroller_17',['LoginController',['../classApp_1_1Http_1_1Controllers_1_1Auth_1_1LoginController.html',1,'App::Http::Controllers::Auth']]],
+  ['logincontroller_2ephp_18',['LoginController.php',['../LoginController_8php.html',1,'']]]
+];

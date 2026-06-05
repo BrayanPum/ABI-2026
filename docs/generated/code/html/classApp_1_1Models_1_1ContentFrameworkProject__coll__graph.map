@@ -1,0 +1,7 @@
+<map id="App::Models::ContentFrameworkProject" name="App::Models::ContentFrameworkProject">
+<area shape="rect" id="Node000001" title="content_framework_project table model, manages communication with the database using the root user,..." alt="" coords="5,133,232,273"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="53,5,107,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,83,105,132,100,134,88,85"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="132,5,183,71"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="152,71,141,118,136,117,147,70"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="App::Models::Version::createdBy" name="App::Models::Version::createdBy">
+<area shape="rect" id="Node000001" title="User who generated the version snapshot." alt="" coords="517,49,676,89"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#a9976c03a3acda9b79522e8e8e8658d42" title="Resolve the best human&#45;readable label for the user who generated the version." alt="" coords="283,41,469,96"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="504,71,469,71,469,66,504,66"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#a2389d8b616d87db11847ca38eb91109b" title="Display the version history associated with the project." alt="" coords="27,5,213,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="269,56,213,48,214,43,270,51"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#a2cfada4301b68a0a74ecc8723a363bc7" title="Show the full snapshot of a project version." alt="" coords="5,85,235,125"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="269,86,235,91,235,86,269,81"/>
+</map>

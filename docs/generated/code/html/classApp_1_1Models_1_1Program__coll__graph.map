@@ -1,0 +1,5 @@
+<map id="App::Models::Program" name="App::Models::Program">
+<area shape="rect" id="Node000001" title="program table model, manages communication with the database using the root user, should not be used ..." alt="" coords="5,119,163,293"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="57,5,111,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,84,87,119,81,119,81,84"/>
+</map>

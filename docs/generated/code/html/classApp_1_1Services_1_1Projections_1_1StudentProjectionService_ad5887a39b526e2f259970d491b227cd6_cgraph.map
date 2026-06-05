@@ -1,0 +1,14 @@
+<map id="App::Services::Projections::StudentProjectionService::allSupportRows" name="App::Services::Projections::StudentProjectionService::allSupportRows">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,149,199,203"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Services_1_1Projections_1_1StudentProjectionService.html#adf4e2a0cd6f629e7ae72ffdc76e71f7f" title=" " alt="" coords="247,30,440,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,146,245,94,258,88,260,93,248,98,150,151"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Services_1_1Projections_1_1StudentProjectionService.html#af6a3111e8cb39c765df26ace27562097" title=" " alt="" coords="247,109,440,163"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="198,157,233,152,233,157,199,163"/>
+<area shape="rect" id="Node000006" href="$classApp_1_1Services_1_1Projections_1_1StudentProjectionService.html#a6e0de06ceba8de44626de29be29d426a" title=" " alt="" coords="247,187,440,242"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="199,198,233,203,233,209,198,203"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1Student.html#a46fcfb5c48fcf7591c7541e8767ac37f" title="Get the city program that the student belongs to." alt="" coords="488,5,648,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="440,41,474,36,474,41,440,46"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Models_1_1Student.html#a31451a9324c201d1a33bbb55100bdd37" title="Get the user associated with the student." alt="" coords="488,69,648,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="440,68,474,73,474,79,440,74"/>
+<area shape="poly" id="edge6_Node000006_Node000001" title=" " alt="" coords="246,193,212,187,212,182,247,188"/>
+</map>

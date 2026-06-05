@@ -1,0 +1,13 @@
+<map id="Database::Seeders::AcademicProcessWindowsTableSeeder" name="Database::Seeders::AcademicProcessWindowsTableSeeder">
+<area shape="rect" id="Node000001" title=" " alt="" coords="125,376,347,471"/>
+<area shape="rect" id="Node000002" href="$classDatabase_1_1Seeders_1_1CsvUpsertSeeder.html" title=" " alt="" coords="143,177,329,327"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="239,340,239,376,233,376,233,340"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="199,5,257,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="233,85,236,177,231,177,227,85"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="19,5,69,71"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="35,72,20,124,9,190,8,225,12,260,21,294,36,325,51,345,69,361,112,387,109,391,66,365,47,348,31,328,16,296,7,261,3,225,4,190,15,123,30,70"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="67,70,96,110,130,152,141,163,137,167,126,155,92,113,63,73"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="317,5,365,71"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="356,71,361,94,364,158,358,233,344,328,316,366,312,363,339,326,353,232,358,158,356,95,351,72"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="319,55,296,73,276,96,260,128,250,162,244,161,255,126,271,93,292,69,316,51"/>
+</map>

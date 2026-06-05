@@ -1,0 +1,11 @@
+<map id="App::Models::ContentVersion::content" name="App::Models::ContentVersion::content">
+<area shape="rect" id="Node000001" title="Get the content associated with this version entry." alt="" coords="280,127,489,167"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#aabc0e75c6ae3f6a0be5d8ecb116f2f6d" title="Map the content values for the provided version into a keyed collection." alt="" coords="5,5,232,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="334,123,231,74,203,63,205,58,233,69,336,118"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#ac2f30c9debf1c8b4a2909a4bfea8312c" title="Extract correction comments from version content and fallback stage notes." alt="" coords="23,84,215,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="266,134,215,127,215,122,266,129"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#ae1323a36bd9ece1992b9536d1cb3e1f0" title="Display the details of a project, including its latest version." alt="" coords="28,163,209,203"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="266,166,210,174,209,168,266,161"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Http_1_1Controllers_1_1VersionController.html#ab839bea0ef57286d2423bc6b0e8a6e7f" title="Muestra una versión específica con sus contenidos." alt="" coords="27,227,211,267"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="332,176,233,218,197,230,195,225,231,213,330,171"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="App::Models::Project::contentFrameworkProjects" name="App::Models::Project::contentFrameworkProjects">
+<area shape="rect" id="Node000001" title=" " alt="" coords="301,77,505,117"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a1a5cbe33cd3fb125fa815009ad08ece0" title="Display the edit form with the existing project information." alt="" coords="43,5,215,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="314,76,253,60,207,48,209,43,254,55,316,71"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1BankApprovedIdeasForProfessorsController.html#aeb7ae4b548502b0d6d8ff88d43a38acf" title="Los profesores pueden ver el detalle de una idea aprobada sin depender de la ventana del calendario." alt="" coords="5,70,253,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="287,100,253,100,253,95,287,95"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Http_1_1Controllers_1_1BankApprovedIdeasForStudentsController.html#a1da16a4a5c61221cfdcd5ec9887a8a9e" title=" " alt="" coords="11,149,248,203"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="321,124,226,151,225,146,319,119"/>
+</map>

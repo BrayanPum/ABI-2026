@@ -1,0 +1,7 @@
+<map id="App::Models::TeacherAssignment::academicPeriod" name="App::Models::TeacherAssignment::academicPeriod">
+<area shape="rect" id="Node000001" title=" " alt="" coords="308,41,545,81"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1TeacherAssignmentController.html#af78d2a95591aedb7edda304816d28956" title=" " alt="" coords="5,5,260,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="294,48,260,44,261,38,295,43"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Services_1_1Projects_1_1TeacherWorkloadService.html#a74b39a9a99a70fa6cfd47b8689db4646" title=" " alt="" coords="38,70,227,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="294,80,228,88,227,83,293,75"/>
+</map>

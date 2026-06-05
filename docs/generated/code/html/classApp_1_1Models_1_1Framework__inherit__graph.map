@@ -1,0 +1,11 @@
+<map id="App::Models::Framework" name="App::Models::Framework">
+<area shape="rect" id="Node000001" title="framework table model, manages communication with the database using the root user,..." alt="" coords="198,119,378,264"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1Professor_1_1ProfessorFramework.html" title="Extended model that ensures framework queries go through the professor connection,..." alt="" coords="5,312,168,412"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="193,275,147,314,143,310,190,271"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffFramework.html" title="Extended model that channels framework operations through the research staff connection to honor the ..." alt="" coords="192,312,384,412"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="291,278,291,312,285,312,285,278"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Models_1_1Student_1_1StudentFramework.html" title="Extended model that executes framework operations on the student connection, aligning with the role&#39;s..." alt="" coords="408,312,560,412"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="384,271,429,310,425,314,380,275"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="261,5,315,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="291,84,291,118,285,118,285,84"/>
+</map>

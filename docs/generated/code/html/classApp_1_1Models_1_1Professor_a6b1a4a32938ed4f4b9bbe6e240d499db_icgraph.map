@@ -1,0 +1,7 @@
+<map id="App::Models::Professor::getProjectModelClass" name="App::Models::Professor::getProjectModelClass">
+<area shape="rect" id="Node000001" title="Resolve the model class used for the projects relationship." alt="" coords="443,5,613,45"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Professor.html#af3733be06c51af18059e0c09fb5e8f59" title="Get the projects assigned to the professor." alt="" coords="224,5,395,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="429,28,395,28,395,23,429,23"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1Professor.html#a996e542628b2403f657c991f4e27638a" title=" " alt="" coords="5,5,176,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="210,28,176,28,176,23,210,23"/>
+</map>

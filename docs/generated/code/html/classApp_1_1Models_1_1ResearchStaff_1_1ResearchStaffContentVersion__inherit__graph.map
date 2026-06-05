@@ -1,0 +1,7 @@
+<map id="App::Models::ResearchStaff::ResearchStaffContentVersion" name="App::Models::ResearchStaff::ResearchStaffContentVersion">
+<area shape="rect" id="Node000001" title="Extended model that keeps content&#45;version queries on the research staff connection,..." alt="" coords="5,272,216,372"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1ContentVersion.html" title="content_version table model, manages communication with the database using the root user,..." alt="" coords="10,119,211,224"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,237,113,272,108,272,108,237"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="83,5,138,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="113,85,113,118,108,118,108,85"/>
+</map>

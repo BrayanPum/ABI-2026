@@ -1,0 +1,25 @@
+var classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProject =
+[
+    [ "assignmentAcademicPeriod", "classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProject.html#a84c5a040b588b7da398ed42dc966b784", null ],
+    [ "contentFrameworkProjects", "classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProject.html#a152d496578f09f42e1a3c553b0707128", null ],
+    [ "contentFrameworks", "classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProject.html#aa00af01096f4ca490f1caf0642e07e55", null ],
+    [ "getProfessorModelClass", "classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProject.html#a9a6441af906571c56830eecbd0dd4c26", null ],
+    [ "getStudentModelClass", "classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProject.html#ae88ee4defd24f6391a8c475c6c66fd9b", null ],
+    [ "isPendingReviewDueToAge", "classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProject.html#a29d49c246adebfd21a284b5fe8da8cd1", null ],
+    [ "maxStudents", "classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProject.html#ac3c65f1f97724cbf4a68dbaacd492404", null ],
+    [ "pendingPostulations", "classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProject.html#a6c07a58115a2651d39ff999769203530", null ],
+    [ "postulations", "classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProject.html#a06ed7df540239d113f6b18b8191b3495", null ],
+    [ "professors", "classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProject.html#a15197eb4854cf5d7ecd802ff9647b515", null ],
+    [ "projectStatus", "classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProject.html#a2957d15a78ccb6a5d46712c9ecb0503b", null ],
+    [ "proposalAcademicPeriod", "classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProject.html#a420e5cdaa9461c251dbb35622fd6f71c", null ],
+    [ "scopePendingReviewDueToAge", "classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProject.html#a5c5339392461a6b85ccbeae49706e949", null ],
+    [ "setTitleAttribute", "classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProject.html#aaec0fc39f5c6003a5e10c811844c628a", null ],
+    [ "stageHistories", "classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProject.html#aa7f598c5341f3abbdc5c667597789ac4", null ],
+    [ "students", "classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProject.html#a6e148fe6ffa1778de91228a3cbe51ec5", null ],
+    [ "thematicArea", "classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProject.html#aa96cc7a6d2323571a8ae63459a55a083", null ],
+    [ "versions", "classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProject.html#a481cceca5ff749aeaead65b9482cfd23", null ],
+    [ "$casts", "classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProject.html#a29bb5facdd08c597a63daece47b5f2d3", null ],
+    [ "$connection", "classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProject.html#a69cc355db81066aa08a28298ccd05776", null ],
+    [ "$fillable", "classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProject.html#ac13e3d1982e06cee97ea29552c3a212a", null ],
+    [ "$table", "classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProject.html#a4504e3af3c6ccc7a1b095b5657995e83", null ]
+];

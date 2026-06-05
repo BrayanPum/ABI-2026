@@ -1,0 +1,5 @@
+<map id="App::Models::ContentVersion" name="App::Models::ContentVersion">
+<area shape="rect" id="Node000001" title="content_version table model, manages communication with the database using the root user,..." alt="" coords="5,119,207,224"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="79,5,133,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,85,109,118,103,118,103,85"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="App::Models::InvestigationLine::thematicAreas" name="App::Models::InvestigationLine::thematicAreas">
+<area shape="rect" id="Node000001" title="Get the thematic areas associated with this investigation line." alt="" coords="539,53,733,93"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1InvestigationLineController.html#af9b324a76033a9c403ad6d2636c301d8" title="Elimina lógicamente (soft delete) una línea de investigación." alt="" coords="273,5,479,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="525,58,479,51,480,46,526,53"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Services_1_1Projects_1_1TeacherIdeaBalanceService.html#a12ca986abc2c4cc0941c9746f26130d5" title=" " alt="" coords="261,84,491,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="526,92,491,97,490,92,525,86"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Services_1_1Projects_1_1TeacherIdeaBalanceService.html#ac9598103ab1490175c9e4541228a944d" title=" " alt="" coords="5,84,213,139"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="248,114,214,114,214,109,248,109"/>
+</map>

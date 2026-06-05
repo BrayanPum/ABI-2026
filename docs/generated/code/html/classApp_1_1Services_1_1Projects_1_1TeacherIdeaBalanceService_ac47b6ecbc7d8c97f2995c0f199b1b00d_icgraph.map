@@ -1,0 +1,8 @@
+<map id="App::Services::Projects::TeacherIdeaBalanceService::emptyState" name="App::Services::Projects::TeacherIdeaBalanceService::emptyState">
+<area shape="rect" id="Node000001" title=" " alt="" coords="539,39,747,93"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Services_1_1Projects_1_1TeacherIdeaBalanceService.html#a12ca986abc2c4cc0941c9746f26130d5" title=" " alt="" coords="261,5,491,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="525,54,490,50,491,44,526,49"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Services_1_1Projects_1_1TeacherIdeaBalanceService.html#ac9598103ab1490175c9e4541228a944d" title=" " alt="" coords="5,39,213,93"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="525,73,491,74,261,74,214,73,214,67,261,69,491,69,525,68"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="248,51,214,56,213,50,247,46"/>
+</map>

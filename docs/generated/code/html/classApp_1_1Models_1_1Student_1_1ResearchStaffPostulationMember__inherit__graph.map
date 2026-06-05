@@ -1,0 +1,7 @@
+<map id="App::Models::Student::ResearchStaffPostulationMember" name="App::Models::Student::ResearchStaffPostulationMember">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,327,244,427"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1PostulationMember.html" title=" " alt="" coords="37,119,212,279"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,293,127,326,122,326,122,293"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="97,5,152,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="127,85,127,118,122,118,122,85"/>
+</map>

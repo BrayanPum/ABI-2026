@@ -1,0 +1,5 @@
+<map id="App::Http::Controllers::Auth::RegisterController::validator" name="App::Http::Controllers::Auth::RegisterController::validator">
+<area shape="rect" id="Node000001" title="Get a validator instance for the incoming registration request." alt="" coords="240,5,427,60"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1Auth_1_1RegisterController.html#a7be0e94b13b2ea2e1f55c73decd4ddc9" title="Handle a registration request for the application." alt="" coords="5,5,192,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="227,35,192,35,192,30,227,30"/>
+</map>

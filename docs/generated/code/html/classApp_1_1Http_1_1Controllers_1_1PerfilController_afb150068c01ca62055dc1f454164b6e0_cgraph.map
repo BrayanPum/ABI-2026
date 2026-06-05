@@ -1,0 +1,23 @@
+<map id="App::Http::Controllers::PerfilController::show" name="App::Http::Controllers::PerfilController::show">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,149,175,189"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1PerfilController.html#aef4b978bd064c247366616f1e4d6efeb" title=" " alt="" coords="256,5,467,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,146,161,108,221,70,242,61,244,66,224,75,164,112,116,150"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1PerfilController.html#a992760e3c8425e96e5c73038fc7e3cb7" title=" " alt="" coords="237,149,485,189"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="175,166,224,166,224,171,175,171"/>
+<area shape="rect" id="Node000006" href="$classApp_1_1Http_1_1Controllers_1_1PerfilController.html#a5b88204314f8c45104c90ef065e71b6a" title=" " alt="" coords="249,213,473,253"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="174,186,223,198,261,207,260,212,222,203,172,191"/>
+<area shape="rect" id="Node000008" href="$classApp_1_1Http_1_1Controllers_1_1PerfilController.html#a012e5db8d6febedf7f6cc7f448421c4e" title=" " alt="" coords="223,85,500,125"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="172,146,222,134,260,125,261,130,223,139,174,151"/>
+<area shape="rect" id="Node000009" href="$classApp_1_1Http_1_1Controllers_1_1PerfilController.html#ac47814436ba85047bb205928d322033d" title=" " alt="" coords="241,277,481,332"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="116,187,164,225,224,262,241,270,239,275,221,267,161,229,112,191"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Models_1_1User.html#a49efcb9e3b03c4867ce680e80d9f427f" title="Professor profile associated with the user." alt="" coords="548,149,696,189"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="486,166,534,166,534,171,486,171"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Models_1_1User.html#af8dcd04bd243a915211126ed63a33839" title="Student profile associated with the user." alt="" coords="548,85,696,125"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="450,146,499,134,534,125,535,130,501,139,451,151"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="450,210,499,198,534,189,535,194,501,203,451,215"/>
+<area shape="poly" id="edge8_Node000006_Node000005" title=" " alt="" coords="472,212,498,198,514,184,522,168,531,152,546,135,553,130,556,134,550,139,535,155,527,171,518,187,502,203,475,217"/>
+<area shape="rect" id="Node000007" href="$classApp_1_1Models_1_1User.html#a544c62be055196e8cd509650f9292a6c" title="Research staff profile associated with the user." alt="" coords="548,213,696,253"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="474,230,534,230,534,235,474,235"/>
+<area shape="poly" id="edge10_Node000008_Node000004" title=" " alt="" coords="451,122,501,134,535,143,534,148,499,139,450,127"/>
+<area shape="poly" id="edge11_Node000008_Node000005" title=" " alt="" coords="500,102,534,102,534,107,500,107"/>
+</map>

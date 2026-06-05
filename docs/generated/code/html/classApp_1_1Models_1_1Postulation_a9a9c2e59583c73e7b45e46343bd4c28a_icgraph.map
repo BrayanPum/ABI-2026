@@ -1,0 +1,9 @@
+<map id="App::Models::Postulation::leadStudent" name="App::Models::Postulation::leadStudent">
+<area shape="rect" id="Node000001" title=" " alt="" coords="332,91,515,131"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1PostulationEvaluationController.html#ac0384bc1bc01b644fac6a53677d278ad" title=" " alt="" coords="27,5,263,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="339,90,283,74,243,63,245,57,285,69,341,85"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1PostulationEvaluationController.html#ae96488fe5cdf5d367be7cffa75a954ba" title=" " alt="" coords="27,84,263,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="318,114,263,114,263,109,318,109"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Http_1_1Controllers_1_1PostulationEvaluationController.html#aedb1dfd33ab6bb74544232c89a599579" title=" " alt="" coords="5,163,284,203"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="340,138,285,153,232,166,230,161,283,147,339,132"/>
+</map>

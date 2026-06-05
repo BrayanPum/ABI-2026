@@ -1,0 +1,9 @@
+<map id="App::Models::Professor::ProfessorFramework" name="App::Models::Professor::ProfessorFramework">
+<area shape="rect" id="Node000001" title="Extended model that ensures framework queries go through the professor connection,..." alt="" coords="14,308,177,408"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Framework.html" title="framework table model, manages communication with the database using the root user,..." alt="" coords="5,133,185,259"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,272,98,308,93,308,93,272"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="29,5,84,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="70,83,83,132,77,134,65,85"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="109,5,159,71"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="129,71,117,118,112,117,124,70"/>
+</map>

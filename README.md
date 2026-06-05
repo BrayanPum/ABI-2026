@@ -32,6 +32,10 @@ Plataforma web para la gestión y trazabilidad del banco de ideas y proyectos de
 - **Laravel Pint**
 - **PHPUnit**
 - **Faker**
+- **GitHub Actions** para generación automática de documentación
+- **Scribe** para documentación de endpoints API
+- **Doxygen** y **Graphviz** para documentación de código y diagramas
+- **Laravel ER Diagram Generator** para diagramas entidad-relación
 
 ## 📁 Arquitectura del Proyecto
 
@@ -45,12 +49,18 @@ abi-mio/
 ├── config/                       # Archivos de configuración
 ├── database/
 │   └── migrations/               # Migraciones de base de datos
+├── docs/                         # Documentación técnica y generada
+│   └── generated/                # Salidas automáticas de documentación
 ├── public/                       # Archivos públicos y assets
 ├── resources/
 │   ├── views/                    # Plantillas Blade
 │   └── js/                       # Assets JavaScript
 ├── routes/
+│   ├── api.php                   # Rutas API
 │   └── web.php                   # Rutas web de la aplicación
+├── scripts/                      # Scripts auxiliares del proyecto
+├── .github/
+│   └── workflows/                # Workflows de GitHub Actions
 └── storage/                      # Almacenamiento de archivos
 ```
 
@@ -352,6 +362,84 @@ La interfaz del sistema está construida principalmente con **Blade + Tablar**, 
 - Formularios de creación y edición
 - Vistas separadas según rol y módulo
 - Plantillas de correo personalizadas para notificaciones
+
+## 📚 Documentación automática
+
+El proyecto cuenta con un sistema de documentación automática que vive dentro del repositorio y se regenera con el estado actual del código.
+
+### ¿Qué documentación se genera?
+
+- **Documentación de API:** generada con Scribe a partir de las rutas y controladores API.
+- **Documentación de código PHP:** generada con Doxygen a partir de controladores, modelos, rutas y migraciones.
+- **Diagrama entidad-relación:** generado a partir de los modelos Eloquent mediante Laravel ER Diagram Generator.
+- **Listado de rutas:** generado con `php artisan route:list`.
+
+### Ubicación de la documentación
+
+La documentación principal se encuentra en:
+
+```text
+docs/README.md
+```
+
+La documentación generada automáticamente queda en:
+
+```text
+docs/generated/
+├── api/                 # Documentación API, OpenAPI y colección Postman
+├── code/html/           # Documentación HTML del código generada con Doxygen
+├── diagrams/            # Diagramas generados, como el ERD
+└── routes/              # Listados de rutas web y API
+```
+
+Archivos principales para consultar:
+
+```text
+docs/generated/api/index.html
+docs/generated/api/openapi.yaml
+docs/generated/api/collection.json
+docs/generated/code/html/index.html
+docs/generated/diagrams/erd.svg
+docs/generated/routes/all-routes.txt
+docs/generated/routes/api-routes.txt
+```
+
+> **Importante:** no edites manualmente los archivos dentro de `docs/generated/`, porque se regeneran automáticamente.
+
+### Generar documentación localmente
+
+Desde la raíz del proyecto:
+
+```bash
+bash scripts/generate-docs.sh
+```
+
+Para una generación completa en local se requiere tener disponible:
+
+- Bash o Git Bash
+- Doxygen
+- Graphviz, incluyendo el comando `dot`
+- Dependencias de Composer instaladas
+
+En Windows, si Graphviz o Doxygen no están disponibles, la documentación de rutas y API puede generarse, pero el ERD o la documentación de código pueden omitirse hasta que esas herramientas estén instaladas o hasta que se ejecute el workflow en GitHub Actions.
+
+### Generación automática con GitHub Actions
+
+El workflow se encuentra en:
+
+```text
+.github/workflows/auto-docs.yml
+```
+
+Este workflow puede ejecutarse manualmente desde la pestaña **Actions** de GitHub y también se ejecuta según la configuración definida para el repositorio, especialmente al integrar cambios en la rama principal.
+
+El flujo automatizado realiza, de forma general:
+
+1. Instala dependencias del proyecto.
+2. Prepara el entorno de Laravel.
+3. Genera rutas, documentación API, ERD y documentación de código.
+4. Guarda los archivos generados dentro de `docs/generated/` cuando detecta cambios.
+
 
 ## 🔧 Comandos útiles
 

@@ -888,39 +888,6 @@ El listener `SendNotificationListener` implementa `ShouldQueue`. En desarrollo, 
 
 Existe un archivo `nixpacks.toml` con paquetes para extensiones PHP requeridas en despliegues compatibles con Nixpacks.
 
-## 🧯 Troubleshooting
-
-### Error `could not find driver`
-
-Normalmente significa que no estás usando el PHP de XAMPP o que `pdo_mysql` no está habilitado.
-
-### Las fotos de perfil no cargan
-
-Verifica:
-
-- que exista `storage/app/public`
-- que hayas ejecutado `php artisan storage:link`
-- que `APP_URL` sea correcto
-
-### El script de roles falla
-
-Revisa:
-
-- credenciales `DB_USERNAME` y `DB_PASSWORD`
-- variables `DB_USER_PASS`, `DB_STUDENT_PASS`, `DB_PROFESSOR_PASS`, `DB_RESEARCH_PASS`
-- permisos del usuario administrador para crear usuarios MySQL
-
-### Las ventanas académicas bloquean módulos
-
-Eso puede ser comportamiento esperado. Varias pantallas de proyección y flujo académico se habilitan solo cuando la ventana configurada para el proceso está abierta.
-
-### La documentación automática no se genera completa
-
-Para salida completa necesitas herramientas de sistema como:
-
-- `doxygen`
-- `graphviz`
-- comando `dot`
 
 ## 🤝 Contribución
 

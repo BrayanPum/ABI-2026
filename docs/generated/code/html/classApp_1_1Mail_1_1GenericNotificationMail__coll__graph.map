@@ -1,7 +1,5 @@
 <map id="App::Mail::GenericNotificationMail" name="App::Mail::GenericNotificationMail">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,119,259,288"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="42,5,113,71"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,83,106,117,101,119,90,85"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="137,5,237,71"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="174,85,163,119,158,117,169,83"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="97,5,167,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,84,135,118,129,118,129,84"/>
 </map>

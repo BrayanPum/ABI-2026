@@ -2,9 +2,14 @@ var annotated_dup =
 [
     [ "App", "namespaceApp.html", [
       [ "Console", "namespaceApp_1_1Console.html", [
+        [ "Commands", "namespaceApp_1_1Console_1_1Commands.html", [
+          [ "NotifyProcessWindows", "classApp_1_1Console_1_1Commands_1_1NotifyProcessWindows.html", "classApp_1_1Console_1_1Commands_1_1NotifyProcessWindows" ]
+        ] ],
         [ "Kernel", "classApp_1_1Console_1_1Kernel.html", "classApp_1_1Console_1_1Kernel" ]
       ] ],
       [ "Events", "namespaceApp_1_1Events.html", [
+        [ "AcademicProcessWindowClosing", "classApp_1_1Events_1_1AcademicProcessWindowClosing.html", "classApp_1_1Events_1_1AcademicProcessWindowClosing" ],
+        [ "AcademicProcessWindowOpened", "classApp_1_1Events_1_1AcademicProcessWindowOpened.html", "classApp_1_1Events_1_1AcademicProcessWindowOpened" ],
         [ "ProjectIdeaEvaluated", "classApp_1_1Events_1_1ProjectIdeaEvaluated.html", "classApp_1_1Events_1_1ProjectIdeaEvaluated" ],
         [ "UserCreated", "classApp_1_1Events_1_1UserCreated.html", "classApp_1_1Events_1_1UserCreated" ]
       ] ],

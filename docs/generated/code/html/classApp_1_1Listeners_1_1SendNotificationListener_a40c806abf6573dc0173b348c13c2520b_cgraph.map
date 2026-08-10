@@ -1,0 +1,5 @@
+<map id="App::Listeners::SendNotificationListener::handleAcademicProcessWindowClosing" name="App::Listeners::SendNotificationListener::handleAcademicProcessWindowClosing">
+<area shape="rect" id="Node000001" title="Handle AcademicProcessWindowClosing event." alt="" coords="5,5,297,60"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Listeners_1_1SendNotificationListener.html#a3298079769331feab9d52b9559456058" title="Resolve all students and professors emails." alt="" coords="345,13,619,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="297,30,331,30,331,35,297,35"/>
+</map>

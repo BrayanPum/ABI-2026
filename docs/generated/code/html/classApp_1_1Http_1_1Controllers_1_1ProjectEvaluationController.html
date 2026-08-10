@@ -137,6 +137,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a2c92a25c3577ed2efed766a9c592e5c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84721381bb7c33e2f38ad6c52f9327ad" id="r_a84721381bb7c33e2f38ad6c52f9327ad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#a84721381bb7c33e2f38ad6c52f9327ad">ensureProjectBelongsToCommitteeProgram</a> (<a class="el" href="classApp_1_1Models_1_1Project.html">Project</a> $project, int $cityProgramId)</td></tr>
 <tr class="separator:a84721381bb7c33e2f38ad6c52f9327ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31a85374ed6ec80f43833df7f50489d1" id="r_a31a85374ed6ec80f43833df7f50489d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#a31a85374ed6ec80f43833df7f50489d1">normalizeComments</a> (?string $comments)</td></tr>
+<tr class="separator:a31a85374ed6ec80f43833df7f50489d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1f88212523849b7aa557aa47f024476" id="r_ab1f88212523849b7aa557aa47f024476"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#ab1f88212523849b7aa557aa47f024476">programProjectsQuery</a> (int $cityProgramId)</td></tr>
 <tr class="separator:ab1f88212523849b7aa557aa47f024476"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61dddccee54514855270cbaf4ddeb24b" id="r_a61dddccee54514855270cbaf4ddeb24b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#a61dddccee54514855270cbaf4ddeb24b">publicAssetDataUri</a> (string $relativePath)</td></tr>
@@ -237,9 +239,9 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>array{ totals: array{evaluated:int,pending:int,approved:int,rejected:int,returned:int}, periods: array&lt;int, array{label:string,value:int,percentage:float,color:string}&gt;, statuses: array&lt;int, array{label:string,value:int,percentage:float,color:string}&gt;, rates: array&lt;int, array{label:string,value:int,percentage:float,color:string,description:string}&gt;, topPeriod:?string } </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ProjectEvaluationController_8php_source.html#l00196">196</a> of file <a class="el" href="ProjectEvaluationController_8php_source.html">ProjectEvaluationController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ProjectEvaluationController_8php_source.html#l00213">213</a> of file <a class="el" href="ProjectEvaluationController_8php_source.html">ProjectEvaluationController.php</a>.</p>
 
-<p class="reference">References <a class="el" href="ProjectEvaluationController_8php_source.html#l00330">committeeStatusLabel()</a>, <a class="el" href="ProjectEvaluationController_8php_source.html#l00174">programProjectsQuery()</a>, <a class="el" href="Project_8php_source.html#l00045">App::Models::Project::projectStatus()</a>, and <a class="el" href="Project_8php_source.html#l00082">App::Models::Project::stageHistories()</a>.</p>
+<p class="reference">References <a class="el" href="ProjectEvaluationController_8php_source.html#l00347">committeeStatusLabel()</a>, <a class="el" href="ProjectEvaluationController_8php_source.html#l00191">programProjectsQuery()</a>, <a class="el" href="Project_8php_source.html#l00045">App::Models::Project::projectStatus()</a>, and <a class="el" href="Project_8php_source.html#l00082">App::Models::Project::stageHistories()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ProjectEvaluationController_8php_source.html#l00022">index()</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -290,9 +292,9 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>array&lt;int, array{label:string,value:string,caption:string}&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ProjectEvaluationController_8php_source.html#l00406">406</a> of file <a class="el" href="ProjectEvaluationController_8php_source.html">ProjectEvaluationController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ProjectEvaluationController_8php_source.html#l00423">423</a> of file <a class="el" href="ProjectEvaluationController_8php_source.html">ProjectEvaluationController.php</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ProjectEvaluationController_8php_source.html#l00363">downloadCommitteeReportPdf()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ProjectEvaluationController_8php_source.html#l00380">downloadCommitteeReportPdf()</a>.</p>
 <div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
@@ -334,9 +336,9 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>array&lt;int, array{ title:string, description:string, total_label:string, total_value:int, segments: array&lt;int, array{label:string,value:int,percentage:float,color:string,description?:string}&gt; }&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ProjectEvaluationController_8php_source.html#l00448">448</a> of file <a class="el" href="ProjectEvaluationController_8php_source.html">ProjectEvaluationController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ProjectEvaluationController_8php_source.html#l00465">465</a> of file <a class="el" href="ProjectEvaluationController_8php_source.html">ProjectEvaluationController.php</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ProjectEvaluationController_8php_source.html#l00363">downloadCommitteeReportPdf()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ProjectEvaluationController_8php_source.html#l00380">downloadCommitteeReportPdf()</a>.</p>
 <div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
@@ -387,9 +389,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ProjectEvaluationController_8php_source.html#l00330">330</a> of file <a class="el" href="ProjectEvaluationController_8php_source.html">ProjectEvaluationController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ProjectEvaluationController_8php_source.html#l00347">347</a> of file <a class="el" href="ProjectEvaluationController_8php_source.html">ProjectEvaluationController.php</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ProjectEvaluationController_8php_source.html#l00196">buildCommitteeReportState()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ProjectEvaluationController_8php_source.html#l00213">buildCommitteeReportState()</a>.</p>
 <div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
@@ -436,9 +438,9 @@ Protected Member Functions</h2></td></tr>
 
 <p>Render the committee report as a branded PDF document. </p>
 
-<p class="definition">Definition at line <a class="el" href="ProjectEvaluationController_8php_source.html#l00363">363</a> of file <a class="el" href="ProjectEvaluationController_8php_source.html">ProjectEvaluationController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ProjectEvaluationController_8php_source.html#l00380">380</a> of file <a class="el" href="ProjectEvaluationController_8php_source.html">ProjectEvaluationController.php</a>.</p>
 
-<p class="reference">References <a class="el" href="Professor_8php_source.html#l00053">App::Models::Professor::cityProgram()</a>, <a class="el" href="ProjectEvaluationController_8php_source.html#l00406">committeeReportInsights()</a>, <a class="el" href="ProjectEvaluationController_8php_source.html#l00448">committeeReportVisuals()</a>, and <a class="el" href="ProjectEvaluationController_8php_source.html#l00478">publicAssetDataUri()</a>.</p>
+<p class="reference">References <a class="el" href="Professor_8php_source.html#l00053">App::Models::Professor::cityProgram()</a>, <a class="el" href="ProjectEvaluationController_8php_source.html#l00423">committeeReportInsights()</a>, <a class="el" href="ProjectEvaluationController_8php_source.html#l00465">committeeReportVisuals()</a>, and <a class="el" href="ProjectEvaluationController_8php_source.html#l00495">publicAssetDataUri()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ProjectEvaluationController_8php_source.html#l00022">index()</a>.</p>
 <div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -492,9 +494,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ProjectEvaluationController_8php_source.html#l00349">349</a> of file <a class="el" href="ProjectEvaluationController_8php_source.html">ProjectEvaluationController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ProjectEvaluationController_8php_source.html#l00366">366</a> of file <a class="el" href="ProjectEvaluationController_8php_source.html">ProjectEvaluationController.php</a>.</p>
 
-<p class="reference">References <a class="el" href="ProjectEvaluationController_8php_source.html#l00174">programProjectsQuery()</a>.</p>
+<p class="reference">References <a class="el" href="ProjectEvaluationController_8php_source.html#l00191">programProjectsQuery()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ProjectEvaluationController_8php_source.html#l00081">evaluate()</a>, and <a class="el" href="ProjectEvaluationController_8php_source.html#l00054">show()</a>.</p>
 <div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -542,13 +544,13 @@ Protected Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ProjectEvaluationController_8php_source.html#l00081">81</a> of file <a class="el" href="ProjectEvaluationController_8php_source.html">ProjectEvaluationController.php</a>.</p>
 
-<p class="reference">References <a class="el" href="ProjectEvaluationController_8php_source.html#l00349">ensureProjectBelongsToCommitteeProgram()</a>, <a class="el" href="Project_8php_source.html#l00087">App::Models::Project::professors()</a>, <a class="el" href="Project_8php_source.html#l00055">App::Models::Project::proposalAcademicPeriod()</a>, <a class="el" href="ProjectEvaluationController_8php_source.html#l00153">resolveCommitteeLeader()</a>, and <a class="el" href="Project_8php_source.html#l00077">App::Models::Project::versions()</a>.</p>
+<p class="reference">References <a class="el" href="ProjectEvaluationController_8php_source.html#l00366">ensureProjectBelongsToCommitteeProgram()</a>, <a class="el" href="ProjectEvaluationController_8php_source.html#l00155">normalizeComments()</a>, <a class="el" href="Project_8php_source.html#l00087">App::Models::Project::professors()</a>, <a class="el" href="Project_8php_source.html#l00055">App::Models::Project::proposalAcademicPeriod()</a>, <a class="el" href="ProjectEvaluationController_8php_source.html#l00170">resolveCommitteeLeader()</a>, and <a class="el" href="Project_8php_source.html#l00077">App::Models::Project::versions()</a>.</p>
 <div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-12-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController_af13e4ab54e821c1878ecfd0317015cdf_cgraph.svg" width="100%" height="554"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController_af13e4ab54e821c1878ecfd0317015cdf_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -571,13 +573,50 @@ Protected Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ProjectEvaluationController_8php_source.html#l00022">22</a> of file <a class="el" href="ProjectEvaluationController_8php_source.html">ProjectEvaluationController.php</a>.</p>
 
-<p class="reference">References <a class="el" href="ProjectEvaluationController_8php_source.html#l00196">buildCommitteeReportState()</a>, <a class="el" href="ProjectEvaluationController_8php_source.html#l00363">downloadCommitteeReportPdf()</a>, and <a class="el" href="ProjectEvaluationController_8php_source.html#l00153">resolveCommitteeLeader()</a>.</p>
+<p class="reference">References <a class="el" href="ProjectEvaluationController_8php_source.html#l00213">buildCommitteeReportState()</a>, <a class="el" href="ProjectEvaluationController_8php_source.html#l00380">downloadCommitteeReportPdf()</a>, and <a class="el" href="ProjectEvaluationController_8php_source.html#l00170">resolveCommitteeLeader()</a>.</p>
 <div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-13-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController_a242ddacaab9456585601a8eb9bb3f993_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a31a85374ed6ec80f43833df7f50489d1" name="a31a85374ed6ec80f43833df7f50489d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31a85374ed6ec80f43833df7f50489d1">&#9670;&#160;</a></span>normalizeComments()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">App::Http::Controllers::ProjectEvaluationController::normalizeComments </td>
+          <td>(</td>
+          <td class="paramtype">?string&#160;</td>
+          <td class="paramname"><em>$comments</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ProjectEvaluationController_8php_source.html#l00155">155</a> of file <a class="el" href="ProjectEvaluationController_8php_source.html">ProjectEvaluationController.php</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ProjectEvaluationController_8php_source.html#l00081">evaluate()</a>.</p>
+<div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController_a31a85374ed6ec80f43833df7f50489d1_icgraph.svg" width="475" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -606,14 +645,14 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ProjectEvaluationController_8php_source.html#l00174">174</a> of file <a class="el" href="ProjectEvaluationController_8php_source.html">ProjectEvaluationController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ProjectEvaluationController_8php_source.html#l00191">191</a> of file <a class="el" href="ProjectEvaluationController_8php_source.html">ProjectEvaluationController.php</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ProjectEvaluationController_8php_source.html#l00196">buildCommitteeReportState()</a>, and <a class="el" href="ProjectEvaluationController_8php_source.html#l00349">ensureProjectBelongsToCommitteeProgram()</a>.</p>
-<div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+<p class="reference">Referenced by <a class="el" href="ProjectEvaluationController_8php_source.html#l00213">buildCommitteeReportState()</a>, and <a class="el" href="ProjectEvaluationController_8php_source.html#l00366">ensureProjectBelongsToCommitteeProgram()</a>.</p>
+<div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController_ab1f88212523849b7aa557aa47f024476_icgraph.svg" width="100%" height="457"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -645,14 +684,14 @@ Protected Member Functions</h2></td></tr>
 
 <p>Convert a public asset into a base64 data URI so Dompdf can embed it reliably. </p>
 
-<p class="definition">Definition at line <a class="el" href="ProjectEvaluationController_8php_source.html#l00478">478</a> of file <a class="el" href="ProjectEvaluationController_8php_source.html">ProjectEvaluationController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ProjectEvaluationController_8php_source.html#l00495">495</a> of file <a class="el" href="ProjectEvaluationController_8php_source.html">ProjectEvaluationController.php</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ProjectEvaluationController_8php_source.html#l00363">downloadCommitteeReportPdf()</a>.</p>
-<div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-15-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+<p class="reference">Referenced by <a class="el" href="ProjectEvaluationController_8php_source.html#l00380">downloadCommitteeReportPdf()</a>.</p>
+<div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController_a61dddccee54514855270cbaf4ddeb24b_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -681,14 +720,14 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ProjectEvaluationController_8php_source.html#l00153">153</a> of file <a class="el" href="ProjectEvaluationController_8php_source.html">ProjectEvaluationController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ProjectEvaluationController_8php_source.html#l00170">170</a> of file <a class="el" href="ProjectEvaluationController_8php_source.html">ProjectEvaluationController.php</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ProjectEvaluationController_8php_source.html#l00081">evaluate()</a>, <a class="el" href="ProjectEvaluationController_8php_source.html#l00022">index()</a>, and <a class="el" href="ProjectEvaluationController_8php_source.html#l00054">show()</a>.</p>
-<div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-16-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController_a810cc4bedafa100ef4c8806abfeaffb0_icgraph.svg" width="518" height="210"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -712,12 +751,12 @@ Protected Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ProjectEvaluationController_8php_source.html#l00054">54</a> of file <a class="el" href="ProjectEvaluationController_8php_source.html">ProjectEvaluationController.php</a>.</p>
 
-<p class="reference">References <a class="el" href="Project_8php_source.html#l00102">App::Models::Project::contentFrameworks()</a>, <a class="el" href="ProjectEvaluationController_8php_source.html#l00349">ensureProjectBelongsToCommitteeProgram()</a>, <a class="el" href="ProjectEvaluationController_8php_source.html#l00153">resolveCommitteeLeader()</a>, and <a class="el" href="Project_8php_source.html#l00077">App::Models::Project::versions()</a>.</p>
-<div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-17-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+<p class="reference">References <a class="el" href="Project_8php_source.html#l00102">App::Models::Project::contentFrameworks()</a>, <a class="el" href="ProjectEvaluationController_8php_source.html#l00366">ensureProjectBelongsToCommitteeProgram()</a>, <a class="el" href="ProjectEvaluationController_8php_source.html#l00170">resolveCommitteeLeader()</a>, and <a class="el" href="Project_8php_source.html#l00077">App::Models::Project::versions()</a>.</p>
+<div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController_aa6ad08d9d2d47f827a4147947f210082_cgraph.svg" width="100%" height="505"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 

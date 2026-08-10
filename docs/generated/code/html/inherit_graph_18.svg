@@ -11,10 +11,10 @@
 <!-- Node0 -->
 <g id="Node000000" class="node">
 <title>Node0</title>
-<g id="a_Node000000"><a xlink:href="classApp_1_1Services_1_1Projects_1_1RoleContext.html" target="_top" xlink:title="Value object that describes the currently authenticated user within the projects module.">
+<g id="a_Node000000"><a xlink:href="classApp_1_1Services_1_1Projects_1_1ProjectIdeaResult.html" target="_top" xlink:title="Small data carrier that exposes the persisted project alongside the message displayed to the user.">
 <polygon fill="white" stroke="#666666" points="128,-30 0,-30 0,0 128,0 128,-30"/>
 <text text-anchor="start" x="8" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">App::Services::Projects</text>
-<text text-anchor="middle" x="64" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">::RoleContext</text>
+<text text-anchor="middle" x="64" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">::ProjectIdeaResult</text>
 </a>
 </g>
 </g>

@@ -1,6 +1,8 @@
 var hierarchy =
 [
     [ "App::Services::AcademicCalendar::AcademicCalendarService", "classApp_1_1Services_1_1AcademicCalendar_1_1AcademicCalendarService.html", null ],
+    [ "App::Events::AcademicProcessWindowClosing", "classApp_1_1Events_1_1AcademicProcessWindowClosing.html", null ],
+    [ "App::Events::AcademicProcessWindowOpened", "classApp_1_1Events_1_1AcademicProcessWindowOpened.html", null ],
     [ "Authenticatable", "classAuthenticatable.html", [
       [ "App::Models::User", "classApp_1_1Models_1_1User.html", [
         [ "App::Models::Professor::ProfessorUser", "classApp_1_1Models_1_1Professor_1_1ProfessorUser.html", null ],
@@ -91,6 +93,7 @@ var hierarchy =
     [ "App::Services::Projects::RoleContext", "classApp_1_1Services_1_1Projects_1_1RoleContext.html", null ],
     [ "App::Services::Projects::RoleContextResolver", "classApp_1_1Services_1_1Projects_1_1RoleContextResolver.html", null ],
     [ "App::Http::Middleware::RoleMiddleware", "classApp_1_1Http_1_1Middleware_1_1RoleMiddleware.html", null ],
+    [ "App::Listeners::SendNotificationListener", "classApp_1_1Listeners_1_1SendNotificationListener.html", null ],
     [ "App::Services::Students::StudentAcademicProgressService", "classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html", null ],
     [ "App::Services::Projections::StudentProjectionService", "classApp_1_1Services_1_1Projections_1_1StudentProjectionService.html", null ],
     [ "App::Services::Projects::TeacherIdeaBalanceService", "classApp_1_1Services_1_1Projects_1_1TeacherIdeaBalanceService.html", null ],
@@ -99,6 +102,9 @@ var hierarchy =
     [ "App::Events::UserCreated", "classApp_1_1Events_1_1UserCreated.html", null ],
     [ "App::Helpers::UserRoleHelper", "classApp_1_1Helpers_1_1UserRoleHelper.html", null ],
     [ "App::Services::Reports::VisualReportService", "classApp_1_1Services_1_1Reports_1_1VisualReportService.html", null ],
+    [ "Command", null, [
+      [ "App::Console::Commands::NotifyProcessWindows", "classApp_1_1Console_1_1Commands_1_1NotifyProcessWindows.html", null ]
+    ] ],
     [ "Factory", null, [
       [ "Database::Factories::UserFactory", "classDatabase_1_1Factories_1_1UserFactory.html", null ]
     ] ],
@@ -288,9 +294,5 @@ var hierarchy =
       [ "App::Providers::BroadcastServiceProvider", "classApp_1_1Providers_1_1BroadcastServiceProvider.html", null ],
       [ "App::Providers::EventServiceProvider", "classApp_1_1Providers_1_1EventServiceProvider.html", null ],
       [ "App::Providers::RouteServiceProvider", "classApp_1_1Providers_1_1RouteServiceProvider.html", null ]
-    ] ],
-    [ "ShouldQueue", null, [
-      [ "App::Listeners::SendNotificationListener", "classApp_1_1Listeners_1_1SendNotificationListener.html", null ],
-      [ "App::Mail::GenericNotificationMail", "classApp_1_1Mail_1_1GenericNotificationMail.html", null ]
     ] ]
 ];

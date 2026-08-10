@@ -119,39 +119,50 @@ $(document).ready(function(){initNavTree('NotificationService_8php_source.html',
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    ): void {</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        try {</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            $mailable = new <a class="code hl_class" href="classApp_1_1Mail_1_1GenericNotificationMail.html">GenericNotificationMail</a>($subject, $view, $content, $attachments);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keywordflow">if</span> ($sender) {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                $mailable-&gt;from($sender);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            }</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            Mail::to($recipient)-&gt;send($mailable);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        } <span class="keywordflow">catch</span> (\Exception $e) {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            Log::error(<span class="stringliteral">&quot;Failed to send notification to {$recipient}: &quot;</span> . $e-&gt;getMessage(), [</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                <span class="stringliteral">&#39;subject&#39;</span> =&gt; $subject,</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                <span class="stringliteral">&#39;view&#39;</span> =&gt; $view,</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                <span class="stringliteral">&#39;exception&#39;</span> =&gt; $e</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            $senderAddress = $sender ?? config(<span class="stringliteral">&#39;mail.from.address&#39;</span>);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            $senderName = config(<span class="stringliteral">&#39;mail.from.name&#39;</span>);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="keywordflow">if</span> ($senderAddress) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                $mailable-&gt;from($senderAddress, $senderName);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            Log::info(<span class="stringliteral">&#39;Sending notification email&#39;</span>, [</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                <span class="stringliteral">&#39;recipient&#39;</span> =&gt; $recipient,</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                <span class="stringliteral">&#39;subject&#39;</span> =&gt; $subject,</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                <span class="stringliteral">&#39;sender&#39;</span> =&gt; $senderAddress,</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            ]);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        }</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            @set_time_limit(300);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            @ini_set(<span class="stringliteral">&#39;max_execution_time&#39;</span>, <span class="stringliteral">&#39;300&#39;</span>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            Mail::to($recipient)-&gt;send($mailable);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        } <span class="keywordflow">catch</span> (\Exception $e) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            Log::error(<span class="stringliteral">&quot;Failed to send notification to {$recipient}: &quot;</span> . $e-&gt;getMessage(), [</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                <span class="stringliteral">&#39;subject&#39;</span> =&gt; $subject,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                <span class="stringliteral">&#39;view&#39;</span> =&gt; $view,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                <span class="stringliteral">&#39;exception&#39;</span> =&gt; $e</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            ]);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
 </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classApp_1_1Services_1_1NotificationService.html#a6fedd6ed6c7908cc7306c0f9b0d14473">   51</a></span>    <span class="keyword">public</span> function <a class="code hl_function" href="classApp_1_1Services_1_1NotificationService.html#a6fedd6ed6c7908cc7306c0f9b0d14473">send</a>(array $config): void</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        $this-&gt;sendNotification(</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            $config[<span class="stringliteral">&#39;recipient&#39;</span>],</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            $config[<span class="stringliteral">&#39;subject&#39;</span>],</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            $config[<span class="stringliteral">&#39;view&#39;</span>],</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            $config[<span class="stringliteral">&#39;content&#39;</span>] ?? [],</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            $config[<span class="stringliteral">&#39;attachments&#39;</span>] ?? []</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        );</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classApp_1_1Services_1_1NotificationService.html#a6fedd6ed6c7908cc7306c0f9b0d14473">   62</a></span>    <span class="keyword">public</span> function <a class="code hl_function" href="classApp_1_1Services_1_1NotificationService.html#a6fedd6ed6c7908cc7306c0f9b0d14473">send</a>(array $config): void</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        $this-&gt;sendNotification(</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            $config[<span class="stringliteral">&#39;recipient&#39;</span>],</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            $config[<span class="stringliteral">&#39;subject&#39;</span>],</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            $config[<span class="stringliteral">&#39;view&#39;</span>],</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            $config[<span class="stringliteral">&#39;content&#39;</span>] ?? [],</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            $config[<span class="stringliteral">&#39;attachments&#39;</span>] ?? []</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        );</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
 </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>}</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}</div>
 </div>
-<div class="ttc" id="aclassApp_1_1Mail_1_1GenericNotificationMail_html"><div class="ttname"><a href="classApp_1_1Mail_1_1GenericNotificationMail.html">App::Mail::GenericNotificationMail</a></div><div class="ttdef"><b>Definition</b> <a href="GenericNotificationMail_8php_source.html#l00013">GenericNotificationMail.php:14</a></div></div>
+<div class="ttc" id="aclassApp_1_1Mail_1_1GenericNotificationMail_html"><div class="ttname"><a href="classApp_1_1Mail_1_1GenericNotificationMail.html">App::Mail::GenericNotificationMail</a></div><div class="ttdef"><b>Definition</b> <a href="GenericNotificationMail_8php_source.html#l00012">GenericNotificationMail.php:13</a></div></div>
 <div class="ttc" id="aclassApp_1_1Services_1_1NotificationService_html"><div class="ttname"><a href="classApp_1_1Services_1_1NotificationService.html">App::Services::NotificationService</a></div><div class="ttdef"><b>Definition</b> <a href="NotificationService_8php_source.html#l00009">NotificationService.php:10</a></div></div>
-<div class="ttc" id="aclassApp_1_1Services_1_1NotificationService_html_a6fedd6ed6c7908cc7306c0f9b0d14473"><div class="ttname"><a href="classApp_1_1Services_1_1NotificationService.html#a6fedd6ed6c7908cc7306c0f9b0d14473">App::Services::NotificationService::send</a></div><div class="ttdeci">send(array $config)</div><div class="ttdoc">Alternative method for more complex logic if needed in the future.</div><div class="ttdef"><b>Definition</b> <a href="NotificationService_8php_source.html#l00051">NotificationService.php:51</a></div></div>
+<div class="ttc" id="aclassApp_1_1Services_1_1NotificationService_html_a6fedd6ed6c7908cc7306c0f9b0d14473"><div class="ttname"><a href="classApp_1_1Services_1_1NotificationService.html#a6fedd6ed6c7908cc7306c0f9b0d14473">App::Services::NotificationService::send</a></div><div class="ttdeci">send(array $config)</div><div class="ttdoc">Alternative method for more complex logic if needed in the future.</div><div class="ttdef"><b>Definition</b> <a href="NotificationService_8php_source.html#l00062">NotificationService.php:62</a></div></div>
 <div class="ttc" id="aclassApp_1_1Services_1_1NotificationService_html_ae6e1d9c5581fecfbf9628d18a5a6be18"><div class="ttname"><a href="classApp_1_1Services_1_1NotificationService.html#ae6e1d9c5581fecfbf9628d18a5a6be18">App::Services::NotificationService::sendNotification</a></div><div class="ttdeci">sendNotification(string $recipient, string $subject, string $view, array $content=[], array $attachments=[], ?string $sender=null)</div><div class="ttdoc">Sends a notification using the generic mailable.</div><div class="ttdef"><b>Definition</b> <a href="NotificationService_8php_source.html#l00022">NotificationService.php:22</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

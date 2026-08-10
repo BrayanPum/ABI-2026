@@ -1,0 +1,10 @@
+<map id="App::Listeners::SendNotificationListener::resolveAllRelevantRecipients" name="App::Listeners::SendNotificationListener::resolveAllRelevantRecipients">
+<area shape="rect" id="Node000001" title="Resolve all students and professors emails." alt="" coords="673,49,947,89"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Listeners_1_1SendNotificationListener.html#a40c806abf6573dc0173b348c13c2520b" title="Handle AcademicProcessWindowClosing event." alt="" coords="308,5,600,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="659,56,600,50,601,45,660,51"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Listeners_1_1SendNotificationListener.html#a0be74324932c71aec1d139299b65e7ca" title="Handle AcademicProcessWindowOpened event." alt="" coords="283,85,625,125"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="660,87,626,90,625,85,659,81"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Listeners_1_1SendNotificationListener.html#a42a5a7afacf951884f05d81d01dddaac" title="Handle the event." alt="" coords="5,49,235,89"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="294,53,235,59,235,54,294,47"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="269,87,235,84,235,78,270,82"/>
+</map>

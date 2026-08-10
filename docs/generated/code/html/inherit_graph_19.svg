@@ -11,10 +11,10 @@
 <!-- Node0 -->
 <g id="Node000000" class="node">
 <title>Node0</title>
-<g id="a_Node000000"><a xlink:href="classApp_1_1Services_1_1Projects_1_1RoleContextResolver.html" target="_top" xlink:title="Resolves the role context for the authenticated user so controllers and services can share the same c...">
+<g id="a_Node000000"><a xlink:href="classApp_1_1Services_1_1Projects_1_1ProjectIdeaService.html" target="_top" xlink:title="Encapsulates the persistence rules used when professors or students submit a project idea.">
 <polygon fill="white" stroke="#666666" points="128,-30 0,-30 0,0 128,0 128,-30"/>
 <text text-anchor="start" x="8" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">App::Services::Projects</text>
-<text text-anchor="middle" x="64" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">::RoleContextResolver</text>
+<text text-anchor="middle" x="64" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">::ProjectIdeaService</text>
 </a>
 </g>
 </g>

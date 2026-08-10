@@ -1,0 +1,15 @@
+<map id="App::Models::Project::contentFrameworks" name="App::Models::Project::contentFrameworks">
+<area shape="rect" id="Node000001" title=" " alt="" coords="581,127,740,167"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a8eca93212c12c16305928089124a9a7f" title="Build a portable snapshot so each version preserves the project state of that moment." alt="" coords="296,5,520,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="618,122,577,97,532,74,505,63,507,58,534,69,580,92,621,117"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#a66279c21a7515cf7b7e7227dc4bcaa2b" title="Build a compatible snapshot for legacy and new versions." alt="" coords="315,84,501,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="568,137,501,127,502,122,568,132"/>
+<area shape="rect" id="Node000006" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#ae1323a36bd9ece1992b9536d1cb3e1f0" title="Display the details of a project, including its latest version." alt="" coords="317,163,499,203"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="568,163,499,173,499,168,567,158"/>
+<area shape="rect" id="Node000007" href="$classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#aa6ad08d9d2d47f827a4147947f210082" title=" " alt="" coords="283,227,533,267"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="617,177,577,198,534,218,499,230,497,225,532,213,575,193,614,172"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#a2389d8b616d87db11847ca38eb91109b" title="Display the version history associated with the project." alt="" coords="27,48,213,103"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="301,101,213,90,214,84,301,95"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#a2cfada4301b68a0a74ecc8723a363bc7" title="Show the full snapshot of a project version." alt="" coords="5,127,235,167"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="301,127,235,136,234,130,301,122"/>
+</map>

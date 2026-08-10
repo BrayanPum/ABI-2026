@@ -1,0 +1,7 @@
+<map id="App::Models::Professor::ProfessorThematicArea" name="App::Models::Professor::ProfessorThematicArea">
+<area shape="rect" id="Node000001" title="Extended model that ensures thematic area reads occur through the professor connection so catalog acc..." alt="" coords="15,321,189,421"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1ThematicArea.html" title="thematic_areas table model, manages communication with the database using the root user,..." alt="" coords="5,119,199,273"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,287,105,321,99,321,99,287"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="75,5,129,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="105,84,105,118,99,118,99,84"/>
+</map>

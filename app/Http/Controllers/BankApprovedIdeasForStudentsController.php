@@ -6,6 +6,7 @@ use App\Models\AcademicProcessWindow;
 use App\Models\Project;
 use App\Models\Student;
 use App\Models\ThematicArea;
+use App\Models\Postulation;
 use App\Services\AcademicCalendar\AcademicCalendarService;
 use App\Services\Students\StudentAcademicProgressService;
 use Illuminate\Http\Request;
@@ -151,6 +152,20 @@ class BankApprovedIdeasForStudentsController extends Controller
         }
 
         $canSelectProject = true;
+        
+        // Check if already assigned
+        if ($student->hasActiveProject()) {
+            $canSelectProject = false;
+        }
+
+        // Check if already postulated to THIS project
+        $existingPostulation = Postulation::where('project_id', $project->id)
+            ->whereHas('members', function($q) use ($student) {
+                $q->where('student_id', $student->id);
+            })
+            ->where('status', 'pending')
+            ->first();
+
         $selectionWindowOpen = true;
         $selectionWindowMessage = null;
 
@@ -163,7 +178,8 @@ class BankApprovedIdeasForStudentsController extends Controller
             'selectionWindow',
             'selectionWindowOpen',
             'selectionWindowMessage',
-            'activeAcademicPeriod'
+            'activeAcademicPeriod',
+            'existingPostulation'
         ));
     }
 }

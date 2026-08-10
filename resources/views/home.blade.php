@@ -4,31 +4,27 @@
 --}}
 @extends('tablar::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Inicio')
 
 @section('content')
-    {{-- Header section introducing the dashboard and greeting the user. --}}
     <div class="page-header d-print-none">
         <div class="container-xl">
             <div class="row g-2 align-items-center">
                 <div class="col">
-                    {{-- Subheading gives context to the title below. --}}
                     <div class="page-pretitle">
                         {{ $displayName !== '' ? 'Bienvenido, ' . $displayName : 'Bienvenido' }}
                     </div>
                     <h2 class="page-title">
                         ABI - Sistema de Gestión
                     </h2>
-                    <!--Perfil-->
                 </div>
             </div>
         </div>
     </div>
 
-    {{-- Welcome card summarizing the system purpose and current user details. --}}
     <div class="row mt-4 justify-content-center">
         <div class="col-lg-8">
-                <div class="card card-md">
+            <div class="card card-md">
                 <div class="card-body text-center py-5">
                     <span class="avatar avatar-xl rounded-circle bg-white shadow-sm mb-4 p-0 abi-home-avatar">
                         <img

@@ -2,26 +2,47 @@
 
 namespace Tests\Unit\Controllers;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Models\ResearchStaff\ResearchStaffCity;
+use App\Models\ResearchStaff\ResearchStaffDepartment;
 use App\Models\ResearchStaff\ResearchStaffProgram;
 use App\Models\ResearchStaff\ResearchStaffResearchGroup;
 use App\Models\ResearchStaff\ResearchStaffUser;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Hash;
+use Tests\TestCase;
 
 class ProgramControllerTest extends TestCase
 {
     use RefreshDatabase;
 
-    protected $researchGroup;
+    protected ResearchStaffCity $cityA;
+
+    protected ResearchStaffCity $cityB;
+
+    protected ResearchStaffResearchGroup $researchGroup;
 
     protected function setUp(): void
     {
         parent::setUp();
+
+        $department = ResearchStaffDepartment::create([
+            'name' => 'Santander',
+        ]);
+
+        $this->cityA = ResearchStaffCity::create([
+            'name' => 'Bucaramanga',
+            'department_id' => $department->id,
+        ]);
+
+        $this->cityB = ResearchStaffCity::create([
+            'name' => 'San Gil',
+            'department_id' => $department->id,
+        ]);
+
         $this->researchGroup = ResearchStaffResearchGroup::create([
             'name' => 'Grupo Test',
             'initials' => 'GT',
-            'description' => 'Descripción del grupo test'
+            'description' => 'DescripciÃ³n del grupo test',
         ]);
     }
 
@@ -29,17 +50,20 @@ class ProgramControllerTest extends TestCase
     public function test_can_list_programs()
     {
         $user = $this->createAuthUser();
-        ResearchStaffProgram::create([
+        $program = ResearchStaffProgram::create([
             'code' => 1001,
             'name' => 'Programa Test',
-            'research_group_id' => $this->researchGroup->id
+            'research_group_id' => $this->researchGroup->id,
         ]);
+        $program->cities()->sync([$this->cityA->id, $this->cityB->id]);
 
         $response = $this->actingAs($user)->get(route('programs.index'));
 
         $response->assertStatus(200);
         $response->assertViewIs('programs.index');
         $response->assertViewHas('programs');
+        $response->assertSee('Bucaramanga');
+        $response->assertSee('2 ciudades');
     }
 
     /** @test */
@@ -49,7 +73,8 @@ class ProgramControllerTest extends TestCase
         $data = [
             'code' => 1001,
             'name' => 'Nuevo Programa',
-            'research_group_id' => $this->researchGroup->id
+            'research_group_id' => $this->researchGroup->id,
+            'city_ids' => [$this->cityA->id, $this->cityB->id],
         ];
 
         $response = $this->actingAs($user)->post(route('programs.store'), $data);
@@ -57,6 +82,16 @@ class ProgramControllerTest extends TestCase
         $response->assertRedirect(route('programs.index'));
         $response->assertSessionHas('success');
         $this->assertDatabaseHas('programs', ['name' => 'Nuevo Programa']);
+
+        $program = ResearchStaffProgram::where('name', 'Nuevo Programa')->firstOrFail();
+        $this->assertDatabaseHas('city_program', [
+            'program_id' => $program->id,
+            'city_id' => $this->cityA->id,
+        ]);
+        $this->assertDatabaseHas('city_program', [
+            'program_id' => $program->id,
+            'city_id' => $this->cityB->id,
+        ]);
     }
 
     /** @test */
@@ -66,13 +101,13 @@ class ProgramControllerTest extends TestCase
         ResearchStaffProgram::create([
             'code' => 1001,
             'name' => 'Programa Existente',
-            'research_group_id' => $this->researchGroup->id
+            'research_group_id' => $this->researchGroup->id,
         ]);
 
         $data = [
             'code' => 1001,
             'name' => 'Nuevo Programa',
-            'research_group_id' => $this->researchGroup->id
+            'research_group_id' => $this->researchGroup->id,
         ];
 
         $response = $this->actingAs($user)->post(route('programs.store'), $data);
@@ -87,19 +122,48 @@ class ProgramControllerTest extends TestCase
         $program = ResearchStaffProgram::create([
             'code' => 1001,
             'name' => 'Programa Original',
-            'research_group_id' => $this->researchGroup->id
+            'research_group_id' => $this->researchGroup->id,
         ]);
+        $program->cities()->sync([$this->cityA->id]);
 
         $data = [
             'code' => 1002,
             'name' => 'Programa Actualizado',
-            'research_group_id' => $this->researchGroup->id
+            'research_group_id' => $this->researchGroup->id,
+            'city_ids' => [$this->cityB->id],
         ];
 
         $response = $this->actingAs($user)->put(route('programs.update', $program), $data);
 
         $response->assertRedirect(route('programs.index'));
         $this->assertDatabaseHas('programs', ['name' => 'Programa Actualizado']);
+        $this->assertDatabaseHas('city_program', [
+            'program_id' => $program->id,
+            'city_id' => $this->cityB->id,
+        ]);
+        $this->assertDatabaseMissing('city_program', [
+            'program_id' => $program->id,
+            'city_id' => $this->cityA->id,
+        ]);
+    }
+
+    /** @test */
+    public function test_show_displays_associated_cities_and_department()
+    {
+        $user = $this->createAuthUser();
+        $program = ResearchStaffProgram::create([
+            'code' => 1001,
+            'name' => 'Programa Test',
+            'research_group_id' => $this->researchGroup->id,
+        ]);
+        $program->cities()->sync([$this->cityA->id]);
+
+        $response = $this->actingAs($user)->get(route('programs.show', $program));
+
+        $response->assertStatus(200);
+        $response->assertSee('Ciudades asociadas');
+        $response->assertSee('Bucaramanga');
+        $response->assertSee('Santander');
     }
 
     /** @test */
@@ -109,7 +173,7 @@ class ProgramControllerTest extends TestCase
         $program = ResearchStaffProgram::create([
             'code' => 1001,
             'name' => 'Programa Test',
-            'research_group_id' => $this->researchGroup->id
+            'research_group_id' => $this->researchGroup->id,
         ]);
 
         $response = $this->actingAs($user)->delete(route('programs.destroy', $program));
@@ -125,7 +189,7 @@ class ProgramControllerTest extends TestCase
         $program = ResearchStaffProgram::create([
             'code' => 1001,
             'name' => 'Programa Test',
-            'research_group_id' => $this->researchGroup->id
+            'research_group_id' => $this->researchGroup->id,
         ]);
         $program->delete();
 

@@ -1,0 +1,5 @@
+<map id="App::Models::InvestigationLine" name="App::Models::InvestigationLine">
+<area shape="rect" id="Node000001" title="investigation_lines table model, manages communication with the database using the root user,..." alt="" coords="5,119,220,273"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="85,5,140,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,84,115,118,110,118,110,84"/>
+</map>

@@ -7,26 +7,26 @@
                 <div class="col col-login mx-auto">
                     <div class="text-center mb-1 mt-5">
                         <a href="" class="navbar-brand navbar-brand-autodark">
-                            <img src="{{asset(config('tablar.auth_logo.img.path','assets/tablar-logo.png'))}}" height="36"
-                                 alt=""></a>
+                            <img src="{{ asset(config('tablar.auth_logo.img.path', 'assets/tablar-logo.png')) }}" height="36"
+                                 alt="Logo de autenticación"></a>
                     </div>
                     <form class="card" method="POST" action="{{ route('password.request') }}">
                         @csrf
                         <input type="hidden" name="token" value="{{ $token }}">
 
                         <div class="card-body p-6">
-                            <div class="card-title">@lang('Reset password')</div>
+                            <div class="card-title">Restablecer contraseña</div>
 
-                            <p class="text-muted">@lang('Enter your email address and your password will be reset and emailed to you.')</p>
+                            <p class="text-muted">Ingresa tu correo electrónico y define una nueva contraseña.</p>
                             <div class="form-group">
-                                <label class="form-label" for="exampleInputEmail1">@lang('Email address')</label>
+                                <label class="form-label" for="exampleInputEmail1">Correo electrónico</label>
                                 <input
                                     type="email"
                                     class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
                                     id="email"
                                     name="email"
                                     aria-describedby="emailHelp"
-                                    placeholder="Enter email"
+                                    placeholder="Ingresa tu correo"
                                     value="{{ $email ?? old('email') }}"
                                     required
                                     autofocus>
@@ -38,11 +38,11 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="form-label">@lang('Password')</label>
+                                <label class="form-label">Contraseña</label>
                                 <input
                                     type="password"
                                     class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
-                                    placeholder="Password"
+                                    placeholder="Contraseña"
                                     name="password"
                                     required>
                                 @if ($errors->has('password'))
@@ -52,11 +52,11 @@
                                 @endif
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="password-confirm">@lang('Confirm Password')</label>
+                                <label class="form-label" for="password-confirm">Confirmar contraseña</label>
                                 <input
                                     type="password"
                                     class="form-control{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}"
-                                    placeholder="Confirm Password"
+                                    placeholder="Confirmar contraseña"
                                     name="password_confirmation"
                                     id="password-confirm">
                                 @if ($errors->has('password_confirmation'))
@@ -66,7 +66,7 @@
                                 @endif
                             </div>
                             <div class="form-footer">
-                                <button type="submit" class="btn btn-primary btn-block">@lang('Reset Password')</button>
+                                <button type="submit" class="btn btn-primary btn-block">Restablecer contraseña</button>
                             </div>
                         </div>
                     </form>

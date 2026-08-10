@@ -17,7 +17,7 @@ final class RoleContextResolver
         $isResearchStaff = $user?->role === 'research_staff';
 
         if (! $isProfessor && ! $isStudent && ! ($allowResearchStaff && $isResearchStaff)) {
-            abort(403, 'This action is only available for professors, committee leaders or students.');
+            abort(403, 'Esta acción solo está disponible para docentes, líderes de comité o estudiantes.');
         }
 
         return new RoleContext(

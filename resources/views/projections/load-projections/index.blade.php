@@ -3,6 +3,8 @@
 @section('title', 'Proyeccion de carga')
 
 @section('content')
+    @include('reports.partials.visual-report-styles')
+
     <div class="page-header d-print-none">
         <div class="container-xl">
             <div class="row g-2 align-items-center">
@@ -50,7 +52,6 @@
                         <div class="col-12 col-lg-4">
                             <label for="academic_period_id" class="form-label">Periodo objetivo</label>
                             <select id="academic_period_id" name="academic_period_id" class="form-select">
-                                <option value="">Todos</option>
                                 @foreach($periods as $period)
                                     <option value="{{ $period->id }}" {{ (int) $selectedPeriodId === (int) $period->id ? 'selected' : '' }}>
                                         {{ $period->name }}
@@ -145,6 +146,106 @@
                     </div>
                 @endif
             </div>
+
+            <div class="card mt-3" id="load-projections-report">
+                <div class="card-header">
+                    <div>
+                        <h3 class="card-title">Reporte de proyeccion de carga</h3>
+                        <div class="text-muted">{{ $reportModules[$activeReportKey]['description'] ?? 'Resumen de la proyeccion de carga para el periodo seleccionado.' }}</div>
+                    </div>
+                </div>
+                <div class="card-body project-report-shell">
+                    <form method="GET" action="{{ route('projections.load-projections.index') }}#load-projections-report" class="row g-3 align-items-end">
+                        <input type="hidden" name="academic_period_id" value="{{ $selectedPeriodId }}">
+                        <input type="hidden" name="program_id" value="{{ $selectedProgramId }}">
+                        <input type="hidden" name="per_page" value="{{ $perPage }}">
+                        <div class="col-12 col-lg-6">
+                            <label for="report_key" class="form-label">Reporte</label>
+                            <select id="report_key" name="report_key" class="form-select">
+                                @foreach ($reportModules as $reportKey => $module)
+                                    <option value="{{ $reportKey }}" @selected($activeReportKey === $reportKey)>{{ $module['label'] }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="d-flex flex-wrap gap-2">
+                                <button type="submit" class="btn btn-primary">Generar reporte</button>
+                                <a href="{{ route('projections.load-projections.index', array_filter([
+                                    'academic_period_id' => $selectedPeriodId,
+                                    'program_id' => $selectedProgramId,
+                                    'per_page' => $perPage,
+                                    'report_key' => $activeReportKey,
+                                    'report_export' => 'pdf',
+                                ], static fn ($value) => $value !== null && $value !== '')) }}" class="btn btn-outline-danger">Exportar PDF</a>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="text-muted small">
+                        El reporte siempre toma un solo periodo academico y reutiliza las mismas visualizaciones del modulo de proyectos.
+                    </div>
+
+                    <div class="project-report-grid">
+                        @foreach ($reportInsights as $insight)
+                            <div class="project-report-stat">
+                                <div class="project-report-stat__label">{{ $insight['label'] }}</div>
+                                <div class="project-report-stat__value" style="font-size: 1.2rem;">{{ $insight['value'] }}</div>
+                                <div class="text-muted small mt-2">{{ $insight['caption'] }}</div>
+                            </div>
+                        @endforeach
+                    </div>
+
+                    <div class="project-report-visuals">
+                        @forelse ($reportVisuals as $visual)
+                            @include('projects.partials.report-visual', [
+                                'visual' => $visual,
+                                'groupId' => 'load-report-' . $loop->index,
+                            ])
+                        @empty
+                            <div class="project-report-empty">Sin datos para construir el reporte.</div>
+                        @endforelse
+                    </div>
+
+                    @if ($reportTable)
+                        <div class="card project-report-table-card bg-white">
+                            <div class="card-header">
+                                <div>
+                                    <h4 class="card-title mb-0">{{ $reportTable['title'] }}</h4>
+                                    <div class="text-muted">{{ $reportTable['description'] }}</div>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table card-table table-vcenter">
+                                    <thead>
+                                        <tr>
+                                            @foreach ($reportTable['columns'] as $column)
+                                                <th>{{ $column }}</th>
+                                            @endforeach
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @forelse ($reportTable['rows'] as $row)
+                                            <tr>
+                                                @foreach ($row as $cell)
+                                                    <td class="text-break">{{ $cell }}</td>
+                                                @endforeach
+                                            </tr>
+                                        @empty
+                                            <tr>
+                                                <td colspan="{{ count($reportTable['columns']) }}" class="text-center text-secondary">
+                                                    No se encontraron registros para este reporte.
+                                                </td>
+                                            </tr>
+                                        @endforelse
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    @endif
+                </div>
+            </div>
         </div>
     </div>
+
+    @include('reports.partials.visual-report-scripts')
 @endsection

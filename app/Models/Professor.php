@@ -7,11 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-use function PHPSTORM_META\map;
-
 /**
- * professors table model, manages communication with the database using the root user, 
- * should not be used by any end user, 
+ * professors table model, manages communication with the database using the root user,
+ * should not be used by any end user,
  * always use an inherited model with the connection specific to each role.
  */
 class Professor extends Model
@@ -26,7 +24,6 @@ class Professor extends Model
         'user_id',
         'committee_leader',
     ];
-
 
     /**
      * The attributes that are guarded from mass assignment.
@@ -69,5 +66,14 @@ class Professor extends Model
             'professor_id',
             'project_id'
         )->withTimestamps();
+    }
+
+    // Postulaciones que debe revisar (vía professor_project)
+    public function postulationToReview()
+    {
+        return Postulation::whereIn(
+            'project_id',
+            $this->projects()->pluck('projects.id')
+        );
     }
 }

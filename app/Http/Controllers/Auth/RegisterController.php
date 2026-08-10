@@ -40,7 +40,7 @@ class RegisterController extends Controller
         // The middleware is handled in routes, but this inline closure ensures authorization
         $this->middleware(function ($request, $next) {
             if (auth()->check() && auth()->user()->role !== 'research_staff') {
-                return redirect('/home')->with('error', 'Unauthorized access');
+                return redirect('/home')->with('error', 'No tienes autorización para acceder a esta sección.');
             }
             return $next($request);
         });

@@ -24,11 +24,15 @@ class BankApprovedIdeasAssignController extends Controller
 
     public function select(Project $project): View|RedirectResponse
     {
-        if (! AcademicCalendarService::isProcessWindowOpen(AcademicProcessWindow::PROCESS_IDEA_SELECTION)) {
-            return view(
-                'academic-calendar.unavailable',
-                AcademicCalendarService::unavailableActivityViewData(AcademicProcessWindow::PROCESS_IDEA_SELECTION)
-            );
+        $selectionWindow = AcademicCalendarService::currentWindowForProcess(AcademicProcessWindow::PROCESS_IDEA_SELECTION);
+        
+        if (! $selectionWindow) {
+            return $this->academicProcessUnavailableView(AcademicProcessWindow::PROCESS_IDEA_SELECTION);
+        }
+
+        // Si la ventana requiere evaluación, NO permitimos entrar a la vista de selección directa
+        if ($selectionWindow->requires_evaluation) {
+            return redirect()->route('students.postulations.create', $project);
         }
 
         $student = Student::where('user_id', Auth::id())
@@ -66,14 +70,16 @@ class BankApprovedIdeasAssignController extends Controller
 
     public function assign(Request $request, Project $project): View|RedirectResponse
     {
-        if (! AcademicCalendarService::isProcessWindowOpen(AcademicProcessWindow::PROCESS_IDEA_SELECTION)) {
-            return view(
-                'academic-calendar.unavailable',
-                AcademicCalendarService::unavailableActivityViewData(AcademicProcessWindow::PROCESS_IDEA_SELECTION)
-            );
+        $selectionWindow = AcademicCalendarService::currentWindowForProcess(AcademicProcessWindow::PROCESS_IDEA_SELECTION);
+
+        if (! $selectionWindow) {
+            return $this->academicProcessUnavailableView(AcademicProcessWindow::PROCESS_IDEA_SELECTION);
         }
 
-        $selectionWindow = AcademicCalendarService::currentWindowForProcess(AcademicProcessWindow::PROCESS_IDEA_SELECTION);
+        if ($selectionWindow->requires_evaluation === true || $selectionWindow->requires_evaluation == 1) {
+            return redirect()->route('students.postulations.create', $project);
+        }
+
         $activePeriod = AcademicCalendarService::currentActivePeriodOrFail();
 
         $student = Student::where('user_id', Auth::id())

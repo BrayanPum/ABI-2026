@@ -1,0 +1,7 @@
+<map id="App::Http::Controllers::ProjectController::mapContentValues" name="App::Http::Controllers::ProjectController::mapContentValues">
+<area shape="rect" id="Node000001" title="Map the content values for the provided version into a keyed collection." alt="" coords="5,30,232,85"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1ContentVersion.html#ae23373aa6d8e963a8394763814691f56" title="Get the content associated with this version entry." alt="" coords="280,5,489,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="232,41,266,37,267,42,232,46"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1Version.html#a0e34ee2163b2e005dfb48e942a2af7e2" title="Direct relationship with the completed content." alt="" coords="305,69,464,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="232,68,292,76,291,81,232,74"/>
+</map>

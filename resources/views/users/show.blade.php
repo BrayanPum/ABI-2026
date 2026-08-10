@@ -70,7 +70,7 @@
                         </div>
                         <div class="card-body">
                             <dl class="row mb-0">
-                                <dt class="col-sm-3">Email</dt>
+                                <dt class="col-sm-3">Correo electrónico</dt>
                                 <dd class="col-sm-9">{{ $user->email }}</dd>
 
                                 <dt class="col-sm-3">Rol</dt>

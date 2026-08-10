@@ -1,0 +1,5 @@
+<map id="App::Services::Projects::ProjectIdeaService::hasDuplicateStudentProject" name="App::Services::Projects::ProjectIdeaService::hasDuplicateStudentProject">
+<area shape="rect" id="Node000001" title="Determines if a duplicate project already exists for the provided student lineup." alt="" coords="5,5,208,60"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Project.html#a6e148fe6ffa1778de91228a3cbe51ec5" title=" " alt="" coords="256,13,411,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,30,242,30,242,35,208,35"/>
+</map>

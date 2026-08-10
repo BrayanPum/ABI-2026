@@ -24,6 +24,7 @@ class AcademicProcessWindow extends Model
         'start_at',
         'end_at',
         'is_enabled',
+        'requires_evaluation',
         'notes',
     ];
 
@@ -32,6 +33,7 @@ class AcademicProcessWindow extends Model
         'start_at' => 'datetime',
         'end_at' => 'datetime',
         'is_enabled' => 'boolean',
+        'requires_evaluation' => 'boolean',
     ];
 
     public function academicPeriod(): BelongsTo

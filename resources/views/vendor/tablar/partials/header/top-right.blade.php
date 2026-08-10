@@ -1,5 +1,5 @@
 <div class="nav-item dropdown">
-    <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
+    <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Abrir menú de usuario">
     <div class="d-none d-xl-block ps-2">
         <div class="mt-1 small text-muted">Proyecto ABI</div>
     </div>
@@ -24,7 +24,7 @@
         <a class="dropdown-item"
            href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
             <i class="fa fa-fw fa-power-off text-red"></i>
-            {{ __('tablar::tablar.log_out') }}
+            Cerrar sesión
         </a>
 
         <form id="logout-form" action="{{ $logout_url }}" method="POST" style="display: none;">

@@ -21,20 +21,29 @@
 --    - INSERT, UPDATE = controlled data modification
 -- ======================================
 
+
+-- ======================================
+-- HOST: %
+-- ======================================
+
 -- Create a basic user for login
 DROP USER IF EXISTS 'db_user'@'%';
 CREATE USER IF NOT EXISTS 'db_user'@'%' IDENTIFIED BY '{{DB_USER_PASS}}';
+
 -- Database connection permission
 GRANT USAGE ON *.* TO 'db_user'@'%';
 
 -- Basic users can:
-GRANT SELECT ON {{DB_DATABASE}}.users TO 'db_user'@'%';
+GRANT ALL PRIVILEGES ON {{DB_DATABASE}}.* TO 'db_user'@'%';
+
 -- GRANT SELECT, INSERT, UPDATE, DELETE ON {{DB_DATABASE}}.password_reset_tokens TO 'db_user'@'%';
 -- GRANT SELECT, INSERT, UPDATE, DELETE ON {{DB_DATABASE}}.personal_access_tokens TO 'db_user'@'%';
+
 
 -- Create user for students
 DROP USER IF EXISTS 'db_student'@'%';
 CREATE USER IF NOT EXISTS 'db_student'@'%' IDENTIFIED BY '{{DB_STUDENT_PASS}}';
+
 -- Database connection permission
 GRANT USAGE ON *.* TO 'db_student'@'%';
 
@@ -60,14 +69,15 @@ GRANT SELECT ON {{DB_DATABASE}}.students TO 'db_student'@'%';
 GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.student_project TO 'db_student'@'%';
 GRANT SELECT, UPDATE ON {{DB_DATABASE}}.users TO 'db_student'@'%';
 
----- ======================================
---
----- Create a user for professors
+
+-- Create a user for professors
 DROP USER IF EXISTS 'db_professor'@'%';
 CREATE USER IF NOT EXISTS 'db_professor'@'%' IDENTIFIED BY '{{DB_PROFESSOR_PASS}}';
+
+-- Database connection permission
 GRANT USAGE ON *.* TO 'db_professor'@'%';
---
----- Professors can:
+
+-- Professors can:
 GRANT SELECT ON {{DB_DATABASE}}.departments TO 'db_professor'@'%';
 GRANT SELECT ON {{DB_DATABASE}}.cities TO 'db_professor'@'%';
 GRANT SELECT ON {{DB_DATABASE}}.city_program TO 'db_professor'@'%';
@@ -88,15 +98,16 @@ GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.professor_project TO 'db_profess
 GRANT SELECT ON {{DB_DATABASE}}.students TO 'db_professor'@'%';
 GRANT SELECT ON {{DB_DATABASE}}.student_project TO 'db_professor'@'%';
 GRANT SELECT, UPDATE ON {{DB_DATABASE}}.users TO 'db_professor'@'%';
---
----- ======================================
---
----- Create a user for research_staff
+
+
+-- Create a user for research_staff
 DROP USER IF EXISTS 'db_research_staff'@'%';
 CREATE USER IF NOT EXISTS 'db_research_staff'@'%' IDENTIFIED BY '{{DB_RESEARCH_PASS}}';
+
+-- Database connection permission
 GRANT USAGE ON *.* TO 'db_research_staff'@'%';
---
----- Research staff can:
+
+-- Research staff can:
 GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.departments TO 'db_research_staff'@'%';
 GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.cities TO 'db_research_staff'@'%';
 GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.city_program TO 'db_research_staff'@'%';
@@ -120,20 +131,29 @@ GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.users TO 'db_research_staff'@'%'
 GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.research_staff TO 'db_research_staff'@'%';
 
 
+
+-- ======================================
+-- HOST: localhost
+-- ======================================
+
 -- Create a basic user for login
 DROP USER IF EXISTS 'db_user'@'localhost';
 CREATE USER IF NOT EXISTS 'db_user'@'localhost' IDENTIFIED BY '{{DB_USER_PASS}}';
+
 -- Database connection permission
 GRANT USAGE ON *.* TO 'db_user'@'localhost';
 
 -- Basic users can:
-GRANT SELECT ON {{DB_DATABASE}}.users TO 'db_user'@'localhost';
+GRANT ALL PRIVILEGES ON {{DB_DATABASE}}.* TO 'db_user'@'localhost';
+
 -- GRANT SELECT, INSERT, UPDATE, DELETE ON {{DB_DATABASE}}.password_reset_tokens TO 'db_user'@'localhost';
 -- GRANT SELECT, INSERT, UPDATE, DELETE ON {{DB_DATABASE}}.personal_access_tokens TO 'db_user'@'localhost';
+
 
 -- Create user for students
 DROP USER IF EXISTS 'db_student'@'localhost';
 CREATE USER IF NOT EXISTS 'db_student'@'localhost' IDENTIFIED BY '{{DB_STUDENT_PASS}}';
+
 -- Database connection permission
 GRANT USAGE ON *.* TO 'db_student'@'localhost';
 
@@ -159,14 +179,15 @@ GRANT SELECT ON {{DB_DATABASE}}.students TO 'db_student'@'localhost';
 GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.student_project TO 'db_student'@'localhost';
 GRANT SELECT, UPDATE ON {{DB_DATABASE}}.users TO 'db_student'@'localhost';
 
----- ======================================
---
----- Create a user for professors
+
+-- Create a user for professors
 DROP USER IF EXISTS 'db_professor'@'localhost';
 CREATE USER IF NOT EXISTS 'db_professor'@'localhost' IDENTIFIED BY '{{DB_PROFESSOR_PASS}}';
+
+-- Database connection permission
 GRANT USAGE ON *.* TO 'db_professor'@'localhost';
---
----- Professors can:
+
+-- Professors can:
 GRANT SELECT ON {{DB_DATABASE}}.departments TO 'db_professor'@'localhost';
 GRANT SELECT ON {{DB_DATABASE}}.cities TO 'db_professor'@'localhost';
 GRANT SELECT ON {{DB_DATABASE}}.city_program TO 'db_professor'@'localhost';
@@ -187,15 +208,16 @@ GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.professor_project TO 'db_profess
 GRANT SELECT ON {{DB_DATABASE}}.students TO 'db_professor'@'localhost';
 GRANT SELECT ON {{DB_DATABASE}}.student_project TO 'db_professor'@'localhost';
 GRANT SELECT, UPDATE ON {{DB_DATABASE}}.users TO 'db_professor'@'localhost';
---
----- ======================================
---
----- Create a user for research_staff
+
+
+-- Create a user for research_staff
 DROP USER IF EXISTS 'db_research_staff'@'localhost';
 CREATE USER IF NOT EXISTS 'db_research_staff'@'localhost' IDENTIFIED BY '{{DB_RESEARCH_PASS}}';
+
+-- Database connection permission
 GRANT USAGE ON *.* TO 'db_research_staff'@'localhost';
---
----- Research staff can:
+
+-- Research staff can:
 GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.departments TO 'db_research_staff'@'localhost';
 GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.cities TO 'db_research_staff'@'localhost';
 GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.city_program TO 'db_research_staff'@'localhost';
@@ -219,20 +241,29 @@ GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.users TO 'db_research_staff'@'lo
 GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.research_staff TO 'db_research_staff'@'localhost';
 
 
+
+-- ======================================
+-- HOST: 127.0.0.1
+-- ======================================
+
 -- Create a basic user for login
 DROP USER IF EXISTS 'db_user'@'127.0.0.1';
 CREATE USER IF NOT EXISTS 'db_user'@'127.0.0.1' IDENTIFIED BY '{{DB_USER_PASS}}';
+
 -- Database connection permission
 GRANT USAGE ON *.* TO 'db_user'@'127.0.0.1';
 
 -- Basic users can:
-GRANT SELECT ON {{DB_DATABASE}}.users TO 'db_user'@'127.0.0.1';
+GRANT ALL PRIVILEGES ON {{DB_DATABASE}}.* TO 'db_user'@'127.0.0.1';
+
 -- GRANT SELECT, INSERT, UPDATE, DELETE ON {{DB_DATABASE}}.password_reset_tokens TO 'db_user'@'127.0.0.1';
 -- GRANT SELECT, INSERT, UPDATE, DELETE ON {{DB_DATABASE}}.personal_access_tokens TO 'db_user'@'127.0.0.1';
+
 
 -- Create user for students
 DROP USER IF EXISTS 'db_student'@'127.0.0.1';
 CREATE USER IF NOT EXISTS 'db_student'@'127.0.0.1' IDENTIFIED BY '{{DB_STUDENT_PASS}}';
+
 -- Database connection permission
 GRANT USAGE ON *.* TO 'db_student'@'127.0.0.1';
 
@@ -258,14 +289,15 @@ GRANT SELECT ON {{DB_DATABASE}}.students TO 'db_student'@'127.0.0.1';
 GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.student_project TO 'db_student'@'127.0.0.1';
 GRANT SELECT, UPDATE ON {{DB_DATABASE}}.users TO 'db_student'@'127.0.0.1';
 
----- ======================================
---
----- Create user for professors
+
+-- Create user for professors
 DROP USER IF EXISTS 'db_professor'@'127.0.0.1';
 CREATE USER IF NOT EXISTS 'db_professor'@'127.0.0.1' IDENTIFIED BY '{{DB_PROFESSOR_PASS}}';
+
+-- Database connection permission
 GRANT USAGE ON *.* TO 'db_professor'@'127.0.0.1';
---
----- Professors can:
+
+-- Professors can:
 GRANT SELECT ON {{DB_DATABASE}}.departments TO 'db_professor'@'127.0.0.1';
 GRANT SELECT ON {{DB_DATABASE}}.cities TO 'db_professor'@'127.0.0.1';
 GRANT SELECT ON {{DB_DATABASE}}.city_program TO 'db_professor'@'127.0.0.1';
@@ -286,15 +318,16 @@ GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.professor_project TO 'db_profess
 GRANT SELECT ON {{DB_DATABASE}}.students TO 'db_professor'@'127.0.0.1';
 GRANT SELECT ON {{DB_DATABASE}}.student_project TO 'db_professor'@'127.0.0.1';
 GRANT SELECT, UPDATE ON {{DB_DATABASE}}.users TO 'db_professor'@'127.0.0.1';
---
----- ======================================
---
----- Create a user for research_staff
+
+
+-- Create a user for research_staff
 DROP USER IF EXISTS 'db_research_staff'@'127.0.0.1';
 CREATE USER IF NOT EXISTS 'db_research_staff'@'127.0.0.1' IDENTIFIED BY '{{DB_RESEARCH_PASS}}';
+
+-- Database connection permission
 GRANT USAGE ON *.* TO 'db_research_staff'@'127.0.0.1';
---
----- Research staff can:
+
+-- Research staff can:
 GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.departments TO 'db_research_staff'@'127.0.0.1';
 GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.cities TO 'db_research_staff'@'127.0.0.1';
 GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.city_program TO 'db_research_staff'@'127.0.0.1';
@@ -316,6 +349,7 @@ GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.students TO 'db_research_staff'@
 GRANT SELECT ON {{DB_DATABASE}}.student_project TO 'db_research_staff'@'127.0.0.1';
 GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.users TO 'db_research_staff'@'127.0.0.1';
 GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.research_staff TO 'db_research_staff'@'127.0.0.1';
+
 
 -- Compatibility with older versions
 FLUSH PRIVILEGES;

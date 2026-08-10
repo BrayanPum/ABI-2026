@@ -1,0 +1,7 @@
+<map id="App::Services::Projects::ProjectParticipantService::baseQuery" name="App::Services::Projects::ProjectParticipantService::baseQuery">
+<area shape="rect" id="Node000001" title="Shared query builder used by both the fetch and search flows." alt="" coords="245,45,437,100"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Services_1_1Projects_1_1ProjectParticipantService.html#a1c730c0f87df756fb2c35097b3122612" title="Returns the participant payload for the requested identifiers keeping the original collection shape." alt="" coords="5,5,197,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="231,57,197,51,198,46,232,52"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Services_1_1Projects_1_1ProjectParticipantService.html#a6e63e2f6be2966c0e54d28d215abf903" title="Performs an unrestricted search optionally excluding the active professor." alt="" coords="5,84,197,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="232,93,198,99,197,93,231,88"/>
+</map>

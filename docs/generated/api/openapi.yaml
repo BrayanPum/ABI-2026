@@ -1,0 +1,643 @@
+openapi: 3.0.3
+info:
+  title: 'ABI-2026 API Documentation'
+  description: 'Documentacion automatica de los endpoints API del proyecto ABI-2026.'
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+tags:
+  -
+    name: 'API Endpoints'
+    description: ''
+paths:
+  /api/user:
+    get:
+      summary: ''
+      operationId: getApiUser
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+  /api/research-groups:
+    get:
+      summary: 'Muestra el listado de grupos de investigación con filtros'
+      operationId: muestraElListadoDeGruposDeInvestigacinConFiltros
+      description: "Permite filtrar por búsqueda de texto (nombre, iniciales)\ny muestra contadores de programas y líneas de investigación."
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    post:
+      summary: 'Almacena un nuevo grupo de investigación en la base de datos'
+      operationId: almacenaUnNuevoGrupoDeInvestigacinEnLaBaseDeDatos
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+  '/api/research-groups/{id}':
+    get:
+      summary: 'Muestra el detalle de un grupo de investigación'
+      operationId: muestraElDetalleDeUnGrupoDeInvestigacin
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    put:
+      summary: 'Actualiza un grupo de investigación existente'
+      operationId: actualizaUnGrupoDeInvestigacinExistente
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    delete:
+      summary: 'Elimina lógicamente (soft delete) un grupo de investigación'
+      operationId: eliminaLgicamentesoftDeleteUnGrupoDeInvestigacin
+      description: 'Verifica que no tenga programas o líneas de investigación asociadas.'
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the research group.'
+        example: 16
+        required: true
+        schema:
+          type: integer
+  /api/programs:
+    get:
+      summary: ''
+      operationId: getApiPrograms
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    post:
+      summary: ''
+      operationId: postApiPrograms
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+  '/api/programs/{id}':
+    get:
+      summary: ''
+      operationId: getApiProgramsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    put:
+      summary: ''
+      operationId: putApiProgramsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiProgramsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the program.'
+        example: 16
+        required: true
+        schema:
+          type: integer
+  /api/investigation-lines:
+    get:
+      summary: 'Muestra el listado de líneas de investigación con filtros'
+      operationId: muestraElListadoDeLneasDeInvestigacinConFiltros
+      description: "Permite filtrar por búsqueda de texto (nombre, descripción)\ny por grupo de investigación."
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    post:
+      summary: 'Almacena una nueva línea de investigación en la base de datos'
+      operationId: almacenaUnaNuevaLneaDeInvestigacinEnLaBaseDeDatos
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+  '/api/investigation-lines/{id}':
+    get:
+      summary: 'Muestra el detalle de una línea de investigación'
+      operationId: muestraElDetalleDeUnaLneaDeInvestigacin
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    put:
+      summary: 'Actualiza una línea de investigación existente'
+      operationId: actualizaUnaLneaDeInvestigacinExistente
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    delete:
+      summary: 'Elimina lógicamente (soft delete) una línea de investigación'
+      operationId: eliminaLgicamentesoftDeleteUnaLneaDeInvestigacin
+      description: 'Verifica que no tenga áreas temáticas asociadas antes de eliminar.'
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the investigation line.'
+        example: 16
+        required: true
+        schema:
+          type: integer
+  /api/thematic-areas:
+    get:
+      summary: ''
+      operationId: getApiThematicAreas
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    post:
+      summary: ''
+      operationId: postApiThematicAreas
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'El campo value no debe tener más de 100 caracteres.'
+                  example: ufkaaacsmazquuxslxug
+                description:
+                  type: string
+                  description: 'El campo value debe tener al menos 10 caracteres.'
+                  example: 'Harum id cum exercitationem blanditiis saepe.'
+                investigation_line_id:
+                  type: string
+                  description: 'The <code>id</code> of an existing record in the investigation_lines table.'
+                  example: omnis
+              required:
+                - name
+                - description
+                - investigation_line_id
+      security: []
+  '/api/thematic-areas/{id}':
+    get:
+      summary: ''
+      operationId: getApiThematicAreasId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    put:
+      summary: ''
+      operationId: putApiThematicAreasId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: null
+                description:
+                  type: string
+                  description: 'El campo value debe tener al menos 10 caracteres.'
+                  example: 'Incidunt velit aperiam sit aperiam sunt impedit deleniti.'
+                investigation_line_id:
+                  type: string
+                  description: 'The <code>id</code> of an existing record in the investigation_lines table.'
+                  example: omnis
+              required:
+                - description
+                - investigation_line_id
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiThematicAreasId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the thematic area.'
+        example: 16
+        required: true
+        schema:
+          type: integer
+  /api/contents:
+    get:
+      summary: 'Obtiene un listado paginado de contenidos disponibles'
+      operationId: obtieneUnListadoPaginadoDeContenidosDisponibles
+      description: "Soporta filtrado por:\n- Búsqueda general (nombre y descripción)\n- Roles específicos (mediante campo JSON)\n- Paginación configurable"
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    post:
+      summary: 'Crea un nuevo contenido en el catálogo'
+      operationId: creaUnNuevoContenidoEnElCatlogo
+      description: "Valida y registra un nuevo contenido dentro de una transacción\npara garantizar integridad de datos."
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'El campo value no debe tener más de 100 caracteres.'
+                  example: ufkaaacsmazquuxslxug
+                description:
+                  type: string
+                  description: ''
+                  example: 'Incidunt velit aperiam sit aperiam sunt impedit deleniti.'
+                  nullable: true
+                roles:
+                  type: array
+                  description: ''
+                  example:
+                    - committee_leader
+                  items:
+                    type: string
+                    enum:
+                      - research_staff
+                      - professor
+                      - student
+                      - committee_leader
+              required:
+                - name
+                - roles
+      security: []
+  '/api/contents/{id}':
+    get:
+      summary: 'Muestra el detalle completo de un contenido específico'
+      operationId: muestraElDetalleCompletoDeUnContenidoEspecfico
+      description: 'Incluye todas las versiones asociadas ordenadas por fecha de creación'
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    put:
+      summary: 'Actualiza los datos de un contenido existente'
+      operationId: actualizaLosDatosDeUnContenidoExistente
+      description: 'Valida y actualiza el contenido dentro de una transacción'
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'El campo value no debe tener más de 100 caracteres.'
+                  example: ufkaaacsmazquuxslxug
+                description:
+                  type: string
+                  description: ''
+                  example: 'Incidunt velit aperiam sit aperiam sunt impedit deleniti.'
+                  nullable: true
+                roles:
+                  type: array
+                  description: ''
+                  example:
+                    - committee_leader
+                  items:
+                    type: string
+                    enum:
+                      - research_staff
+                      - professor
+                      - student
+                      - committee_leader
+              required:
+                - name
+                - roles
+      security: []
+    delete:
+      summary: 'Elimina lógicamente (soft delete) un contenido del catálogo'
+      operationId: eliminaLgicamentesoftDeleteUnContenidoDelCatlogo
+      description: "Verifica que no tenga versiones asociadas antes de eliminar.\nUtiliza soft delete para mantener el registro en la base de datos."
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the content.'
+        example: 16
+        required: true
+        schema:
+          type: integer
+  /api/versions:
+    get:
+      summary: 'Lista las versiones registradas con filtros'
+      operationId: listaLasVersionesRegistradasConFiltros
+      description: 'Permite filtrar por project_id y paginar resultados.'
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    post:
+      summary: 'Crea una nueva versión para un proyecto'
+      operationId: creaUnaNuevaVersinParaUnProyecto
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                project_id:
+                  type: integer
+                  description: 'The <code>id</code> of an existing record in the projects table.'
+                  example: 16
+              required:
+                - project_id
+      security: []
+  '/api/versions/{id}':
+    get:
+      summary: 'Muestra una versión específica con sus contenidos'
+      operationId: muestraUnaVersinEspecficaConSusContenidos
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    put:
+      summary: 'Actualiza los datos de una versión'
+      operationId: actualizaLosDatosDeUnaVersin
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                project_id:
+                  type: integer
+                  description: 'The <code>id</code> of an existing record in the projects table.'
+                  example: 16
+      security: []
+    delete:
+      summary: 'Elimina lógicamente (soft delete) una versión'
+      operationId: eliminaLgicamentesoftDeleteUnaVersin
+      description: 'Verifica que no tenga contenidos diligenciados antes de eliminar.'
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the version.'
+        example: 16
+        required: true
+        schema:
+          type: integer
+  /api/content-versions:
+    get:
+      summary: 'Lista los valores diligenciados por contenido y versión'
+      operationId: listaLosValoresDiligenciadosPorContenidoYVersin
+      description: 'Permite filtrar por version_id, content_id, project_id y búsqueda de texto.'
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    post:
+      summary: 'Registra un nuevo valor de contenido para una versión'
+      operationId: registraUnNuevoValorDeContenidoParaUnaVersin
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content_id:
+                  type: integer
+                  description: 'The <code>id</code> of an existing record in the contents table.'
+                  example: 16
+                version_id:
+                  type: integer
+                  description: 'The <code>id</code> of an existing record in the versions table.'
+                  example: 16
+                value:
+                  type: string
+                  description: ''
+                  example: omnis
+                content_version_id:
+                  type: string
+                  description: ''
+                  example: null
+              required:
+                - content_id
+                - version_id
+                - value
+      security: []
+  '/api/content-versions/{id}':
+    get:
+      summary: 'Muestra el detalle de un registro contenido-versión'
+      operationId: muestraElDetalleDeUnRegistroContenidoVersin
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    put:
+      summary: 'Actualiza el valor de un contenido para una versión'
+      operationId: actualizaElValorDeUnContenidoParaUnaVersin
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content_id:
+                  type: integer
+                  description: 'The <code>id</code> of an existing record in the contents table.'
+                  example: 16
+                version_id:
+                  type: integer
+                  description: 'The <code>id</code> of an existing record in the versions table.'
+                  example: 16
+                value:
+                  type: string
+                  description: ''
+                  example: omnis
+                content_version_id:
+                  type: string
+                  description: ''
+                  example: null
+      security: []
+    delete:
+      summary: 'Elimina lógicamente (soft delete) un registro contenido-versión'
+      operationId: eliminaLgicamentesoftDeleteUnRegistroContenidoVersin
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the content version.'
+        example: 16
+        required: true
+        schema:
+          type: integer
+  /api/projects:
+    get:
+      summary: 'Display a paginated list of projects for the authenticated user.'
+      operationId: displayAPaginatedListOfProjectsForTheAuthenticatedUser
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    post:
+      summary: 'Persist a new project idea following the role specific business rules.'
+      operationId: persistANewProjectIdeaFollowingTheRoleSpecificBusinessRules
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+  '/api/projects/{id}':
+    get:
+      summary: 'Display the details of a project, including its latest version.'
+      operationId: displayTheDetailsOfAProjectIncludingItsLatestVersion
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    put:
+      summary: 'Update the project information by creating a new version with the submitted content.'
+      operationId: updateTheProjectInformationByCreatingANewVersionWithTheSubmittedContent
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the project.'
+        example: 16
+        required: true
+        schema:
+          type: integer

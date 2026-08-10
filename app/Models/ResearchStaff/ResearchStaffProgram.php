@@ -3,6 +3,9 @@
 namespace App\Models\ResearchStaff;
 
 use App\Models\Program;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
 
 /**
@@ -14,6 +17,22 @@ class ResearchStaffProgram extends Program
     protected $table = 'programs';
 
     protected $connection = 'mysql_research_staff';
+
+    public function researchGroup(): BelongsTo
+    {
+        return $this->belongsTo(ResearchStaffResearchGroup::class, 'research_group_id', 'id');
+    }
+
+    public function cities(): BelongsToMany
+    {
+        return $this->belongsToMany(ResearchStaffCity::class, 'city_program', 'program_id', 'city_id')
+            ->withTimestamps();
+    }
+
+    public function cityPrograms(): HasMany
+    {
+        return $this->hasMany(ResearchStaffCityProgram::class, 'program_id', 'id');
+    }
 
     public static function uniqueOptions(): Collection
     {

@@ -1,0 +1,7 @@
+<map id="App::Http::Controllers::ProjectController::presentParticipant" name="App::Http::Controllers::ProjectController::presentParticipant">
+<area shape="rect" id="Node000001" title="Normalize the participant payload so the Blade and JS layers consume the same shape." alt="" coords="5,30,201,85"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Professor.html#ad2da7b4e640a943b256c39e03b9bf74c" title="Get the city program that the professor belongs to." alt="" coords="249,5,420,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,41,236,36,236,42,202,46"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1Professor.html#a40972ba6a5a24a8fa59596c0268da934" title="Get the user associated with the professor." alt="" coords="249,69,420,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="202,68,236,73,236,78,201,74"/>
+</map>

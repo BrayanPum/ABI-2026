@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * students table model, manages communication with the database using the root user, 
- * should not be used by any end user, 
+ * students table model, manages communication with the database using the root user,
+ * should not be used by any end user,
  * always use an inherited model with the connection specific to each role.
  */
 class Student extends Model
@@ -17,6 +17,7 @@ class Student extends Model
     use HasFactory, SoftDeletes;
 
     public const PG_STAGE_PG1 = 'pg1';
+
     public const PG_STAGE_PG2 = 'pg2';
 
     /**
@@ -74,5 +75,47 @@ class Student extends Model
             'student_id',
             'project_id'
         )->withTimestamps();
+    }
+
+    // Postulaciones donde es líder
+    public function postulations()
+    {
+        return $this->hasMany(Postulation::class, 'lead_student_id', 'id');
+    }
+
+    // Postulaciones donde aparece como integrante o líder
+    public function applications(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            Postulation::class,
+            'postulation_members',
+            'student_id',
+            'postulation_id'
+        )->withPivot('role_description', 'is_lead');
+    }
+
+    // Cuántas postulaciones activas tiene (máximo 3)
+    public function activeApplicationsCount(): int
+    {
+        return $this->applications()
+            ->whereIn('status', ['pending', 'approved'])
+            ->count();
+    }
+
+    public function hasActiveProject(): bool
+    {
+        $allowedStatuses = ['Rechazado', 'Devuelto para correccion'];
+
+        return $this->projects()
+            ->whereHas('projectStatus', fn ($status) => $status->whereNotIn('name', $allowedStatuses))
+            ->exists();
+    }
+
+    /**
+     * Get the student's full name.
+     */
+    public function getFullNameAttribute(): string
+    {
+        return "{$this->name} {$this->last_name}";
     }
 }

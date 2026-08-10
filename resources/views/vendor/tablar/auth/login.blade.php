@@ -1,5 +1,5 @@
 @extends('tablar::auth.layout')
-@section('title', 'Login')
+@section('title', 'Iniciar sesión')
 @section('content')
     <div class="container container-tight py-4">
         <div class="text-center mb-1 mt-5">
@@ -7,16 +7,15 @@
                 <img src="{{ asset(config('tablar.auth_logo.img.path', 'assets/tablar-logo.png')) }}"
                      width="{{ config('tablar.auth_logo.img.width', 110) }}"
                      height="{{ config('tablar.auth_logo.img.height', 110) }}"
-                     alt="{{ config('tablar.auth_logo.img.alt', 'Auth Logo') }}"
+                     alt="{{ config('tablar.auth_logo.img.alt', 'Logo de autenticación') }}"
                      class="{{ trim('navbar-brand-image ' . config('tablar.auth_logo.img.class', '')) }}"
                      @if(config('tablar.auth_logo.img.style')) style="{{ config('tablar.auth_logo.img.style') }}" @endif>
             </a>
         </div>
         <div class="card card-md">
             <div class="card-body">
-                <h2 class="h2 text-center mb-4">Ingresa tu cuenta</h2>
-                
-                <!-- Display Errors -->
+                <h2 class="h2 text-center mb-4">Ingresa a tu cuenta</h2>
+
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         @foreach ($errors->all() as $error)
@@ -24,24 +23,22 @@
                         @endforeach
                     </div>
                 @endif
-                
+
                 <form action="{{ route('login') }}" method="post" autocomplete="off" novalidate>
                     @csrf
                     <div class="mb-3">
-                        <label class="form-label">Cuenta email</label>
+                        <label class="form-label">Correo electrónico</label>
                         <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
-                               placeholder="your@email.com" autocomplete="off" required>
+                               placeholder="tu@correo.com" autocomplete="off" required>
                         @error('email')
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="mb-2">
-                        <label class="form-label">
-                            Contraseña
-                        </label>
+                        <label class="form-label">Contraseña</label>
                         <div class="input-group input-group-flat">
                             <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror"
-                                   placeholder="Your password" autocomplete="off" required>
+                                   placeholder="Tu contraseña" autocomplete="off" required>
                             <span class="input-group-text">
                                 <a href="#" class="link-secondary pe-auto" title="Mostrar contraseña" data-bs-toggle="tooltip" id="toggle-password">
                                     <svg id="icon-eye" xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
@@ -68,7 +65,7 @@
                         </div>
                     </div>
                     <div class="form-footer">
-                        <button type="submit" class="btn btn-primary w-100">Sign in</button>
+                        <button type="submit" class="btn btn-primary w-100">Iniciar sesión</button>
                     </div>
                 </form>
             </div>
@@ -77,27 +74,21 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-
             const togglePassword = document.getElementById('toggle-password');
             const passwordField = document.getElementById('password');
-
             const iconEye = document.getElementById('icon-eye');
             const iconEyeOff = document.getElementById('icon-eye-off');
 
             togglePassword.addEventListener('click', function(e) {
                 e.preventDefault();
 
-                // Alternar tipo de campo
                 const isHidden = passwordField.getAttribute('type') === 'password';
                 passwordField.setAttribute('type', isHidden ? 'text' : 'password');
 
-                // Cambiar iconos
                 iconEye.classList.toggle('d-none', !isHidden);
                 iconEyeOff.classList.toggle('d-none', isHidden);
-
-                // Cambiar tooltip
                 togglePassword.setAttribute('title', isHidden ? 'Ocultar contraseña' : 'Mostrar contraseña');
             });
         });
-        </script>
+    </script>
 @endsection

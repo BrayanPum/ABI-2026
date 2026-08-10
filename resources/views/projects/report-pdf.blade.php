@@ -274,7 +274,7 @@
                     @endif
                 </td>
                 <td class="header-main">
-                    <h1>Reporte de proyectos</h1>
+                    <h1>{{ $reportSubject ?? 'Reporte de proyectos' }}</h1>
                     <div class="institution">Universidad de Investigacion y Desarrollo UDI</div>
                     <div class="system-name">ABI Sistema de gestion</div>
                 </td>

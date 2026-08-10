@@ -38,12 +38,11 @@ class LoginController extends Controller
     {
         $this->validateLogin($request);
 
-        // Check if the user is inactive
         $user = \App\Models\User::where('email', $request->email)->first();
 
         if ($user && $user->state == 0) {
             return back()->withErrors([
-                'email' => 'Tu usuario está inactivo. Contacta al administrador.'
+                'email' => 'Tu usuario está inactivo. Contacta al administrador.',
             ]);
         }
 
@@ -65,7 +64,7 @@ class LoginController extends Controller
         } catch (\Exception $e) {
             Log::error('Database error: ' . $e->getMessage());
 
-            return redirect()->back()->withErrors(['db_error' => 'Inténtelo más tarde.']);
+            return redirect()->back()->withErrors(['db_error' => 'Inténtalo más tarde.']);
         }
     }
 

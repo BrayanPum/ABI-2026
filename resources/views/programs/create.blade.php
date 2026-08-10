@@ -28,7 +28,7 @@
                         </svg>
                         Registrar programa académico
                     </h2>
-                    <p class="text-muted mb-0">Ingresa la información del programa bilingüe y relaciónalo con un grupo de investigación.</p>
+                    <p class="text-muted mb-0">Ingresa la información del programa y selecciona desde aquí las ciudades donde estará disponible.</p>
                 </div>
                 <div class="col-auto ms-auto d-print-none">
                     <a href="{{ route('programs.index') }}" class="btn btn-outline-secondary">
@@ -50,16 +50,15 @@
             @endif
 
             <div class="row g-3">
-                <div class="col-12 col-lg-8">
+                <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Información del programa</h3>
+                            <h3 class="card-title">Información del programa y ciudades asociadas</h3>
                             <div class="card-actions">
                                 <small class="text-secondary">Los campos marcados con * son obligatorios</small>
                             </div>
                         </div>
                         <div class="card-body">
-                            {{-- Form stores the captured program data. --}}
                             <form method="POST" action="{{ route('programs.store') }}">
                                 @csrf
                                 @include('programs.form')

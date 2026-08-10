@@ -1,0 +1,25 @@
+<map id="App::Http::Controllers::ProjectEvaluationController::index" name="App::Http::Controllers::ProjectEvaluationController::index">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,356,213,411"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#af7cb0e60d2182440b97fa54f0d25a327" title=" " alt="" coords="271,156,483,211"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,354,326,217,329,221,149,358"/>
+<area shape="rect" id="Node000007" href="$classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#a2c92a25c3577ed2efed766a9c592e5c5" title="Render the committee report as a branded PDF document." alt="" coords="261,356,492,411"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="213,381,248,381,248,386,213,386"/>
+<area shape="rect" id="Node000012" href="$classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#a810cc4bedafa100ef4c8806abfeaffb0" title=" " alt="" coords="273,435,481,489"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="204,408,271,428,269,433,202,413"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#a758c94cf7a6fc8a9b4629a62baebe150" title=" " alt="" coords="540,5,748,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="411,154,469,111,539,69,550,63,553,68,541,74,472,116,414,158"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#ab1f88212523849b7aa557aa47f024476" title=" " alt="" coords="540,84,748,139"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="478,153,528,140,530,145,480,158"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Models_1_1Project.html#a2957d15a78ccb6a5d46712c9ecb0503b" title=" " alt="" coords="567,163,721,203"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="483,181,553,181,553,186,483,186"/>
+<area shape="rect" id="Node000006" href="$classApp_1_1Models_1_1Project.html#aa7f598c5341f3abbdc5c667597789ac4" title=" " alt="" coords="567,227,721,267"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="484,206,554,223,553,228,482,211"/>
+<area shape="rect" id="Node000008" href="$classApp_1_1Models_1_1Professor.html#ad2da7b4e640a943b256c39e03b9bf74c" title="Get the city program that the professor belongs to." alt="" coords="559,291,729,331"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="478,353,555,332,557,338,480,358"/>
+<area shape="rect" id="Node000009" href="$classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#a9a7be54ee204441cf1530d8860640b34" title=" " alt="" coords="540,356,748,411"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="492,381,526,381,526,386,492,386"/>
+<area shape="rect" id="Node000010" href="$classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#a0f7ac35118f4ddc956d27d98072a95dc" title=" " alt="" coords="540,435,748,489"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="471,408,538,428,537,433,469,413"/>
+<area shape="rect" id="Node000011" href="$classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#a61dddccee54514855270cbaf4ddeb24b" title="Convert a public asset into a base64 data URI so Dompdf can embed it reliably." alt="" coords="540,513,748,568"/>
+<area shape="poly" id="edge10_Node000007_Node000011" title=" " alt="" coords="477,409,494,420,511,440,519,460,526,480,542,499,548,504,545,508,538,503,521,482,514,462,506,443,490,424,474,413"/>
+</map>

@@ -1,0 +1,28 @@
+<map id="App::Services::Projects::TeacherIdeaBalanceService::recommendationsForUser" name="App::Services::Projects::TeacherIdeaBalanceService::recommendationsForUser">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,203,213,257"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Services_1_1Projects_1_1TeacherIdeaBalanceService.html#ac47b6ecbc7d8c97f2995c0f199b1b00d" title=" " alt="" coords="539,5,747,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,200,554,62,556,67,185,205"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Services_1_1Projects_1_1TeacherIdeaBalanceService.html#a12ca986abc2c4cc0941c9746f26130d5" title=" " alt="" coords="261,203,491,257"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="213,227,248,227,248,233,213,233"/>
+<area shape="rect" id="Node000012" href="$classApp_1_1Services_1_1Projects_1_1TeacherIdeaBalanceService.html#a2279dc31d96d4d5775c9bc56eef33767" title=" " alt="" coords="272,341,480,396"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="164,255,311,332,309,337,162,260"/>
+<area shape="poly" id="edge10_Node000003_Node000002" title=" " alt="" coords="397,201,456,136,495,100,537,69,545,64,548,69,540,74,498,104,460,139,401,204"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Services_1_1Projects_1_1TeacherIdeaBalanceService.html#a0a3208028cd713e676b1d5c055a6ccb9" title=" " alt="" coords="539,84,747,139"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="428,200,538,148,552,141,554,146,540,152,431,205"/>
+<area shape="rect" id="Node000006" href="$classApp_1_1Services_1_1Projects_1_1TeacherIdeaBalanceService.html#a3801986320a7cae7f509ce317729240a" title=" " alt="" coords="539,163,747,217"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="490,210,525,205,525,210,491,215"/>
+<area shape="rect" id="Node000008" href="$classApp_1_1Services_1_1Projects_1_1TeacherIdeaBalanceService.html#a4b5c134f4b30a98ef0e01136695d9117" title=" " alt="" coords="539,241,747,296"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="491,244,525,249,525,254,490,249"/>
+<area shape="rect" id="Node000010" href="$classApp_1_1Models_1_1Professor.html#ad2da7b4e640a943b256c39e03b9bf74c" title="Get the city program that the professor belongs to." alt="" coords="557,321,728,361"/>
+<area shape="poly" id="edge9_Node000003_Node000010" title=" " alt="" coords="430,255,540,306,560,314,558,319,538,311,427,260"/>
+<area shape="rect" id="Node000011" href="$classApp_1_1Models_1_1InvestigationLine.html#abb3e4b52f28cf60dca730f125feb1b2b" title="Get the thematic areas associated with this investigation line." alt="" coords="545,385,740,425"/>
+<area shape="poly" id="edge11_Node000003_Node000011" title=" " alt="" coords="410,256,493,328,515,351,540,370,553,377,550,382,537,375,512,355,489,332,407,260"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Services_1_1Projects_1_1TeacherIdeaBalanceService.html#a58dd62cc3e9383581ee66bdb7262f439" title=" " alt="" coords="795,84,1003,139"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="747,109,781,109,781,114,747,114"/>
+<area shape="rect" id="Node000007" href="$classApp_1_1Models_1_1ThematicArea.html#ad2d4d4adb1abde55e4cae16bc08638be" title="Get the investigation line that owns the thematic area." alt="" coords="798,170,999,210"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="747,187,784,187,784,193,747,193"/>
+<area shape="rect" id="Node000009" href="$classApp_1_1Models_1_1Project.html#aa96cc7a6d2323571a8ae63459a55a083" title=" " alt="" coords="821,249,976,289"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="747,266,808,266,808,271,747,271"/>
+<area shape="rect" id="Node000013" href="$classApp_1_1Models_1_1User.html#a49efcb9e3b03c4867ce680e80d9f427f" title="Professor profile associated with the user." alt="" coords="569,449,717,489"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="439,394,540,434,562,442,560,447,538,439,437,399"/>
+</map>

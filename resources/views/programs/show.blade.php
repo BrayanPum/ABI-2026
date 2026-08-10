@@ -28,7 +28,7 @@
                         </svg>
                         {{ $program->name }}
                     </h2>
-                    <p class="text-muted mb-0">Consulta los detalles del programa y verifica su grupo de investigación asociado.</p>
+                    <p class="text-muted mb-0">Consulta los detalles del programa, su grupo de investigación y las ciudades donde está disponible.</p>
                 </div>
                 <div class="col-12 col-md-auto ms-auto d-print-none">
                     <div class="btn-list">
@@ -78,12 +78,52 @@
                             @endif
                         </dd>
 
+                        <dt class="col-sm-3">Ciudades asociadas</dt>
+                        <dd class="col-sm-9">
+                            <span class="badge bg-azure-lt">{{ $program->cities->count() }}</span>
+                        </dd>
+
                         <dt class="col-sm-3">Creado</dt>
                         <dd class="col-sm-9">{{ $program->created_at?->format('d/m/Y H:i') ?? 'N/D' }}</dd>
 
                         <dt class="col-sm-3">Última actualización</dt>
                         <dd class="col-sm-9">{{ $program->updated_at?->diffForHumans() ?? 'N/D' }}</dd>
                     </dl>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-header">
+                    <h3 class="card-title">Ciudades asociadas</h3>
+                    <div class="card-actions">
+                        <span class="badge bg-azure-lt">{{ $program->cities->count() }}</span>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table card-table table-vcenter align-middle">
+                        <thead>
+                            <tr>
+                                <th class="w-1">#</th>
+                                <th>Ciudad</th>
+                                <th>Departamento</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse($program->cities as $index => $city)
+                                <tr>
+                                    <td class="text-muted">{{ $index + 1 }}</td>
+                                    <td>{{ $city->name }}</td>
+                                    <td>{{ $city->department->name ?? 'Sin departamento' }}</td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="3" class="text-center text-muted py-4">
+                                        Este programa todavía no tiene ciudades asociadas.
+                                    </td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

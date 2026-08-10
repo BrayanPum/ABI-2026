@@ -1,0 +1,5 @@
+<map id="App::Http::Controllers::ProjectController::resolveProfessorProfile" name="App::Http::Controllers::ProjectController::resolveProfessorProfile">
+<area shape="rect" id="Node000001" title="Resolve the professor profile associated with the authenticated user." alt="" coords="5,5,200,60"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1User.html#a49efcb9e3b03c4867ce680e80d9f427f" title="Professor profile associated with the user." alt="" coords="248,13,396,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,30,234,30,234,35,200,35"/>
+</map>

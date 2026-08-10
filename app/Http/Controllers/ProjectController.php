@@ -34,8 +34,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
-use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class ProjectController extends Controller
 {
@@ -54,7 +54,7 @@ class ProjectController extends Controller
     /**
      * Display a paginated list of projects for the authenticated user.
      */
-    public function index(Request $request): View|StreamedResponse|Response
+    public function index(Request $request): View|Response
     {
         $user = AuthUserHelper::fullUser();
 
@@ -115,14 +115,6 @@ class ProjectController extends Controller
 
         if ($user?->role === 'research_staff') {
             $reportState = $this->buildProjectReportState($request, $user);
-
-            if ($reportState['export'] === 'csv') {
-                return $this->streamProjectReportCsv(
-                    $reportState['reportKey'],
-                    $reportState['exportLabel'],
-                    $reportState['reportData']
-                );
-            }
 
             if ($reportState['export'] === 'pdf') {
                 return $this->downloadProjectReportPdf($reportState);
@@ -203,7 +195,7 @@ class ProjectController extends Controller
             'report_from' => ['nullable', 'date'],
             'report_to' => ['nullable', 'date', 'after_or_equal:report_from'],
             'report_program_id' => ['nullable', 'integer', 'exists:programs,id'],
-            'report_export' => ['nullable', Rule::in(['csv', 'pdf'])],
+            'report_export' => ['nullable', Rule::in(['pdf'])],
         ]);
 
         $reportKey = $filters['report_key'] ?? 'projects_by_status';
@@ -1585,42 +1577,6 @@ SQL;
     }
 
     /**
-     * @param  array{categories: array<int, string>, values: array<int, int>, percentages: array<int, float>, total: int}  $reportData
-     */
-    protected function streamProjectReportCsv(string $reportKey, string $reportLabel, array $reportData): StreamedResponse
-    {
-        $filename = sprintf(
-            'reporte-%s-%s.csv',
-            str_replace('_', '-', $reportKey),
-            now()->format('Ymd-His')
-        );
-
-        return response()->streamDownload(function () use ($reportLabel, $reportData): void {
-            $handle = fopen('php://output', 'wb');
-
-            if ($handle === false) {
-                return;
-            }
-
-            fputcsv($handle, [$reportLabel]);
-            fputcsv($handle, ['Categoria', 'Valor', 'Porcentaje']);
-
-            foreach ($reportData['categories'] as $index => $category) {
-                fputcsv($handle, [
-                    $category,
-                    $reportData['values'][$index] ?? 0,
-                    $reportData['percentages'][$index] ?? 0,
-                ]);
-            }
-
-            fputcsv($handle, ['Total', $reportData['total'], 100]);
-            fclose($handle);
-        }, $filename, [
-            'Content-Type' => 'text/csv; charset=UTF-8',
-        ]);
-    }
-
-    /**
      * Render the selected report as a branded PDF document.
      */
     protected function downloadProjectReportPdf(array $reportState): Response
@@ -1730,7 +1686,7 @@ SQL;
         $isCommitteeLeader = $user?->role === 'committee_leader';
 
         if (! $isProfessor && ! $isStudent && ! ($allowResearchStaff && $isResearchStaff)) {
-            abort(403, 'This action is only available for professors, committee leaders or students.');
+            abort(403, 'Esta acción solo está disponible para docentes, líderes de comité o estudiantes.');
         }
 
         return [$user, $isProfessor, $isStudent, $isResearchStaff, $isCommitteeLeader];
@@ -1745,7 +1701,7 @@ SQL;
         $activeProfessor = $this->resolveProfessorProfile($user);
 
         if ($isResearchStaff) {
-            abort(403, 'Research staff members cannot create project ideas.');
+            abort(403, 'El personal de investigación no puede crear ideas de proyecto.');
         }
 
         if (! AcademicCalendarService::isProcessWindowOpen(AcademicProcessWindow::PROCESS_IDEA_PROPOSAL)) {
@@ -1804,7 +1760,7 @@ SQL;
         if ($isProfessor) {
             $professor = $activeProfessor;
             if (! $professor) {
-                abort(403, 'Professor profile required to submit proposals.');
+                abort(403, 'Se requiere un perfil docente para enviar propuestas.');
             }
 
             $prefill = array_merge($prefill, [
@@ -1824,7 +1780,7 @@ SQL;
         } else {
             $student = $user->student;
             if (! $student) {
-                abort(403, 'Student profile required to submit proposals.');
+                abort(403, 'Se requiere un perfil de estudiante para enviar propuestas.');
             }
 
             $cityProgram = $student->cityProgram;
@@ -1884,7 +1840,7 @@ SQL;
 
         try {
             if ($isResearchStaff) {
-                abort(403, 'Research staff members cannot create project ideas.');
+                abort(403, 'El personal de investigación no puede crear ideas de proyecto.');
             }
 
             if (! AcademicCalendarService::isProcessWindowOpen(AcademicProcessWindow::PROCESS_IDEA_PROPOSAL)) {
@@ -1917,6 +1873,8 @@ SQL;
             }
 
             return $this->persistStudentProject($request, $user->student, null, $activeAcademicPeriod, $proposalWindow);
+        } catch (ValidationException $exception) {
+            throw $exception;
         } catch (\Throwable $exception) {
             Log::error('Failed to register project idea.', [
                 'message' => $exception->getMessage(),
@@ -1929,7 +1887,7 @@ SQL;
                 ->withInput()
                 ->with('error', app()->environment('local')
                     ? $exception->getMessage()
-                    : 'Unexpected error. Please try again later.');
+                    : 'Ocurrió un error inesperado. Inténtalo de nuevo más tarde.');
         }
     }
 
@@ -1993,7 +1951,7 @@ SQL;
         [$user, $isProfessor] = $this->ensureRoleAccess();
 
         if (! $isProfessor) {
-            abort(403, 'Only professors and committee leaders can browse participants.');
+            abort(403, 'Solo los docentes y líderes de comité pueden consultar participantes.');
         }
 
         $requestedIds = collect($request->input('ids', []))
@@ -2132,7 +2090,7 @@ SQL;
         $statusName = $this->normalizeStatusName($project->projectStatus->name ?? '');
 
         if ($statusName === 'pendiente de aprobacion') {
-            abort(403, 'Projects pending approval cannot be edited.');
+            abort(403, 'Los proyectos pendientes de aprobación no se pueden editar.');
         }
 
         if (! $this->isReturnedForCorrection($project)) {
@@ -2201,7 +2159,7 @@ SQL;
         if ($useProfessorForm) {
             $contextProfessor = $isProfessor ? $activeProfessor : $project->professors->first();
             if (! $contextProfessor) {
-                abort(403, 'Professor profile required to edit proposals.');
+                abort(403, 'Se requiere un perfil docente para editar propuestas.');
             }
 
             $prefill = array_merge($prefill, [
@@ -2229,7 +2187,7 @@ SQL;
         } elseif ($useStudentForm) {
             $contextStudent = $isStudent ? $user->student : $project->students->first();
             if (! $contextStudent) {
-                abort(403, 'Student profile required to edit proposals.');
+                abort(403, 'Se requiere un perfil de estudiante para editar propuestas.');
             }
 
             $cityProgram = $contextStudent->cityProgram;
@@ -2266,7 +2224,7 @@ SQL;
                 ->orderBy('name')
                 ->get();
         } else {
-            abort(403, 'Project participants are required to edit this proposal.');
+            abort(403, 'Se requiere ser participante del proyecto para editar esta propuesta.');
         }
 
         return view('projects.edit', [
@@ -2300,7 +2258,7 @@ SQL;
         $statusName = $this->normalizeStatusName($project->projectStatus->name ?? '');
 
         if ($statusName === 'pendiente de aprobacion') {
-            abort(403, 'Projects pending approval cannot be edited.');
+            abort(403, 'Los proyectos pendientes de aprobación no se pueden editar.');
         }
 
         if (! $this->isReturnedForCorrection($project)) {
@@ -2324,6 +2282,8 @@ SQL;
             if ($isResearchStaff) {
                 abort(403, 'Pidele al creador del proyecto que lo edite y envie a revision de nuevo.');
             }
+        } catch (ValidationException $exception) {
+            throw $exception;
         } catch (\Throwable $exception) {
             Log::error('Failed to update project idea.', [
                 'project_id' => $project->id,
@@ -2337,7 +2297,7 @@ SQL;
                 ->withInput()
                 ->with('error', app()->environment('local')
                     ? $exception->getMessage()
-                    : 'Unexpected error. Please try again later.');
+                    : 'Ocurrió un error inesperado. Inténtalo de nuevo más tarde.');
         }
     }
 
@@ -2355,17 +2315,17 @@ SQL;
             $professor = $this->resolveProfessorProfile($user);
 
             if (! $professor || ! $project->professors->contains('id', $professor->id)) {
-                abort(403, 'You are not assigned to this project.');
+                abort(403, 'No estás asignado a este proyecto.');
             }
         } elseif ($isStudent) {
             $user = AuthUserHelper::fullUser();
             $student = $user->student;
 
             if (! $student || ! $project->students->contains('id', $student->id)) {
-                abort(403, 'You are not assigned to this project.');
+                abort(403, 'No estás asignado a este proyecto.');
             }
         } else {
-            abort(403, 'Unauthorized access.');
+            abort(403, 'Acceso no autorizado.');
         }
     }
 
@@ -2375,6 +2335,67 @@ SQL;
     protected function normalizeTitle(string $title): string
     {
         return Str::of($title)->squish()->title()->toString();
+    }
+
+    /**
+     * Spanish validation messages for project idea forms.
+     */
+    protected function projectValidationMessages(): array
+    {
+        return [
+            'required' => 'El campo :attribute es obligatorio.',
+            'string' => 'El campo :attribute debe ser texto.',
+            'integer' => 'El campo :attribute debe ser un número entero.',
+            'email' => 'El campo :attribute debe ser un correo electrónico válido.',
+            'array' => 'El campo :attribute debe ser una lista válida.',
+            'exists' => 'El valor seleccionado en :attribute no es válido.',
+            'in' => 'El valor seleccionado en :attribute no es válido.',
+            'max' => 'El campo :attribute no debe ser mayor que :max.',
+            'min' => 'El campo :attribute debe ser al menos :min.',
+            'unique' => 'El valor ingresado en :attribute ya está registrado.',
+            'associated_professors.*.exists' => 'El profesor seleccionado no existe o está inactivo.',
+            'teammate_ids.*.exists' => 'El compañero seleccionado no es válido para este proyecto.',
+            'content_frameworks.*.required' => 'Debes seleccionar al menos un contenido del marco.',
+            'content_frameworks.*.exists' => 'El contenido del marco seleccionado no es válido.',
+        ];
+    }
+
+    /**
+     * Human-readable Spanish names for project idea form fields.
+     */
+    protected function projectValidationAttributes(): array
+    {
+        return [
+            'city_id' => 'ciudad',
+            'program_id' => 'programa académico',
+            'investigation_line_id' => 'línea de investigación',
+            'thematic_area_id' => 'área temática',
+            'title' => 'título del proyecto',
+            'evaluation_criteria' => 'criterios de evaluación',
+            'students_count' => 'cantidad de estudiantes',
+            'execution_time' => 'tiempo de ejecución',
+            'viability' => 'viabilidad',
+            'relevance' => 'pertinencia',
+            'teacher_availability' => 'disponibilidad de docentes',
+            'title_objectives_quality' => 'calidad entre título y objetivo',
+            'general_objective' => 'objetivo general',
+            'description' => 'descripción',
+            'contact_first_name' => 'nombres del contacto',
+            'contact_last_name' => 'apellidos del contacto',
+            'contact_email' => 'correo del contacto',
+            'contact_phone' => 'teléfono del contacto',
+            'associated_professors' => 'profesores asociados',
+            'associated_professors.*' => 'profesor asociado',
+            'content_frameworks' => 'contenidos del marco',
+            'content_frameworks.*' => 'contenido del marco',
+            'teammate_ids' => 'compañeros',
+            'teammate_ids.*' => 'compañero',
+            'student_first_name' => 'nombres del estudiante',
+            'student_last_name' => 'apellidos del estudiante',
+            'student_card_id' => 'documento del estudiante',
+            'student_email' => 'correo del estudiante',
+            'student_phone' => 'teléfono del estudiante',
+        ];
     }
 
     /**
@@ -2415,7 +2436,7 @@ SQL;
             ->first();
 
         if (! $status) {
-            throw new \RuntimeException('Waiting evaluation status is missing from the catalog.');
+            throw new \RuntimeException('El estado de pendiente de evaluación no existe en el catálogo.');
         }
 
         $this->waitingStatusId = $status->id;
@@ -2454,13 +2475,13 @@ SQL;
     ): RedirectResponse
     {
         if (! $professor) {
-            abort(403, 'Professor profile required to complete this action.');
+            abort(403, 'Se requiere un perfil docente para completar esta acción.');
         }
 
         $assignedProgramId = optional($professor->cityProgram)->program_id;
 
         if (! $assignedProgramId) {
-            abort(403, 'A program assignment is required before submitting projects.');
+            abort(403, 'Debes tener un programa asignado antes de enviar proyectos.');
         }
 
         $request->merge(['program_id' => $assignedProgramId]);
@@ -2493,7 +2514,11 @@ SQL;
             'content_frameworks.*' => ['required', Rule::exists('content_frameworks', 'id')],
         ];
 
-        $validated = $request->validate($baseRules);
+        $validated = $request->validate(
+            $baseRules,
+            $this->projectValidationMessages(),
+            $this->projectValidationAttributes()
+        );
         $isUpdate = $project !== null;
         $normalizedTitle = $this->normalizeTitle($validated['title']);
 
@@ -2520,7 +2545,7 @@ SQL;
         if ($duplicateProject) {
             return back()
                 ->withInput()
-                ->with('error', 'A project with the same title and professor team already exists.');
+                ->with('error', 'Ya existe un proyecto con el mismo título y el mismo equipo de docentes.');
         }
 
         $activeAcademicPeriod ??= AcademicCalendarService::currentActivePeriodOrFail();
@@ -2590,8 +2615,8 @@ SQL;
         }
 
         $message = $isUpdate
-            ? 'Project idea updated and set to waiting evaluation'
-            : 'Project idea registered and set to waiting evaluation';
+            ? 'La idea de proyecto fue actualizada y quedó pendiente de evaluación.'
+            : 'La idea de proyecto fue registrada y quedó pendiente de evaluación.';
 
         return redirect()
             ->route('projects.index')
@@ -2610,7 +2635,7 @@ SQL;
     ): RedirectResponse
     {
         if (! $student) {
-            abort(403, 'Student profile required to complete this action.');
+            abort(403, 'Se requiere un perfil de estudiante para completar esta acción.');
         }
 
         $baseRules = [
@@ -2644,7 +2669,15 @@ SQL;
             'content_frameworks.*' => ['required', Rule::exists('content_frameworks', 'id')],
         ];
 
-        $validated = $request->validate($baseRules);
+        $validated = $request->validate($baseRules, [
+            'investigation_line_id.required' => 'Debes seleccionar una línea de investigación.',
+            'thematic_area_id.required' => 'Debes seleccionar un área temática.',
+            'title.required' => 'El título del proyecto es obligatorio.',
+            'general_objective.required' => 'El objetivo general es obligatorio.',
+            'description.required' => 'La descripción del proyecto es obligatoria.',
+            'content_frameworks.required' => 'Debes completar la selección de marcos.',
+            'content_frameworks.*.required' => 'Debes seleccionar una opción en cada marco.',
+        ]);
         $isUpdate = $project !== null;
 
         if (! empty($validated['teammate_ids'])) {
@@ -2780,8 +2813,8 @@ SQL;
         }
 
         $message = $isUpdate
-            ? 'Project idea updated and set to waiting evaluation'
-            : 'Project idea registered and set to waiting evaluation';
+            ? 'La idea de proyecto fue actualizada y quedó pendiente de evaluación.'
+            : 'La idea de proyecto fue registrada y quedó pendiente de evaluación.';
 
         return redirect()
             ->route('projects.index')

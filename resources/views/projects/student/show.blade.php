@@ -30,10 +30,29 @@
                 </div>
                 <div class="col-auto ms-auto d-print-none">
                     <a href="{{ route('students.projects.approved.index') }}" class="btn btn-outline-secondary">Volver al listado</a>
-                    @if($canSelectProject)
-                        <a href="{{ route('projects.student.select', $project) }}" class="btn btn-success">Seleccionar proyecto</a>
+                    @if($existingPostulation)
+                        <span class="badge bg-warning p-2">Postulación en revisión</span>
+                    @elseif($canSelectProject)
+                        @php
+                            $requiresEval = false;
+                            if(isset($selectionWindow)){
+                                // Force boolean check
+                                $requiresEval = (bool) $selectionWindow->requires_evaluation;
+                            }
+                        @endphp
+                        
+                        @if($requiresEval)
+                            <a href="{{ route('students.postulations.create', $project) }}" class="btn btn-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-inline" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" /><path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" /><line x1="16" y1="5" x2="19" y2="8" /></svg>
+                                Iniciar Postulación
+                            </a>
+                        @else
+                            <a href="{{ route('projects.student.select', $project) }}" class="btn btn-success">Seleccionar proyecto</a>
+                        @endif
                     @else
-                        <button type="button" class="btn btn-success" disabled>Seleccionar proyecto</button>
+                        <button type="button" class="btn btn-success" disabled>
+                            {{ (isset($selectionWindow) && $selectionWindow->requires_evaluation) ? 'Postular a esta idea' : 'Seleccionar proyecto' }}
+                        </button>
                     @endif
                 </div>
             </div>

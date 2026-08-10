@@ -1,0 +1,13 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classAuthenticatable.html" title=" " alt="" coords="5,109,131,134"/>
+<area shape="rect" id="Node000001" href="$classApp_1_1Models_1_1User.html" title="user table model, manages communication with the database using the root user, should not be used by ..." alt="" coords="179,109,319,134"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="145,119,178,119,178,124,145,124"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Professor_1_1ProfessorUser.html" title="Extended model that enforces the professor connection when reading users so authentication data is li..." alt="" coords="381,5,552,45"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="281,99,366,55,397,43,399,48,368,60,283,104"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffUser.html" title="Extended model that runs user queries through the research staff connection so authentication data re..." alt="" coords="367,69,567,109"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="332,106,366,101,367,107,333,112"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Models_1_1Student_1_1StudentUser.html" title="Extended model that ensures user lookups for students use the student connection, applying the limite..." alt="" coords="387,133,547,173"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="333,131,387,139,386,144,332,136"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Models_1_1User_1_1UserConnect.html" title="Extended model that uses the generic user connection to expose a limited set of permissions tailored ..." alt="" coords="393,197,541,237"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="283,139,368,183,399,195,397,200,366,188,281,144"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="App::Models::ResearchStaff::ResearchStaffProjectStatus" name="App::Models::ResearchStaff::ResearchStaffProjectStatus">
+<area shape="rect" id="Node000001" title="Extended model that binds project status lookups to the research staff connection so catalog queries ..." alt="" coords="5,232,204,332"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1ProjectStatus.html" title="project_statuses table model, manages communication with the database using the root user,..." alt="" coords="11,119,199,184"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,198,107,232,102,232,102,198"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="77,5,132,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="107,84,107,119,102,119,102,84"/>
+</map>

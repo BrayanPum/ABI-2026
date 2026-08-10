@@ -1,0 +1,7 @@
+<map id="App::Models::Professor::ProfessorVersion" name="App::Models::Professor::ProfessorVersion">
+<area shape="rect" id="Node000001" title="Extended model that ensures version records are handled via the professor connection,..." alt="" coords="5,312,168,412"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Version.html" title="version table model, manages communication with the database using the root user, should not be used ..." alt="" coords="11,119,162,264"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,278,89,312,84,312,84,278"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="59,5,114,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="89,84,89,118,84,118,84,84"/>
+</map>

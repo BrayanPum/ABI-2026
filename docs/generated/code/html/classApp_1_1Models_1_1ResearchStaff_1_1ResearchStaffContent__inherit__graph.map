@@ -1,0 +1,7 @@
+<map id="App::Models::ResearchStaff::ResearchStaffContent" name="App::Models::ResearchStaff::ResearchStaffContent">
+<area shape="rect" id="Node000001" title="Extended model that routes content queries through the research staff connection to enforce the limit..." alt="" coords="5,292,197,392"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Content.html" title="content table model, manages communication with the database using the root user, should not be used ..." alt="" coords="11,119,192,244"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,258,104,292,99,292,99,258"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="74,5,129,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="104,85,104,119,99,119,99,85"/>
+</map>

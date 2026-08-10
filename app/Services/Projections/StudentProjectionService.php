@@ -2,6 +2,7 @@
 
 namespace App\Services\Projections;
 
+use App\Models\ResearchStaff\ResearchStaffAcademicPeriod;
 use App\Models\ResearchStaff\ResearchStaffProject;
 use App\Models\ResearchStaff\ResearchStaffStudent;
 use App\Services\Students\StudentAcademicProgressService;
@@ -11,9 +12,14 @@ class StudentProjectionService
 {
     private const TERMINAL_STATUSES = ['Rechazado', 'Descartado'];
 
-    private ?Collection $supportRows = null;
+    /**
+     * @var array<int|string, \Illuminate\Support\Collection<int, array<string, mixed>>>
+     */
+    private array $supportRows = [];
 
     private ?array $continuitySuggestions = null;
+
+    private ?Collection $loadedStudents = null;
 
     public function __construct(
         private readonly ProjectionPeriodService $periods,
@@ -27,9 +33,9 @@ class StudentProjectionService
         return $this->academicProgress->stageOptions();
     }
 
-    public function supportRows(?int $programId = null): Collection
+    public function supportRows(?int $programId = null, ?int $academicPeriodId = null): Collection
     {
-        $rows = $this->allSupportRows();
+        $rows = $this->allSupportRows($academicPeriodId);
 
         if ($programId) {
             return $rows->where('program_id', $programId)->values();
@@ -38,9 +44,9 @@ class StudentProjectionService
         return $rows;
     }
 
-    public function projectedPg2StudentsForProgram(int $programId): int
+    public function projectedPg2StudentsForProgram(int $programId, ?int $academicPeriodId = null): int
     {
-        return $this->supportRows($programId)
+        return $this->supportRows($programId, $academicPeriodId)
             ->filter(fn (array $row) => $row['is_active'] && $row['projected_pg2_next_period'])
             ->count();
     }
@@ -135,16 +141,26 @@ class StudentProjectionService
         return $this->continuitySuggestions = $suggestions;
     }
 
-    private function allSupportRows(): Collection
+    public function referencePeriod(?int $academicPeriodId = null): ?ResearchStaffAcademicPeriod
     {
-        if ($this->supportRows !== null) {
-            return $this->supportRows;
+        if ($academicPeriodId) {
+            return ResearchStaffAcademicPeriod::query()->find($academicPeriodId);
         }
 
-        $activePeriod = $this->periods->activePeriod();
-        $this->academicProgress->syncAll($activePeriod);
+        return $this->periods->activePeriod();
+    }
 
-        $students = ResearchStaffStudent::query()
+    private function allSupportRows(?int $academicPeriodId = null): Collection
+    {
+        $cacheKey = $academicPeriodId ?: 'default';
+
+        if (array_key_exists($cacheKey, $this->supportRows)) {
+            return $this->supportRows[$cacheKey];
+        }
+
+        $referencePeriod = $this->referencePeriod($academicPeriodId);
+
+        $students = $this->loadedStudents ??= ResearchStaffStudent::query()
             ->with([
                 'user',
                 'cityProgram.city',
@@ -165,14 +181,14 @@ class StudentProjectionService
             ->orderBy('name')
             ->get();
 
-        return $this->supportRows = $students
-            ->map(fn (ResearchStaffStudent $student) => $this->mapStudent($student, $activePeriod))
+        return $this->supportRows[$cacheKey] = $students
+            ->map(fn (ResearchStaffStudent $student) => $this->mapStudent($student, $referencePeriod))
             ->values();
     }
 
-    private function mapStudent(ResearchStaffStudent $student, $activePeriod): array
+    private function mapStudent(ResearchStaffStudent $student, ?ResearchStaffAcademicPeriod $referencePeriod): array
     {
-        $progress = $this->academicProgress->describe($student, $activePeriod);
+        $progress = $this->academicProgress->describeForPeriod($student, $referencePeriod);
         $assignedProject = $progress['assigned_project'];
         $latestProject = $progress['latest_project'];
         $teacherNames = $latestProject
@@ -199,6 +215,7 @@ class StudentProjectionService
             'project_title' => $latestProject?->title,
             'project_status' => $latestProject?->projectStatus?->name,
             'assignment_period_name' => $assignedProject?->assignmentAcademicPeriod?->name,
+            'reference_period_name' => $referencePeriod?->name,
             'teacher_names' => $teacherNames,
             'projected_pg2_next_period' => (bool) $progress['projected_pg2_next_period'],
         ];

@@ -1,0 +1,40 @@
+<map id="App::Models::Student::projects" name="App::Models::Student::projects">
+<area shape="rect" id="Node000001" title="Get the projects assigned to the student." alt="" coords="1189,190,1349,230"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#a40693dc117fd8e73cd1dc73f9dea47a8" title=" " alt="" coords="893,111,1141,165"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1185,189,1113,168,1114,163,1186,184"/>
+<area shape="rect" id="Node000012" href="$classApp_1_1Models_1_1Student.html#aa50fdaed6b7af59f402a3d582b089dea" title=" " alt="" coords="937,190,1097,230"/>
+<area shape="poly" id="edge16_Node000001_Node000012" title=" " alt="" coords="1175,213,1097,213,1097,207,1175,207"/>
+<area shape="rect" id="Node000013" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#aa4ccef91a56d349c2f2f8e54f7c446ed" title=" " alt="" coords="597,20,845,75"/>
+<area shape="poly" id="edge17_Node000001_Node000013" title=" " alt="" coords="1241,181,1197,138,1170,117,1140,100,1067,75,990,58,915,49,845,46,846,41,915,44,991,53,1069,69,1142,96,1173,113,1201,134,1245,178"/>
+<area shape="rect" id="Node000014" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a01f301c831deec8989b3edf0f3b00a0c" title="Persist the project data for a student either creating or updating a record." alt="" coords="922,255,1113,309"/>
+<area shape="poly" id="edge20_Node000001_Node000014" title=" " alt="" coords="1186,236,1114,257,1112,252,1184,231"/>
+<area shape="rect" id="Node000015" href="$classApp_1_1Services_1_1Projects_1_1ProjectIdeaService.html#aca6db5377882854bfc064effd107c913" title="Ensures the student does not have another active project awaiting evaluation." alt="" coords="932,333,1103,388"/>
+<area shape="poly" id="edge21_Node000001_Node000015" title=" " alt="" coords="1243,242,1198,284,1143,324,1104,342,1102,337,1140,320,1195,280,1239,238"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#a342aecffaca0198db506453dd0d79774" title=" " alt="" coords="301,44,549,99"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="879,125,549,88,550,83,880,120"/>
+<area shape="rect" id="Node000008" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#aeb732c9b05ef4cc560b5aa5fc328ebfe" title=" " alt="" coords="301,123,549,177"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="879,143,549,150,549,145,879,138"/>
+<area shape="rect" id="Node000009" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#a1d556e1d47caaf57c8c7753df8db0355" title=" " alt="" coords="597,201,845,256"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="915,172,812,204,810,199,913,167"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#a55a9ac21791b1808b8e6dcd6df8a8d40" title=" " alt="" coords="5,163,253,217"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="316,107,303,114,279,133,255,154,231,165,229,160,252,149,276,129,300,109,314,102"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#a775c34b5077ad05fdc69cbcd34616b19" title=" " alt="" coords="5,241,253,296"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="309,109,303,113,291,127,285,142,280,171,275,201,268,217,255,232,241,243,237,239,251,228,263,214,270,200,275,170,280,140,287,125,299,109,305,105"/>
+<area shape="rect" id="Node000006" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#ad4a9a187a3af7eab46510377ddcd8fd9" title=" " alt="" coords="5,5,253,60"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="287,56,253,51,254,46,288,51"/>
+<area shape="rect" id="Node000007" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#a8b9cff259063e54d6862375d6fd898bc" title=" " alt="" coords="5,84,253,139"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="288,93,254,97,253,92,287,87"/>
+<area shape="poly" id="edge9_Node000009_Node000008" title=" " alt="" coords="604,200,528,180,530,175,606,195"/>
+<area shape="rect" id="Node000010" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#a177fb0ef9853928148fdc8795e95e497" title=" " alt="" coords="301,280,549,335"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="606,262,530,282,528,277,604,257"/>
+<area shape="rect" id="Node000011" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#a05802f22d14a0a627d4185203760a502" title=" " alt="" coords="301,201,549,256"/>
+<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="584,231,549,231,549,226,584,226"/>
+<area shape="poly" id="edge12_Node000011_Node000004" title=" " alt="" coords="287,213,253,209,254,204,288,208"/>
+<area shape="poly" id="edge13_Node000011_Node000005" title=" " alt="" coords="288,250,254,255,253,249,287,245"/>
+<area shape="poly" id="edge14_Node000011_Node000006" title=" " alt="" coords="303,195,299,192,287,177,280,161,275,131,270,102,263,87,251,73,237,62,241,58,255,69,268,84,275,100,280,130,285,160,291,174,303,188,306,191"/>
+<area shape="poly" id="edge15_Node000011_Node000007" title=" " alt="" coords="312,198,300,192,276,173,252,154,225,141,228,136,255,149,279,169,303,188,314,194"/>
+<area shape="poly" id="edge18_Node000013_Node000003" title=" " alt="" coords="584,61,550,64,549,59,584,56"/>
+<area shape="poly" id="edge19_Node000013_Node000008" title=" " alt="" coords="638,82,550,114,517,125,515,120,548,109,636,77"/>
+<area shape="rect" id="Node000016" href="$classApp_1_1Services_1_1Projects_1_1ProjectIdeaService.html#a1cc2ae9ac23b365acdedb1b839ece004" title="Persist a project idea coming from a student." alt="" coords="636,333,807,388"/>
+<area shape="poly" id="edge22_Node000015_Node000016" title=" " alt="" coords="918,363,807,363,807,358,918,358"/>
+</map>

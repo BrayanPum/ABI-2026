@@ -1,0 +1,9 @@
+member_id,postulation_id,student_id,role_description,is_lead
+1,1,2,Lider Tecnico,1
+2,2,1,Analista de Datos,1
+3,3,6,Arquitecto Blockchain,1
+4,4,24,Coordinadora de equipo,1
+5,4,49,Desarrolladora Frontend,0
+6,4,65,Desarrolladora Backend,0
+7,5,13,Lider de Proyecto,1
+8,5,69,Desarrolladora Movil,0

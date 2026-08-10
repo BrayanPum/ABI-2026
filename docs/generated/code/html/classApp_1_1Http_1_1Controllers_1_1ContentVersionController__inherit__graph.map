@@ -1,0 +1,7 @@
+<map id="App::Http::Controllers::ContentVersionController" name="App::Http::Controllers::ContentVersionController">
+<area shape="rect" id="Node000001" title="Controlador para la gestión de versiones de contenido." alt="" coords="5,291,292,544"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1Controller.html" title=" " alt="" coords="33,119,264,243"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,256,151,291,146,291,146,256"/>
+<area shape="rect" id="Node000003" href="$classBaseController.html" title=" " alt="" coords="93,5,204,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="151,84,151,118,146,118,146,84"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="App::Http::Controllers::PerfilController::edit" name="App::Http::Controllers::PerfilController::edit">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,49,168,89"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1PerfilController.html#aef4b978bd064c247366616f1e4d6efeb" title=" " alt="" coords="223,5,433,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,54,209,48,210,53,169,59"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1PerfilController.html#a5b88204314f8c45104c90ef065e71b6a" title=" " alt="" coords="216,85,440,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="169,78,203,83,202,89,168,83"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Models_1_1User.html#a49efcb9e3b03c4867ce680e80d9f427f" title="Professor profile associated with the user." alt="" coords="488,21,636,61"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="401,82,474,62,476,67,403,87"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Models_1_1User.html#a544c62be055196e8cd509650f9292a6c" title="Research staff profile associated with the user." alt="" coords="488,85,636,125"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="440,102,474,102,474,107,440,107"/>
+<area shape="rect" id="Node000006" href="$classApp_1_1Models_1_1User.html#af8dcd04bd243a915211126ed63a33839" title="Student profile associated with the user." alt="" coords="488,149,636,189"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="403,122,476,142,474,148,401,127"/>
+</map>

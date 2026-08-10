@@ -30,6 +30,8 @@ use App\Http\Controllers\ProjectionProfessorController;
 use App\Http\Controllers\ProjectionStudentController;
 use App\Http\Controllers\TeacherAssignmentController;
 use App\Http\Controllers\TeacherLoadController;
+use App\Http\Controllers\PostulationController;
+use App\Http\Controllers\PostulationEvaluationController;
 use App\Http\Controllers\Formats\FormatoTipoController;
 use App\Http\Controllers\Formats\FormatoRegistroController;
 
@@ -168,9 +170,21 @@ Route::middleware(['auth', 'role:student'])->prefix('students/projects')->group(
 
     Route::post('{project}/assign', [BankApprovedIdeasAssignController::class, 'assign'])
         ->name('projects.student.assign');
+
+    // Postulaciones
+    Route::get('postulations', [PostulationController::class, 'index'])->name('students.postulations.index');
+    Route::get('postulations/{postulation}', [PostulationController::class, 'show'])->name('students.postulations.show');
+    Route::get('approved/{project}/postulate', [PostulationController::class, 'create'])->name('students.postulations.create');
+    Route::post('postulations', [PostulationController::class, 'store'])->name('students.postulations.store');
+    Route::delete('postulations/{postulation}', [PostulationController::class, 'destroy'])->name('students.postulations.destroy');
 });
 
-
+Route::middleware(['auth', 'role:committee_leader'])->prefix('evaluation/postulations')->name('projects.evaluation.postulations.')->group(function () {
+    Route::get('/', [PostulationEvaluationController::class, 'index'])->name('index');
+    Route::get('/{postulation}', [PostulationEvaluationController::class, 'show'])->name('show');
+    Route::post('/{postulation}/evaluate', [PostulationEvaluationController::class, 'evaluate'])->name('evaluate');
+    Route::get('/{postulation}/download-grades', [PostulationEvaluationController::class, 'downloadGrades'])->name('download-grades');
+});
 
 Route::middleware(['auth', 'role:committee_leader'])->group(function () {
     Route::get('professor/projects/approved', [BankApprovedIdeasForProfessorsController::class, 'index'])

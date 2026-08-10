@@ -1,35 +1,35 @@
-name
-Amazonas
-Antioquia
-Arauca
-Archipielago de San Andres
-Atlantico
-Bogota D. C.
-Bolivar
-Boyaca
-Caldas
-Caqueta
-Casanare
-Cauca
-Cesar
-Choco
-Cordoba
-Cundinamarca
-Guainia
-Guaviare
-Huila
-La Guajira
-Magdalena
-Meta
-Narino
-Norte de Santander
-Putumayo
-Quindio
-Risaralda
-Santander
-Sin asignar
-Sucre
-Tolima
-Valle del Cauca
-Vaupes
-Vichada
+id,name
+1,Amazonas
+2,Antioquia
+3,Arauca
+4,Archipielago de San Andres
+5,Atlantico
+6,Bogota D. C.
+7,Bolivar
+8,Boyaca
+9,Caldas
+10,Caqueta
+11,Casanare
+12,Cauca
+13,Cesar
+14,Choco
+15,Cordoba
+16,Cundinamarca
+17,Guainia
+18,Guaviare
+19,Huila
+20,La Guajira
+21,Magdalena
+22,Meta
+23,Narino
+24,Norte de Santander
+25,Putumayo
+26,Quindio
+27,Risaralda
+28,Santander
+29,Sin asignar
+30,Sucre
+31,Tolima
+32,Valle del Cauca
+33,Vaupes
+34,Vichada

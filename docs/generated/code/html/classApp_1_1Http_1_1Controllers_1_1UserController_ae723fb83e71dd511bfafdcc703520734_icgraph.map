@@ -1,0 +1,5 @@
+<map id="App::Http::Controllers::UserController::deleteOldRoleRecord" name="App::Http::Controllers::UserController::deleteOldRoleRecord">
+<area shape="rect" id="Node000001" title="Deletes the record from the table of the previous role." alt="" coords="231,5,455,60"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1UserController.html#a135836dbcd088916fe059c96e16a3128" title="Update the specified resource in storage." alt="" coords="5,13,183,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="217,35,183,35,183,30,217,30"/>
+</map>

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->dateTime('start_at');
             $table->dateTime('end_at');
             $table->boolean('is_enabled')->default(true);
+            $table->boolean('requires_evaluation')->default(false);
             $table->text('notes')->nullable();
             $table->timestamps();
             $table->softDeletes();

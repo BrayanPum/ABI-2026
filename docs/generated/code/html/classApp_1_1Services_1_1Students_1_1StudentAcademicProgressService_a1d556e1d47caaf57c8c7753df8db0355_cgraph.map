@@ -1,0 +1,15 @@
+<map id="App::Services::Students::StudentAcademicProgressService::determineStoredStage" name="App::Services::Students::StudentAcademicProgressService::determineStoredStage">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,102,253,157"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#a40693dc117fd8e73cd1dc73f9dea47a8" title=" " alt="" coords="301,62,549,117"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="253,110,288,105,288,111,254,115"/>
+<area shape="rect" id="Node000007" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#ab4f64cdf15272ef3a207dcea238398db" title=" " alt="" coords="301,141,549,195"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="254,143,288,147,288,153,253,148"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1Project.html#a84c5a040b588b7da398ed42dc966b784" title=" " alt="" coords="597,5,808,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="544,59,601,46,603,51,545,65"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Models_1_1Student.html#af3237a316f5e0d39630a7fc7f40d5f19" title="Get the projects assigned to the student." alt="" coords="623,69,783,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="550,87,609,87,609,92,550,92"/>
+<area shape="rect" id="Node000006" href="$classApp_1_1Models_1_1Project.html#a2957d15a78ccb6a5d46712c9ecb0503b" title=" " alt="" coords="625,133,780,173"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="545,114,613,130,611,135,544,119"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Models_1_1Student.html#a3bf17f9bede4cf4076b93cfe9c0e00e0" title="Resolve the model class used for the projects relationship." alt="" coords="856,69,1027,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="783,87,842,87,842,92,783,92"/>
+</map>

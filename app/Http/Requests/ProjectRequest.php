@@ -82,6 +82,12 @@ class ProjectRequest extends FormRequest
     public function messages(): array
     {
         return [
+            'title.required' => 'El título del proyecto es obligatorio.',
+            'title.max' => 'El título del proyecto no puede superar los 255 caracteres.',
+            'thematic_area_id.required' => 'Debes seleccionar un área temática.',
+            'thematic_area_id.exists' => 'El área temática seleccionada no existe o está inactiva.',
+            'project_status_id.required' => 'Debes seleccionar un estado del proyecto.',
+            'project_status_id.exists' => 'El estado del proyecto seleccionado no existe o está inactivo.',
             'professor_ids.*.exists' => 'El profesor seleccionado no existe o está inactivo.',
             'student_ids.*.exists' => 'El estudiante seleccionado no existe o está inactivo.',
         ];

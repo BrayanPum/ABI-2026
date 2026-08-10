@@ -1,0 +1,7 @@
+<map id="App::Models::Student::StudentDepartment" name="App::Models::Student::StudentDepartment">
+<area shape="rect" id="Node000001" title="Extended model that restricts department records to the student connection, making sure learners only..." alt="" coords="19,252,171,352"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Department.html" title="departments table model, manages communication with the database using the root user,..." alt="" coords="5,119,185,204"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,217,98,252,93,252,93,217"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="68,5,123,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="98,85,98,119,93,119,93,85"/>
+</map>

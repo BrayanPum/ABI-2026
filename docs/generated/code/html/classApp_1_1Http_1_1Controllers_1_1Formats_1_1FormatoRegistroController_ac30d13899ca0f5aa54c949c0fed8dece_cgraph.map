@@ -1,0 +1,9 @@
+<map id="App::Http::Controllers::Formats::FormatoRegistroController::exportPdf" name="App::Http::Controllers::Formats::FormatoRegistroController::exportPdf">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,41,268,96"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1Formats_1_1FormatoRegistroController.html#a5f5fbe43f2776d358cf787c3ac65adf8" title=" " alt="" coords="316,5,579,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="268,51,302,47,303,52,268,56"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Models_1_1FormatoRegistro.html#a1fa8b56f3242abf80638d400f95c68c6" title=" " alt="" coords="338,85,557,125"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="268,81,325,88,324,93,268,87"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1FormatoTipo.html#aa7723012de64d5372a8fd844c2d69ee2" title=" " alt="" coords="627,13,819,53"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="579,30,613,30,613,35,579,35"/>
+</map>

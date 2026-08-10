@@ -1,0 +1,7 @@
+<map id="App::Models::Professor::ResearchStaffPostulationPriority" name="App::Models::Professor::ResearchStaffPostulationPriority">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,307,237,407"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1PostulationPriority.html" title=" " alt="" coords="34,119,209,259"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,272,124,306,119,306,119,272"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="94,5,149,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="124,84,124,118,119,118,119,84"/>
+</map>

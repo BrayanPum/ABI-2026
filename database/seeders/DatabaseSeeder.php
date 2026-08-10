@@ -58,6 +58,9 @@ class DatabaseSeeder extends Seeder
             ProjectStageHistoriesTableSeeder::class,
             LoadProjectionsTableSeeder::class,
             TeacherAssignmentsTableSeeder::class,
+            PostulationSeeder::class,
+            PostulationMemberSeeder::class,
+            PostulationPrioritySeeder::class,
         ]);
     }
 }

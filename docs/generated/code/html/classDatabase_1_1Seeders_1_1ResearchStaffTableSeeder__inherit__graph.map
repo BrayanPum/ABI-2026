@@ -1,0 +1,7 @@
+<map id="Database::Seeders::ResearchStaffTableSeeder" name="Database::Seeders::ResearchStaffTableSeeder">
+<area shape="rect" id="Node000001" title=" " alt="" coords="8,396,191,496"/>
+<area shape="rect" id="Node000002" href="$classDatabase_1_1Seeders_1_1CsvUpsertSeeder.html" title=" " alt="" coords="5,119,193,348"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,362,102,396,97,396,97,362"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="70,5,129,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="102,84,102,119,97,119,97,84"/>
+</map>

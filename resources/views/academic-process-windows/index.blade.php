@@ -83,6 +83,7 @@
                             <th>Proceso</th>
                             <th>Apertura</th>
                             <th>Cierre</th>
+                            <th class="text-center">Req. Eval.</th>
                             <th>Estado</th>
                             <th class="text-center">Acciones</th>
                         </tr>
@@ -94,6 +95,13 @@
                                 <td>{{ $processOptions[$window->process_key] ?? $window->process_key }}</td>
                                 <td>{{ $window->start_at?->format('d/m/Y H:i') }}</td>
                                 <td>{{ $window->end_at?->format('d/m/Y H:i') }}</td>
+                                <td class="text-center">
+                                    @if($window->requires_evaluation)
+                                        <span class="badge bg-purple text-purple-fg">Sí</span>
+                                    @else
+                                        <span class="badge bg-secondary text-secondary-fg">No</span>
+                                    @endif
+                                </td>
                                 <td>
                                     @php
                                         $badgeClass = match($window->calculated_status_key) {

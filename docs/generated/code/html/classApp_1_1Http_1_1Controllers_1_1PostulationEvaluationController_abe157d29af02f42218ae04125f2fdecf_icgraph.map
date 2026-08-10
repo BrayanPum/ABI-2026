@@ -1,0 +1,5 @@
+<map id="App::Http::Controllers::PostulationEvaluationController::cleanupPriority" name="App::Http::Controllers::PostulationEvaluationController::cleanupPriority">
+<area shape="rect" id="Node000001" title="Libera y reordena las prioridades de un estudiante cuando una postulación es rechazada." alt="" coords="289,5,525,60"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1PostulationEvaluationController.html#ae96488fe5cdf5d367be7cffa75a954ba" title=" " alt="" coords="5,5,241,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="275,35,242,35,242,30,275,30"/>
+</map>

@@ -16,7 +16,7 @@
 
 <div class="row g-3">
     <div class="col-12 col-lg-6">
-        <label for="email" class="form-label required">Email</label>
+        <label for="email" class="form-label required">Correo electrónico</label>
         <input
             type="email"
             id="email"

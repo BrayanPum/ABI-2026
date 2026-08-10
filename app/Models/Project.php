@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -102,5 +102,37 @@ class Project extends Model
     public function contentFrameworks(): BelongsToMany
     {
         return $this->belongsToMany(ContentFramework::class, 'content_framework_project', 'project_id', 'content_framework_id');
+    }
+
+    // Todas las postulaciones que ha recibido esta idea
+    public function postulations()
+    {
+        return $this->hasMany(Postulation::class, 'project_id', 'id');
+    }
+
+    // Solo postulaciones pendientes
+    public function pendingPostulations()
+    {
+        return $this->hasMany(Postulation::class, 'project_id', 'id')
+            ->where('status', 'pending');
+    }
+
+    /**
+     * Get the maximum number of students allowed for this project.
+     * Based on content_id = 1 in the latest version.
+     */
+    public function maxStudents(): int
+    {
+        $latestVersion = $this->versions()->latest()->first();
+
+        if (!$latestVersion) {
+            return 3; // Default fallback
+        }
+
+        $contentVersion = $latestVersion->contentVersions()
+            ->where('content_id', 1)
+            ->first();
+
+        return $contentVersion ? (int) $contentVersion->value : 3;
     }
 }

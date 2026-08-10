@@ -97,6 +97,30 @@ class StudentAcademicProgressService
         ];
     }
 
+    public function describeForPeriod(Student $student, ?AcademicPeriod $activePeriod = null): array
+    {
+        $activePeriod ??= $this->periods->activePeriod();
+
+        $this->loadStudentContext($student);
+
+        $stageKey = $this->determineStoredStage($student, $activePeriod);
+        $assignedProject = $this->assignedProjectForStudent($student);
+        $latestProject = $assignedProject ?? $this->latestNonTerminalProject($student);
+        $blockingReason = $this->blockingReason($stageKey, $assignedProject, $latestProject);
+
+        return [
+            'stage_key' => $stageKey,
+            'stage_label' => $this->stageOptions()[$stageKey],
+            'progression_note' => $this->progressionNote($stageKey, $assignedProject, $latestProject, $activePeriod),
+            'assigned_project' => $assignedProject,
+            'latest_project' => $latestProject,
+            'can_access_idea_bank' => $blockingReason === null,
+            'can_create_proposal' => $blockingReason === null,
+            'bank_block_reason' => $blockingReason,
+            'projected_pg2_next_period' => $this->projectsToPg2NextPeriod($stageKey, $assignedProject, $activePeriod),
+        ];
+    }
+
     public function canAccessIdeaBank(Student $student, ?AcademicPeriod $activePeriod = null): bool
     {
         $this->syncStudent($student, $activePeriod);

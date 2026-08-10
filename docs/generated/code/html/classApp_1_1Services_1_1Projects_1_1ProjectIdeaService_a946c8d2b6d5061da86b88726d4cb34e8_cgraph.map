@@ -1,0 +1,5 @@
+<map id="App::Services::Projects::ProjectIdeaService::storeContentValues" name="App::Services::Projects::ProjectIdeaService::storeContentValues">
+<area shape="rect" id="Node000001" title="Stores the provided content values for the given project version." alt="" coords="5,5,176,60"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Services_1_1Projects_1_1ProjectIdeaService.html#a0ac5780c777fd44fc0325e1db56e7e84" title="Retrieve the identifier for a content record, caching the lookup for the current request." alt="" coords="224,5,395,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,30,210,30,210,35,176,35"/>
+</map>

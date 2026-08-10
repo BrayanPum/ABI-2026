@@ -1,0 +1,5 @@
+<map id="App::Services::Projects::TeacherIdeaBalanceService::buildAreaStats" name="App::Services::Projects::TeacherIdeaBalanceService::buildAreaStats">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,213,60"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1ThematicArea.html#ad2d4d4adb1abde55e4cae16bc08638be" title="Get the investigation line that owns the thematic area." alt="" coords="261,13,463,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,30,248,30,248,35,213,35"/>
+</map>

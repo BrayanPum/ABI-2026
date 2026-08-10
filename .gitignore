@@ -1,5 +1,4 @@
 /.phpunit.cache
-.phpunit.result.cache
 /node_modules
 /public/build
 /public/hot
@@ -18,6 +17,11 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+.scribe
 .env
 docker-compose.yml
-.DS_Store
+
+
+.continue
+/database/sql/my-roles.sql
+/scripts/my-set-db-roles.ps1

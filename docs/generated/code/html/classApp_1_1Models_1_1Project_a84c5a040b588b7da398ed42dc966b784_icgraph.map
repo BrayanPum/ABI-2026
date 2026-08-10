@@ -1,0 +1,32 @@
+<map id="App::Models::Project::assignmentAcademicPeriod" name="App::Models::Project::assignmentAcademicPeriod">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1189,71,1400,111"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#a40693dc117fd8e73cd1dc73f9dea47a8" title=" " alt="" coords="893,96,1141,151"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1176,108,1142,112,1141,106,1175,102"/>
+<area shape="rect" id="Node000012" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#aefd497b72d6186bed10217659cbd317c" title=" " alt="" coords="597,5,845,60"/>
+<area shape="poly" id="edge16_Node000001_Node000012" title=" " alt="" coords="1176,82,846,48,846,43,1176,77"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#a342aecffaca0198db506453dd0d79774" title=" " alt="" coords="301,29,549,84"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="879,111,549,73,550,68,880,105"/>
+<area shape="rect" id="Node000008" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#aeb732c9b05ef4cc560b5aa5fc328ebfe" title=" " alt="" coords="301,108,549,163"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="879,129,549,136,549,130,879,123"/>
+<area shape="rect" id="Node000009" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#a1d556e1d47caaf57c8c7753df8db0355" title=" " alt="" coords="597,187,845,241"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="915,157,812,189,810,184,913,152"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#a55a9ac21791b1808b8e6dcd6df8a8d40" title=" " alt="" coords="5,187,253,241"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="310,93,303,99,287,117,280,137,272,157,255,177,238,189,235,184,252,173,268,155,275,135,283,115,300,95,307,89"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#a775c34b5077ad05fdc69cbcd34616b19" title=" " alt="" coords="5,265,253,320"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="308,94,303,98,289,118,282,136,280,176,278,215,270,236,255,256,242,267,238,263,251,252,266,233,273,214,275,175,277,135,284,115,299,95,304,91"/>
+<area shape="rect" id="Node000006" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#ad4a9a187a3af7eab46510377ddcd8fd9" title=" " alt="" coords="5,29,253,84"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="288,59,253,59,253,54,288,54"/>
+<area shape="rect" id="Node000007" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#a8b9cff259063e54d6862375d6fd898bc" title=" " alt="" coords="5,108,253,163"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="310,90,234,110,232,105,308,85"/>
+<area shape="poly" id="edge9_Node000009_Node000008" title=" " alt="" coords="604,186,528,165,530,160,606,181"/>
+<area shape="rect" id="Node000010" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#a177fb0ef9853928148fdc8795e95e497" title=" " alt="" coords="301,187,549,241"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="584,217,549,217,549,211,584,211"/>
+<area shape="rect" id="Node000011" href="$classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#a05802f22d14a0a627d4185203760a502" title=" " alt="" coords="301,265,549,320"/>
+<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="606,247,530,268,528,263,604,242"/>
+<area shape="poly" id="edge12_Node000011_Node000004" title=" " alt="" coords="308,264,232,244,234,239,310,259"/>
+<area shape="poly" id="edge13_Node000011_Node000005" title=" " alt="" coords="288,295,253,295,253,290,288,290"/>
+<area shape="poly" id="edge14_Node000011_Node000006" title=" " alt="" coords="302,259,299,256,284,236,277,215,275,176,273,136,266,118,251,99,237,86,240,82,255,95,270,115,278,135,280,175,282,214,289,233,303,252,306,255"/>
+<area shape="poly" id="edge15_Node000011_Node000007" title=" " alt="" coords="305,260,300,256,282,236,275,216,268,196,252,177,232,165,235,161,255,173,272,193,280,214,287,233,303,252,309,256"/>
+<area shape="poly" id="edge17_Node000012_Node000003" title=" " alt="" coords="584,46,550,49,549,44,584,41"/>
+<area shape="poly" id="edge18_Node000012_Node000008" title=" " alt="" coords="638,67,550,99,517,110,515,105,548,94,636,62"/>
+</map>

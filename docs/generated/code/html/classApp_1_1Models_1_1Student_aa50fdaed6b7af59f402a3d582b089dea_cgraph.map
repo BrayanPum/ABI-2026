@@ -1,0 +1,7 @@
+<map id="App::Models::Student::hasActiveProject" name="App::Models::Student::hasActiveProject">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,165,45"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Student.html#af3237a316f5e0d39630a7fc7f40d5f19" title="Get the projects assigned to the student." alt="" coords="213,5,373,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,23,199,23,199,28,165,28"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1Student.html#a3bf17f9bede4cf4076b93cfe9c0e00e0" title="Resolve the model class used for the projects relationship." alt="" coords="421,5,592,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="374,23,408,23,408,28,374,28"/>
+</map>

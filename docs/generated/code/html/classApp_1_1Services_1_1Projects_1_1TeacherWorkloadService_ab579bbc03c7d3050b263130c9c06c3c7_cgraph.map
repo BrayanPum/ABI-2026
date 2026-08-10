@@ -1,0 +1,5 @@
+<map id="App::Services::Projects::TeacherWorkloadService::resolveProfessor" name="App::Services::Projects::TeacherWorkloadService::resolveProfessor">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,195,60"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1User.html#a49efcb9e3b03c4867ce680e80d9f427f" title="Professor profile associated with the user." alt="" coords="243,13,391,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,30,228,30,228,35,195,35"/>
+</map>

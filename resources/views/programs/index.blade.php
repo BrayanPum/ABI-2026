@@ -1,8 +1,7 @@
 {{--
     View path: programs/index.blade.php.
     Purpose: Renders the index view for the Programs module using the Tablar layout.
-    Expected variables within this template: $index, $perPage, $program, $programs, $researchGroupId,
-    $researchGroups, $search.
+    Expected variables within this template: $programs, $researchGroupId, $researchGroups, $search, $perPage.
     Included partials or components: tablar::common.alert.
     All markup below follows Tablar styling conventions for visual consistency.
 --}}
@@ -15,7 +14,6 @@
         <div class="container-xl">
             <div class="row g-2 align-items-center">
                 <div class="col">
-                    {{-- Breadcrumb clarifies the navigation path within the academic catalogue. --}}
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('home') }}">Inicio</a></li>
@@ -33,10 +31,9 @@
                         Programas académicos
                         <span class="badge bg-teal ms-2">{{ $programs->total() }}</span>
                     </h2>
-                    <p class="text-muted mb-0">Gestiona los programas educativos y asócialos a sus grupos de investigación.</p>
+                    <p class="text-muted mb-0">Gestiona los programas académicos y sus ciudades asociadas desde un solo flujo.</p>
                 </div>
                 <div class="col-12 col-md-auto ms-auto d-print-none">
-                    {{-- Primary action button opens the creation flow for a new program. --}}
                     <a href="{{ route('programs.create') }}" class="btn btn-primary">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -67,12 +64,11 @@
                     </h3>
                 </div>
                 <div class="card-body">
-                    {{-- Form captures the filters that shape the program listing. --}}
                     <form method="GET" action="{{ route('programs.index') }}" class="row g-3 align-items-end">
                         <div class="col-12 col-lg-6 col-xl-5">
                             <label for="search" class="form-label">Buscar</label>
                             <div class="input-group">
-                                <input type="text" id="search" name="search" value="{{ $search ?? '' }}" class="form-control" placeholder="Nombre o código…">
+                                <input type="text" id="search" name="search" value="{{ $search ?? '' }}" class="form-control" placeholder="Nombre o código...">
                                 @if(!empty($search) || !empty($researchGroupId) || ($perPage ?? 10) != 10)
                                     <a href="{{ route('programs.index') }}" class="input-group-text" title="Limpiar filtros">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -106,7 +102,7 @@
                                     <path d="M5 12h14" />
                                     <path d="M12 5l7 7-7 7" />
                                 </svg>
-                                Aplicar Filtros
+                                Aplicar filtros
                             </button>
                         </div>
                     </form>
@@ -121,7 +117,6 @@
                     </div>
                 </div>
                 <div class="table-responsive">
-                    {{-- Table lists each program along with its code and associated research group. --}}
                     <table class="table card-table table-vcenter align-middle">
                         <thead>
                             <tr>
@@ -129,11 +124,17 @@
                                 <th style="max-width: 140px;" class="text-truncate">Código</th>
                                 <th style="max-width: 280px;" class="text-truncate">Programa</th>
                                 <th style="max-width: 320px;" class="text-truncate">Grupo de investigación</th>
+                                <th style="max-width: 220px;" class="text-truncate">Ciudades asociadas</th>
                                 <th class="w-1 text-center">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                         @forelse($programs as $index => $program)
+                            @php
+                                $previewCities = $program->cities->take(2)->pluck('name')->implode(', ');
+                                $fullCities = $program->cities->pluck('name')->implode(', ');
+                                $remainingCities = max($program->cities_count - 2, 0);
+                            @endphp
                             <tr>
                                 <td class="text-muted">{{ $programs->firstItem() + $index }}</td>
                                 <td>
@@ -151,16 +152,26 @@
                                         <span class="text-muted">Sin grupo</span>
                                     @endif
                                 </td>
+                                <td style="max-width: 220px;">
+                                    <div class="d-flex flex-column gap-1">
+                                        <span class="badge bg-azure-lt align-self-start">{{ $program->cities_count }}</span>
+                                        @if($program->cities_count > 0)
+                                            <span class="small text-muted text-truncate" title="{{ $fullCities }}">
+                                                {{ $previewCities }}{{ $remainingCities > 0 ? ' +' . $remainingCities : '' }}
+                                            </span>
+                                        @else
+                                            <span class="small text-muted">Sin ciudades asociadas</span>
+                                        @endif
+                                    </div>
+                                </td>
                                 <td>
                                     <div class="btn-list flex-nowrap justify-content-center">
-                                        {{-- Action button lets administrators review the program details. --}}
                                         <a href="{{ route('programs.show', $program) }}" class="btn btn-sm btn-outline-primary" title="Ver detalles">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                 <circle cx="12" cy="12" r="2" />
                                                 <path d="M22 12c-2.667 4.667-6 7-10 7s-7.333-2.333-10-7c2.667-4.667 6-7 10-7s7.333 2.333 10 7" />
                                             </svg>
                                         </a>
-                                        {{-- Action button opens the edit form to adjust this program. --}}
                                         <a href="{{ route('programs.edit', $program) }}" class="btn btn-sm btn-outline-success" title="Editar">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                 <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
@@ -168,7 +179,6 @@
                                                 <path d="M16 5l3 3" />
                                             </svg>
                                         </a>
-                                        {{-- Dedicated form is triggered via the custom confirmation modal. --}}
                                         <form action="{{ route('programs.destroy', $program) }}" method="POST" class="d-none" id="delete-program-{{ $program->id }}">
                                             @csrf
                                             @method('DELETE')
@@ -191,7 +201,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="5">
+                                <td colspan="6">
                                     <div class="empty">
                                         <div class="empty-img">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-lg text-muted" width="64" height="64" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -203,7 +213,7 @@
                                             </svg>
                                         </div>
                                         <p class="empty-title">No hay programas registrados</p>
-                                        <p class="empty-subtitle text-muted">Crea un programa y vincúlalo a su grupo de investigación correspondiente.</p>
+                                        <p class="empty-subtitle text-muted">Crea un programa y asígnale sus ciudades disponibles desde el mismo formulario.</p>
                                         <div class="empty-action">
                                             <a href="{{ route('programs.create') }}" class="btn btn-primary">Registrar programa</a>
                                         </div>
@@ -231,7 +241,6 @@
     </div>
 @endsection
 
-{{-- Modal replaces the native confirmation dialog when deleting a program. --}}
 <div class="modal modal-blur fade" id="program-delete-modal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

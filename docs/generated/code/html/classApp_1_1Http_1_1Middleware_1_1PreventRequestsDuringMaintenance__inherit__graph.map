@@ -1,0 +1,5 @@
+<map id="App::Http::Middleware::PreventRequestsDuringMaintenance" name="App::Http::Middleware::PreventRequestsDuringMaintenance">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,119,264,199"/>
+<area shape="rect" id="Node000002" href="$classMiddleware.html" title=" " alt="" coords="89,5,180,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,85,137,118,132,118,132,85"/>
+</map>

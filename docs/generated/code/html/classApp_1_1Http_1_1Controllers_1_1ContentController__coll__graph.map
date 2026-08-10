@@ -1,0 +1,7 @@
+<map id="App::Http::Controllers::ContentController" name="App::Http::Controllers::ContentController">
+<area shape="rect" id="Node000001" title="Controlador para la gestión de contenidos del catálogo." alt="" coords="5,291,244,544"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1Controller.html" title=" " alt="" coords="9,119,240,243"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,256,127,291,122,291,122,256"/>
+<area shape="rect" id="Node000003" href="$classBaseController.html" title=" " alt="" coords="69,5,180,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="127,84,127,118,122,118,122,84"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="App::Services::Students::StudentAcademicProgressService::latestNonTerminalProject" name="App::Services::Students::StudentAcademicProgressService::latestNonTerminalProject">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,30,253,85"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Student.html#af3237a316f5e0d39630a7fc7f40d5f19" title="Get the projects assigned to the student." alt="" coords="301,5,461,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="253,39,287,35,288,40,254,44"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Models_1_1Project.html#a2957d15a78ccb6a5d46712c9ecb0503b" title=" " alt="" coords="304,69,459,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="254,70,291,75,290,81,253,76"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1Student.html#a3bf17f9bede4cf4076b93cfe9c0e00e0" title="Resolve the model class used for the projects relationship." alt="" coords="509,5,680,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="462,23,496,23,496,28,462,28"/>
+</map>

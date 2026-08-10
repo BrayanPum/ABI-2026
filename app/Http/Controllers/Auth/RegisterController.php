@@ -227,7 +227,7 @@ class RegisterController extends Controller
         event(new Registered($user));
         
         // Fire custom UserCreated event for our notification system
-        event(new UserCreated($user, $request->only(['name', 'last_name'])));
+        event(new UserCreated($user, $request->only(['name', 'last_name', 'password'])));
 
         // Handle post-registration logic and redirection
         if ($response = $this->registered($request, $user)) {

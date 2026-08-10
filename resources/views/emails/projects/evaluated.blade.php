@@ -13,9 +13,6 @@
         <p>{{ $comments }}</p>
     @endif
 
-    <p>Puedes ver más detalles en el siguiente enlace:</p>
-    <p><a href="{{ $url }}">{{ $url }}</a></p>
-
     <p>Atentamente,<br>Equipo ABI</p>
 </body>
 </html>

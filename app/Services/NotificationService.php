@@ -29,10 +29,21 @@ class NotificationService
     ): void {
         try {
             $mailable = new GenericNotificationMail($subject, $view, $content, $attachments);
-            
-            if ($sender) {
-                $mailable->from($sender);
+
+            $senderAddress = $sender ?? config('mail.from.address');
+            $senderName = config('mail.from.name');
+            if ($senderAddress) {
+                $mailable->from($senderAddress, $senderName);
             }
+
+            Log::info('Sending notification email', [
+                'recipient' => $recipient,
+                'subject' => $subject,
+                'sender' => $senderAddress,
+            ]);
+
+            @set_time_limit(300);
+            @ini_set('max_execution_time', '300');
 
             Mail::to($recipient)->send($mailable);
         } catch (\Exception $e) {

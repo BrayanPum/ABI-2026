@@ -87,7 +87,9 @@ class ProjectEvaluationController extends Controller
             'comments' => 'nullable|string',
         ]);
 
-        $statusName = $validated['status'];
+        $comments = $this->normalizeComments($validated['comments'] ?? null);
+        $requestedStatus = Str::of($validated['status'])->ascii()->squish()->toString();
+        $statusName = $requestedStatus;
         $isProfessorProject = $project->professors()->exists();
         $isStudentProject = ! $isProfessorProject;
 
@@ -114,7 +116,7 @@ class ProjectEvaluationController extends Controller
                     ContentVersion::create([
                         'version_id' => $latestVersion->id,
                         'content_id' => $commentContent->id,
-                        'value' => $validated['comments'] ?? 'Sin comentarios',
+                        'value' => $comments ?? 'Sin comentarios',
                     ]);
                 }
             }
@@ -134,7 +136,7 @@ class ProjectEvaluationController extends Controller
             $stage,
             $activePeriod,
             Auth::id(),
-            $validated['comments'] ?? null,
+            $comments,
             ['final_status_name' => $statusName]
         );
 
@@ -142,12 +144,27 @@ class ProjectEvaluationController extends Controller
         event(new ProjectIdeaEvaluated(
             $project->load(['students.user', 'professors.user']),
             $statusName,
-            $validated['comments'] ?? null
+            $comments
         ));
 
         return redirect()
             ->route('projects.evaluation.index')
             ->with('success', "Evaluacion del proyecto '{$project->title}' enviada correctamente con estado: $statusName.");
+    }
+
+    protected function normalizeComments(?string $comments): ?string
+    {
+        if ($comments === null) {
+            return null;
+        }
+
+        $comments = trim($comments);
+
+        if ($comments === '' || strcasecmp($comments, 'null') === 0) {
+            return null;
+        }
+
+        return $comments;
     }
 
     protected function resolveCommitteeLeader(): Professor

@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Events\ProjectIdeaEvaluated;
 use App\Events\UserCreated;
+use App\Events\AcademicProcessWindowOpened;
+use App\Events\AcademicProcessWindowClosing;
 use App\Listeners\SendNotificationListener;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -24,6 +26,12 @@ class EventServiceProvider extends ServiceProvider
             SendNotificationListener::class,
         ],
         UserCreated::class => [
+            SendNotificationListener::class,
+        ],
+        AcademicProcessWindowOpened::class => [
+            SendNotificationListener::class,
+        ],
+        AcademicProcessWindowClosing::class => [
             SendNotificationListener::class,
         ],
     ];

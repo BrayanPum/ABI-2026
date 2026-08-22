@@ -241,6 +241,12 @@ class ProgramController extends Controller
                         ->with('error', 'El programa ya fue eliminado.');
                 }
 
+                if ($program->cities()->exists()) {
+                    return redirect()
+                        ->route('programs.index')
+                        ->with('error', 'No se puede eliminar el programa porque tiene ciudades asociadas.');
+                }
+
                 $name = $program->name;
                 $program->delete();
 

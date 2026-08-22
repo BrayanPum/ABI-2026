@@ -307,39 +307,44 @@ class UserController extends Controller
      */
     private function validateRoleFields(\Illuminate\Http\Request $request, string $role): array
     {
+        $messages = [
+            'card_id.regex' => 'La cédula solo debe contener números.',
+            'phone.regex' => 'El teléfono solo debe contener números.',
+        ];
+
         switch ($role) {
             case 'student':
                 return $request->validate([
-                    'card_id' => 'required|string|max:20',
+                    'card_id' => 'required|string|max:20|regex:/^[0-9]+$/',
                     'name' => 'required|string|max:255',
                     'last_name' => 'required|string|max:255',
-                    'phone' => 'required|string|max:20',
+                    'phone' => 'required|string|max:20|regex:/^[0-9]+$/',
                     'semester' => 'required|integer|min:1|max:10',
                     'city_program_id' => 'required|exists:city_program,id',
-                ]);
-                
+                ], $messages);
+
             case 'professor':
             case 'committee_leader':
                 $validated = $request->validate([
-                    'card_id' => 'required|string|max:20',
+                    'card_id' => 'required|string|max:20|regex:/^[0-9]+$/',
                     'name' => 'required|string|max:255',
                     'last_name' => 'required|string|max:255',
-                    'phone' => 'required|string|max:20',
+                    'phone' => 'required|string|max:20|regex:/^[0-9]+$/',
                     'city_program_id' => 'required|exists:city_program,id',
                     'committee_leader' => 'required|in:0,1',
-                ]);
-                
+                ], $messages);
+
                 // We ignore what the client sent and set based on the role
                 $validated['committee_leader'] = ($role === 'committee_leader') ? 1 : 0;
                 return $validated;
             case 'research_staff':
                 return $request->validate([
-                    'card_id' => 'required|string|max:20',
+                    'card_id' => 'required|string|max:20|regex:/^[0-9]+$/',
                     'name' => 'required|string|max:255',
                     'last_name' => 'required|string|max:255',
-                    'phone' => 'required|string|max:20',
-                ]);
-                
+                    'phone' => 'required|string|max:20|regex:/^[0-9]+$/',
+                ], $messages);
+
             default:
                 throw new \Exception('Rol no válido');
         }

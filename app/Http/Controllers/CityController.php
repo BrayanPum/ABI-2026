@@ -82,6 +82,11 @@ class CityController extends Controller
 
     public function destroy(Request $request, ResearchStaffCity $city): RedirectResponse
     {
+        if ($city->cityPrograms()->exists()) {
+            return $this->redirectToTarget($request, 'cities.index')
+                ->with('error', 'No se puede eliminar la ciudad porque tiene programas asociados.');
+        }
+
         try {
             $name = $city->name;
             $city->delete();

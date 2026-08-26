@@ -67,6 +67,9 @@
 
         .users-table__value {
             min-width: 0;
+            display: block;
+            width: 100%;
+            overflow: hidden;
         }
 
         .users-table__truncate {
@@ -75,6 +78,30 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+        }
+
+        .users-table__wrap {
+            overflow: visible;
+            word-wrap: break-word;
+            word-break: break-word;
+        }
+
+        .users-table__wrap-badge {
+            white-space: normal;
+            min-width: 0;
+            max-width: 100%;
+        }
+
+        .users-table .users-table__value > .badge,
+        .users-table td > .badge {
+            white-space: nowrap;
+            min-width: min-content;
+        }
+
+        .users-table .users-table__wrap .users-table__wrap-badge {
+            white-space: normal;
+            min-width: 0;
+            max-width: 100%;
         }
 
         .users-table__actions {
@@ -155,8 +182,17 @@
                 max-width: none;
             }
 
+            .users-table__wrap-badge,
+            .users-table__value > .badge,
             .users-table td > .badge {
-                margin-left: auto;
+                white-space: nowrap;
+                min-width: min-content;
+            }
+
+            .users-table .users-table__wrap .users-table__wrap-badge {
+                white-space: normal;
+                min-width: 0;
+                max-width: 100%;
             }
 
             .users-table__value {
@@ -355,20 +391,20 @@
                                     <span class="users-table__value users-table__truncate" title="{{ $user->email }}">{{ $user->email }}</span>
                                 </td>
                                 <td data-label="Rol">
-                                    @php
+                                     @php
                                         $roleLabel = \App\Helpers\UserRoleHelper::displayName($user, $user->details ?? null);
                                     @endphp
-                                    <span class="users-table__value">
-                                        <span class="badge {{ \App\Helpers\UserRoleHelper::badgeClass($user->role) }}" title="{{ $roleLabel }}">
+                                    <span class="users-table__value users-table__wrap">
+                                        <span class="badge {{ \App\Helpers\UserRoleHelper::badgeClass($user->role) }} users-table__wrap-badge" title="{{ $roleLabel }}">
                                             {{ $roleLabel }}
                                         </span>
                                     </span>
                                 </td>
                                 <td data-label="Estado">
-                                    @if($user->state === '1' || $user->state === 1)
-                                        <span class="users-table__value"><span class="badge bg-success-lt">Activo</span></span>
+                                     @if($user->state === '1' || $user->state === 1)
+                                        <span class="users-table__value users-table__wrap"><span class="badge bg-success-lt users-table__wrap-badge">Activo</span></span>
                                     @else
-                                        <span class="users-table__value"><span class="badge bg-danger-lt">Inactivo</span></span>
+                                        <span class="users-table__value users-table__wrap"><span class="badge bg-danger-lt users-table__wrap-badge">Inactivo</span></span>
                                     @endif
                                 </td>
                                 <td data-label="Nombre">
@@ -391,7 +427,7 @@
                                     @if($user->details && in_array($user->role, ['student', 'professor', 'committee_leader']))
                                         @if(isset($user->details->cityProgram))
                                             {{-- Display both the program and city to contextualize the enrollment. --}}
-                                            <span class="users-table__value users-table__truncate" title="{{ $user->details->cityProgram->program->name ?? 'N/A' }} - {{ $user->details->cityProgram->city->name ?? 'N/A' }}">
+                                            <span class="users-table__value users-table__wrap" title="{{ $user->details->cityProgram->program->name ?? 'N/A' }} - {{ $user->details->cityProgram->city->name ?? 'N/A' }}">
                                                 {{ $user->details->cityProgram->program->name ?? 'N/A' }} - {{ $user->details->cityProgram->city->name ?? 'N/A' }}
                                             </span>
                                         @else

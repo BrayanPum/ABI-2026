@@ -98,6 +98,10 @@
                 value="{{ old('card_id') }}"
                 required
                 autocomplete="off"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                maxlength="20"
+                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
             >
         @endif
         @error('card_id')
@@ -113,6 +117,10 @@
             class="form-control @error('phone') is-invalid @enderror"
             value="{{ old('phone', $detailsModel->phone ?? '') }}"
             required
+            inputmode="numeric"
+            pattern="[0-9]*"
+            maxlength="20"
+            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
         >
         @error('phone')
             <div class="invalid-feedback">{{ $message }}</div>

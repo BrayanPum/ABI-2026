@@ -35,7 +35,7 @@
                 </div>
                 <div class="col-auto ms-auto d-print-none">
                     <div class="btn-list">
-                        <a href="{{ route('versions.edit', ['versionId' => $versionId]) }}" class="btn btn-primary" id="version-edit-link">Editar</a>
+                        <a href="{{ route('versions.edit', ['versionId' => $versionId]) }}" class="btn btn-primary d-none" id="version-edit-link">Editar</a>
                         <a href="{{ route('versions.index') }}" class="btn btn-outline-secondary">Volver</a>
                     </div>
                 </div>
@@ -109,6 +109,7 @@
             const updatedElement = document.getElementById('version-updated');
             const contentsBody = document.getElementById('version-contents-body');
             const contentsBadge = document.getElementById('version-contents-count');
+            const editLink = document.getElementById('version-edit-link');
 
             function showAlert(type, message) {
                 alertBox.className = `alert alert-${type}`;
@@ -146,6 +147,7 @@
                     projectElement.textContent = data.project ? `${data.project.title ?? 'Proyecto sin nombre'} (#${data.project.id})` : `ID ${data.project_id ?? '—'}`;
                     createdElement.textContent = formatDate(data.created_at);
                     updatedElement.textContent = formatDate(data.updated_at);
+                    editLink.classList.toggle('d-none', !!data.is_finalized);
 
                     if (Array.isArray(data.contents) && data.contents.length) {
                         contentsBadge.textContent = data.contents.length;

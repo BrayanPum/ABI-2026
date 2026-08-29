@@ -69,6 +69,7 @@
             const apiBase = '{{ url('/api/content-versions') }}';
             const contentsEndpoint = '{{ url('/api/contents') }}';
             const versionsEndpoint = '{{ url('/api/versions') }}';
+            const csrfToken = '{{ csrf_token() }}';
 
             const form = document.getElementById('content-version-create-form');
             const alertBox = document.getElementById('content-version-create-alert');
@@ -180,6 +181,7 @@
                         headers: {
                             'Content-Type': 'application/json',
                             'Accept': 'application/json',
+                            'X-CSRF-TOKEN': csrfToken,
                         },
                         body: JSON.stringify(payload),
                     });

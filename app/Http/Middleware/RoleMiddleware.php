@@ -19,6 +19,10 @@ class RoleMiddleware
         $user = Auth::user();
 
         if (! $user) {
+            if ($request->expectsJson()) {
+                return response()->json(['message' => 'Debes iniciar sesión para acceder.'], 401);
+            }
+
             return redirect('login')->with('error', 'Debes iniciar sesión para acceder.');
         }
 
@@ -36,6 +40,10 @@ class RoleMiddleware
 
         // Comprobar si el usuario tiene alguno de los roles permitidos
         if (! $user->hasAnyRole($allowedRoles->toArray())) {
+            if ($request->expectsJson()) {
+                return response()->json(['message' => 'No tienes permiso para acceder a esta sección.'], 403);
+            }
+
             return redirect('/home')->with('error', 'No tienes permiso para acceder a esta sección.');
         }
 

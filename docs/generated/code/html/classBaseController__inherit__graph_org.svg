@@ -1998,30 +1998,33 @@
 <g id="Node000042" class="node">
 <title>Node42</title>
 <g id="a_Node000042"><a xlink:href="classApp_1_1Http_1_1Controllers_1_1VersionController.html" target="_top" xlink:title="Controlador para la gestión de versiones de proyectos.">
-<polygon fill="white" stroke="transparent" points="8354,-1156 8177,-1156 8177,-966 8354,-966 8354,-1156"/>
-<text text-anchor="start" x="8213" y="-1144" font-family="Helvetica,sans-Serif" font-size="10.00">App::Http::Controllers</text>
-<text text-anchor="start" x="8220.5" y="-1133" font-family="Helvetica,sans-Serif" font-size="10.00">::VersionController</text>
-<text text-anchor="start" x="8264" y="-1118" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<text text-anchor="start" x="8181.5" y="-1103" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="8194.5" y="-1103" font-family="Helvetica,sans-Serif" font-size="10.00">destroy(ResearchStaffVersion</text>
-<text text-anchor="start" x="8194.5" y="-1092" font-family="Helvetica,sans-Serif" font-size="10.00"> $version)</text>
-<text text-anchor="start" x="8181.5" y="-1077" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="8194.5" y="-1077" font-family="Helvetica,sans-Serif" font-size="10.00">index(Request $request)</text>
-<text text-anchor="start" x="8181.5" y="-1062" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="8194.5" y="-1062" font-family="Helvetica,sans-Serif" font-size="10.00">restore(int $id)</text>
-<text text-anchor="start" x="8181.5" y="-1047" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="8194.5" y="-1047" font-family="Helvetica,sans-Serif" font-size="10.00">show(ResearchStaffVersion</text>
-<text text-anchor="start" x="8194.5" y="-1036" font-family="Helvetica,sans-Serif" font-size="10.00"> $version)</text>
-<text text-anchor="start" x="8181.5" y="-1021" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="8194.5" y="-1021" font-family="Helvetica,sans-Serif" font-size="10.00">store(VersionRequest</text>
-<text text-anchor="start" x="8194.5" y="-1010" font-family="Helvetica,sans-Serif" font-size="10.00"> $request)</text>
-<text text-anchor="start" x="8181.5" y="-995" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="8194.5" y="-995" font-family="Helvetica,sans-Serif" font-size="10.00">update(VersionRequest</text>
-<text text-anchor="start" x="8194.5" y="-984" font-family="Helvetica,sans-Serif" font-size="10.00"> $request, ResearchStaffVersion</text>
-<text text-anchor="start" x="8194.5" y="-973" font-family="Helvetica,sans-Serif" font-size="10.00"> $version)</text>
-<polygon fill="#666666" stroke="#666666" points="8177.5,-1128 8177.5,-1128 8354.5,-1128 8354.5,-1128 8177.5,-1128"/>
-<polygon fill="#666666" stroke="#666666" points="8177.5,-1113 8177.5,-1113 8354.5,-1113 8354.5,-1113 8177.5,-1113"/>
-<polygon fill="none" stroke="#666666" points="8177,-966 8177,-1156 8354,-1156 8354,-966 8177,-966"/>
+<polygon fill="white" stroke="transparent" points="8354,-1161.5 8177,-1161.5 8177,-960.5 8354,-960.5 8354,-1161.5"/>
+<text text-anchor="start" x="8213" y="-1149" font-family="Helvetica,sans-Serif" font-size="10.00">App::Http::Controllers</text>
+<text text-anchor="start" x="8220.5" y="-1138" font-family="Helvetica,sans-Serif" font-size="10.00">::VersionController</text>
+<text text-anchor="start" x="8184" y="-1123" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="8194.5" y="-1123" font-family="Helvetica,sans-Serif" font-size="10.00">const ACCEPTED_PROJECT</text>
+<text text-anchor="start" x="8194.5" y="-1112" font-family="Helvetica,sans-Serif" font-size="10.00">_STATUSES</text>
+<text text-anchor="start" x="8181.5" y="-1097" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="8194.5" y="-1097" font-family="Helvetica,sans-Serif" font-size="10.00">destroy(ResearchStaffVersion</text>
+<text text-anchor="start" x="8194.5" y="-1086" font-family="Helvetica,sans-Serif" font-size="10.00"> $version)</text>
+<text text-anchor="start" x="8181.5" y="-1071" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="8194.5" y="-1071" font-family="Helvetica,sans-Serif" font-size="10.00">index(Request $request)</text>
+<text text-anchor="start" x="8181.5" y="-1056" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="8194.5" y="-1056" font-family="Helvetica,sans-Serif" font-size="10.00">restore(int $id)</text>
+<text text-anchor="start" x="8181.5" y="-1041" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="8194.5" y="-1041" font-family="Helvetica,sans-Serif" font-size="10.00">show(ResearchStaffVersion</text>
+<text text-anchor="start" x="8194.5" y="-1030" font-family="Helvetica,sans-Serif" font-size="10.00"> $version)</text>
+<text text-anchor="start" x="8181.5" y="-1015" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="8194.5" y="-1015" font-family="Helvetica,sans-Serif" font-size="10.00">store(VersionRequest</text>
+<text text-anchor="start" x="8194.5" y="-1004" font-family="Helvetica,sans-Serif" font-size="10.00"> $request)</text>
+<text text-anchor="start" x="8181.5" y="-989" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="8194.5" y="-989" font-family="Helvetica,sans-Serif" font-size="10.00">update(VersionRequest</text>
+<text text-anchor="start" x="8194.5" y="-978" font-family="Helvetica,sans-Serif" font-size="10.00"> $request, ResearchStaffVersion</text>
+<text text-anchor="start" x="8194.5" y="-967" font-family="Helvetica,sans-Serif" font-size="10.00"> $version)</text>
+<polygon fill="#666666" stroke="#666666" points="8177.5,-1133 8177.5,-1133 8354.5,-1133 8354.5,-1133 8177.5,-1133"/>
+<polygon fill="#666666" stroke="#666666" points="8177.5,-1107 8177.5,-1107 8192.5,-1107 8192.5,-1107 8177.5,-1107"/>
+<polygon fill="#666666" stroke="#666666" points="8192.5,-1107 8192.5,-1107 8354.5,-1107 8354.5,-1107 8192.5,-1107"/>
+<polygon fill="none" stroke="#666666" points="8177,-960.5 8177,-1161.5 8354,-1161.5 8354,-960.5 8177,-960.5"/>
 </a>
 </g>
 </g>
@@ -2029,7 +2032,7 @@
 <g id="edge41_Node000002_Node000042" class="edge">
 <title>Node2&#45;&gt;Node42</title>
 <g id="a_edge41_Node000002_Node000042"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M4113.6,-2203.37C4731.52,-2202.32 8091.83,-2193.36 8168.5,-2122 8438.86,-1870.34 8346.18,-1365.49 8292.54,-1156.22"/>
+<path fill="none" stroke="#63b8ff" d="M4113.6,-2203.37C4731.52,-2202.32 8091.83,-2193.36 8168.5,-2122 8436.5,-1872.54 8347.77,-1374.31 8293.96,-1161.78"/>
 <polygon fill="none" stroke="#63b8ff" points="4113.39,-2199.87 4103.39,-2203.39 4113.4,-2206.87 4113.39,-2199.87"/>
 </a>
 </g>

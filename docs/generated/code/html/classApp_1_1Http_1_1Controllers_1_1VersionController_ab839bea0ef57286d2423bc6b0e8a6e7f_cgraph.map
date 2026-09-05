@@ -1,5 +1,7 @@
 <map id="App::Http::Controllers::VersionController::show" name="App::Http::Controllers::VersionController::show">
-<area shape="rect" id="Node000001" title="Muestra una versión específica con sus contenidos." alt="" coords="5,5,189,45"/>
+<area shape="rect" id="Node000001" title="Muestra una versión específica con sus contenidos." alt="" coords="5,37,189,77"/>
 <area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1ContentVersion.html#ae23373aa6d8e963a8394763814691f56" title="Get the content associated with this version entry." alt="" coords="237,5,447,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,23,224,23,224,28,189,28"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,43,223,38,224,43,190,48"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1Version.html#ab978795e2e6eae87ee972d600d31ed09" title="Parent project of the version." alt="" coords="263,69,421,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="190,67,249,75,249,80,189,72"/>
 </map>

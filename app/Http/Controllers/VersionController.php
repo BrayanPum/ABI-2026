@@ -21,6 +21,15 @@ use Illuminate\Support\Facades\Log;
 class VersionController extends Controller
 {
     /**
+     * Project status names that mark a project (and therefore its versions)
+     * as already accepted, meaning the version can no longer be edited.
+     * 'Asignado' follows 'Aprobado' once a student/team is assigned to it.
+     *
+     * @var array<int, string>
+     */
+    private const ACCEPTED_PROJECT_STATUSES = ['Aprobado', 'Asignado'];
+
+    /**
      * Lista las versiones registradas con filtros
      *
      * Permite filtrar por project_id y paginar resultados.
@@ -134,8 +143,8 @@ class VersionController extends Controller
                 ], 404);
             }
 
-            // Load the related project so the frontend can display contextual info.
-            $version->load('project');
+            // Load the related project (with its status) so the frontend can display contextual info.
+            $version->load('project.projectStatus');
 
             // Gather associated contents using the model bound to the research staff connection.
             $contents = ResearchStaffContentVersion::query()
@@ -163,8 +172,11 @@ class VersionController extends Controller
                 })
                 ->toArray();
 
+            $statusName = $version->project?->projectStatus?->name;
+
             $payload = $version->toArray();
             $payload['contents'] = $contents;
+            $payload['is_finalized'] = in_array($statusName, self::ACCEPTED_PROJECT_STATUSES, true);
 
             return response()->json($payload);
 

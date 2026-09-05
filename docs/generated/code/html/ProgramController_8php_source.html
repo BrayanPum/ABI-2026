@@ -354,88 +354,94 @@ $(document).ready(function(){initNavTree('ProgramController_8php_source.html',''
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>                        -&gt;with(<span class="stringliteral">&#39;error&#39;</span>, <span class="stringliteral">&#39;El programa ya fue eliminado.&#39;</span>);</div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>                }</div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>                $name = $program-&gt;name;</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>                $program-&gt;delete();</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                Log::info(<span class="stringliteral">&#39;Programa eliminado&#39;</span>, [</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                    <span class="stringliteral">&#39;program_id&#39;</span> =&gt; $program-&gt;id,</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                    <span class="stringliteral">&#39;program_code&#39;</span> =&gt; $program-&gt;code,</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                    <span class="stringliteral">&#39;program_name&#39;</span> =&gt; $name,</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                    <span class="stringliteral">&#39;user_id&#39;</span> =&gt; auth()-&gt;<span class="keywordtype">id</span>(),</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>                ]);</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>                <span class="keywordflow">return</span> redirect()</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>                    -&gt;route(<span class="stringliteral">&#39;programs.index&#39;</span>)</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>                    -&gt;with(<span class="stringliteral">&#39;success&#39;</span>, <span class="stringliteral">&quot;Programa &#39;{$name}&#39; eliminado correctamente.&quot;</span>);</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>            });</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        } <span class="keywordflow">catch</span> (QueryException $exception) {</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>            Log::error(<span class="stringliteral">&#39;Error de integridad al eliminar programa: &#39;</span> . $exception-&gt;getMessage());</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>            <span class="keywordflow">return</span> redirect()</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>                -&gt;route(<span class="stringliteral">&#39;programs.index&#39;</span>)</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>                -&gt;with(<span class="stringliteral">&#39;error&#39;</span>, <span class="stringliteral">&#39;No se puede eliminar el programa porque tiene informacion relacionada.&#39;</span>);</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        } <span class="keywordflow">catch</span> (\Exception $exception) {</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>            Log::error(<span class="stringliteral">&#39;Error al eliminar programa: &#39;</span> . $exception-&gt;getMessage());</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>                if ($program-&gt;<a class="code hl_function" href="classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProgram.html#abf60c774bb4018088650ac7f6a15ecfb">cities</a>()-&gt;exists()) {</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>                    return redirect()</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                        -&gt;route(<span class="stringliteral">&#39;programs.index&#39;</span>)</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                        -&gt;with(<span class="stringliteral">&#39;error&#39;</span>, <span class="stringliteral">&#39;No se puede eliminar el programa porque tiene ciudades asociadas.&#39;</span>);</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                }</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                $name = $program-&gt;name;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                $program-&gt;delete();</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>                Log::info(<span class="stringliteral">&#39;Programa eliminado&#39;</span>, [</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>                    <span class="stringliteral">&#39;program_id&#39;</span> =&gt; $program-&gt;id,</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>                    <span class="stringliteral">&#39;program_code&#39;</span> =&gt; $program-&gt;code,</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>                    <span class="stringliteral">&#39;program_name&#39;</span> =&gt; $name,</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                    <span class="stringliteral">&#39;user_id&#39;</span> =&gt; auth()-&gt;<span class="keywordtype">id</span>(),</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                ]);</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>                <span class="keywordflow">return</span> redirect()</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                    -&gt;route(<span class="stringliteral">&#39;programs.index&#39;</span>)</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>                    -&gt;with(<span class="stringliteral">&#39;success&#39;</span>, <span class="stringliteral">&quot;Programa &#39;{$name}&#39; eliminado correctamente.&quot;</span>);</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>            });</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        } <span class="keywordflow">catch</span> (QueryException $exception) {</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>            Log::error(<span class="stringliteral">&#39;Error de integridad al eliminar programa: &#39;</span> . $exception-&gt;getMessage());</div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>            <span class="keywordflow">return</span> redirect()</div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>                -&gt;route(<span class="stringliteral">&#39;programs.index&#39;</span>)</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>                -&gt;with(<span class="stringliteral">&#39;error&#39;</span>, <span class="stringliteral">&#39;Ocurrio un error al eliminar el programa.&#39;</span>);</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        }</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    }</div>
-</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>                -&gt;with(<span class="stringliteral">&#39;error&#39;</span>, <span class="stringliteral">&#39;No se puede eliminar el programa porque tiene informacion relacionada.&#39;</span>);</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        } <span class="keywordflow">catch</span> (\Exception $exception) {</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>            Log::error(<span class="stringliteral">&#39;Error al eliminar programa: &#39;</span> . $exception-&gt;getMessage());</div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
-<div class="foldopen" id="foldopen00273" data-start="{" data-end="}">
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno"><a class="line" href="classApp_1_1Http_1_1Controllers_1_1ProgramController.html#a698991493f8ab1e839b1cd421ce6b8ad">  273</a></span>    <span class="keyword">public</span> function <a class="code hl_function" href="classApp_1_1Http_1_1Controllers_1_1ProgramController.html#a698991493f8ab1e839b1cd421ce6b8ad">restore</a>(<span class="keywordtype">int</span> $id): RedirectResponse</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    {</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>            <span class="keywordflow">return</span> DB::transaction(function () use ($id) {</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>                $program = ResearchStaffProgram::withTrashed()-&gt;findOrFail($id);</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>            <span class="keywordflow">return</span> redirect()</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>                -&gt;route(<span class="stringliteral">&#39;programs.index&#39;</span>)</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>                -&gt;with(<span class="stringliteral">&#39;error&#39;</span>, <span class="stringliteral">&#39;Ocurrio un error al eliminar el programa.&#39;</span>);</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>        }</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    }</div>
+</div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>                <span class="keywordflow">if</span> (! $program-&gt;trashed()) {</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>                    <span class="keywordflow">return</span> redirect()</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>                        -&gt;route(<span class="stringliteral">&#39;programs.index&#39;</span>)</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>                        -&gt;with(<span class="stringliteral">&#39;error&#39;</span>, <span class="stringliteral">&#39;El programa no esta eliminado.&#39;</span>);</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>                }</div>
+<div class="foldopen" id="foldopen00279" data-start="{" data-end="}">
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno"><a class="line" href="classApp_1_1Http_1_1Controllers_1_1ProgramController.html#a698991493f8ab1e839b1cd421ce6b8ad">  279</a></span>    <span class="keyword">public</span> function <a class="code hl_function" href="classApp_1_1Http_1_1Controllers_1_1ProgramController.html#a698991493f8ab1e839b1cd421ce6b8ad">restore</a>(<span class="keywordtype">int</span> $id): RedirectResponse</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    {</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>            <span class="keywordflow">return</span> DB::transaction(function () use ($id) {</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>                $program = ResearchStaffProgram::withTrashed()-&gt;findOrFail($id);</div>
 <div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>                $program-&gt;restore();</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>                Log::info(<span class="stringliteral">&#39;Programa restaurado&#39;</span>, [</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>                    <span class="stringliteral">&#39;program_id&#39;</span> =&gt; $program-&gt;id,</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>                    <span class="stringliteral">&#39;program_code&#39;</span> =&gt; $program-&gt;code,</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>                    <span class="stringliteral">&#39;program_name&#39;</span> =&gt; $program-&gt;name,</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>                    <span class="stringliteral">&#39;user_id&#39;</span> =&gt; auth()-&gt;<span class="keywordtype">id</span>(),</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>                ]);</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span> </div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>                <span class="keywordflow">return</span> redirect()</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>                    -&gt;route(<span class="stringliteral">&#39;programs.index&#39;</span>)</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>                    -&gt;with(<span class="stringliteral">&#39;success&#39;</span>, <span class="stringliteral">&quot;Programa &#39;{$program-&gt;name}&#39; restaurado correctamente.&quot;</span>);</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>            });</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>        } <span class="keywordflow">catch</span> (\<a class="code hl_class" href="classIlluminate.html">Illuminate</a>\Database\Eloquent\ModelNotFoundException $exception) {</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>            <span class="keywordflow">return</span> redirect()</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>                -&gt;route(<span class="stringliteral">&#39;programs.index&#39;</span>)</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>                -&gt;with(<span class="stringliteral">&#39;error&#39;</span>, <span class="stringliteral">&#39;No se encontro el programa especificado.&#39;</span>);</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>        } <span class="keywordflow">catch</span> (\Exception $exception) {</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>            Log::error(<span class="stringliteral">&#39;Error al restaurar programa: &#39;</span> . $exception-&gt;getMessage());</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span> </div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>                <span class="keywordflow">if</span> (! $program-&gt;trashed()) {</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>                    <span class="keywordflow">return</span> redirect()</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>                        -&gt;route(<span class="stringliteral">&#39;programs.index&#39;</span>)</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>                        -&gt;with(<span class="stringliteral">&#39;error&#39;</span>, <span class="stringliteral">&#39;El programa no esta eliminado.&#39;</span>);</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>                }</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span> </div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>                $program-&gt;restore();</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span> </div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>                Log::info(<span class="stringliteral">&#39;Programa restaurado&#39;</span>, [</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>                    <span class="stringliteral">&#39;program_id&#39;</span> =&gt; $program-&gt;id,</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>                    <span class="stringliteral">&#39;program_code&#39;</span> =&gt; $program-&gt;code,</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>                    <span class="stringliteral">&#39;program_name&#39;</span> =&gt; $program-&gt;name,</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>                    <span class="stringliteral">&#39;user_id&#39;</span> =&gt; auth()-&gt;<span class="keywordtype">id</span>(),</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>                ]);</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>                <span class="keywordflow">return</span> redirect()</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>                    -&gt;route(<span class="stringliteral">&#39;programs.index&#39;</span>)</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>                    -&gt;with(<span class="stringliteral">&#39;success&#39;</span>, <span class="stringliteral">&quot;Programa &#39;{$program-&gt;name}&#39; restaurado correctamente.&quot;</span>);</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>            });</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>        } <span class="keywordflow">catch</span> (\<a class="code hl_class" href="classIlluminate.html">Illuminate</a>\Database\Eloquent\ModelNotFoundException $exception) {</div>
 <div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>            <span class="keywordflow">return</span> redirect()</div>
 <div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>                -&gt;route(<span class="stringliteral">&#39;programs.index&#39;</span>)</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>                -&gt;with(<span class="stringliteral">&#39;error&#39;</span>, <span class="stringliteral">&#39;Ocurrio un error al restaurar el programa.&#39;</span>);</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        }</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    }</div>
-</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>                -&gt;with(<span class="stringliteral">&#39;error&#39;</span>, <span class="stringliteral">&#39;No se encontro el programa especificado.&#39;</span>);</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        } <span class="keywordflow">catch</span> (\Exception $exception) {</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>            Log::error(<span class="stringliteral">&#39;Error al restaurar programa: &#39;</span> . $exception-&gt;getMessage());</div>
 <div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span> </div>
-<div class="foldopen" id="foldopen00315" data-start="{" data-end="}">
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno"><a class="line" href="classApp_1_1Http_1_1Controllers_1_1ProgramController.html#a9b829756cc58acd67bb2cd9bd8927c73">  315</a></span>    <span class="keyword">private</span> function <a class="code hl_function" href="classApp_1_1Http_1_1Controllers_1_1ProgramController.html#a9b829756cc58acd67bb2cd9bd8927c73">normalizeCityIds</a>(array $cityIds): array</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>    {</div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>        <span class="keywordflow">return</span> collect($cityIds)</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>            -&gt;filter(fn ($cityId) =&gt; filled($cityId))</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>            -&gt;map(fn ($cityId) =&gt; (<span class="keywordtype">int</span>) $cityId)</div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>            -&gt;unique()</div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>            -&gt;values()</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>            -&gt;all();</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    }</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>            <span class="keywordflow">return</span> redirect()</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>                -&gt;route(<span class="stringliteral">&#39;programs.index&#39;</span>)</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>                -&gt;with(<span class="stringliteral">&#39;error&#39;</span>, <span class="stringliteral">&#39;Ocurrio un error al restaurar el programa.&#39;</span>);</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        }</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    }</div>
 </div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>}</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
+<div class="foldopen" id="foldopen00321" data-start="{" data-end="}">
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno"><a class="line" href="classApp_1_1Http_1_1Controllers_1_1ProgramController.html#a9b829756cc58acd67bb2cd9bd8927c73">  321</a></span>    <span class="keyword">private</span> function <a class="code hl_function" href="classApp_1_1Http_1_1Controllers_1_1ProgramController.html#a9b829756cc58acd67bb2cd9bd8927c73">normalizeCityIds</a>(array $cityIds): array</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    {</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>        <span class="keywordflow">return</span> collect($cityIds)</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>            -&gt;filter(fn ($cityId) =&gt; filled($cityId))</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>            -&gt;map(fn ($cityId) =&gt; (<span class="keywordtype">int</span>) $cityId)</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>            -&gt;unique()</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>            -&gt;values()</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>            -&gt;all();</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>    }</div>
+</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>}</div>
 </div>
 <div class="ttc" id="aclassApp_1_1Http_1_1Controllers_1_1Controller_html"><div class="ttname"><a href="classApp_1_1Http_1_1Controllers_1_1Controller.html">App::Http::Controllers::Controller</a></div><div class="ttdef"><b>Definition</b> <a href="Controller_8php_source.html#l00011">Controller.php:12</a></div></div>
 <div class="ttc" id="aclassApp_1_1Http_1_1Controllers_1_1ProgramController_html"><div class="ttname"><a href="classApp_1_1Http_1_1Controllers_1_1ProgramController.html">App::Http::Controllers::ProgramController</a></div><div class="ttdef"><b>Definition</b> <a href="ProgramController_8php_source.html#l00015">ProgramController.php:16</a></div></div>
@@ -443,9 +449,9 @@ $(document).ready(function(){initNavTree('ProgramController_8php_source.html',''
 <div class="ttc" id="aclassApp_1_1Http_1_1Controllers_1_1ProgramController_html_a3cb0bc3029434997c98f72f188c533b0"><div class="ttname"><a href="classApp_1_1Http_1_1Controllers_1_1ProgramController.html#a3cb0bc3029434997c98f72f188c533b0">App::Http::Controllers::ProgramController::update</a></div><div class="ttdeci">update(Request $request, ResearchStaffProgram $program)</div><div class="ttdef"><b>Definition</b> <a href="ProgramController_8php_source.html#l00168">ProgramController.php:168</a></div></div>
 <div class="ttc" id="aclassApp_1_1Http_1_1Controllers_1_1ProgramController_html_a3d9020567f5ec3307edc6914c4fc28ab"><div class="ttname"><a href="classApp_1_1Http_1_1Controllers_1_1ProgramController.html#a3d9020567f5ec3307edc6914c4fc28ab">App::Http::Controllers::ProgramController::store</a></div><div class="ttdeci">store(Request $request)</div><div class="ttdef"><b>Definition</b> <a href="ProgramController_8php_source.html#l00076">ProgramController.php:76</a></div></div>
 <div class="ttc" id="aclassApp_1_1Http_1_1Controllers_1_1ProgramController_html_a5efb9b730f8fd97dd4201c6ff878de85"><div class="ttname"><a href="classApp_1_1Http_1_1Controllers_1_1ProgramController.html#a5efb9b730f8fd97dd4201c6ff878de85">App::Http::Controllers::ProgramController::show</a></div><div class="ttdeci">show(ResearchStaffProgram $program)</div><div class="ttdef"><b>Definition</b> <a href="ProgramController_8php_source.html#l00137">ProgramController.php:137</a></div></div>
-<div class="ttc" id="aclassApp_1_1Http_1_1Controllers_1_1ProgramController_html_a698991493f8ab1e839b1cd421ce6b8ad"><div class="ttname"><a href="classApp_1_1Http_1_1Controllers_1_1ProgramController.html#a698991493f8ab1e839b1cd421ce6b8ad">App::Http::Controllers::ProgramController::restore</a></div><div class="ttdeci">restore(int $id)</div><div class="ttdef"><b>Definition</b> <a href="ProgramController_8php_source.html#l00273">ProgramController.php:273</a></div></div>
+<div class="ttc" id="aclassApp_1_1Http_1_1Controllers_1_1ProgramController_html_a698991493f8ab1e839b1cd421ce6b8ad"><div class="ttname"><a href="classApp_1_1Http_1_1Controllers_1_1ProgramController.html#a698991493f8ab1e839b1cd421ce6b8ad">App::Http::Controllers::ProgramController::restore</a></div><div class="ttdeci">restore(int $id)</div><div class="ttdef"><b>Definition</b> <a href="ProgramController_8php_source.html#l00279">ProgramController.php:279</a></div></div>
 <div class="ttc" id="aclassApp_1_1Http_1_1Controllers_1_1ProgramController_html_a849c9149c32b8394a0a7d58276ce6892"><div class="ttname"><a href="classApp_1_1Http_1_1Controllers_1_1ProgramController.html#a849c9149c32b8394a0a7d58276ce6892">App::Http::Controllers::ProgramController::index</a></div><div class="ttdeci">index(Request $request)</div><div class="ttdef"><b>Definition</b> <a href="ProgramController_8php_source.html#l00017">ProgramController.php:17</a></div></div>
-<div class="ttc" id="aclassApp_1_1Http_1_1Controllers_1_1ProgramController_html_a9b829756cc58acd67bb2cd9bd8927c73"><div class="ttname"><a href="classApp_1_1Http_1_1Controllers_1_1ProgramController.html#a9b829756cc58acd67bb2cd9bd8927c73">App::Http::Controllers::ProgramController::normalizeCityIds</a></div><div class="ttdeci">normalizeCityIds(array $cityIds)</div><div class="ttdef"><b>Definition</b> <a href="ProgramController_8php_source.html#l00315">ProgramController.php:315</a></div></div>
+<div class="ttc" id="aclassApp_1_1Http_1_1Controllers_1_1ProgramController_html_a9b829756cc58acd67bb2cd9bd8927c73"><div class="ttname"><a href="classApp_1_1Http_1_1Controllers_1_1ProgramController.html#a9b829756cc58acd67bb2cd9bd8927c73">App::Http::Controllers::ProgramController::normalizeCityIds</a></div><div class="ttdeci">normalizeCityIds(array $cityIds)</div><div class="ttdef"><b>Definition</b> <a href="ProgramController_8php_source.html#l00321">ProgramController.php:321</a></div></div>
 <div class="ttc" id="aclassApp_1_1Http_1_1Controllers_1_1ProgramController_html_ac040e33c1cd566a05f361b0cc47ca8c9"><div class="ttname"><a href="classApp_1_1Http_1_1Controllers_1_1ProgramController.html#ac040e33c1cd566a05f361b0cc47ca8c9">App::Http::Controllers::ProgramController::edit</a></div><div class="ttdeci">edit(ResearchStaffProgram $program)</div><div class="ttdef"><b>Definition</b> <a href="ProgramController_8php_source.html#l00151">ProgramController.php:151</a></div></div>
 <div class="ttc" id="aclassApp_1_1Http_1_1Controllers_1_1ProgramController_html_af75fdd2f6f19d91b43dc684bc482f790"><div class="ttname"><a href="classApp_1_1Http_1_1Controllers_1_1ProgramController.html#af75fdd2f6f19d91b43dc684bc482f790">App::Http::Controllers::ProgramController::create</a></div><div class="ttdeci">create()</div><div class="ttdef"><b>Definition</b> <a href="ProgramController_8php_source.html#l00067">ProgramController.php:67</a></div></div>
 <div class="ttc" id="aclassApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProgram_html"><div class="ttname"><a href="classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProgram.html">App::Models::ResearchStaff::ResearchStaffProgram</a></div><div class="ttdoc">Extended model that keeps program queries under the research staff connection so actions respect thei...</div><div class="ttdef"><b>Definition</b> <a href="ResearchStaffProgram_8php_source.html#l00015">ResearchStaffProgram.php:16</a></div></div>

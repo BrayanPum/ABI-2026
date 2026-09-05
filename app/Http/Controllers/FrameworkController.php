@@ -43,7 +43,7 @@ class FrameworkController extends Controller
         try {
 
             // Query base - solo frameworks no eliminados
-            $query = ResearchStaffFramework::query();
+            $query = ResearchStaffFramework::query()->withCount('contentFrameworks');
 
             // Aplicar filtro de búsqueda
             if ($search) {

@@ -361,6 +361,21 @@
                             })()
                             : '<span class="text-secondary">Sin descripción</span>';
 
+                        const versionsCount = Number(item.content_versions_count ?? 0);
+                        const deleteButton = versionsCount === 0
+                            ? `
+                                <button class="btn btn-sm btn-outline-danger" data-action="delete" data-id="${item.id}" title="Eliminar">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="4" y1="7" x2="20" y2="7" />
+                                        <line x1="10" y1="11" x2="10" y2="17" />
+                                        <line x1="14" y1="11" x2="14" y2="17" />
+                                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                        <path d="M9 7v-3h6v3" />
+                                    </svg>
+                                </button>
+                            `
+                            : '';
+
                         return `
                             <tr data-id="${item.id}" data-name="${safeName}">
                                 <td class="text-secondary">#${item.id}</td>
@@ -385,15 +400,7 @@
                                                 <path d="M16 5l3 3" />
                                             </svg>
                                         </button>
-                                        <button class="btn btn-sm btn-outline-danger" data-action="delete" data-id="${item.id}" title="Eliminar">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                <line x1="4" y1="7" x2="20" y2="7" />
-                                                <line x1="10" y1="11" x2="10" y2="17" />
-                                                <line x1="14" y1="11" x2="14" y2="17" />
-                                                <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                                <path d="M9 7v-3h6v3" />
-                                            </svg>
-                                        </button>
+                                        ${deleteButton}
                                     </div>
                                 </td>
                             </tr>

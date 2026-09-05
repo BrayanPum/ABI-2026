@@ -50,7 +50,7 @@ class ContentController extends Controller
             $perPage = $perPage > 0 ? min($perPage, 100) : 15;
 
             // Iniciar consulta base
-            $query = ResearchStaffContent::query();
+            $query = ResearchStaffContent::query()->withCount('contentVersions');
 
             // Aplicar filtro de búsqueda si existe
             if (!empty($validated['search'])) {

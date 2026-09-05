@@ -104,18 +104,21 @@ $(document).ready(function(){initNavTree('classApp_1_1Models_1_1Professor_1_1Pro
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classApp_1_1Models_1_1Professor_1_1ProfessorCity__inherit__graph.svg" width="174" height="358"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classApp_1_1Models_1_1Professor_1_1ProfessorCity__inherit__graph.svg" width="174" height="378"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for App::Models::Professor::ProfessorCity:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classApp_1_1Models_1_1Professor_1_1ProfessorCity__coll__graph.svg" width="174" height="358"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classApp_1_1Models_1_1Professor_1_1ProfessorCity__coll__graph.svg" width="174" height="378"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a745ab889fcf8a60193cbdd2c685c90a1" id="r_a745ab889fcf8a60193cbdd2c685c90a1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classApp_1_1Models_1_1City.html#a745ab889fcf8a60193cbdd2c685c90a1">cityPrograms</a> ()</td></tr>
+<tr class="memdesc:a745ab889fcf8a60193cbdd2c685c90a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the relationship between <a class="el" href="classApp_1_1Models_1_1City.html">City</a> and <a class="el" href="classApp_1_1Models_1_1CityProgram.html" title="city_program table model, manages communication with the database using the root user,...">CityProgram</a>.  <br /></td></tr>
+<tr class="separator:a745ab889fcf8a60193cbdd2c685c90a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1745e5a03aef663a5f897f8102359faf" id="r_a1745e5a03aef663a5f897f8102359faf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classApp_1_1Models_1_1City.html#a1745e5a03aef663a5f897f8102359faf">department</a> ()</td></tr>
 <tr class="memdesc:a1745e5a03aef663a5f897f8102359faf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the relationship between <a class="el" href="classApp_1_1Models_1_1City.html">City</a> and <a class="el" href="classApp_1_1Models_1_1Department.html" title="departments table model, manages communication with the database using the root user,...">Department</a>.  <br /></td></tr>
 <tr class="separator:a1745e5a03aef663a5f897f8102359faf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,6 +137,37 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ProfessorCity_8php_source.html#l00011">11</a> of file <a class="el" href="ProfessorCity_8php_source.html">ProfessorCity.php</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a745ab889fcf8a60193cbdd2c685c90a1" name="a745ab889fcf8a60193cbdd2c685c90a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a745ab889fcf8a60193cbdd2c685c90a1">&#9670;&#160;</a></span>cityPrograms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">App::Models::City::cityPrograms </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Defines the relationship between <a class="el" href="classApp_1_1Models_1_1City.html">City</a> and <a class="el" href="classApp_1_1Models_1_1CityProgram.html" title="city_program table model, manages communication with the database using the root user,...">CityProgram</a>. </p>
+<p>A city is "in use" when it has been assigned to at least one program, since professors and students are enrolled through that assignment.</p>
+<dl class="section return"><dt>Returns</dt><dd>\Illuminate\Database\Eloquent\Relations\HasMany </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="City_8php_source.html#l00062">62</a> of file <a class="el" href="City_8php_source.html">City.php</a>.</p>
+
+</div>
+</div>
 <a id="a1745e5a03aef663a5f897f8102359faf" name="a1745e5a03aef663a5f897f8102359faf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1745e5a03aef663a5f897f8102359faf">&#9670;&#160;</a></span>department()</h2>
 

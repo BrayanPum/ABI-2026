@@ -1,5 +1,13 @@
 <map id="App::Http::Controllers::ProjectVersionController::edit" name="App::Http::Controllers::ProjectVersionController::edit">
-<area shape="rect" id="Node000001" title="Display an informational screen because versions are read&#45;only." alt="" coords="5,13,225,53"/>
-<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#adacb95202c38fa936cb57ac339917dc0" title="Allow the history to be consulted by any authenticated user that can reach the project detail." alt="" coords="273,5,460,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="225,30,260,30,260,35,225,35"/>
+<area shape="rect" id="Node000001" title="Display an informational screen because versions are read&#45;only." alt="" coords="5,101,225,141"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#adacb95202c38fa936cb57ac339917dc0" title="Restrict the version history to the project&#39;s own participants, research staff, and committee leaders..." alt="" coords="273,94,460,149"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="225,119,260,119,260,124,225,124"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1User.html#a49efcb9e3b03c4867ce680e80d9f427f" title="Professor profile associated with the user." alt="" coords="511,5,659,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="426,91,507,55,522,48,524,53,509,60,428,96"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Models_1_1Project.html#a15197eb4854cf5d7ecd802ff9647b515" title=" " alt="" coords="508,69,663,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="460,105,494,100,495,105,461,110"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Models_1_1User.html#af8dcd04bd243a915211126ed63a33839" title="Student profile associated with the user." alt="" coords="511,133,659,173"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="461,132,498,138,497,143,460,138"/>
+<area shape="rect" id="Node000006" href="$classApp_1_1Models_1_1Project.html#a6e148fe6ffa1778de91228a3cbe51ec5" title=" " alt="" coords="508,197,663,237"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="428,146,509,183,524,189,522,194,507,188,426,151"/>
 </map>

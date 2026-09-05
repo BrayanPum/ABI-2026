@@ -1,27 +1,33 @@
 <map id="App::Http::Controllers::ProjectVersionController::index" name="App::Http::Controllers::ProjectVersionController::index">
-<area shape="rect" id="Node000001" title="Display the version history associated with the project." alt="" coords="5,95,192,150"/>
-<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#adacb95202c38fa936cb57ac339917dc0" title="Allow the history to be consulted by any authenticated user that can reach the project detail." alt="" coords="240,17,427,71"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,93,237,73,239,78,182,98"/>
-<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#a9976c03a3acda9b79522e8e8e8658d42" title="Resolve the best human&#45;readable label for the user who generated the version." alt="" coords="240,95,427,150"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="192,120,226,120,226,125,192,125"/>
-<area shape="rect" id="Node000005" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#a66279c21a7515cf7b7e7227dc4bcaa2b" title="Build a compatible snapshot for legacy and new versions." alt="" coords="240,270,427,325"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="138,148,286,260,283,264,135,152"/>
-<area shape="rect" id="Node000004" href="$classApp_1_1Models_1_1Version.html#a663cf47c8739fb20674588ae05973121" title="User who generated the version snapshot." alt="" coords="489,5,647,45"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="398,93,425,80,474,55,491,48,493,53,476,60,428,85,400,98"/>
-<area shape="rect" id="Node000006" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#a4b3a381ffcac9bfb0a3f9fec87d6faf0" title="Present readable labels even if the catalog data is stored without accents." alt="" coords="475,70,661,125"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="351,268,402,203,435,167,473,135,482,129,485,134,476,139,439,171,406,206,355,271"/>
-<area shape="rect" id="Node000007" href="$classApp_1_1Models_1_1Project.html#aa00af01096f4ca490f1caf0642e07e55" title=" " alt="" coords="489,149,647,189"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="368,268,416,233,473,199,488,192,490,197,476,204,419,237,371,272"/>
-<area shape="rect" id="Node000008" href="$classApp_1_1Models_1_1Version.html#a0e34ee2163b2e005dfb48e942a2af7e2" title="Direct relationship with the completed content." alt="" coords="489,213,647,253"/>
-<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="426,269,480,254,482,260,427,275"/>
-<area shape="rect" id="Node000009" href="$classApp_1_1Models_1_1Project.html#a15197eb4854cf5d7ecd802ff9647b515" title=" " alt="" coords="491,277,645,317"/>
-<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="427,295,477,295,477,300,427,300"/>
-<area shape="rect" id="Node000010" href="$classApp_1_1Models_1_1Project.html#a2957d15a78ccb6a5d46712c9ecb0503b" title=" " alt="" coords="491,341,645,381"/>
-<area shape="poly" id="edge9_Node000005_Node000010" title=" " alt="" coords="427,320,482,335,480,340,426,325"/>
-<area shape="rect" id="Node000011" href="$classApp_1_1Models_1_1Project.html#a6e148fe6ffa1778de91228a3cbe51ec5" title=" " alt="" coords="491,405,645,445"/>
-<area shape="poly" id="edge10_Node000005_Node000011" title=" " alt="" coords="371,323,419,358,476,391,490,398,488,403,473,396,416,362,368,327"/>
-<area shape="rect" id="Node000012" href="$classApp_1_1Models_1_1Project.html#aa96cc7a6d2323571a8ae63459a55a083" title=" " alt="" coords="491,469,645,509"/>
-<area shape="poly" id="edge11_Node000005_Node000012" title=" " alt="" coords="354,323,404,389,438,425,476,455,486,461,483,465,473,460,435,428,400,393,350,327"/>
-<area shape="rect" id="Node000013" href="$classApp_1_1Models_1_1Professor.html#a40972ba6a5a24a8fa59596c0268da934" title="Get the user associated with the professor." alt="" coords="483,533,653,573"/>
-<area shape="poly" id="edge12_Node000005_Node000013" title=" " alt="" coords="347,324,366,367,394,419,431,473,476,519,483,524,480,528,473,523,426,476,389,422,361,369,342,326"/>
+<area shape="rect" id="Node000001" title="Display the version history associated with the project." alt="" coords="5,350,192,405"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#adacb95202c38fa936cb57ac339917dc0" title="Restrict the version history to the project&#39;s own participants, research staff, and committee leaders..." alt="" coords="240,126,427,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,348,292,188,296,192,130,352"/>
+<area shape="rect" id="Node000007" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#a9976c03a3acda9b79522e8e8e8658d42" title="Resolve the best human&#45;readable label for the user who generated the version." alt="" coords="240,525,427,579"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="138,403,286,514,283,519,135,407"/>
+<area shape="rect" id="Node000009" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#a66279c21a7515cf7b7e7227dc4bcaa2b" title="Build a compatible snapshot for legacy and new versions." alt="" coords="240,350,427,405"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="192,375,226,375,226,380,192,380"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1User.html#a49efcb9e3b03c4867ce680e80d9f427f" title="Professor profile associated with the user." alt="" coords="494,69,642,109"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="426,125,480,110,482,116,427,131"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Models_1_1Project.html#a15197eb4854cf5d7ecd802ff9647b515" title=" " alt="" coords="491,197,645,237"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="427,176,482,191,480,196,426,181"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Models_1_1User.html#af8dcd04bd243a915211126ed63a33839" title="Student profile associated with the user." alt="" coords="494,5,642,45"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="368,124,416,89,473,55,488,48,490,53,476,60,419,93,371,128"/>
+<area shape="rect" id="Node000006" href="$classApp_1_1Models_1_1Project.html#a6e148fe6ffa1778de91228a3cbe51ec5" title=" " alt="" coords="491,133,645,173"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="427,151,477,151,477,156,427,156"/>
+<area shape="rect" id="Node000008" href="$classApp_1_1Models_1_1Version.html#a663cf47c8739fb20674588ae05973121" title="User who generated the version snapshot." alt="" coords="489,661,647,701"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="370,577,419,613,476,647,490,654,488,659,473,652,416,617,367,582"/>
+<area shape="poly" id="edge12_Node000009_Node000004" title=" " alt="" coords="357,348,407,297,439,270,473,247,485,241,488,245,476,252,442,275,411,301,360,352"/>
+<area shape="poly" id="edge14_Node000009_Node000006" title=" " alt="" coords="346,348,366,311,394,267,430,222,473,183,481,178,484,182,476,187,434,226,399,270,370,314,350,351"/>
+<area shape="rect" id="Node000010" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#a4b3a381ffcac9bfb0a3f9fec87d6faf0" title="Present readable labels even if the catalog data is stored without accents." alt="" coords="475,454,661,509"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="395,402,476,439,492,446,490,451,474,444,393,407"/>
+<area shape="rect" id="Node000011" href="$classApp_1_1Models_1_1Project.html#aa00af01096f4ca490f1caf0642e07e55" title=" " alt="" coords="489,533,647,573"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="358,403,408,461,441,491,476,518,489,525,486,530,473,522,437,495,404,465,354,407"/>
+<area shape="rect" id="Node000012" href="$classApp_1_1Models_1_1Version.html#a0e34ee2163b2e005dfb48e942a2af7e2" title="Direct relationship with the completed content." alt="" coords="489,597,647,637"/>
+<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="356,404,429,511,450,551,459,567,476,583,484,588,481,593,473,587,455,570,445,553,424,513,352,407"/>
+<area shape="rect" id="Node000013" href="$classApp_1_1Models_1_1Project.html#a2957d15a78ccb6a5d46712c9ecb0503b" title=" " alt="" coords="491,261,645,301"/>
+<area shape="poly" id="edge13_Node000009_Node000013" title=" " alt="" coords="390,348,474,311,493,303,495,308,476,316,392,352"/>
+<area shape="rect" id="Node000014" href="$classApp_1_1Models_1_1Project.html#aa96cc7a6d2323571a8ae63459a55a083" title=" " alt="" coords="491,325,645,365"/>
+<area shape="poly" id="edge15_Node000009_Node000014" title=" " alt="" coords="426,362,476,355,477,360,427,367"/>
+<area shape="rect" id="Node000015" href="$classApp_1_1Models_1_1Professor.html#a40972ba6a5a24a8fa59596c0268da934" title="Get the user associated with the professor." alt="" coords="483,389,653,429"/>
+<area shape="poly" id="edge16_Node000009_Node000015" title=" " alt="" coords="427,387,470,393,469,399,426,393"/>
 </map>

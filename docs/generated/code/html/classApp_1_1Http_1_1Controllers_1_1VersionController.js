@@ -6,5 +6,6 @@ var classApp_1_1Http_1_1Controllers_1_1VersionController =
     [ "restore", "classApp_1_1Http_1_1Controllers_1_1VersionController.html#a5e0b05d4d71441ce62a8a3c844ccf9ed", null ],
     [ "show", "classApp_1_1Http_1_1Controllers_1_1VersionController.html#ab839bea0ef57286d2423bc6b0e8a6e7f", null ],
     [ "store", "classApp_1_1Http_1_1Controllers_1_1VersionController.html#a392796bac6b8026fb6405280bf97fbbc", null ],
-    [ "update", "classApp_1_1Http_1_1Controllers_1_1VersionController.html#a1e92f0dfebd1d3be23d770440546297a", null ]
+    [ "update", "classApp_1_1Http_1_1Controllers_1_1VersionController.html#a1e92f0dfebd1d3be23d770440546297a", null ],
+    [ "ACCEPTED_PROJECT_STATUSES", "classApp_1_1Http_1_1Controllers_1_1VersionController.html#a4436a3eb8dcfec3f21bf2caed1922630", null ]
 ];

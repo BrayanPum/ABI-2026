@@ -121,7 +121,7 @@ class PerfilController extends Controller
         if ($canManageProfileFields) {
             $rules['name'] = ['required', 'string', 'max:255'];
             $rules['last_name'] = ['required', 'string', 'max:255'];
-            $rules['phone'] = ['required', 'string', 'max:20'];
+            $rules['phone'] = ['required', 'string', 'max:20', 'regex:/^[0-9]+$/'];
             $rules['email'] = ['required', 'string', 'email', 'max:255', Rule::unique('users', 'email')->ignore($user->id)];
         }
 
@@ -135,6 +135,7 @@ class PerfilController extends Controller
             'password.required' => 'Debes ingresar una nueva contrasena.',
             'password.min' => 'La contrasena debe tener al menos 9 caracteres.',
             'password.confirmed' => 'La confirmacion de la contrasena no coincide.',
+            'phone.regex' => 'El telefono solo debe contener numeros.',
         ]);
 
         if ($canManageProfileFields) {

@@ -50,4 +50,17 @@ class City extends Model
     {
         return $this->belongsTo(Department::class, 'department_id', 'id');
     }
+
+    /**
+     * Defines the relationship between City and CityProgram.
+     *
+     * A city is "in use" when it has been assigned to at least one program,
+     * since professors and students are enrolled through that assignment.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function cityPrograms()
+    {
+        return $this->hasMany(CityProgram::class, 'city_id', 'id');
+    }
 }

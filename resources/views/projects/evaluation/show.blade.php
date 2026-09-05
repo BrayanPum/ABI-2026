@@ -161,7 +161,7 @@
                                         <option value="">Seleccionar...</option>
                                         <option value="Aprobado">Aprobar</option>
                                         <option value="Rechazado">Rechazar</option>
-                                        <option value="Devuelto para corrección">Devolver para corrección</option>
+                                        <option value="Devuelto para correccion">Devolver para corrección</option>
                                     </select>
                                 </div>
 
@@ -244,7 +244,7 @@
 <script>
     document.getElementById('status').addEventListener('change', function() {
         const commentsField = document.getElementById('comments-field');
-        commentsField.style.display = this.value === 'Devuelto para corrección' ? 'block' : 'none';
+        commentsField.style.display = this.value === 'Devuelto para correccion' ? 'block' : 'none';
     });
 </script>
 @endsection

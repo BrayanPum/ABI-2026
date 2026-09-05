@@ -83,7 +83,7 @@ class ProjectEvaluationController extends Controller
         $committeeLeader = $this->resolveCommitteeLeader();
         $this->ensureProjectBelongsToCommitteeProgram($project, $committeeLeader->city_program_id);
         $validated = $request->validate([
-            'status' => 'required|string|in:Aprobado,Rechazado,Devuelto para correccion',
+            'status' => 'required|string|in:Aprobado,Rechazado,Devuelto para correccion,Devuelto para corrección',
             'comments' => 'nullable|string',
         ]);
 
@@ -108,7 +108,7 @@ class ProjectEvaluationController extends Controller
 
         $project->update(['project_status_id' => $status->id]);
 
-        if (in_array($validated['status'], ['Devuelto para correccion'], true)) {
+        if (in_array($statusName, ['Devuelto para correccion'], true)) {
             $latestVersion = $project->versions()->latest('created_at')->first();
             if ($latestVersion) {
                 $commentContent = Content::where('name', 'Comentarios')->whereJsonContains('roles', 'committee_leader')->first();

@@ -49,6 +49,7 @@ class DepartmentController extends Controller
         if ($selectedDepartment) {
             $cities = $selectedDepartment->cities()
                 ->with('department')
+                ->withCount('cityPrograms')
                 ->when($citySearch !== '', function ($query) use ($citySearch) {
                     $query->where('name', 'like', "%{$citySearch}%");
                 })
@@ -119,6 +120,11 @@ class DepartmentController extends Controller
 
     public function destroy(Request $request, ResearchStaffDepartment $department): RedirectResponse
     {
+        if ($department->cities()->exists()) {
+            return $this->redirectToTarget($request, 'departments.index')
+                ->with('error', 'No se puede eliminar el departamento porque tiene ciudades asociadas.');
+        }
+
         try {
             $name = $department->name;
             $department->delete();

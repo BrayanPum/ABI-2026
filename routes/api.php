@@ -26,7 +26,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::name('api.')->group(function () {
+// These endpoints are consumed exclusively by the AJAX/fetch calls made from the
+// "research_staff" area of the app (contents, versions, content-versions, etc. —
+// see the equivalent, already-protected pages in routes/web.php). They previously
+// had no authentication at all, so anyone who could reach /api/* directly could
+// read, create, update or delete records. 'web' restores session/cookie handling
+// (required for the 'auth' guard and CSRF checks to work on these endpoints),
+// 'auth' requires a logged-in user, and 'role:research_staff' matches the same
+// role restriction already enforced on the Blade pages that call these routes.
+Route::middleware(['web', 'auth', 'role:research_staff'])->name('api.')->group(function () {
     Route::apiResource('research-groups', ResearchGroupController::class);
     Route::apiResource('programs', ProgramController::class);
     Route::apiResource('investigation-lines', InvestigationLineController::class);

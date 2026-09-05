@@ -49,7 +49,9 @@
                 <div class="mb-3">
                     <label class="form-label">Número de identificación</label>
                     <input type="text" name="card_id" class="form-control @error('card_id') is-invalid @enderror"
-                           placeholder="Ingrese el número de identificación" value="{{ old('card_id') }}" required>
+                           placeholder="Ingrese el número de identificación" value="{{ old('card_id') }}" required
+                           inputmode="numeric" pattern="[0-9]*" maxlength="20"
+                           oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                     @error('card_id')
                     <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -76,7 +78,9 @@
                 <div class="mb-3">
                     <label class="form-label">Teléfono</label>
                     <input type="text" name="phone" class="form-control @error('phone') is-invalid @enderror"
-                           placeholder="Ingrese el número de teléfono" value="{{ old('phone') }}" required>
+                           placeholder="Ingrese el número de teléfono" value="{{ old('phone') }}" required
+                           inputmode="numeric" pattern="[0-9]*" maxlength="20"
+                           oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                     @error('phone')
                     <div class="invalid-feedback">{{ $message }}</div>
                     @enderror

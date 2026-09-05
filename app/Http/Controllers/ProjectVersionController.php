@@ -131,13 +131,51 @@ class ProjectVersionController extends Controller
     }
 
     /**
-     * Allow the history to be consulted by any authenticated user that can reach the project detail.
+     * Restrict the version history to the project's own participants, research staff,
+     * and committee leaders evaluating projects within their own program.
      */
     protected function authorizeHistoryAccess(Project $project, ?User $user): void
     {
         if (! $user) {
             abort(403);
         }
+
+        if ($user->role === 'research_staff') {
+            return;
+        }
+
+        $project->loadMissing(['professors', 'students']);
+
+        if (in_array($user->role, ['professor', 'committee_leader'], true)) {
+            $professor = $user->professor ?? Professor::query()->where('user_id', $user->id)->first();
+
+            if ($professor && $project->professors->contains('id', $professor->id)) {
+                return;
+            }
+
+            if ($user->role === 'committee_leader' && $professor && $professor->committee_leader && $professor->city_program_id) {
+                $belongsToProgram = $project->professors->contains('city_program_id', $professor->city_program_id)
+                    || $project->students->contains('city_program_id', $professor->city_program_id);
+
+                if ($belongsToProgram) {
+                    return;
+                }
+            }
+
+            abort(403, 'No estás asignado a este proyecto.');
+        }
+
+        if ($user->role === 'student') {
+            $student = $user->student;
+
+            if ($student && $project->students->contains('id', $student->id)) {
+                return;
+            }
+
+            abort(403, 'No estás asignado a este proyecto.');
+        }
+
+        abort(403, 'Acceso no autorizado.');
     }
 
     /**

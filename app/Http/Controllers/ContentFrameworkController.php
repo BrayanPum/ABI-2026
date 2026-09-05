@@ -18,6 +18,7 @@ class ContentFrameworkController extends Controller
 
         $query = ContentFramework::query()
             ->with('framework')
+            ->withCount('contentFrameworkProjects')
             ->orderByDesc('id');
 
         if ($search !== '') {
@@ -103,6 +104,12 @@ class ContentFrameworkController extends Controller
 
     public function destroy(ContentFramework $contentFramework): RedirectResponse
     {
+        if ($contentFramework->contentFrameworkProjects()->exists()) {
+            return redirect()
+                ->route('content-frameworks.index')
+                ->with('error', 'No se puede eliminar el contenido porque está en uso en proyectos.');
+        }
+
         $contentFramework->delete();
 
         return redirect()

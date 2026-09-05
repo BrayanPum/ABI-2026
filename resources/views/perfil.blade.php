@@ -136,6 +136,10 @@
                                                 name="phone"
                                                 value="{{ $currentPhone }}"
                                                 required
+                                                inputmode="numeric"
+                                                pattern="[0-9]*"
+                                                maxlength="20"
+                                                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                                             >
                                             @error('phone')
                                                 <div class="invalid-feedback">{{ $message }}</div>

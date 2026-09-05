@@ -450,198 +450,44 @@ El proyecto maneja:
 
 ## 🛠️ Instalación y configuración
 
-### Requisitos previos
+La guía detallada y actualizada de instalación está en [docs/README.md](docs/README.md). Incluye la configuración de `.env`, los requisitos, la inicialización de MySQL por rol y las comprobaciones locales.
 
-Para desarrollo en Windows, el repositorio está claramente orientado a trabajar con **XAMPP**.
-
-Se recomienda contar con:
-
-- **XAMPP** con Apache, MySQL y PHP 8.2+
-- **Composer**
-- **Node.js y npm**
-- **Git**
-
-En Linux también puede ejecutarse, siempre que el entorno provea PHP 8.2+, MySQL/MariaDB y Node.js.
-
-### Variables de entorno disponibles
-
-El repositorio incluye dos plantillas:
-
-- `.env.example`: configuración local
-- `.env.examplenube`: referencia para entorno con base de datos remota
-
-### Instalación local en Windows con XAMPP
-
-#### 1. Clonar el repositorio
+### Inicio rápido
 
 ```bash
 git clone <url-del-repositorio>
 cd ABI
-```
-
-#### 2. Iniciar Apache y MySQL en XAMPP
-
-Desde el panel de control de XAMPP, inicia:
-
-- `Apache`
-- `MySQL`
-
-#### 3. Asegurar que estás usando el PHP de XAMPP
-
-```powershell
-$env:Path = "C:\xampp\php;C:\xampp\mysql\bin;" + $env:Path
-php --ini
-```
-
-La salida debe apuntar al `php.ini` de `C:\xampp\php`.
-
-#### 4. Instalar dependencias PHP
-
-```bash
-composer install
-```
-
-#### 5. Instalar dependencias frontend
-
-```bash
-npm install
-```
-
-#### 6. Crear el archivo `.env`
-
-Para entorno local:
-
-```bash
-copy .env.example .env
-```
-
-Para usar la plantilla nube:
-
-```bash
-copy .env.examplenube .env
-```
-
-#### 7. Ajustar variables mínimas del entorno
-
-Ejemplo recomendado para desarrollo local:
-
-```env
-APP_NAME=ABI
-APP_ENV=local
-APP_DEBUG=true
-APP_URL=http://127.0.0.1:8000
-
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=abi
-DB_USERNAME=root
-DB_PASSWORD=
-
-DB_USER_USERNAME=db_user
-DB_USER_PASS=
-DB_RESEARCH_USER=root
-DB_RESEARCH_PASS=
-DB_PROFESSOR_PASS=
-DB_STUDENT_PASS=
-```
-
-Notas:
-
-- `DB_CONNECTION=mysql` es la conexión base para migraciones y tareas administrativas.
-- El proyecto también usa conexiones por rol (`mysql_user`, `mysql_research_staff`, `mysql_professor`, `mysql_student`).
-- Si vas a utilizar el esquema de usuarios restringidos, debes completar las contraseñas asociadas.
-
-#### 8. Generar clave de aplicación
-
-```bash
-php artisan key:generate
-```
-
-#### 9. Crear enlace de almacenamiento público
-
-Este paso es importante para la foto de perfil y otros archivos servidos desde disco público.
-
-```bash
-php artisan storage:link
-```
-
-#### 10. Inicializar base de datos
-
-Si vas a trabajar con la base local y quieres dejar también configurados los usuarios MySQL por rol:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\set-db-roles.ps1
-```
-
-Este script:
-
-- ejecuta migraciones
-- ejecuta seeders
-- procesa `database/sql/roles.sql`
-- crea usuarios y privilegios por rol en MySQL
-
-Si trabajas desde Git Bash o Linux:
-
-```bash
-bash scripts/set-db-roles.sh
-```
-
-Si solo necesitas levantar el esquema sin crear usuarios por rol:
-
-```bash
-php artisan migrate --seed
-```
-
-#### 11. Compilar assets
-
-```bash
-npm run build
-```
-
-#### 12. Iniciar la aplicación
-
-En una terminal:
-
-```bash
-php artisan serve
-```
-
-Opcionalmente, en otra terminal para desarrollo frontend:
-
-```bash
-npm run dev
-```
-
-La aplicación web quedará normalmente disponible en:
-
-```text
-http://127.0.0.1:8000
-```
-
-Vite HMR se apoya en `localhost:3000` según `vite.config.js`.
-
-### Instalación local en Linux
-
-```bash
 cp .env.example .env
 composer install
 npm install
 php artisan key:generate
 php artisan storage:link
-bash scripts/set-db-roles.sh
+php artisan migrate --seed
 npm run build
 php artisan serve
 ```
 
-### Consideración para bases de datos remotas o administradas
+Antes de ejecutar las migraciones, crea la base de datos configurada en `DB_DATABASE` (por defecto, `abi`) y completa en `.env` los datos de tu servidor MySQL. La aplicación queda normalmente disponible en `http://127.0.0.1:8000`.
 
-En algunos proveedores cloud no tendrás permisos para `CREATE USER`, `DROP USER` o `GRANT`. En ese caso:
+### Entorno de desarrollo
 
-- configura las credenciales remotas directamente en `.env`
-- evita ejecutar el script de roles si el proveedor no lo permite
-- usa `php artisan migrate --seed`
-- valida manualmente la estrategia de conexiones por rol según el entorno
+- PHP 8.2 o superior con `pdo_mysql`, Composer, Node.js/npm, Git y MySQL o MariaDB.
+- En Windows puede usarse XAMPP; verifica que la terminal resuelva el PHP de XAMPP antes de ejecutar Composer o Artisan.
+- Para desarrollo de frontend, ejecuta `npm run dev` en otra terminal. Vite usa HMR en `localhost:3000`.
+
+### Base de datos con privilegios por rol
+
+El inicio rápido usa una única conexión administrativa. Si necesitas reproducir las restricciones MySQL por rol, configura las variables `DB_USER_*`, `DB_RESEARCH_*`, `DB_PROFESSOR_PASS` y `DB_STUDENT_PASS` en tu `.env`, y ejecuta el script para tu sistema:
+
+```bash
+# Linux o Git Bash
+bash scripts/set-db-roles.sh
+
+# Windows PowerShell
+powershell -ExecutionPolicy Bypass -File .\scripts\set-db-roles.ps1
+```
+
+Los scripts requieren permisos MySQL para crear usuarios y asignar privilegios. Consulta la [guía de instalación completa](docs/README.md#conexiones-mysql-por-rol) antes de usarlos en una base de datos administrada o remota.
 
 ## 🔐 Conexiones por rol y seguridad de base de datos
 
@@ -721,7 +567,7 @@ npm run build
 
 ## 🧪 Pruebas
 
-El repositorio incluye una suite de pruebas automatizadas con cobertura funcional y unitaria. Actualmente hay **41 archivos de prueba** versionados en `tests/`.
+El repositorio incluye una suite de pruebas automatizadas con cobertura funcional y unitaria. Actualmente hay **39 archivos de prueba** versionados en `tests/`.
 
 ### Cobertura presente en el repositorio
 
@@ -883,11 +729,6 @@ QUEUE_CONNECTION=database
 ### Colas y notificaciones
 
 El listener `SendNotificationListener` implementa `ShouldQueue`. En desarrollo, con `QUEUE_CONNECTION=sync`, los correos se procesan en línea. En producción es recomendable ejecutar un worker real.
-
-### Nixpacks
-
-Existe un archivo `nixpacks.toml` con paquetes para extensiones PHP requeridas en despliegues compatibles con Nixpacks.
-
 
 ## 🤝 Contribución
 

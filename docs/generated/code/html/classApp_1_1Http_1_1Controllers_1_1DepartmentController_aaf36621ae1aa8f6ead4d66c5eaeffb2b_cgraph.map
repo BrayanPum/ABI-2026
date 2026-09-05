@@ -1,7 +1,9 @@
 <map id="App::Http::Controllers::DepartmentController::destroy" name="App::Http::Controllers::DepartmentController::destroy">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,177,60"/>
-<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1DepartmentController.html#af72d11b73f216b90e8d310085e4b6301" title=" " alt="" coords="225,5,397,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,30,212,30,212,35,178,35"/>
-<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1DepartmentController.html#a3117ee18d4b963fd86fc6aa37a6b3592" title=" " alt="" coords="445,5,617,60"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="398,30,432,30,432,35,398,35"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,34,177,89"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Department.html#a31aa082e40d88bbf3818d89ab5aa988f" title="Defines the one&#45;to&#45;many relationship between Department and City." alt="" coords="225,5,413,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,45,211,40,212,45,178,50"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1DepartmentController.html#af72d11b73f216b90e8d310085e4b6301" title=" " alt="" coords="233,70,405,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="178,72,220,79,219,84,177,78"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Http_1_1Controllers_1_1DepartmentController.html#a3117ee18d4b963fd86fc6aa37a6b3592" title=" " alt="" coords="461,70,633,125"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="406,95,447,95,447,100,406,100"/>
 </map>

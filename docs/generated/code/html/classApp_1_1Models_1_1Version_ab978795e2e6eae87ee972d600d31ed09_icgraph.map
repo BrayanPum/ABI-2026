@@ -1,0 +1,5 @@
+<map id="App::Models::Version::project" name="App::Models::Version::project">
+<area shape="rect" id="Node000001" title="Parent project of the version." alt="" coords="237,5,396,45"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1VersionController.html#ab839bea0ef57286d2423bc6b0e8a6e7f" title="Muestra una versión específica con sus contenidos." alt="" coords="5,5,189,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,28,190,28,190,23,224,23"/>
+</map>

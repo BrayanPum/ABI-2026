@@ -130,7 +130,7 @@ $(document).ready(function(){initNavTree('ContentController_8php_source.html',''
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            $perPage = $perPage &gt; 0 ? min($perPage, 100) : 15;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            <span class="comment">// Iniciar consulta base</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            $query = ResearchStaffContent::query();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            $query = ResearchStaffContent::query()-&gt;withCount(<span class="stringliteral">&#39;contentVersions&#39;</span>);</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="comment">// Aplicar filtro de búsqueda si existe</span></div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="keywordflow">if</span> (!empty($validated[<span class="stringliteral">&#39;search&#39;</span>])) {</div>

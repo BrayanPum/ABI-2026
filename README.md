@@ -450,30 +450,171 @@ El proyecto maneja:
 
 ## 🛠️ Instalación y configuración
 
-La guía detallada y actualizada de instalación está en [docs/README.md](docs/README.md). Incluye la configuración de `.env`, los requisitos, la inicialización de MySQL por rol y las comprobaciones locales.
+### Prerrequisitos
 
-### Inicio rápido
+Para ejecutar el proyecto en local, **usa XAMPP**. No instales PHP, MySQL ni Apache por separado para evitar conflictos.
 
+- **XAMPP**, con:
+  - **PHP 8.1 o superior**
+  - **MySQL o MariaDB**
+  - **Apache**
+- **Composer**, para instalar dependencias de PHP
+- **Node.js y npm**, para compilar los assets del frontend
+
+> **Importante:** este proyecto asume en Windows que XAMPP está instalado en `C:\xampp`. Si lo instalaste en otra ruta, debes ajustar los scripts o la variable PATH.
+
+### Instalación local en Windows con XAMPP
+
+#### 1. Instala XAMPP
+Instala XAMPP según el sistema operativo donde vayas a desplegarlo y, al terminar, abre el panel de control de XAMPP.
+Link para la instalación de XAMPP: https://www.apachefriends.org/es/index.html
+
+#### 2. Inicia servicios
+En el panel de XAMPP, inicia:
+- **Apache**
+- **MySQL**
+
+#### 3. Verifica que estás usando el PHP de XAMPP
+Antes de ejecutar comandos de Laravel, abre **PowerShell** y asegúrate de que `php` apunte al PHP de XAMPP.
+
+Puedes hacerlo temporalmente en la terminal actual con:
+
+```powershell
+$env:Path = "C:\xampp\php;C:\xampp\mysql\bin;" + $env:Path
+php --ini
+```
+
+La salida de `php --ini` debe apuntar a un `php.ini` dentro de `C:\xampp\php`.
+
+> **No uses otro PHP instalado aparte**, porque eso suele causar errores como `could not find driver` al correr migraciones.
+
+#### 4. Instala Composer
+Instala Composer y durante el proceso de instalación en caso de que se habilite la opción debes seleccionar "Add This PHP To Your PATH".
+Link para descargar la ultima versión de Composer: https://getcomposer.org/Composer-Setup.exe
+
+#### 5. Reiniciar el equipo
+Debes reiniciar el equipo para que el sistema operativo actualice sus rutas internas y reconozca el comando Composer.
+
+#### 6. Clona el repositorio
 ```bash
 git clone <url-del-repositorio>
-cd ABI
-cp .env.example .env
+cd ABI-2026-main
+```
+
+#### 7. Instala dependencias de PHP
+```bash
+composer install
+```
+
+```
+En caso de que Composer presente problemas de instalación reemplacen el archivo php.ini del Config de Apache en XAMPP.
+```
+> PHP.INI corregido: https://drive.google.com/file/d/1EquA3PZSD6l0HsOLjGdzTbd6wqDecLKb/view?usp=sharing
+
+#### 8. Instala dependencias del frontend
+```bash
+npm install
+```
+
+#### 9. Configura el archivo `.env`
+Si vas a trabajar con base de datos local:
+
+```bash
+copy .env.example .env
+```
+
+Si vas a usar base de datos en la nube:
+
+```bash
+copy .env.examplenube .env
+```
+
+#### 10. Ajusta las variables de entorno
+Si trabajas en local, revisa como mínimo estos valores en `.env`:
+
+```env
+APP_NAME=ABI
+APP_ENV=local
+APP_DEBUG=true
+APP_URL=http://127.0.0.1:8000
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Si tu usuario `root` en MySQL tiene contraseña, colócala en `DB_PASSWORD`.
+
+#### 11. Genera la clave de la aplicación
+```bash
+php artisan key:generate
+```
+
+#### 12. Inicializa la base de datos local
+Este paso solo aplica si estás usando `.env` local.
+
+En Windows PowerShell, desde la raíz del proyecto:
+
+```powershell
+.\scripts\set-db-roles.ps1
+```
+
+Ese script realiza dos acciones:
+- ejecuta migraciones y seeders
+- crea los usuarios y permisos de MySQL usados por el sistema
+
+> **Importante:** si vas a usar base de datos en la nube, omite este paso.
+
+#### 12. Compila los assets
+```bash
+npm run build
+```
+
+#### 13. Inicia el servidor de desarrollo
+```bash
+php artisan serve
+```
+
+La aplicación quedará disponible en:
+
+```text
+http://127.0.0.1:8000
+```
+
+### Instalación local en Linux
+
+1. Instala PHP 8.1+, Composer, Node.js y MySQL/MariaDB.
+2. Copia `.env.example` a `.env`.
+3. Ajusta credenciales de base de datos.
+4. Ejecuta:
+
+```bash
 composer install
 npm install
 php artisan key:generate
-php artisan storage:link
-php artisan migrate --seed
+bash scripts/set-db-roles.sh
 npm run build
 php artisan serve
 ```
 
-Antes de ejecutar las migraciones, crea la base de datos configurada en `DB_DATABASE` (por defecto, `abi`) y completa en `.env` los datos de tu servidor MySQL. La aplicación queda normalmente disponible en `http://127.0.0.1:8000`.
+### Para manejar un inicio rápido
 
-### Entorno de desarrollo
+```bash
+composer install
+npm install
+cp .env.example .env
+Abre XAMPP y enciende:
+- Apache
+- MySQL
 
-- PHP 8.2 o superior con `pdo_mysql`, Composer, Node.js/npm, Git y MySQL o MariaDB.
-- En Windows puede usarse XAMPP; verifica que la terminal resuelva el PHP de XAMPP antes de ejecutar Composer o Artisan.
-- Para desarrollo de frontend, ejecuta `npm run dev` en otra terminal. Vite usa HMR en `localhost:3000`.
+php artisan key:generate
+.\scripts\set-db-roles.ps1
+npm run build
+php artisan serve
+```
 
 ### Base de datos con privilegios por rol
 

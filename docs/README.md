@@ -17,7 +17,7 @@ Este directorio reúne la documentación técnica del proyecto. La guía de esta
 Para ejecutar el proyecto en local, **usa XAMPP**. No instales PHP, MySQL ni Apache por separado para evitar conflictos.
 
 - **XAMPP**, con:
-  - **PHP 8.1 o superior**
+  - **PHP 8.2 o superior con `pdo_mysql`**
   - **MySQL o MariaDB**
   - **Apache**
 - **Composer**, para instalar dependencias de PHP

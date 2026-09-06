@@ -13,6 +13,11 @@
         <p>{{ $comments }}</p>
     @endif
 
+    @if(!empty($url))
+        <p>Puedes consultar el detalle de tu proyecto en el siguiente enlace:</p>
+        <p><a href="{{ $url }}">{{ $url }}</a></p>
+    @endif
+
     <p>Atentamente,<br>Equipo ABI</p>
 </body>
 </html>

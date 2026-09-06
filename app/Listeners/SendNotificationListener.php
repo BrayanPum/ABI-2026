@@ -51,7 +51,7 @@ class SendNotificationListener
         $content = [
             'windowName' => $window->name,
             'period' => $window->academicPeriod?->name,
-            'endDate' => $window->end_at->format('d/m/Y'),
+            'endDate' => $window->end_at?->format('d/m/Y') ?? 'Fecha por definir',
             'url' => route('projects.create')
         ];
 
@@ -74,7 +74,7 @@ class SendNotificationListener
         $content = [
             'windowName' => $window->name,
             'daysLeft' => $event->daysLeft,
-            'endDate' => $window->end_at->format('d/m/Y H:i'),
+            'endDate' => $window->end_at?->format('d/m/Y H:i') ?? 'Fecha por definir',
             'url' => route('projects.create')
         ];
 
@@ -89,6 +89,7 @@ class SendNotificationListener
     protected function resolveAllRelevantRecipients(): array
     {
         return ResearchStaffUser::query()
+            ->where('state', 1)
             ->whereIn('role', ['student', 'professor', 'committee_leader'])
             ->pluck('email')
             ->filter()

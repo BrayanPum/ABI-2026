@@ -143,19 +143,19 @@ class BankApprovedIdeasAssignController extends Controller
                 ['selection_window_id' => $selectionWindow?->id, 'student_ids' => $studentIds]
             );
 
-            // Disparar evento de notificación
-            event(new ProjectIdeaEvaluated(
-                $project->load(['students.user', 'professors.user']),
-                'Asignado',
-                'El proyecto ha sido seleccionado por un estudiante.'
-            ));
-
             DB::commit();
         } catch (\Throwable $e) {
             DB::rollBack();
 
             return back()->with('error', 'Error al asignar el proyecto. Intenta de nuevo.');
         }
+
+        // Disparar evento de notificación después del commit
+        event(new ProjectIdeaEvaluated(
+            $project->load(['students.user', 'professors.user']),
+            'Asignado',
+            'El proyecto ha sido seleccionado por un estudiante.'
+        ));
 
         return redirect()->route('projects.index')->with('success', 'Proyecto asignado exitosamente. Ahora es tuyo para ejecutar.');
     }
